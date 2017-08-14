@@ -1,0 +1,7 @@
+<can-component tag="tag-loading" leak-scope>
+  <template>
+    {{#eq state "resolved"}}
+      <content></content>
+    {{/eq}}
+  </template>
+</can-component>

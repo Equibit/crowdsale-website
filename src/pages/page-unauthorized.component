@@ -1,0 +1,29 @@
+<can-component tag="page-unauthorized">
+  <style type="less">
+    display: block;
+
+    p { font-weight: bold; }
+  </style>
+  <view>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-10 col-lg-offset-1">
+          <div class="h1 no-top-margin">401 Not Authorized</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-lg-10 col-lg-offset-1">
+          <div class="well text-center">
+            <h3 style="margin-top: 15px">You need to login to see this page.</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </view>
+  <script type="view-model">
+    import DefineMap from 'can-define/map/';
+
+    export default DefineMap.extend({
+    });
+  </script>
+</can-component>

@@ -1,0 +1,90 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, maximum-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>{{title}}</title>
+
+  <link rel="shortcut icon" href="/assets/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-icon-180x180.png">
+  <link rel="manifest" href="/assets/favicons/manifest.json">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="fb:app_id" content="1188163631300990" />
+  <meta property="og:url" content="https://tx.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="https://tx.com/assets/social/facebook-share.png" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@tx_info">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://tx.com/assets/social/twitter-share.png">
+</head>
+<body>
+<can-import from="tx/app" export-as="viewModel" />
+<can-import from="tx/styles.less" />
+<can-import from="tx/components/loading.component!" />
+<can-import from="tx/components/footer.component!" />
+<can-import from="tx/components/session-error.component!" />
+<can-import from="tx/components/navigation/" />
+
+<navigation-bar {page}="page" />
+
+<!--- if session error --->
+<!--can-import from="tx/components/session-error.component!" can-tag="tag-loading">
+  <session-error />
+</can-import-->
+
+<!--- end session error --->
+
+{{#switch page}}
+  {{#case 'home'}}
+    <can-import from="tx/pages/page-home/" can-tag="tag-loading">
+      <page-home />
+    </can-import>
+  {{/case}}
+  {{#case 'panel'}}
+    <!-- todo: if logged in -->
+    <!--can-import from="tx/pages/page-panel/" can-tag="tag-loading">
+      <page-panel />
+    </can-import-->
+    <!-- todo: else -->
+    <!--can-import from="tx/pages/page-unauthorized.component" can-tag="tag-loading">
+      <page-unauthorized />
+    </can-import-->
+    <!-- todo: end if -->
+  {{/case}}
+  {{#case 'terms'}}
+    <can-import from="tx/pages/page-tos/" can-tag="tag-loading">
+      <page-tos />
+    </can-import>
+  {{/case}}
+  {{#case 'privacy'}}
+    <can-import from="tx/pages/page-privacy/" can-tag="tag-loading">
+      <page-privacy />
+    </can-import>
+  {{/case}}
+
+  {{#default}}
+    <can-import from="tx/pages/page-missing.component" can-tag="tag-loading">
+      <page-missing />
+    </can-import>
+  {{/default}}
+{{/switch}}
+
+<page-footer />
+
+{{#switch env.NODE_ENV}}
+  {{#case "production"}}
+    <script src="{{joinBase 'steal.production.js'}}"></script>
+  {{/case}}
+  {{#default}}
+    <script src="/node_modules/steal/steal.js"></script>
+  {{/default}}
+{{/switch}}
+</body>
+</html>

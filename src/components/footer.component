@@ -1,0 +1,28 @@
+<can-component tag="page-footer">
+  <style type="less">
+    display: block;
+
+    p { font-weight: bold; }
+  </style>
+  <view>
+    <can-import from="can-stache/helpers/route" />
+    <footer class="container-fluid bottom-padding">
+      <div class="row">
+        <div class="col-sm-12 text-center text-shadow text-white">{{{copyMessage}}}</div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 text-right"><a href="{{routeUrl page='terms'}}" class="text-shadow">Terms of Service</a></div>
+        <div class="col-sm-6 text-left"><a href="{{routeUrl page='privacy'}}" class="text-shadow">Privacy Policy</a></div>
+      </div>
+    </footer>
+  </view>
+  <script type="view-model">
+    import DefineMap from 'can-define/map/'
+
+    export default DefineMap.extend({
+      copyMessage: {
+        value: '&copy; Copyright 2017 Tx Universe Inc. All Rights Reserved'
+      }
+    })
+  </script>
+</can-component>

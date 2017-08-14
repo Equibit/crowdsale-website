@@ -1,0 +1,32 @@
+<can-component tag="page-missing">
+  <style type="less">
+    display: block;
+
+    p { font-weight: bold; }
+  </style>
+  <view>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-10 col-lg-offset-1">
+          <div class="h1 no-top-margin">404 Page Not Found</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-lg-10 col-lg-offset-1">
+          <div class="well text-center">
+            <h3 style="margin-top: 15px">This page is not found!</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </view>
+  <script type="view-model">
+    import DefineMap from 'can-define/map/';
+
+    export default DefineMap.extend({
+      message: {
+        value: 'This is the page-missing component'
+      }
+    });
+  </script>
+</can-component>

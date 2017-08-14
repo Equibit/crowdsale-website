@@ -1,0 +1,52 @@
+<can-import from="can-stache/helpers/route" />
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{routeUrl page='home'}}"><img src="/assets/imgs/tx-logo.png" /><span>TxUniverse.com</span></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <!--- todo: if not logged in --->
+      <ul class="nav navbar-nav">
+        <li class="{{#eq page 'home'}}active{{/eq}}"><a href="{{routeUrl page='home'}}">Home{{#eq page 'home'}} <span class="sr-only">(current)</span>{{/eq}}</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!--li><a href="javascript: void(0);" data-toggle="modal" data-target="#SignUp">SignUp</a></li-->
+        <li><a href="javascript: void(0);" data-toggle="modal" data-target="#Login">Login</a></li>
+      </ul>
+      <!--- todo: else --->
+      <!--ul class="nav navbar-nav">
+        <li class="{{#eq page 'panel'}}active{{/eq}}"><a href="{{routeUrl page='panel'}}">Panel{{#eq page 'panel'}} <span class="sr-only">(current)</span>{{/eq}}</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="javascript: void(0);">Logout</a></li>
+      </ul-->
+      <!--- todo: end if logged in --->
+    </div>
+  </div>
+</nav>
+
+<!--- todo: if logged in --->
+
+<can-import from="tx/components/navigation/login/" />
+<can-import from="tx/components/navigation/signup/" />
+<can-import from="tx/components/navigation/forgot-password/" />
+<can-import from="tx/components/navigation/set-password/" />
+
+<login-modal />
+<signup-modal />
+<forgot-password-modal />
+<set-password-modal />
+
+<!--- todo: else --->
+
+
+
+<!--- todo: end if logged in --->

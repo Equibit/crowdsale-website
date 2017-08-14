@@ -1,0 +1,66 @@
+@import "../node_modules/bootstrap/less/mixins";
+@import "less/mixins";
+@import "../node_modules/bootstrap/less/variables";
+@import "less/_checkbox";
+@import "less/_bootswatch-variables";
+@import "../node_modules/bootstrap/less/bootstrap";
+@import "less/_bootswatch-styles";
+@import "../node_modules/font-awesome/less/font-awesome";
+@import "less/_custom";
+@import "less/_spacing";
+
+body {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  padding-top: 90px;
+}
+html, body {
+  width: 100%;
+  min-height: 100%;
+  overflow-y: scroll;
+}
+::-moz-selection:not(input) {
+  color: inherit;
+  background: transparent;
+}
+::selection:not(input) {
+  color: inherit;
+  background: transparent;
+}
+img {
+  &::-moz-selection {
+    color: inherit;
+    background: transparent;
+  }
+  &::selection {
+    color: inherit;
+    background: transparent;
+  }
+  user-drag: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+}
+button {
+  &:focus, &:active {
+    outline: 0 !important;
+  }
+  .transition();
+}
+input {
+  &:focus, &:active {
+    outline: 0 !important;
+  }
+}
+a {
+  &:hover, &:active {
+    text-decoration: underline;
+    outline: 0 !important;
+  }
+  &:focus {
+    color: inherit;
+    text-decoration: none;
+    outline: 0 !important;
+  }
+  .transition();
+  text-decoration: none;
+}
