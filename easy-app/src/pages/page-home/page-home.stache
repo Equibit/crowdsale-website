@@ -1,9 +1,0 @@
-<can-import from="~/attrs/selectpicker.attr" />
-<can-import from="fullpage.js/dist/jquery.fullpage.css" />
-
-<div id="fullpage">
-  <div class="section">Some section</div>
-  <div class="section">Some section</div>
-  <div class="section">Some section</div>
-  <div class="section">Some section</div>
-</div>

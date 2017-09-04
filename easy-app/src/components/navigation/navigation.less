@@ -1,10 +1,49 @@
+@import "../../../node_modules/bootstrap/less/mixins";
+@import "../../less/_variables";
+
 navigation-bar {
 	display: block;
 	width: inherit;
+	.navbar {
+		z-index: 1041;
+	}
 	.navbar-brand {
 		width: inherit;
 		img {
 			width: inherit;
+		}
+		span {
+			display: block;
+			text-align: center;
+			width: inherit;
+			padding-top: 35px;
+			padding-bottom: 15px;
+			font-size: 22px;
+		}
+		.box-shadow(0px 0px 10px 0px rgba(0,0,0,0.2))
+	}
+	.nav.navbar-nav.navbar-right {
+		position: absolute;
+		bottom: 0;
+		width: inherit;
+		background-color: @brand-primary;
+		.box-shadow(0px 0px 10px 0px rgba(0,0,0,0.2));
+		> li > a.dropdown-toggle {
+			color: white !important;
+			font-size: 18px;
+			border-top: 1px solid white;
+		}
+		> li > a, .dropdown-menu > li > a {
+			border: none;
+			color: white;
+			text-align: center;
+			padding: 5px 15px 5px 15px;
+		}
+		> li > a, .dropdown-menu > li > a:hover {
+			color: @brand-info
+		}
+		.dropdown-menu {
+			border-radius: 0;
 		}
 	}
 	label {
@@ -17,8 +56,5 @@ navigation-bar {
 			font-size: 16px;
 			z-index: 99999;
 		}
-	}
-	.navbar-default .navbar-nav > li > a:focus {
-		background-color: inherit;
 	}
 }
