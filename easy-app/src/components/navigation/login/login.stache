@@ -1,0 +1,34 @@
+<can-import from="~/components/validation-message.component!" />
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" ($click)="clearForm()"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login</h4>
+      </div>
+      <form novalidate>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+            <input type="email" class="form-control" id="login-email" placeholder="Email Address" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus {($value)}="email" {{#if disableForm}}disabled{{/if}}>
+            <validation-message {message}="emailError" />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password<span class="show-password" ($click)="toggleType()"><i class="fa fa-eye{{#if passwordVisible}}-slash{{/if}}" aria-hidden="true"></i></span></label>
+            <input type="{{#if passwordVisible}}text{{else}}password{{/if}}" class="form-control" id="login-password" placeholder="Password" {($value)}="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ($enter)="handleLogin(%event, email, password)" {{#if disableForm}}disabled{{/if}}>
+            <validation-message {message}="passwordError" />
+          </div>
+          <a href="#" data-toggle="modal" data-target="#forgot-password-modal" data-dismiss="modal">Forgot Password?</a>
+          {{#if loginError}}
+            <div class="text-center text-danger margin-top">Login error, please check your email and password with your records.</div>
+          {{/if}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ($click)="clearForm()">Close</button>
+          <button type="button" class="btn btn-primary" ($click)="handleLogin(%event, email, password)" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Login{{/if}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

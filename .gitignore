@@ -1,0 +1,12 @@
+
+api/.idea/
+api/system/Libraries/
+
+easy-app/.idea/*
+easy-app/dist/
+easy-app/node_moduales
+
+.idea/
+
+extras/
+api/system/ConstantsKeys.php

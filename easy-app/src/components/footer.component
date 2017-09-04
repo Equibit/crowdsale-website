@@ -1,0 +1,28 @@
+<can-component tag="page-footer">
+  <style type="less">
+    display: block;
+
+    p { font-weight: bold; }
+  </style>
+  <view>
+    <can-import from="can-stache/helpers/route" />
+    <footer class="container-fluid bottom-padding">
+      <div class="row">
+        <div class="col-sm-12 text-center">{{{copyMessage}}}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 text-right"><a href="{{routeUrl page='terms'}}">Terms of Service</a></div>
+        <div class="col-xs-6 text-left"><a href="{{routeUrl page='privacy'}}">Privacy Policy</a></div>
+      </div>
+    </footer>
+  </view>
+  <script type="view-model">
+    import DefineMap from 'can-define/map/'
+
+    export default DefineMap.extend({
+      copyMessage: {
+        value: '&copy; Copyright 2017 Easy App Framework All Rights Reserved'
+      }
+    })
+  </script>
+</can-component>

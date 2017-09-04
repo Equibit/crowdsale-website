@@ -1,0 +1,20 @@
+{
+  "name": "RapidDevGroup/PHP-REST-API-JS",
+  "description": "RESTful API in PHP and a JS client with basic SPA start",
+  "version": "0.1.0",
+  "autoload": {
+    "psr-0": {
+      "WebSockets": "system"
+    }
+  },
+  "require": {
+    "php": ">=5.6.0",
+    "cboden/ratchet": "0.3.*",
+    "twilio/sdk": "^5.4",
+    "wildbit/postmark-php": "^2.3",
+    "lcobucci/jwt": "^3.2"
+  },
+  "config": {
+    "vendor-dir": "system/Libraries"
+  }
+}

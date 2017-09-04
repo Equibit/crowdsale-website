@@ -1,0 +1,94 @@
+@import "../../node_modules/bootstrap/less/mixins";
+@import "mixins";
+@import "../../node_modules/bootstrap/less/variables";
+@import "_variables";
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 90px;
+  padding-bottom: 0;
+}
+footer {
+  margin-top: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 70px;
+}
+.bold {
+  font-weight: bold;
+}
+.text-shadow {
+  text-shadow: 2px 2px 8px #000000;
+}
+.text-white {
+  color: white;
+}
+.radio label, .checkbox label {
+  min-height: 16px;
+  padding-left: 10px;
+  line-height: 17px;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: white;
+}
+select[selectpicker] {
+  display: none;
+}
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+}
+.bootstrap-select > .btn-default {
+  border: none;
+  background-color: white;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.bootstrap-select.form-control {
+  border: 1px solid #ccc;
+}
+.bootstrap-select > .btn-default.disabled {
+  background-color: #eeeeee;
+}
+.bootstrap-select.open > .btn-default {
+  background-color: #cecece !important;
+}
+.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
+  top: 8px;
+}
+.bootstrap-select.open > .dropdown-toggle, .bootstrap-select.open > .dropdown-toggle.btn-default {
+  border-color: @brand-primary;
+  outline: 0;
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
+  .form-control-focus();
+}
+.bootstrap-select:not(.open) > .btn-default:focus, .bootstrap-select:not(.open) > .btn-default:hover {
+  border-color: #ccc !important;
+}
+button.btn-clear, button.btn-clear:active, button.btn-clear:focus {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+.popover.top > .arrow:after {
+  bottom: 2px;
+}
+button > i.fa.fa-info-circle {
+  font-size: 16px;
+}
+.bs-searchbox {
+  background-color: white;
+}
+.modal-footer {
+  text-align: center;
+}
+.btn-default, .navbar, .modal-content {
+  .box-shadow(0px 0px 30px 1px rgba(255,255,255,0.7))
+}

@@ -1,0 +1,22 @@
+<can-component tag="validation-message">
+  <style type="less">
+    display: block;
+    .help-block {
+      color: #F04124;
+    }
+  </style>
+  <view>
+    {{#if message}}
+      <small class="form-text help-block">{{message}}</small>
+    {{/if}}
+  </view>
+  <script type="view-model">
+    import DefineMap from 'can-define/map/map';
+
+    export default DefineMap.extend({
+      message: {
+        value: null
+      }
+    });
+  </script>
+</can-component>

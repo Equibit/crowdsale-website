@@ -1,0 +1,16 @@
+<can-component tag="page-missing">
+  <view>
+    <div class="row">
+      <div class="col-md-12 col-lg-10 col-lg-offset-1 text-center">
+        <div class="h1 no-margin-top">404 Page Not Found</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-lg-10 col-lg-offset-1">
+        <div class="well text-center">
+          <h3 style="margin-top: 15px">This page is not found!</h3>
+        </div>
+      </div>
+    </div>
+  </view>
+</can-component>

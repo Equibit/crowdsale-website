@@ -1,0 +1,127 @@
+.transition (@props: all;
+             @duration: 0.3s;
+             @delay: 0s;
+             @timing: ease;
+             @compact: true;
+             @raw-input: false) {
+  .output() when (@raw-input = false) and not (@compact = true) {
+    -webkit-transition-property:@props;
+    -moz-transition-property:@props;
+    -ms-transition-property:@props;
+    -o-transition-property:@props;
+    transition-property:@props;
+    -webkit-transition-duration:@duration;
+    -moz-transition-duration:@duration;
+    -ms-transition-duration:@duration;
+    -o-transition-duration:@duration;
+    transition-duration:@duration;
+    -webkit-transition-delay:   @delay;
+    -moz-transition-delay:   @delay;
+    -ms-transition-delay:   @delay;
+    -o-transition-delay:   @delay;
+    transition-delay:   @delay;
+    -webkit-transition-timing-function:@timing;
+    -moz-transition-timing-function:@timing;
+    -ms-transition-timing-function:@timing;
+    -o-transition-timing-function:@timing;
+    transition-timing-function:@timing;
+  }
+  .output() when (@raw-input = false) and (@compact = true) {
+    @propsLength: length(@props);
+    @durationLength: length(@duration);
+    @delayLength: length(@delay);
+    @timingLength: length(@timing);
+    .buildString(@i, @s: ~'') when (@i <= @propsLength) {
+      @prop: extract(@props, @i);
+      .setDuration() when (@i <= @durationLength) {
+        @dur: extract(@duration, @i);
+      }
+      .setDuration() when (@i > @durationLength) {
+        @dur: extract(@duration, @durationLength);
+      }
+      .setDuration();
+      .setDelay() when (@i <= @delayLength) {
+        @del: extract(@delay, @i);
+      }
+      .setDelay() when (@i > @delayLength) {
+        @del: extract(@delay, @delayLength);
+      }
+      .setDelay();
+      .setTiming() when (@i <= @timingLength) {
+        @time: extract(@timing, @i);
+      }
+      .setTiming() when (@i > @timingLength) {
+        @time: extract(@timing, @timingLength);
+      }
+      .setTiming();
+      .setDivider() when (@i > 1) {
+        @divider: ~'@{s},';
+      }
+      .setDivider() when (@i = 1) {
+        @divider: ~'';
+      }
+      .setDivider();
+      @string: @divider @prop @dur @del @time;
+      .buildString((@i + 1), @string);
+    }
+    .buildString(1);
+    .buildString(@i, @s: ~'') when (@i > @propsLength) {
+      .compact(@s);
+    }
+  }
+  .output() when not (@raw-input = false) {
+    .compact(@raw-input);
+  }
+  .compact(@string) {
+    -webkit-transition:@string;
+    -moz-transition:@string;
+    -ms-transition:@string;
+    -o-transition:@string;
+    transition:@string;
+  }
+  .output();
+}
+
+.checkbox-variant(@parent, @color, @check-color) {
+  .@{parent} input[type="checkbox"]:checked + label,
+  .@{parent} input[type="radio"]:checked + label {
+    &::before {
+      background-color: @color;
+      border-color: @color;
+    }
+    &::after {
+      color: @check-color;
+    }
+  }
+}
+
+.checkbox-variant-indeterminate(@parent, @color, @check-color) {
+  .@{parent} input[type="checkbox"]:indeterminate + label,
+  .@{parent} input[type="radio"]:indeterminate + label {
+    &::before {
+      background-color: @color;
+      border-color: @color;
+    }
+    &::after {
+      background-color: @check-color;
+    }
+  }
+}
+
+.radio-variant(@parent, @color) {
+  .@{parent} input[type="radio"]{
+    & + label{
+      &::after{
+        background-color: @color;
+      }
+    }
+    &:checked + label{
+      &::before {
+        border-color: @color;
+      }
+      &::after{
+        background-color: @color;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{{#if loaded}}
+  {{#if countdown}}
+    {{{status}}}
+  {{else}}
+    {{#if hasMonths}}
+      <span>{{months}}</span><small>{{#if showLabels}} Month{{#if manyMonths}}s{{/if}}{{else}}M{{/if}}</small>
+    {{/if}}
+    {{#if hasDays}}
+      <span>{{days}}</span><small>{{#if showLabels}} Day{{#if manyDays}}s{{/if}}{{else}}D{{/if}}</small>
+    {{/if}}
+    {{#if hasHours}}
+      <span>{{hours}}</span><small>{{#if showLabels}} Hour{{#if manyHours}}s{{/if}}{{else}}H{{/if}}</small>
+    {{/if}}
+    {{#if hasMinutes}}
+      <span>{{minutes}}</span><small>{{#if showLabels}} Minute{{#if manyMinutes}}s{{/if}}{{else}}M{{/if}}</small>
+    {{/if}}
+    {{#if hasSeconds}}
+      <span>{{seconds}}</span><small>{{#if showLabels}} Second{{#if manySeconds}}s{{/if}}{{else}}S{{/if}}</small>
+    {{/if}}
+  {{/if}}
+{{else}}
+  <div class="text-center">
+    <span class="fa fa-refresh fa-spin"></span>
+  </div>
+{{/if}}

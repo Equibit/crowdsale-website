@@ -1,0 +1,87 @@
+AddDefaultCharset UTF-8
+DirectoryIndex index.php
+
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+<Files error_log>
+order allow,deny
+deny from all
+</Files>
+
+# Requires mod_expires to be enabled.
+<IfModule mod_expires.c>
+	# Enable expirations.
+	ExpiresActive On
+	ExpiresDefault "access plus 1 hour"
+	# Do not cache dynamically generated pages.
+	ExpiresByType text/html A1
+
+	# Set up 10 year caching on commonly updated files
+	<FilesMatch "\.(gif|jpg|png)$">
+	ExpiresDefault "access plus 1 hour"
+	</FilesMatch>
+
+	# Force no caching for dynamic files
+	<FilesMatch "\.(php)$">
+	ExpiresActive Off
+	</FilesMatch>
+
+	# Cache various files for 2 weeks
+	<FilesMatch "\.(flv|gif|jpg|jpeg|png|ico|swf|pdf|txt)$">
+	Header set Cache-Control "max-age=1209600"
+	</FilesMatch>
+
+</IfModule>
+
+<IfModule mod_deflate.c>
+	#The following line also enables compression by file content type, for the following list of Content-Type:s
+	AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml text/javascript text/css text/plain application/json
+
+	#The following lines are to avoid bugs with some browsers
+	BrowserMatch ^Mozilla/4 gzip-only-text/html
+	BrowserMatch ^Mozilla/4\.0[678] no-gzip
+	BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+
+<IfModule mod_headers.c>
+	<FilesMatch "\.(js|css|xml|gz)$">
+	Header append Vary: Accept-Encoding
+	</FilesMatch>
+
+    <FilesMatch "\.(html|htm|js|css)$">
+         Header set Pragma "no-cache"
+    </FilesMatch>
+</IfModule>
+
+Options +FollowSymlinks
+RewriteEngine On
+
+# Make sure Authorization header is passed
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+
+# Forward to https
+RewriteCond %{HTTPS} off
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove www
+RewriteCond %{HTTP_HOST}//s%{HTTPS} ^www.(.*)//((s)on|s.*)$ [NC]
+RewriteRule ^ http%3://%1%{REQUEST_URI} [L,R=301]
+
+# Redirect to proper subdomain
+RewriteCond %{HTTP_HOST} ^(.*)\.tokeninvestor\.com
+RewriteRule ^(.*)$ https://tokeninvestor.com/crowdfunding/%1 [R=301,L,NC]
+
+# Add missing trailing slash
+#RewriteCond s%{HTTPS} ^((s)on|s.*)$ [NC]
+#RewriteRule ^/*(.+/)?([^.]*[^/])$ http%2://%{HTTP_HOST}/$1$2/ [L,R=301]
+
+# Find php file for missing directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1&domain=%{HTTP_HOST} [L]
+
+RewriteRule ^$ index.php/?domain=%{HTTP_HOST} [L]

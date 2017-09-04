@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Testing</title>
+    <style>
+        textarea {
+            width: 300px;
+            height: 50px;
+        }
+        button {
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 6px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align: center">
+    <button type="button" class="logout">logout</button>
+</div>
+<hr>
+<table cellspacing="0" cellpadding="2" style="width:100%">
+    <thead>
+    <tr>
+        <th>EndPoint</th>
+        <th>Method</th>
+        <th>Post Data</th>
+        <th>Buttons</th>
+        <th>Results</th>
+    </tr>
+    <tr>
+        <td colspan="5" style="text-align: center"><hr></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>/api/check-auth/</td>
+        <td>GET</td>
+        <td></td>
+        <td><button class="button" type="button" data-url="/api/check-auth/" data-method="GET" data-results="checkLoginResults">run</button></td>
+        <td><textarea id="checkLoginResults"></textarea></td>
+    </tr>
+    <tr style="background-color: #e1e1e1;">
+        <td colspan="5">Sign-up (/api/sign-up/) post data is preprocessed in this testing application. Sign-up is multi-step. User name and Email needs to be unique. Use the API below to check first.</td>
+    </tr>
+    <tr style="background-color: #e1e1e1;">
+        <td>/api/sign-up/</td>
+        <td>POST</td>
+        <td><textarea id="signUpData">{"email":"godard.m@gmail.com"}</textarea></td>
+        <td><button class="button" type="button" data-url="/api/sign-up/" data-method="POST" data-results="signUpResults" data-api-data="signUpData" data-unsigned="true">Sign Up</button></td>
+        <td><textarea id="signUpResults"></textarea></td>
+    </tr>
+    <tr>
+        <td colspan="5">Login (/api/initiate/) post data is preprocessed in this testing application. Login is multi-step and these post data variables has nothing to do with the login.</td>
+    </tr>
+    <tr>
+        <td>/api/authentication/</td>
+        <td>POST</td>
+        <td><textarea id="loginData">{"email":"godard.m@gmail.com", "password":""}</textarea></td>
+        <td><button class="button" type="button" data-url="/api/authentication/" data-method="POST" data-results="loginResults" data-api-data="loginData" data-unsigned="true">login</button></td>
+        <td><textarea id="loginResults"></textarea></td>
+    </tr>
+    <!---
+        CHANGE PASSWORD
+    --->
+    <tr style="background-color: #e1e1e1;">
+        <td colspan="5">Password change (/api/change-password/) post data is preprocessed in this testing application. Both will be hashed with the restAPI.hashMe() function before sending.</td>
+    </tr>
+    <tr style="background-color: #e1e1e1;">
+        <td>/api/change-password/</td>
+        <td>POST</td>
+        <td><textarea id="setPasswordData">{"oldPassword":"1234","newPassword":"123"}</textarea></td>
+        <td><button class="button" type="button" data-url="/api/change-password/" data-method="POST" data-results="setPasswordResults" data-api-data="setPasswordData">run</button></td>
+        <td><textarea id="setPasswordResults"></textarea></td>
+    </tr>
+    <!---
+        ADMIN USERS
+    --->
+    <tr>
+        <td colspan="5" style="text-align: center"><hr><h3>Admin Users</h3>(Requires i18nAdmin Role and Must Send Signed Request)</td>
+    </tr>
+    <tr>
+        <td>/api/admin-users/</td>
+        <td>GET</td>
+        <td></td>
+        <td><button class="button" type="button" data-url="/api/admin-users/" data-method="GET" data-results="adminUsersResults">run</button></td>
+        <td><textarea id="adminUsersResults"></textarea></td>
+    </tr>
+    <tr>
+        <td>/api/admin-users/<input id="updateAdminUserData" type="text" placeholder="{id}">/</td>
+        <td>POST</td>
+        <td><textarea id="updatePostAdminUserData">{}</textarea></td>
+        <td><button class="button" type="button" data-url="/api/admin-users/" data-method="POST" data-results="updateAdminUserResults" data-api-data="updatePostAdminUserData" data-url-data="updateAdminUserData">run</button></td>
+        <td><textarea id="updateAdminUserResults"></textarea></td>
+    </tr>
+    <tr>
+        <td>/api/admin-users/<input id="delAdminUserData" type="text" placeholder="{id}">/</td>
+        <td>DELETE</td>
+        <td></td>
+        <td><button class="button" type="button" data-url="/api/admin-users/" data-method="DELETE" data-results="delAdminUserResults" data-url-data="delAdminUserData">run</button></td>
+        <td><textarea id="delAdminUserResults"></textarea></td>
+    </tr>
+    <!---
+        END
+    --->
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="5" style="text-align: center"><hr></td>
+    </tr>
+    <tr>
+        <th>EndPoint</th>
+        <th>Method</th>
+        <th>Post Data</th>
+        <th>Buttons</th>
+        <th>Results</th>
+    </tr>
+    <tr>
+        <td colspan="5" style="text-align: center"><hr></td>
+    </tr>
+    </tfoot>
+</table>
+
+<script src="/assets/js/api-tester/jquery-2.1.4.min.js"></script>
+<script src="/assets/js/api-tester/testing-api.js"></script>
+
+</body>
+</html>
