@@ -7,22 +7,83 @@
   <title>{{title}}</title>
 
   <link rel="shortcut icon" href="/assets/favicons/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-icon-180x180.png">
   <link rel="manifest" href="/assets/favicons/manifest.json">
   <meta name="theme-color" content="#ffffff">
 
-  <meta property="fb:app_id" content="1188163631300990" />
-  <meta property="og:url" content="https://easyappframework.com/" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:url" content="https://crowdsale.equibitgroup.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="" />
-  <meta property="og:description" content="" />
-  <meta property="og:image" content="https://easyappframework.com/assets/social/facebook-share.png" />
+  <meta property="og:title" content="Equibit Group | Crowdsale" />
+  <meta property="og:description" content="EQB (Equibits) Initial Coin Offering" />
+  <meta property="og:image" content="" />
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@fsm_info">
   <meta name="twitter:title" content="">
   <meta name="twitter:description" content="">
   <meta name="twitter:image" content="https://easyappframework.com/assets/social/twitter-share.png">
+
+  <style>
+    @font-face {
+      font-family: 'gotham_boldregular';
+      src: url('/assets/fonts/gotham-bold-webfont.eot');
+      src: url('/assets/fonts/gotham-bold-webfont.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/gotham-bold-webfont.woff2') format('woff2'),
+      url('/assets/fonts/gotham-bold-webfont.woff') format('woff'),
+      url('/assets/fonts/gotham-bold-webfont.ttf') format('truetype'),
+      url('/assets/fonts/gotham-bold-webfont.svg#gotham_boldregular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'gotham_bookregular';
+      src: url('/assets/fonts/gotham-book-webfont.eot');
+      src: url('/assets/fonts/gotham-book-webfont.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/gotham-book-webfont.woff2') format('woff2'),
+      url('/assets/fonts/gotham-book-webfont.woff') format('woff'),
+      url('/assets/fonts/gotham-book-webfont.ttf') format('truetype'),
+      url('/assets/fonts/gotham-book-webfont.svg#gotham_bookregular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'gotham_ultraregular';
+      src: url('/assets/fonts/gotham-ultra-webfont.eot');
+      src: url('/assets/fonts/gotham-ultra-webfont.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/gotham-ultra-webfont.woff2') format('woff2'),
+      url('/assets/fonts/gotham-ultra-webfont.woff') format('woff'),
+      url('/assets/fonts/gotham-ultra-webfont.ttf') format('truetype'),
+      url('/assets/fonts/gotham-ultra-webfont.svg#gotham_ultraregular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    .ultra {
+      font-family: 'gotham_ultraregular', sans-serif;
+    }
+    .bold {
+      font-family: 'gotham_boldregular', sans-serif;
+    }
+    strong {
+      font-family: 'gotham_boldregular', sans-serif;
+    }
+  </style>
 </head>
 <body>
 <can-import from="~/app" export-as="viewModel" />
@@ -33,10 +94,10 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-4 col-lg-3">
+    <div class="col-sm-3 col-lg-2">
       <navigation-bar {app-state}="appState" />
     </div>
-    <div class="col-sm-8 col-lg-9">
+    <div class="col-sm-9 col-lg-10">
 
       {{#if appState.sessionError}}
         <can-import from="~/components/session-error.component!" can-tag="tag-loading">
