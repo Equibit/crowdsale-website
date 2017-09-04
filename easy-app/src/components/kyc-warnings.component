@@ -6,12 +6,12 @@
   </style>
   <view>
     {{^if kycComplete}}
-      <div class="alert alert-warning margin-top" role="alert">
+      <div class="alert margin-top" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <strong>Identity Verification Incomplete</strong> Your identity has not been verified. Please <a href="" data-toggle="modal" data-target="#kyc-modal"><strong>verify your identify</strong></a>. Some features are disabled until verification.
       </div>
     {{else}}
-      <div class="alert alert-info margin-top" role="alert">
+      <div class="alert margin-top" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <strong>Identity Verification Approval In Progress</strong> Your identity verification is being processed. Some features are disabled until verification.
       </div>

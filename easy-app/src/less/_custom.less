@@ -89,9 +89,20 @@ button > i.fa.fa-info-circle {
 .modal-footer {
   text-align: center;
 }
-.btn, .navbar, .modal-content {
+.btn:not(.dropdown-toggle) {
+  padding: 5px 40px 5px 40px;
+  font-family: 'gotham_boldregular', sans-serif;
+}
+
+
+
+
+.btn, .navbar, .modal-content, .well, .alert {
   .box-shadow(0px 0px 10px 0px rgba(0,0,0,0.2))
 }
-.alert-warning, .alert-info {
+.alert-warning, .alert-info, .well {
   border: none;
+}
+.well, .navbar-default, .alert {
+  background-color: white;
 }

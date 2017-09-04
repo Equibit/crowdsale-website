@@ -25,7 +25,7 @@
           {{/if}}
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" ($click)="clearForm()">Close</button>
+          <!--button type="button" class="btn btn-default" ($click)="clearForm()">Close</button-->
           <button type="button" class="btn btn-primary" ($click)="handleLogin(%event, email, password)" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Login{{/if}}</button>
         </div>
       </form>

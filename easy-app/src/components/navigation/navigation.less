@@ -1,49 +1,98 @@
 @import "../../../node_modules/bootstrap/less/mixins";
+@import "../../../node_modules/bootstrap/less/variables";
 @import "../../less/_variables";
 
 navigation-bar {
 	display: block;
 	width: inherit;
-	.navbar {
-		z-index: 1041;
+	.navbar-default .navbar-toggle {
+		background-color: @brand-primary;
+		border: none;
+		.icon-bar {
+			background-color: white;
+		}
 	}
 	.navbar-brand {
 		width: inherit;
+		padding: 0 0 0 10px;
 		img {
-			width: inherit;
+			position: relative;
+			top: -2px;
+			height: 50px;
+			display: inline-block;
+			margin-right: 20px;
 		}
 		span {
-			display: block;
-			text-align: center;
-			width: inherit;
-			padding-top: 35px;
-			padding-bottom: 15px;
-			font-size: 22px;
+			line-height: 50px;
 		}
-		.box-shadow(0px 0px 10px 0px rgba(0,0,0,0.2))
 	}
-	.nav.navbar-nav.navbar-right {
-		position: absolute;
-		bottom: 0;
-		width: inherit;
-		background-color: @brand-primary;
-		.box-shadow(0px 0px 10px 0px rgba(0,0,0,0.2));
-		> li > a.dropdown-toggle {
-			color: white !important;
-			font-size: 18px;
-			border-top: 1px solid white;
+	@media (min-width: @screen-sm-min) {
+		.navbar-brand {
+			width: inherit;
+			padding: 0;
+			img {
+				width: inherit;
+				height: auto;
+				margin: 0;
+				padding: 10px;
+			}
+			span {
+				display: block;
+				text-align: center;
+				width: inherit;
+				padding-bottom: 15px;
+				font-size: 22px;
+			}
+			.box-shadow(0px 0px 10px 0px rgba(0, 0, 0, 0.2))
 		}
-		> li > a, .dropdown-menu > li > a {
+
+		.navbar-fixed-side .navbar-nav > li > a, .collapse.navbar-collapse.margin-top {
 			border: none;
-			color: white;
 			text-align: center;
-			padding: 5px 15px 5px 15px;
 		}
-		> li > a, .dropdown-menu > li > a:hover {
-			color: @brand-info
-		}
-		.dropdown-menu {
-			border-radius: 0;
+
+		.nav.navbar-nav.navbar-right {
+			position: absolute;
+			bottom: 0;
+			width: inherit;
+			background-color: @brand-primary;
+			.box-shadow(0px 0px 10px 0px rgba(0, 0, 0, 0.2));
+			> li > a.dropdown-toggle {
+				color: white !important;
+				font-size: 18px;
+				border-top: 1px solid white;
+			}
+			> li, .dropdown-menu > li {
+				&.active > a {
+					color: @brand-primary
+				}
+				> a {
+					border: none;
+					color: white;
+					text-align: center;
+					padding: 5px 15px 5px 15px;
+					font-family: 'gotham_boldregular', sans-serif;
+				}
+			}
+			> li > a {
+				padding: 10px 15px 10px 15px;
+			}
+			> li > a:hover, .dropdown-menu > li > a:hover {
+				color: @brand-info
+			}
+			li > a:not(:hover):focus, .dropdown-menu > li > a:not(:hover):focus {
+				color: white;
+				background-color: @brand-primary;
+			}
+			.dropdown-menu {
+				border-radius: 0;
+			}
+			.no-title {
+				padding: 5px 0 0 0;
+				.title {
+					display: none;
+				}
+			}
 		}
 	}
 	label {
