@@ -93,16 +93,44 @@ button > i.fa.fa-info-circle {
   padding: 5px 40px 5px 40px;
   font-family: 'gotham_boldregular', sans-serif;
 }
+.top-right-circle {
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  background-color: @brand-primary;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  line-height: 70px;
+  border: none;
+  .fa-2x {
+    font-size: 30px;
+  }
+}
 
 
 
-
-.btn, .navbar, .modal-content, .well, .alert {
-  .box-shadow(0px 0px 10px 0px rgba(0,0,0,0.2))
+.btn, .btn:active, .navbar, .modal-content, .well, .alert, .panel {
+  .box-shadow(0px 0px 50px 0px rgba(0,0,0,0.15))
 }
 .alert-warning, .alert-info, .well {
   border: none;
 }
 .well, .navbar-default, .alert {
   background-color: white;
+}
+.panel {
+  margin: 90px 50px 50px 50px;
+  .panel-body {
+    position: relative;
+  }
+}
+
+.text-info {
+  color: #58595B;
+  span {
+    color: #ED2F3C
+  }
 }
