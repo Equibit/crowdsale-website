@@ -1,0 +1,26 @@
+<can-component tag="donut-chart">
+  <style type="less">
+    display: block;
+  </style>
+  <view>
+    <div class="progress-radial progress-{{percentage}} setsize brand-{{brand}}">
+      <div class="overlay setsize">
+        <p>{{text}}</p>
+      </div>
+    </div>
+  </view>
+  <script type="view-model">
+    import DefineMap from 'can-define/map/map'
+
+    export default DefineMap.extend({
+      text: 'string',
+      percentage: {
+        set(val) {
+          val = Math.round(val/5)
+          return (val * 5)
+        }
+      },
+      brand: 'string'
+    })
+  </script>
+</can-component>

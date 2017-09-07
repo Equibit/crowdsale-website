@@ -1,3 +1,5 @@
+<can-import from="~/components/donut-chart.component!" />
+
 <div class="row">
   <div class="col-md-12 col-lg-6">
     <div class="panel">
@@ -17,25 +19,10 @@
         </div>
         <div class="row">
           <div class="col-xs-6 col-sm-6">
-
-            <div class="progress-radial progress-100 setsize brand-primary">
-              <div class="overlay setsize">
-                <p>230,000</p>
-              </div>
-            </div>
-
-
+            <donut-chart brand="primary" text="230,000" percentage="100" />
           </div>
           <div class="col-xs-6 col-sm-6">
-
-
-            <div class="progress-radial progress-50 setsize brand-warning">
-              <div class="overlay setsize">
-                <p>135,000</p>
-              </div>
-            </div>
-
-
+            <donut-chart brand="warning" text="135,000" percentage="50" />
           </div>
         </div>
 
@@ -51,27 +38,15 @@
         </div>
         <div class="row">
           <div class="col-xs-6 col-sm-6">
-
-            <div class="progress-radial progress-100 setsize brand-info">
-              <div class="overlay setsize">
-                <p>435,000</p>
-              </div>
-            </div>
-
-
+            <donut-chart brand="info" text="435,000" percentage="100" />
           </div>
           <div class="col-xs-6 col-sm-6">
-
-
-            <div class="progress-radial progress-100 setsize brand-info">
-              <div class="overlay setsize">
-                <p>335,000</p>
-              </div>
-            </div>
-
-
+            <donut-chart brand="info" text="335,000" percentage="100" />
           </div>
         </div>
+
+        <div class="margin-bottom-extra"></div>
+
       </div>
     </div>
   </div>
