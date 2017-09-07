@@ -90,7 +90,7 @@
 
         <div class="row margin-bottom">
           <div class="col-xs-12 text-center">
-            <button type="button" class="btn btn-primary btn-clear">BUY</button>
+            <button type="button" class="btn btn-primary btn-border">BUY</button>
           </div>
         </div>
 
