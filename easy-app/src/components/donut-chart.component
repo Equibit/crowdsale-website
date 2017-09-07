@@ -16,7 +16,6 @@
       text: 'string',
 	    large: {
 	      set(val) {
-	        console.log(val)
 	        return val === "true" || val
 	      }
 	    },
