@@ -96,6 +96,22 @@ button > i.fa.fa-info-circle {
 .top-right-circle {
   position: absolute;
   top: -25px;
+  right: -25px;
+  background-color: @brand-primary;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  line-height: 70px;
+  border: none;
+  .fa-2x {
+    font-size: 30px;
+  }
+}
+.top-left-circle {
+  position: absolute;
+  top: -25px;
   left: -25px;
   background-color: @brand-primary;
   width: 60px;
@@ -113,7 +129,7 @@ button > i.fa.fa-info-circle {
 
 
 .btn-default, .btn:active, .navbar, .modal-content, .well, .alert, .panel {
-  .box-shadow(0px 0px 50px 0px rgba(0,0,0,0.15))
+  .box-shadow(0px 0px 56px -17px rgba(0,0,0,0.59))
 }
 .alert-warning, .alert-info, .well {
   border: none;
@@ -132,5 +148,10 @@ button > i.fa.fa-info-circle {
   color: #58595B;
   span {
     color: #ED2F3C
+  }
+}
+@media (min-width: 768px) {
+  .modal-dialog {
+    margin: 100px auto;
   }
 }

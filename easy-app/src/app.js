@@ -37,11 +37,11 @@ const AppViewModel = DefineMap.extend({
 	title: {
 		get() {
 			if (this.page === "privacy") {
-				return "Easy App Framework | Privacy Statement"
+				return "Equibit Group | Privacy Statement"
 			} else if (this.page === "terms") {
-				return "Easy App Framework | Terms of Service"
+				return "Equibit Group | Terms of Service"
 			} else {
-				return "Easy App Framework"
+				return "Equibit Group"
 			}
 		}
 	}
