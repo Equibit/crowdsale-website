@@ -14,6 +14,8 @@ export const ViewModel = DefineMap.extend({
 	showZeros: {
 		value: false
 	},
+	timestamp: 'number',
+	current: 'number',
 	months: {
 		value: "00"
 	},
