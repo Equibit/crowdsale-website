@@ -38,7 +38,7 @@
         <div class="tab-content">
           <div class="{{#eq question 1}}active{{/eq}}">
             <h2 class="bold">Cras justo odio?</h2>
-            <h3 class="text-primary margin-bottom">Another line?</h3>
+            <h3 class="text-primary margin-bottom bold">Another line?</h3>
             <p>Have finished development and testing of our initial product suite including Equibit Core and Equibit Portfolio. Issuers can issue securities and Investors can invest – both using Equibits and our platform.</p>
             <p>Signed an agreement with IBM to supply and co-market our Supernodes [link]</p>
             <p>Grew the team with top tier talent in both development and marketing</p>
@@ -47,12 +47,17 @@
           </div>
           <div class="{{#eq question 2}}active{{/eq}}">
             <h2 class="bold">Cras justo odio another?</h2>
-            <h3 class="text-primary margin-bottom">Wait Another line?</h3>
+            <h3 class="text-primary margin-bottom bold">Wait Another line?</h3>
+            <p>Re-branded ourselves Equibit Group to better reflect our long-term vision for the company</p>
             <p>Have finished development and testing of our initial product suite including Equibit Core and Equibit Portfolio. Issuers can issue securities and Investors can invest – both using Equibits and our platform.</p>
             <p>Signed an agreement with IBM to supply and co-market our Supernodes [link]</p>
             <p>Grew the team with top tier talent in both development and marketing</p>
             <p>Put together committees of industry leaders to support our executive in areas of Strategy and Security (link to committees)</p>
             <p>Re-branded ourselves Equibit Group to better reflect our long-term vision for the company</p>
+            <p>Have finished development and testing of our initial product suite including Equibit Core and Equibit Portfolio. Issuers can issue securities and Investors can invest – both using Equibits and our platform.</p>
+            <p>Signed an agreement with IBM to supply and co-market our Supernodes [link]</p>
+            <p>Grew the team with top tier talent in both development and marketing</p>
+            <p>Put together committees of industry leaders to support our executive in areas of Strategy and Security (link to committees)</p>
           </div>
           <div class="{{#eq question 3}}active{{/eq}}">
 

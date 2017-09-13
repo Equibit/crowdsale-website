@@ -6,16 +6,16 @@
       <span>{{months}}</span><small>{{#if showLabels}} Month{{#if manyMonths}}s{{/if}}{{else}}M{{/if}}</small>
     {{/if}}
     {{#if hasDays}}
-      <span>{{days}}</span><small>{{#if showLabels}} Day{{#if manyDays}}s{{/if}}{{else}}D{{/if}}</small>
+      <span>{{days}}</span> Day{{#if manyDays}}s{{/if}} |
     {{/if}}
     {{#if hasHours}}
-      <span>{{hours}}</span><small>{{#if showLabels}} Hour{{#if manyHours}}s{{/if}}{{else}}H{{/if}}</small>
+      <span>{{hours}}</span>{{#if showLabels}} Hour{{#if manyHours}}s{{/if}}{{else}} :{{/if}}
     {{/if}}
     {{#if hasMinutes}}
-      <span>{{minutes}}</span><small>{{#if showLabels}} Minute{{#if manyMinutes}}s{{/if}}{{else}}M{{/if}}</small>
+      <span>{{minutes}}</span>{{#if showLabels}} Minute{{#if manyMinutes}}s{{/if}}{{else}} :{{/if}}
     {{/if}}
     {{#if hasSeconds}}
-      <span>{{seconds}}</span><small>{{#if showLabels}} Second{{#if manySeconds}}s{{/if}}{{else}}S{{/if}}</small>
+      <span>{{seconds}}</span>{{#if showLabels}} Second{{#if manySeconds}}s{{/if}}{{else}}{{/if}}
     {{/if}}
   {{/if}}
 {{else}}
