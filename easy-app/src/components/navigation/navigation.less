@@ -27,9 +27,6 @@ navigation-bar {
 		}
 	}
 	@media (min-width: @screen-sm-min) {
-		.navbar-collapse {
-			margin-top: 20px;
-		}
 		.navbar-brand {
 			width: inherit;
 			padding: 0;
@@ -108,5 +105,20 @@ navigation-bar {
 			font-size: 16px;
 			z-index: 99999;
 		}
+	}
+	.nav-item {
+		font-family: 'gotham_boldregular', sans-serif;
+		margin: 10px 0;
+		text-transform: uppercase;
+		text-align: center;
+		img {
+			display: block;
+			width: 15%;
+			margin: 5px auto;
+		}
+	}
+	.active.nav-item a {
+		background-color: transparent !important;
+		color: @brand-primary !important;
 	}
 }

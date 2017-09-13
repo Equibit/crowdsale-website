@@ -15,15 +15,20 @@
     <div class="collapse navbar-collapse margin-top" id="navbar-collapse">
       {{^if appState.loggedIn}}
         <ul class="nav navbar-nav">
-          <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}}"><a href="{{routeUrl page='home'}}" ($click)="closeMenu()">Home{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}} nav-item"><a href="{{routeUrl page='home'}}" ($click)="closeMenu()"><img src="/assets/img/nav-icons/Dashboard{{#routeCurrent page='home'}}-Active{{/routeCurrent}}.svg">Dashboard{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='about'}}active{{/routeCurrent}} nav-item"><a href="{{routeUrl page='about'}}" ($click)="closeMenu()"><img src="/assets/img/nav-icons/About{{#routeCurrent page='about'}}-Active{{/routeCurrent}}.svg">About{{#routeCurrent page='about'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='mining'}}active{{/routeCurrent}} nav-item"><a href="{{routeUrl page='mining'}}" ($click)="closeMenu()"><img src="/assets/img/nav-icons/Mining{{#routeCurrent page='mining'}}-Active{{/routeCurrent}}.svg">Mining{{#routeCurrent page='mining'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='video'}}active{{/routeCurrent}} nav-item"><a href="{{routeUrl page='video'}}" ($click)="closeMenu()"><img src="/assets/img/nav-icons/Video{{#routeCurrent page='video'}}-Active{{/routeCurrent}}.svg">Video{{#routeCurrent page='video'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='overview'}}active{{/routeCurrent}} nav-item"><a href="{{routeUrl page='overview'}}" ($click)="closeMenu()"><img src="/assets/img/nav-icons/Overview{{#routeCurrent page='overview'}}-Active{{/routeCurrent}}.svg">Overview{{#routeCurrent page='overview'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='contact'}}active{{/routeCurrent}} nav-item"><a href="{{routeUrl page='contact'}}" ($click)="closeMenu()"><img src="/assets/img/nav-icons/Contact{{#routeCurrent page='contact'}}-Active{{/routeCurrent}}.svg">Contact{{#routeCurrent page='contact'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="" data-toggle="modal" data-target="#sign-up-modal" ($click)="closeMenu()">SignUp</a></li>
           <li><a href="" data-toggle="modal" data-target="#login-modal" ($click)="closeMenu()">Login</a></li>
+          <li><a href="" data-toggle="modal" data-target="#sign-up-modal" ($click)="closeMenu()">SignUp</a></li>
         </ul>
       {{else}}
         <ul class="nav navbar-nav">
-          <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}}"><a href="{{routeUrl page='home'}}" ($click)="closeMenu()">Dashboard{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}} nav-item"><a href="{{routeUrl page='home'}}" ($click)="closeMenu()"><img src="/assets/img/nav-icons/Dashboard{{#routeCurrent page='home'}}-Active{{/routeCurrent}}.svg">Dashboard{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
