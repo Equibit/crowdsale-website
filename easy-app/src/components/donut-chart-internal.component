@@ -1,9 +1,9 @@
-<can-component tag="donut-chart">
+<can-component tag="donut-chart-internal">
   <style type="less">
     display: block;
   </style>
   <view>
-    <div class="progress-radial progress-{{percentage}} setsize brand-{{brand}}">
+    <div class="progress-radial-internal progress-{{percentage}} setsize brand-{{brand}}">
       <div class="overlay setsize">
         {{#if text}}
           <p class="{{#if large}}larger text-{{brand}}{{/if}}">{{text}}</p>
