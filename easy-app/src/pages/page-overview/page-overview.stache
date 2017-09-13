@@ -13,7 +13,21 @@
     <div class="panel">
       <div class="panel-body">
 
-        asdff
+        <div class="list-group">
+          <li class="bold list-group-item {{#eq question 1}}active{{/eq}}" ($click)="changeQ(1)">Cras justo odio?</li>
+          <li class="bold list-group-item {{#eq question 2}}active{{/eq}}" ($click)="changeQ(2)">Dapibus ac facilisis in?</li>
+          <li class="bold list-group-item {{#eq question 3}}active{{/eq}}" ($click)="changeQ(3)">Morbi leo risus?</li>
+          <li class="bold list-group-item {{#eq question 4}}active{{/eq}}" ($click)="changeQ(4)">Porta ac consectetur ac?</li>
+          <li class="bold list-group-item">Vestibulum at eros?</li>
+          <li class="bold list-group-item">Dapibus ac facilisis in?</li>
+          <li class="bold list-group-item">Morbi leo risus?</li>
+          <li class="bold list-group-item">Porta ac consectetur ac?</li>
+          <li class="bold list-group-item">Vestibulum at eros?</li>
+          <li class="bold list-group-item">Dapibus ac facilisis in?</li>
+          <li class="bold list-group-item">Morbi leo risus?</li>
+          <li class="bold list-group-item">Porta ac consectetur ac?</li>
+          <li class="bold list-group-item">Vestibulum at eros?</li>
+        </div>
 
       </div>
     </div>
@@ -21,9 +35,32 @@
   <div class="col-md-7">
     <div class="panel panel-warning">
       <div class="panel-body">
+        <div class="tab-content">
+          <div class="{{#eq question 1}}active{{/eq}}">
+            <h2 class="bold">Cras justo odio?</h2>
+            <h3 class="text-primary margin-bottom">Another line?</h3>
+            <p>Have finished development and testing of our initial product suite including Equibit Core and Equibit Portfolio. Issuers can issue securities and Investors can invest – both using Equibits and our platform.</p>
+            <p>Signed an agreement with IBM to supply and co-market our Supernodes [link]</p>
+            <p>Grew the team with top tier talent in both development and marketing</p>
+            <p>Put together committees of industry leaders to support our executive in areas of Strategy and Security (link to committees)</p>
+            <p>Re-branded ourselves Equibit Group to better reflect our long-term vision for the company</p>
+          </div>
+          <div class="{{#eq question 2}}active{{/eq}}">
+            <h2 class="bold">Cras justo odio another?</h2>
+            <h3 class="text-primary margin-bottom">Wait Another line?</h3>
+            <p>Have finished development and testing of our initial product suite including Equibit Core and Equibit Portfolio. Issuers can issue securities and Investors can invest – both using Equibits and our platform.</p>
+            <p>Signed an agreement with IBM to supply and co-market our Supernodes [link]</p>
+            <p>Grew the team with top tier talent in both development and marketing</p>
+            <p>Put together committees of industry leaders to support our executive in areas of Strategy and Security (link to committees)</p>
+            <p>Re-branded ourselves Equibit Group to better reflect our long-term vision for the company</p>
+          </div>
+          <div class="{{#eq question 3}}active{{/eq}}">
 
-        sdfsdf
+          </div>
+          <div class="{{#eq question 4}}active{{/eq}}">
 
+          </div>
+        </div>
       </div>
     </div>
   </div>
