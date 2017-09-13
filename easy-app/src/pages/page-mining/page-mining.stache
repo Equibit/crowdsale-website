@@ -18,8 +18,10 @@
           <div class="col-sm-7">
             <div class="row">
               <div class="col-sm-12 margin-top">
-                <donut-chart brand="success" percentage="100">
-                  <donut-chart-internal brand="primary" percentage="30" />
+                <donut-chart brand="warning" percentage="100">
+                  <donut-chart-internal brand="success" percentage="40">
+                    <donut-chart-internal brand="primary" percentage="15" />
+                  </donut-chart-internal>
                 </donut-chart>
               </div>
             </div>
