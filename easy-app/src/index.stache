@@ -118,6 +118,31 @@
             <page-home />
           </can-import>
         {{/case}}
+        {{#case 'about'}}
+          <can-import from="~/pages/page-about/" can-tag="tag-loading">
+            <page-about />
+          </can-import>
+        {{/case}}
+        {{#case 'mining'}}
+          <can-import from="~/pages/page-mining/" can-tag="tag-loading">
+            <page-mining />
+          </can-import>
+        {{/case}}
+        {{#case 'video'}}
+          <can-import from="~/pages/page-video/" can-tag="tag-loading">
+            <page-video />
+          </can-import>
+        {{/case}}
+        {{#case 'overview'}}
+          <can-import from="~/pages/page-overview/" can-tag="tag-loading">
+            <page-overview />
+          </can-import>
+        {{/case}}
+        {{#case 'contact'}}
+          <can-import from="~/pages/page-contact/" can-tag="tag-loading">
+            <page-contact />
+          </can-import>
+        {{/case}}
         {{#case 'terms'}}
           <can-import from="~/pages/page-tos/" can-tag="tag-loading">
             <page-tos />
