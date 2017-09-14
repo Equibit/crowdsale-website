@@ -12,8 +12,82 @@
   <div class="col-sm-12">
     <div class="panel">
       <div class="panel-body">
-
-
+        <div class="row">
+          <div class="col-sm-6">
+            <h4 class="text-uppercase bold text-center margin-top margin-bottom">Main Website</h4>
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3 text-center">
+                <p class="padding text-justify text-larger">Want to find out more about Equibit? Visit our main site for more details about us and our product.</p>
+                <button type="button" class="btn btn-default">GO</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <h4 class="text-uppercase bold text-center margin-top margin-bottom">Social Media</h4>
+            <div class="row">
+              <div class="col-xs-2 col-xs-offset-3 text-primary text-center">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </div>
+              <div class="col-xs-2 text-primary text-center">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </div>
+              <div class="col-xs-2 text-primary text-center">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+                </span>
+              </div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="col-xs-2 col-xs-offset-3 text-primary text-center">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </div>
+              <div class="col-xs-2 text-primary text-center">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </div>
+              <div class="col-xs-2 text-primary text-center">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><br><br>
+        <div class="row">
+          <div class="col-sm-6 text-center">
+            <h4 class="text-uppercase bold text-center text-primary margin-top">Support</h4>
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3 text-center">
+                <p class="padding text-justify text-larger">Having trouble logging in or purchasing EQB? For any technical help please contact our Support Team.</p>
+              </div>
+            </div>
+            <a class="text-more-larger margin-bottom" href="mailto:support@equibitgroup.com">support@equibitgroup.com</a>
+          </div>
+          <div class="col-sm-6 text-center">
+            <h4 class="text-uppercase bold text-center text-primary margin-top">INQUIRIES</h4>
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3 text-center">
+                <p class="padding text-justify text-larger">For any questions about Equibit contact our team and will get back to you shortly!</p>
+              </div>
+            </div>
+            <a class="text-more-larger margin-bottom" href="mailto:info@equibitgroup.com">info@equibitgroup.com</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

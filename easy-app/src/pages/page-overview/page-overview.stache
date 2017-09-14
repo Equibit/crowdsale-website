@@ -13,7 +13,7 @@
     <div class="panel">
       <div class="panel-body">
 
-        <div class="list-group">
+        <div class="list-group no-margin-bottom">
           <li class="bold list-group-item {{#eq question 1}}active{{/eq}}" ($click)="changeQ(1)">Cras justo odio?</li>
           <li class="bold list-group-item {{#eq question 2}}active{{/eq}}" ($click)="changeQ(2)">Dapibus ac facilisis in?</li>
           <li class="bold list-group-item {{#eq question 3}}active{{/eq}}" ($click)="changeQ(3)">Morbi leo risus?</li>
