@@ -12,65 +12,118 @@
   <meta name="theme-color" content="#ffffff">
 
   <meta property="fb:app_id" content="1188163631300990" />
-  <meta property="og:url" content="https://tx.com/" />
+  <meta property="og:url" content="https://txuniverse.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="" />
-  <meta property="og:description" content="" />
-  <meta property="og:image" content="https://tx.com/assets/social/facebook-share.png" />
+  <meta property="og:title" content="Tx Universe" />
+  <meta property="og:description" content="Crypto-Currency and Crypto-Token Consultants and Software Developers" />
+  <meta property="og:image" content="https://txuniverse.com/assets/social/facebook-share.png" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@tx_info">
-  <meta name="twitter:title" content="">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="https://tx.com/assets/social/twitter-share.png">
+  <meta name="twitter:site" content="@fsm_info">
+  <meta name="twitter:title" content="Tx Universe">
+  <meta name="twitter:description" content="Crypto-Currency and Crypto-Token Consultants and Software Developers">
+  <meta name="twitter:image" content="https://txuniverse.com/assets/social/twitter-share.png">
 </head>
 <body>
-<can-import from="tx/app" export-as="viewModel" />
-<can-import from="tx/styles.less" />
-<can-import from="tx/components/loading.component!" />
-<can-import from="tx/components/footer.component!" />
-<can-import from="tx/components/session-error.component!" />
-<can-import from="tx/components/navigation/" />
+<can-import from="~/app" export-as="viewModel" />
+<can-import from="~/styles.less" />
+<can-import from="~/components/loading.component!" />
+<can-import from="~/components/footer.component!" />
+<can-import from="~/components/session-error.component!" />
+<can-import from="~/components/navigation/" />
 
-<navigation-bar {page}="page" />
+<navigation-bar {app-state}="appState" />
 
-<!--- if session error --->
-<!--can-import from="tx/components/session-error.component!" can-tag="tag-loading">
-  <session-error />
-</can-import-->
+{{#if appState.sessionError}}
+  <can-import from="~/components/session-error.component!" can-tag="tag-loading">
+    <session-error />
+  </can-import>
+{{/if}}
 
-<!--- end session error --->
+<!--{{#if appState.loggedIn}}-->
+  <!--{{^if appState.kycApproved}}-->
+    <!--<can-import from="~/components/kyc-warnings.component!" />-->
+    <!--<kyc-warnings {kyc-complete}="appState.kycComplete" />-->
+  <!--{{/if}}-->
+<!--{{/if}}-->
 
 {{#switch page}}
   {{#case 'home'}}
-    <can-import from="tx/pages/page-home/" can-tag="tag-loading">
+    <can-import from="~/pages/page-home/" can-tag="tag-loading">
       <page-home />
     </can-import>
   {{/case}}
-  {{#case 'panel'}}
-    <!-- todo: if logged in -->
-    <!--can-import from="tx/pages/page-panel/" can-tag="tag-loading">
-      <page-panel />
-    </can-import-->
-    <!-- todo: else -->
-    <!--can-import from="tx/pages/page-unauthorized.component" can-tag="tag-loading">
-      <page-unauthorized />
-    </can-import-->
-    <!-- todo: end if -->
+  {{#case 'team'}}
+    <can-import from="~/pages/page-team/" can-tag="tag-loading">
+      <page-team />
+    </can-import>
+  {{/case}}
+  {{#case 'projects'}}
+    <can-import from="~/pages/page-projects/" can-tag="tag-loading">
+      <page-projects />
+    </can-import>
+  {{/case}}
+  {{#case 'about'}}
+    <can-import from="~/pages/page-about/" can-tag="tag-loading">
+      <page-about />
+    </can-import>
+  {{/case}}
+  {{#case 'blog'}}
+    {{#if slug}}
+      <can-import from="~/pages/page-blog/blog-post/" can-tag="tag-loading">
+        <blog-post {link-title}="slug" />
+      </can-import>
+    {{else}}
+      <can-import from="~/pages/page-blog/" can-tag="tag-loading">
+        <page-blog />
+      </can-import>
+    {{/if}}
+  {{/case}}
+  {{#case 'universe'}}
+    <can-import from="~/pages/page-universe/" can-tag="tag-loading">
+      <page-universe />
+    </can-import>
   {{/case}}
   {{#case 'terms'}}
-    <can-import from="tx/pages/page-tos/" can-tag="tag-loading">
+    <can-import from="~/pages/page-tos/" can-tag="tag-loading">
       <page-tos />
     </can-import>
   {{/case}}
   {{#case 'privacy'}}
-    <can-import from="tx/pages/page-privacy/" can-tag="tag-loading">
+    <can-import from="~/pages/page-privacy/" can-tag="tag-loading">
       <page-privacy />
     </can-import>
   {{/case}}
 
+
+
+  {{#case 'admin-users'}}
+    {{#if appState.isAdmin}}
+      <can-import from="~/pages/admin-users/" can-tag="tag-loading">
+        <admin-users {app-state}="appState" />
+      </can-import>
+    {{else}}
+      <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
+        <page-unauthorized />
+      </can-import>
+    {{/if}}
+  {{/case}}
+  {{#case 'admin-blog'}}
+    {{#if appState.isAdmin}}
+      <can-import from="~/pages/admin-blog/" can-tag="tag-loading">
+        <admin-blog />
+      </can-import>
+    {{else}}
+      <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
+        <page-unauthorized />
+      </can-import>
+    {{/if}}
+  {{/case}}
+
+
+
   {{#default}}
-    <can-import from="tx/pages/page-missing.component" can-tag="tag-loading">
+    <can-import from="~/pages/page-missing.component" can-tag="tag-loading">
       <page-missing />
     </can-import>
   {{/default}}

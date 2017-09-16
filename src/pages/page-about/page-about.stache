@@ -1,0 +1,50 @@
+<can-import from="can-stache/helpers/route" />
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="jumbotron">
+        <h1>About</h1>
+        <p>We offer many services from a website for your crypto-token idea, a full funding website for fund raising, to writing articles and white papers. We can also do your social media and even other promotional stuff.</p>
+        <p>Here are some of our basic services. If you do not see what you need, let us know we can probably do it or get it done.</p>
+
+        <ul class="nav nav-pills nav-justified" role="tablist">
+          <li role="presentation" class="active"><a href="#consulting" class="ignore-href" role="tab" data-toggle="pill">Consulting</a></li>
+          <li role="presentation"><a href="#whitepaper" class="ignore-href" role="tab" data-toggle="pill">White Paper Review</a></li>
+          <li role="presentation"><a href="#website" class="ignore-href" role="tab" data-toggle="pill">Websites</a></li>
+          <li role="presentation"><a href="#platform" class="ignore-href" role="tab" data-toggle="pill">Raising Platforms</a></li>
+          <li role="presentation"><a href="#social" class="ignore-href" role="tab" data-toggle="pill">Social Media</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="consulting">
+            <div class="content">
+              <p class="margin-top small">Have an idea, have some needs? We can consult about it... bla bla bla...</p>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="whitepaper">
+            <div class="content">
+              <p class="margin-top small">We will review your white paper and help you improve it.</p>
+              <p class="small">We can help you write it, or just consult and guide you through the process. The best white papers take time and... bla bla bla...</p>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="website">
+            <div class="content">
+              <p class="margin-top small">We can make your website... bla bla bla...</p>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="platform">
+            <div class="content">
+              <p class="margin-top small">Need a platform to raise funds, talk to us... bla bla bla...</p>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="social">
+            <div class="content">
+              <p class="margin-top small">We can help you with your social media needs... bla bla bla...</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

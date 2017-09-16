@@ -1,5 +1,7 @@
-@import "_bootswatch-variables";
 @import "../../node_modules/bootstrap/less/mixins";
+@import "mixins";
+@import "../../node_modules/bootstrap/less/variables";
+@import "_variables";
 
 @font-family-icon: 'FontAwesome';
 @fa-var-check: "\f00c";
@@ -13,7 +15,7 @@
       border-color: @color;
     }
     &::after {
-      color: @gray-lighter;
+      color: white;
     }
   }
 }
@@ -52,7 +54,7 @@
       margin-left: -20px;
       border: 1px solid @input-border;
       border-radius: 3px;
-      background-color: @gray-lighter;
+      background-color: @input-bg;
       .transition(border, color; 0.15s, 2s; 0s, 0s, 0s; ease-in-out, ease-in-out);
     }
 
@@ -170,7 +172,7 @@
       margin-left: -20px;
       border: 1px solid @input-border;
       border-radius: 50%;
-      background-color: @gray-lighter;
+      background-color: @input-bg;
       .transition(border 0.15s ease-in-out);
     }
 
@@ -250,7 +252,7 @@ input[type="radio"] {
   border-radius: 0;
   width: 19px;
   height: 19px;
-  background-color: @gray-lighter;
+  background-color: @input-bg;
 }
 .checkbox label::after {
   margin-top: 1px;
@@ -262,5 +264,5 @@ input[type="radio"] {
   text-align: center;
 }
 .radio label::before {
-  background-color: @gray-lighter !important;
+  background-color: @input-bg !important;
 }

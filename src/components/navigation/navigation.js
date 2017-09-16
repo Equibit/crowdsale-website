@@ -5,13 +5,40 @@ import view from './navigation.stache'
 import 'can-route-pushstate'
 
 export const ViewModel = DefineMap.extend({
-  message: {
-    value: 'This is the navigation-bar component'
-  }
+	listenerAdded: {
+		value: false
+	},
+	appState: {
+		type: 'any'
+	},
+	page: {
+		type: 'any'
+	},
+	closeMenu() {
+		if ($('.navbar-toggle').is(':visible') && $('.navbar-collapse').hasClass('in')) {
+			$('.navbar-toggle').trigger('click');
+			setTimeout(() => $('html, body').animate({scrollTop: 0}, "fast"), 25)
+		}
+	},
+	logout () {
+		this.closeMenu()
+		this.appState.logout()
+	}
 })
 
 export default Component.extend({
   tag: 'navigation-bar',
   ViewModel,
-  view
+  view,
+	events: {
+		inserted: function() {
+			if (!this.viewModel.listenerAdded) {
+				this.viewModel.listenerAdded = true;
+
+				$('.modal').on('shown.bs.modal', function () {
+					$(this).find('[autofocus]').focus();
+				});
+			}
+		}
+	}
 })

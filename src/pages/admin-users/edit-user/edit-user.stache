@@ -1,0 +1,39 @@
+<div class="modal fade" id="EditUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit User</h4>
+      </div>
+      {{#if editUser}}
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-5 col-sm-offset-1">
+              <div class="form-group no-margin-bottom">
+                <div class="checkbox checkbox-primary">
+                  <input type="checkbox" id="checkbox-set-password" {($checked)}="editUser.setPassword" {{#if disableForm}}disabled{{/if}}>
+                  <label for="checkbox-set-password">
+                    Reset Password
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-5 col-sm-offset-1">
+              <div class="form-group no-margin-bottom">
+                <div class="checkbox checkbox-danger">
+                  <input type="checkbox" id="checkbox-lock" {($checked)}="editUser.locked" {{#if disableForm}}disabled{{/if}}>
+                  <label for="checkbox-lock">
+                    Lock Down Account
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" ($click)="saveUser()" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Save{{/if}}</button>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

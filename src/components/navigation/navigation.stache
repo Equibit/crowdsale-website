@@ -9,44 +9,74 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{routeUrl page='home'}}"><img src="/assets/imgs/tx-logo.png" /><span>TxUniverse.com</span></a>
+      <a class="navbar-brand" href="{{routeUrl page='home'}}" ($click)="closeMenu()"><img src="/assets/imgs/tx-logo.png" /><span>Universe</span></a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbar-collapse">
-      <!--- todo: if not logged in --->
-      <ul class="nav navbar-nav">
-        <li class="{{#eq page 'home'}}active{{/eq}}"><a href="{{routeUrl page='home'}}">Home{{#eq page 'home'}} <span class="sr-only">(current)</span>{{/eq}}</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <!--li><a href="javascript: void(0);" data-toggle="modal" data-target="#SignUp">SignUp</a></li-->
-        <li><a href="javascript: void(0);" data-toggle="modal" data-target="#Login">Login</a></li>
-      </ul>
-      <!--- todo: else --->
-      <!--ul class="nav navbar-nav">
-        <li class="{{#eq page 'panel'}}active{{/eq}}"><a href="{{routeUrl page='panel'}}">Panel{{#eq page 'panel'}} <span class="sr-only">(current)</span>{{/eq}}</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="javascript: void(0);">Logout</a></li>
-      </ul-->
-      <!--- todo: end if logged in --->
+      {{^if appState.loggedIn}}
+        <ul class="nav navbar-nav">
+          <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}}"><a href="{{routeUrl page='home'}}" ($click)="closeMenu()">Home{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='about'}}active{{/routeCurrent}}"><a href="{{routeUrl page='about'}}" ($click)="closeMenu()">About{{#routeCurrent page='about'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='team'}}active{{/routeCurrent}}"><a href="{{routeUrl page='team'}}" ($click)="closeMenu()">Team{{#routeCurrent page='team'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='blog'}}active{{/routeCurrent}}"><a href="{{routeUrl page='blog'}}" ($click)="closeMenu()">Blog{{#routeCurrent page='blog'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='projects'}}active{{/routeCurrent}}"><a href="{{routeUrl page='projects'}}" ($click)="closeMenu()">Projects For Sale{{#routeCurrent page='projects'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='universe'}}active{{/routeCurrent}}"><a href="{{routeUrl page='universe'}}" ($click)="closeMenu()">Universe{{#routeCurrent page='universe'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <!--<li><a href="" data-toggle="modal" data-target="#sign-up-modal" ($click)="closeMenu()">Become a Client</a></li>-->
+          <li><a href="" data-toggle="modal" data-target="#login-modal" ($click)="closeMenu()">Client Login</a></li>
+        </ul>
+      {{else}}
+        <ul class="nav navbar-nav">
+          <li class="{{#routeCurrent page='dash'}}active{{/routeCurrent}}"><a href="{{routeUrl page='dash'}}" ($click)="closeMenu()">Dashboard{{#routeCurrent page='dash'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Menu <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!--<li><a href="" data-toggle="modal" data-target="#kyc-modal" ($click)="closeMenu()">Identity Verification</a></li>-->
+              <!--<li class="divider"></li>-->
+              <li><a href="" data-toggle="modal" data-target="#change-password-modal" ($click)="closeMenu()">Change Password</a></li>
+              <li><a href="" data-toggle="modal" data-target="#change-email-modal" ($click)="closeMenu()">Change Email Address</a></li>
+              <li class="divider"></li>
+              <li><a href="" ($click)="logout()">Logout</a></li>
+            </ul>
+          </li>
+          {{#if appState.isAdmin}}
+          <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="{{#routeCurrent page='admin-users'}}active{{/routeCurrent}}"><a href="{{routeUrl page='admin-users'}}" ($click)="closeMenu()">Users{{#routeCurrent page='admin-users'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+              <li class="divider"></li>
+              <li class="{{#routeCurrent page='admin-blog'}}active{{/routeCurrent}}"><a href="{{routeUrl page='admin-blog'}}" ($click)="closeMenu()">Blog{{#routeCurrent page='admin-blog'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+            </ul>
+          </li>
+          {{/if}}
+        </ul>
+      {{/if}}
     </div>
   </div>
 </nav>
 
-<!--- todo: if logged in --->
+{{^if appState.loggedIn}}
 
-<can-import from="tx/components/navigation/login/" />
-<can-import from="tx/components/navigation/signup/" />
-<can-import from="tx/components/navigation/forgot-password/" />
-<can-import from="tx/components/navigation/set-password/" />
+  <can-import from="~/components/navigation/signup/" />
+  <can-import from="~/components/navigation/forgot-password/" />
+  <signup-modal />
+  <forgot-password-modal />
 
-<login-modal />
-<signup-modal />
-<forgot-password-modal />
-<set-password-modal />
+{{else}}
 
-<!--- todo: else --->
+  <!--<can-import from="~/components/navigation/kyc/" />-->
+  <can-import from="~/components/navigation/set-password/" />
+  <can-import from="~/components/navigation/change-password/" />
+  <can-import from="~/components/navigation/change-email/" />
+  <!--<kyc-modal {app-state}="appState" />-->
+  <set-password-modal {app-state}="appState" />
+  <change-password-modal {app-state}="appState" />
+  <change-email-modal {app-state}="appState" />
 
+{{/if}}
 
-
-<!--- todo: end if logged in --->
+<can-import from="~/components/navigation/login/" />
+<login-modal {app-state}="appState" />

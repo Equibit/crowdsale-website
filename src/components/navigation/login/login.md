@@ -1,4 +1,4 @@
-@parent tx
+@parent fsm
 @module {can.Component} tx/components/navigation/login <login-modal>
 
 A short description of the login-modal component

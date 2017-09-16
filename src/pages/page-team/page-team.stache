@@ -1,0 +1,318 @@
+<can-import from="can-stache/helpers/route" />
+<br><br>
+<div id="top" class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="jumbotron">
+        <h1>Team</h1>
+        <p>Our independent constants work great together. Pick and choose based on your needs, or tell us what you need and we can put your team together.</p>
+
+        <ul class="nav nav-justified">
+          <li><a href="#marc">Marc</a></li>
+          <li><a href="#nathan">Nathan</a></li>
+          <li><a href="#ilya">Ilya</a></li>
+          <li><a href="#adrianna">Adrianna</a></li>
+          <li><a href="#anastasiya">Anastasiya</a></li>
+          <li><a href="#peter">Peter</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Marc -->
+  <div id="marc" class="row">
+    <div class="hidden-xs col-sm-2">
+      <img src="/assets/imgs/team/marc.jpg" class="img-responsive img-circle margin-top-extra">
+    </div>
+    <div class="col-sm-8">
+      <div class="h3">Marc Godard</div>
+      <ul class="list-inline">
+        <li>
+          <a href="skype:marc_godard" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-skype"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/MarcGodard" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-twitter"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/marc-godard-4821a373/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-linkedin"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/MarcGodard" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-github"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:marc@txuniverse.com" class="flip" data-autocms="Mail link">
+            <div class="circle-flip">
+              <i class="fa fa-envelope"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="small">Marc is a lifelong entrepreneur, developer and technologist. He studied Cognitive Science with a special concentration in artificial intelligence at Queen’s University’s School of Computing. With over 20 years of programming experience, Marc has designed and built numerous complex and custom systems, applications and web sites, including CRM, CMS, ecommerce and large, corporate web properties including projects for Telus and CIBC. Possessing excellent business and technical acumen, he has acquired, revamped and reformed more than a dozen companies and provided professional consultation to many more.</p>
+      <div class="text-right"><a href="#top">Top</a></div>
+      <hr class="hr-primary">
+    </div>
+  </div>
+
+  <!-- Nathan -->
+  <div id="nathan" class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-right">
+      <div class="h3">Nathan Wosnack</div>
+      <ul class="list-inline">
+        <li>
+          <a href="https://www.facebook.com/nathandwosnack" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-facebook"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/nathanwosnack" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-twitter"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/nathan-d-wosnack-208961104/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-linkedin"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:nathan@txuniverse.com" class="flip" data-autocms="Mail link">
+            <div class="circle-flip">
+              <i class="fa fa-envelope"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="small">Nathan is an entrepreneur, futurist, and pioneer in crypto-currencies since 2009. He has been quoted by Reuters, CoinTelegraph, PanAm Post, The Wall Street Journal and many other news outlets. Nathan is on the North American Advisory Board for Cryptor Trust Inc, Futurist Advisory Board - Lifeboat Foundation. He is Founder, President/CEO of Ubitquity LLC.</p>
+      <div class="text-left"><a href="#top">Top</a></div>
+      <hr class="hr-primary">
+    </div>
+    <div class="hidden-xs col-sm-2">
+      <img src="/assets/imgs/team/nathan.jpg" class="img-responsive img-circle margin-top-extra">
+    </div>
+  </div>
+
+  <!-- Ilya -->
+  <div id="ilya" class="row">
+    <div class="hidden-xs col-sm-2">
+      <img src="/assets/imgs/team/ilya.png" class="img-responsive img-circle margin-top-extra">
+    </div>
+    <div class="col-sm-8">
+      <div class="h3">Ilya Fadeev</div>
+      <ul class="list-inline">
+        <li>
+          <a href="https://twitter.com/ilyavf" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-twitter"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/ilya-fadeev-33475a23/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-linkedin"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/ilyavf" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-github"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:ilya@txuniverse.com" class="flip" data-autocms="Mail link">
+            <div class="circle-flip">
+              <i class="fa fa-envelope"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="small">Ilya is a software engineer, an open-source contributor and a JavaScript evangelist. He focuses on front-end technologies, functional programming, and MVC training.</p>
+      <p class="small">With more than 12 years of web programming experience Ilya has worked on numerous web projects of different sizes. As a front-end architect he designs and builds large and scalable single page applications. He is a core contributor to CanJS project, an open source JavaScript framework for building high performance, real-time web and mobile applications.</p>
+      <div class="text-right"><a href="#top">Top</a></div>
+      <hr class="hr-primary">
+    </div>
+  </div>
+
+  <!-- Adrianna -->
+  <div id="adrianna" class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-right">
+      <div class="h3">Adrianna Mendez</div>
+      <ul class="list-inline">
+        <!--li>
+          <a href="https://www.facebook.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-facebook"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-twitter"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-youtube"></i>
+            </div>
+          </a>
+        </li-->
+        <li>
+          <a href="https://www.linkedin.com/in/adriannamendez/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-linkedin"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:adrianna@txuniverse.com" class="flip" data-autocms="Mail link">
+            <div class="circle-flip">
+              <i class="fa fa-envelope"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="small">Adrianna is marketing and business strategist. She has been utilizing her unique set of skills since 2012 to help drive results from digital marketing strategy. She studied psychology at the University of Texas - San Antonio, and has her Masters of Science from Kaplan University. She helped co-found Bitcoin Beginner Box, LLC and is a member of the BLibre Podcast team. She is currently the Vice President of Marketing for Ubiquity LLC.</p>
+      <div class="text-left"><a href="#top">Top</a></div>
+      <hr class="hr-primary">
+    </div>
+    <div class="hidden-xs col-sm-2">
+      <img src="/assets/imgs/team/adrianna.jpg" class="img-responsive img-circle margin-top-extra">
+    </div>
+  </div>
+
+  <!-- Anastasiya -->
+  <div id="anastasiya" class="row">
+    <div class="hidden-xs col-sm-2">
+      <img src="/assets/imgs/team/anastasiya.jpg" class="img-responsive img-circle margin-top-extra">
+    </div>
+    <div class="col-sm-8">
+      <div class="h3">Anastasiya Maslova</div>
+      <ul class="list-inline">
+        <!--li>
+          <a href="https://www.facebook.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-facebook"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-twitter"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-youtube"></i>
+            </div>
+          </a>
+        </li-->
+        <li>
+          <a href="https://www.linkedin.com/in/asmaslova/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-linkedin"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:anastasiya@txuniverse.com" class="flip" data-autocms="Mail link">
+            <div class="circle-flip">
+              <i class="fa fa-envelope"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="small">Anastasiya is an aspiring entrepreneur, leader, liberty advocate, and client relationship specialist. After receiving a degree in international business and economics she has focused her skills on helping people through technical support, economic and financial education, and writing. She promotes personal and professional development and has experience in the international shipping and real estate industries. Anastasiya has been involved with crypto-currencies since 2016.</p>
+      <div class="text-right"><a href="#top">Top</a></div>
+      <hr class="hr-primary">
+    </div>
+  </div>
+
+  <!-- Peter -->
+  <div id="peter" class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-right">
+      <div class="h3">Peter Nearing</div>
+      <ul class="list-inline">
+        <!--li>
+          <a href="https://www.facebook.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-facebook"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-twitter"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-youtube"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-linkedin"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-github"></i>
+            </div>
+          </a>
+        </li-->
+        <li>
+          <a href="mailto:peter@txuniverse.com" class="flip" data-autocms="Mail link">
+            <div class="circle-flip">
+              <i class="fa fa-envelope"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="small">Peter is a Network and Systems Administrator, programmer, and technologist.  He has over 20 years of programming experience, and 15 years of administration experience.  He has served several large telecom companies internationally, providing high level technical support, and administration services.  He currently runs his own network and systems consulting practice.  In his spare time he also works with embedded and IoT platforms.</p>
+      <div class="text-left"><a href="#top">Top</a></div>
+      <hr class="hr-primary">
+    </div>
+    <div class="hidden-xs col-sm-2">
+      <img src="/assets/imgs/team/peter.jpg" class="img-responsive img-circle margin-top-extra">
+    </div>
+  </div>
+</div>

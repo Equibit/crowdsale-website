@@ -1,0 +1,18 @@
+<div class="modal fade" id="KYCUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">KYC User Data</h4>
+      </div>
+      {{#if kycUser}}
+        <div class="modal-body">
+{{kycUser.firstName}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" ($click)="approveUser()" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Manually Approve{{/if}}</button>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-@parent tx
+@parent fsm
 @module {can.Component} tx/components/navigation/signup <signup-modal>
 
 A short description of the signup-modal component

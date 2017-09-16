@@ -1,0 +1,64 @@
+<can-import from="can-stache/helpers/route" />
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="jumbotron">
+        <h1>Universe</h1>
+        <p>These are the Tx projects that we choose to keep in our control. We are just starting this part of the project, so most are just plans for now.</p>
+
+        <ul class="nav nav-justified">
+          <li><a href="#notify">Notify</a></li>
+          <li><a href="#wallet">Wallet</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <!-- steem voter -->
+  <div id="notify" class="row">
+    <div class="hidden-xs col-sm-2">
+      <img src="/assets/imgs/projects/tx.png" class="img-responsive img-circle margin-top-extra">
+    </div>
+    <div class="col-sm-8">
+      <div class="h3">Tx Notify</div>
+      <ul class="list-inline">
+        <li>
+          <a href="https://txnotify.com" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-link"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="small">Transaction notification platform for our other services and clients.</p>
+      <div class="text-right"><a href="#top">Top</a></div>
+      <hr class="hr-primary">
+    </div>
+  </div>
+
+  <!-- token list -->
+  <div id="wallet" class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-right">
+      <div class="h3">Tx Wallet</div>
+      <ul class="list-inline">
+        <li>
+          <a href="https://txwallet.com" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-link"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="small">Our own branded multi-currency wallet.</p>
+      <div class="text-left"><a href="#top">Top</a></div>
+      <hr class="hr-primary">
+    </div>
+    <div class="hidden-xs col-sm-2">
+      <img src="/assets/imgs/projects/tx.png" class="img-responsive img-circle margin-top-extra">
+    </div>
+  </div>
+
+</div>

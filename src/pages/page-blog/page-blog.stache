@@ -1,0 +1,30 @@
+<can-import from="can-stache/helpers/route" />
+
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="jumbotron">
+        <h1>Blog</h1>
+        <p>Come back for some of our teams blog posts related to crypto-currency and tokens.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{{^if loadingBlog}}
+  <div class="container">
+
+    {{#each rows}}
+      <div id="notify" class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="h3"><a href="{{routeUrl page='blog' slug=linkTitle}}">{{title}}</a></div>
+          <p class="small">{{short}}</p>
+          <hr class="hr-primary">
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
+{{else}}
+  <div class="text-center top-bottom-padding"><i class="fa fa-spin fa-spinner fa-5x"></i></div>
+{{/if}}

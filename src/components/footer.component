@@ -8,11 +8,11 @@
     <can-import from="can-stache/helpers/route" />
     <footer class="container-fluid bottom-padding">
       <div class="row">
-        <div class="col-sm-12 text-center text-shadow text-white">{{{copyMessage}}}</div>
+        <div class="col-sm-12 text-center">{{{copyMessage}}}</div>
       </div>
       <div class="row">
-        <div class="col-sm-6 text-right"><a href="{{routeUrl page='terms'}}" class="text-shadow">Terms of Service</a></div>
-        <div class="col-sm-6 text-left"><a href="{{routeUrl page='privacy'}}" class="text-shadow">Privacy Policy</a></div>
+        <div class="col-xs-6 text-right"><a href="{{routeUrl page='terms'}}">Terms of Service</a></div>
+        <div class="col-xs-6 text-left"><a href="{{routeUrl page='privacy'}}">Privacy Policy</a></div>
       </div>
     </footer>
   </view>

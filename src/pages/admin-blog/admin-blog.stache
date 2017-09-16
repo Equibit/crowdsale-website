@@ -1,0 +1,80 @@
+<can-import from="grid-component" />
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h1>Add / Edit Blog Post</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div class="well">
+
+        <grid-component {(rows)}="rows" {(pagination)}="pagination" (onpage)="loadPage()">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th class="text-nowrap text-center">Title</th>
+                <th class="text-nowrap text-center">Author</th>
+                <th class="text-nowrap text-center">Published</th>
+                <th class="text-nowrap text-center">Date</th>
+                <th class="text-nowrap text-center">Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              {{^if loadingBlog}}
+                {{#if rows.length}}
+                  {{#each rows}}
+                    <tr>
+                      <td class="text-nowrap text-center">{{title}}</td>
+                      <td class="text-nowrap text-center">{{author}}</td>
+                      <td class="text-nowrap text-center">{{#if published}}<i class="fa fa-check text-success"></i>{{else}}<i class="fa fa-close text-danger"></i>{{/if}}</td>
+                      <td class="text-nowrap text-center">{{timestampDetailed datetime}}</td>
+                      <td class="text-nowrap text-center">
+                        <button class="btn btn-primary btn-sm" type="button" ($click)="editBlog(.)">Edit</button>
+                        <button class="btn btn-danger btn-sm" type="button" ($click)="deleteBlog(.)">Delete</button>
+                      </td>
+                    </tr>
+                  {{/each}}
+                {{else}}
+                  <tr class="no-hover no-bg">
+                    <td colspan="5" class="text-center"><h3>There are currently no blog posts</h3></td>
+                  </tr>
+                {{/if}}
+              {{else}}
+                <tr class="no-hover no-bg">
+                  <td colspan="5"><div class="text-center top-bottom-padding"><i class="fa fa-spin fa-spinner fa-5x"></i></div></td>
+                </tr>
+              {{/if}}
+              </tbody>
+            </table>
+
+            {{#if hasPages}}
+              <nav aria-label="Page navigation" class="pull-right">
+                <ul class="pagination">
+                  <li class="{{^if isPrevActive}}disabled{{/if}}"><a href="" ($click)="prev()" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                  {{#each pages}}
+                    <li class="{{#if isActive}}active{{/if}}"><a href="" ($click)=changePage(pageNumber)>{{pageTitle}}</a></li>
+                  {{/each}}
+                  <li class="{{^if isNextActive}}disabled{{/if}}"><a href="" ($click)="next()" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                </ul>
+              </nav>
+            {{/if}}
+
+          </div>
+        </grid-component>
+
+        <div class="row">
+          <div class="col-sm-3 col-sm-offset-9">
+            <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit-modal">Add New Post</button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{{>editTemplate}}

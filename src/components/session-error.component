@@ -1,20 +1,10 @@
 <can-component tag="session-error">
-  <style type="less">
-    display: block;
-
-    p { font-weight: bold; }
-  </style>
   <view>
     <div class="container">
-      <div class="alert alert-warning" role="alert">
+      <div class="alert alert-warning margin-top" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <strong>Session Expired</strong> Your login session has expired, please <a href="javascript: void(0);" data-toggle="modal" data-target="#Login"><strong>login again</strong></a>.
+        <strong>Session Expired</strong> Your login session has expired, please <a href="" data-toggle="modal" data-target="#login-modal"><strong>login again</strong></a>.
       </div>
     </div>
   </view>
-  <script type="view-model">
-    import DefineMap from 'can-define/map/'
-
-    export default DefineMap.extend({})
-  </script>
 </can-component>
