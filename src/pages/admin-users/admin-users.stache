@@ -57,7 +57,7 @@
                   {{/each}}
                 {{else}}
                   <tr class="no-hover no-bg">
-                    <td colspan="5"><h3>There are currently no users</h3></td>
+                    <td colspan="5" class="text-center"><h3>There are currently no users</h3></td>
                   </tr>
                 {{/if}}
               {{else}}
