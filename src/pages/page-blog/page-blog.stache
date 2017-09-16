@@ -15,7 +15,7 @@
   <div class="container">
 
     {{#each rows}}
-      <div id="notify" class="row">
+      <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
           <div class="h3"><a href="{{routeUrl page='blog' slug=linkTitle}}">{{title}}</a></div>
           <p class="small">{{short}}</p>

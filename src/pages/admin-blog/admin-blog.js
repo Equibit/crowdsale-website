@@ -3,7 +3,7 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './admin-blog.less'
 import view from './admin-blog.stache'
-import Blog from '~/models/blog'
+import Blog from '~/models/admin-blog'
 import editTemplate from './edit-blog.stache'
 import Quill from 'quill'
 

@@ -42,7 +42,7 @@
 
         <div class="form-group no-margin-bottom">
           <label for="blog-post">Post</label>
-          <div id="blog-post" class="form-control"></div>
+          <div id="blog-post"></div>
         </div>
 
       </div>

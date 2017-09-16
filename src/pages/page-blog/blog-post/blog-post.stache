@@ -8,6 +8,9 @@
           <p>{{short}}</p>
         </div>
       </div>
+      <div class="col-sm-12">
+        {{{post}}}
+      </div>
     </div>
   </div>
 {{/post}}
