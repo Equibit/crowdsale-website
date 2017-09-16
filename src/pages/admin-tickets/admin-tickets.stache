@@ -16,6 +16,9 @@
               <thead>
               <tr>
                 <th class="text-nowrap text-center">Email</th>
+                <th class="text-nowrap text-center">Subject</th>
+                <th class="text-nowrap text-center">Responded</th>
+                <th class="text-nowrap text-center">Ticket Init</th>
                 <th class="text-nowrap text-center">Action</th>
               </tr>
               </thead>
@@ -25,6 +28,9 @@
                   {{#each rows}}
                     <tr>
                       <td class="text-nowrap text-center"><a href="mailto:{{email}}">{{email}}</a></td>
+                      <td class="text-nowrap text-center">{{shorten subject 30}}</td>
+                      <td class="text-nowrap text-center">{{^if isOpen}}<i class="fa fa-check text-success"></i>{{else}}<i class="fa fa-close text-danger"></i>{{/if}}</td>
+                      <td class="text-nowrap text-center">{{timestampDetailed creationDate}}</td>
                       <td class="text-nowrap text-center"></td>
                     </tr>
                   {{/each}}
