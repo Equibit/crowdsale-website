@@ -12,6 +12,8 @@ import 'tx/pages/page-universe/page-universe-test'
 import 'tx/pages/admin-blog/admin-blog-test'
 import 'tx/pages/page-blog/blog-post/blog-post-test'
 
+import 'tx/pages/page-dash/page-dash-test';
+
 F.attach(QUnit)
 
 QUnit.module('tx functional smoke test', {

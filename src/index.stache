@@ -40,12 +40,12 @@
   </can-import>
 {{/if}}
 
-<!--{{#if appState.loggedIn}}-->
-  <!--{{^if appState.kycApproved}}-->
-    <!--<can-import from="~/components/kyc-warnings.component!" />-->
-    <!--<kyc-warnings {kyc-complete}="appState.kycComplete" />-->
-  <!--{{/if}}-->
-<!--{{/if}}-->
+{{#if appState.loggedIn}}
+  {{^if appState.kycApproved}}
+    <can-import from="~/components/kyc-warnings.component!" />
+    <kyc-warnings {kyc-complete}="appState.kycComplete" />
+  {{/if}}
+{{/if}}
 
 {{#switch page}}
   {{#case 'home'}}
@@ -93,6 +93,20 @@
     <can-import from="~/pages/page-privacy/" can-tag="tag-loading">
       <page-privacy />
     </can-import>
+  {{/case}}
+
+
+
+  {{#case 'dash'}}
+    {{#if appState.loggedIn}}
+      <can-import from="~/pages/page-dash/" can-tag="tag-loading">
+        <page-dash {app-state}="appState" />
+      </can-import>
+    {{else}}
+      <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
+        <page-unauthorized />
+      </can-import>
+    {{/if}}
   {{/case}}
 
 
