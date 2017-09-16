@@ -4,11 +4,9 @@ import DefineMap from 'can-define/map/map'
 import './admin-blog.less'
 import view from './admin-blog.stache'
 import Blog from '~/models/admin-blog'
-import editTemplate from './edit-blog.stache'
 import Quill from 'quill'
 
 export const ViewModel = DefineMap.extend({
-	editTemplate: editTemplate,
 	newEditBlog: {
 		Type: Blog,
 		value: new Blog({})
@@ -108,9 +106,8 @@ export default Component.extend({
 				modules: {
 					toolbar: toolbarOptions
 				},
-				placeholder: 'Blog Post...',
 				theme: 'snow'
-			});
+			})
 
 			let pagination = this.viewModel.pagination
 			Blog.getList({$skip: pagination.skip, $limit: pagination.limit})
