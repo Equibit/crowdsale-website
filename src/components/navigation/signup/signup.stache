@@ -24,7 +24,7 @@
             <validation-message {message}="termsError" />
           </div>
           {{#if isAccountCreated}}
-            <div class="text-center">Please check your email and then <a href="" data-toggle="modal" data-target="#Login" ($click)="clearForm()">login</a> with your temporary password.</div>
+            <div class="text-center">Please check your email and then <a href="" data-toggle="modal" data-target="#login-modal" ($click)="clearForm()">login</a> with your temporary password.</div>
           {{/if}}
           {{#if signUpError}}
             <div class="text-center text-danger">Email address error! Is this a valid email address?</div>

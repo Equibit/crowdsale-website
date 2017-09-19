@@ -57,12 +57,12 @@
                   {{/each}}
                 {{else}}
                   <tr class="no-hover no-bg">
-                    <td colspan="5" class="text-center"><h3>There are currently no users</h3></td>
+                    <td colspan="6" class="text-center"><h3>There are currently no users</h3></td>
                   </tr>
                 {{/if}}
               {{else}}
                 <tr class="no-hover no-bg">
-                  <td colspan="5"><div class="text-center top-bottom-padding"><i class="fa fa-spin fa-spinner fa-5x"></i></div></td>
+                  <td colspan="6"><div class="text-center top-bottom-padding"><i class="fa fa-spin fa-spinner fa-5x"></i></div></td>
                 </tr>
               {{/if}}
               </tbody>

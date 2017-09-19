@@ -23,7 +23,7 @@
           <li class="{{#routeCurrent page='universe'}}active{{/routeCurrent}}"><a href="{{routeUrl page='universe'}}" ($click)="closeMenu()">Universe{{#routeCurrent page='universe'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <!--<li><a href="" data-toggle="modal" data-target="#sign-up-modal" ($click)="closeMenu()">Become a Client</a></li>-->
+          <li><a href="" data-toggle="modal" data-target="#sign-up-modal" ($click)="closeMenu()">Become a Client</a></li>
           <li><a href="" data-toggle="modal" data-target="#login-modal" ($click)="closeMenu()">Client Login</a></li>
         </ul>
       {{else}}
