@@ -14,6 +14,7 @@
           <li><a href="#adrianna">Adrianna</a></li>
           <li><a href="#anastasiya">Anastasiya</a></li>
           <li><a href="#peter">Peter</a></li>
+          <li><a href="#sam">Sam</a></li>
         </ul>
 
       </div>
@@ -315,4 +316,56 @@
       <img src="/assets/imgs/team/peter.jpg" class="img-responsive img-circle margin-top-extra">
     </div>
   </div>
+
+  <!-- Sam -->
+  <div id="sam" class="row">
+    <div class="hidden-xs col-sm-2">
+      <img src="/assets/imgs/team/sam.jpg" class="img-responsive img-circle margin-top-extra">
+    </div>
+    <div class="col-sm-8">
+      <div class="h3">Sam Tannian</div>
+      <ul class="list-inline">
+        <!--li>
+          <a href="https://www.facebook.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-facebook"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-twitter"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-youtube"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/asmaslova/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-linkedin"></i>
+            </div>
+          </a>
+        </li-->
+        <li>
+          <a href="mailto:sam@txuniverse.com" class="flip" data-autocms="Mail link">
+            <div class="circle-flip">
+              <i class="fa fa-envelope"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="small">Sam is a technology analyst and journalist based in Taipei, Taiwan covering the PC hardware and semiconductor industries. In addition to an intimate familiarity with the IT supply chain in Taipei, Sam has experience working with big data cuts and analytical forecasting models. A native of British Columbia, Canada, Sam has followed the Bitcoin and cryptocurrency industry for five years. He is a graduate of Simon Fraser University, and also attended Langara College’s Journalism program.</p>
+      <div class="text-right"><a href="#top">Top</a></div>
+      <hr class="hr-primary">
+    </div>
+  </div>
+
+
 </div>

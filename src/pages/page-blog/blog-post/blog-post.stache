@@ -5,7 +5,7 @@
       <div class="col-sm-12">
         <div class="jumbotron">
           <h1>{{title}}</h1>
-          <p class="small">{{author}}</p>
+          <p class="small">{{author}} | {{timestamp datetime}}</p>
           <p>{{shortPost}}</p>
         </div>
       </div>

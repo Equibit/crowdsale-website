@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
           <div class="h3"><a href="{{routeUrl page='blog' slug=linkTitle}}">{{title}}</a></div>
-          <p class="small">{{author}}</p>
+          <p class="small">{{author}} | {{timestamp datetime}}</p>
           <p>{{shortPost}}</p>
           <hr class="hr-primary">
         </div>

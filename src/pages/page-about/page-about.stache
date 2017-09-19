@@ -15,36 +15,38 @@
           <li role="presentation"><a href="#platform" class="ignore-href" role="tab" data-toggle="pill">Raising Platforms</a></li>
           <li role="presentation"><a href="#social" class="ignore-href" role="tab" data-toggle="pill">Social Media</a></li>
         </ul>
-        <div class="tab-content">
-          <div role="tabpanel" class="tab-pane fade in active" id="consulting">
-            <div class="content">
-              <p class="margin-top small">Have an idea, have some needs? We can consult about it... bla bla bla...</p>
-            </div>
-          </div>
-          <div role="tabpanel" class="tab-pane fade" id="whitepaper">
-            <div class="content">
-              <p class="margin-top small">We will review your white paper and help you improve it.</p>
-              <p class="small">We can help you write it, or just consult and guide you through the process. The best white papers take time and... bla bla bla...</p>
-            </div>
-          </div>
-          <div role="tabpanel" class="tab-pane fade" id="website">
-            <div class="content">
-              <p class="margin-top small">We can make your website... bla bla bla...</p>
-            </div>
-          </div>
-          <div role="tabpanel" class="tab-pane fade" id="platform">
-            <div class="content">
-              <p class="margin-top small">Need a platform to raise funds, talk to us... bla bla bla...</p>
-            </div>
-          </div>
-          <div role="tabpanel" class="tab-pane fade" id="social">
-            <div class="content">
-              <p class="margin-top small">We can help you with your social media needs... bla bla bla...</p>
-            </div>
-          </div>
-        </div>
 
       </div>
+
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="consulting">
+          <div class="content">
+            <p class="margin-top small">Have an idea, have some needs? We can consult about it... bla bla bla...</p>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="whitepaper">
+          <div class="content">
+            <p class="margin-top small">We will review your white paper and help you improve it.</p>
+            <p class="small">We can help you write it, or just consult and guide you through the process. The best white papers take time and... bla bla bla...</p>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="website">
+          <div class="content">
+            <p class="margin-top small">We can make your website... bla bla bla...</p>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="platform">
+          <div class="content">
+            <p class="margin-top small">Need a platform to raise funds, talk to us... bla bla bla...</p>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="social">
+          <div class="content">
+            <p class="margin-top small">We can help you with your social media needs... bla bla bla...</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
