@@ -1,4 +1,6 @@
 <can-import from="can-stache/helpers/route" />
+<can-import from="~/components/social-media.component!" />
+
 <br>
 <div class="container">
   <div class="row">
@@ -7,7 +9,16 @@
         <h1>Tx Universe</h1>
         <p>We are a group of cutting edge developers, writers, marketers, and more that have a strong interest in crypto-currencies and tokens. We are very knowledgeable of blockchains and bitcoin with a strong network in the space.</p>
         <p>Our developers can create anything, however, we have a strong interest in this space. We create projects to sell, and also Tx branded projects for our clients and members.</p>
-        <p><a href="{{routeUrl page='about'}}" class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+
+        <div class="row">
+          <div class="col-sm-6"><a href="{{routeUrl page='about'}}" class="btn btn-primary btn-lg" role="button">Learn more</a></div>
+          <div class="col-sm-6 text-right">
+
+            <social-media />
+
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

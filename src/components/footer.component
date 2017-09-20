@@ -6,7 +6,12 @@
   </style>
   <view>
     <can-import from="can-stache/helpers/route" />
+    <can-import from="~/components/social-media.component!" />
+
     <footer class="container-fluid bottom-padding">
+      <div class="row">
+        <div class="col-sm-12 text-center"><social-media size="small" /></div>
+      </div>
       <div class="row">
         <div class="col-sm-12 text-center">{{{copyMessage}}}</div>
       </div>

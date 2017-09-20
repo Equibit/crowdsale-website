@@ -1,0 +1,63 @@
+<can-component tag="social-media">
+  <style type="less">
+    display: block;
+  </style>
+  <view>
+
+    <ul class="list-inline {{size}}">
+      <li>
+        <a href="https://join.slack.com/t/txuniverse/shared_invite/enQtMjQzNjMyOTQ1NTA1LTQyNGJlMjQxYmZjM2MwNmM1MTc3NzIwMGJlOTIzMjRjZTcyZWI4OWZlNDNjMmVmMThiODg4OTg0NmU1Y2I5N2E" target="_blank" class="flip">
+          <div class="circle-flip">
+            <i class="fa fa-slack"></i>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/Tx-Universe-1484947874918334/" target="_blank" class="flip">
+          <div class="circle-flip">
+            <i class="fa fa-facebook"></i>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/TxUniverse" target="_blank" class="flip">
+          <div class="circle-flip">
+            <i class="fa fa-twitter"></i>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/25067251/" target="_blank" class="flip">
+          <div class="circle-flip">
+            <i class="fa fa-linkedin"></i>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/TxUniverse" target="_blank" class="flip">
+          <div class="circle-flip">
+            <i class="fa fa-github"></i>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:info@txuniverse.com" class="flip" data-autocms="Mail link">
+          <div class="circle-flip">
+            <i class="fa fa-envelope"></i>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+  </view>
+  <script type="view-model">
+    import DefineMap from 'can-define/map/map'
+
+    export default DefineMap.extend({
+      size: {
+        type: 'string',
+        value: 'normal'
+      }
+    })
+  </script>
+</can-component>
