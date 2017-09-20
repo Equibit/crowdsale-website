@@ -1,6 +1,6 @@
 <can-import from="can-stache/helpers/route" />
 <br>
-<div class="container">
+<div id="top" class="container">
   <div class="row">
     <div class="col-sm-12">
       <div class="jumbotron">
@@ -8,8 +8,10 @@
         <p>These are the Tx projects that we choose to keep in our control. We are just starting this part of the project, so most are just plans for now.</p>
 
         <ul class="nav nav-justified">
-          <li><a href="#notify">Notify</a></li>
-          <li><a href="#wallet">Wallet</a></li>
+          <li><a href="#notify">Tx Notify</a></li>
+          <li><a href="#wallet">Tx Wallet</a></li>
+          <li><a href="#explore">Tx Explore</a></li>
+          <li><a href="#caps">Tx Caps</a></li>
         </ul>
 
       </div>
@@ -17,13 +19,14 @@
   </div>
 </div>
 <div class="container">
-  <!-- steem voter -->
+
+  <!-- notify -->
   <div id="notify" class="row">
     <div class="hidden-xs col-sm-2">
       <img src="/assets/imgs/projects/tx.png" class="img-responsive img-circle margin-top-extra">
     </div>
     <div class="col-sm-8">
-      <div class="h3">Tx Notify</div>
+      <div class="h3">Tx Notify <small>In Production</small></div>
       <ul class="list-inline">
         <li>
           <a href="https://txnotify.com" target="_blank" class="flip">
@@ -33,16 +36,16 @@
           </a>
         </li>
       </ul>
-      <p class="small">Transaction notification platform for our other services and clients.</p>
+      <p class="small">Tx Notify is a secure, simple, and fast Instant Payment Notification (IPN) system providing accurate real-time transaction information by SMS, email, and data posts. Using a single address and/or Xpub this IPN will notify you when you receive a payment of Bitcoin, Litecoin or any of our other supported cryptocurrencies. Tx Notify generates a unique, safe, and unused corresponding address for your customers to send payments, instantly notifying you by your chosen system. This is only available for our Tx Services.</p>
       <div class="text-right"><a href="#top">Top</a></div>
       <hr class="hr-primary">
     </div>
   </div>
 
-  <!-- token list -->
+  <!-- wallet -->
   <div id="wallet" class="row">
     <div class="col-sm-8 col-sm-offset-2 text-right">
-      <div class="h3">Tx Wallet</div>
+      <div class="h3"><small>In Planning</small> Tx Wallet</div>
       <ul class="list-inline">
         <li>
           <a href="https://txwallet.com" target="_blank" class="flip">
@@ -53,6 +56,53 @@
         </li>
       </ul>
       <p class="small">Our own branded multi-currency wallet.</p>
+      <p class="small">We are developing it with many new features we feel other wallets are missing.</p>
+      <div class="text-left"><a href="#top">Top</a></div>
+      <hr class="hr-primary">
+    </div>
+    <div class="hidden-xs col-sm-2">
+      <img src="/assets/imgs/projects/tx.png" class="img-responsive img-circle margin-top-extra">
+    </div>
+  </div>
+
+  <!-- explore -->
+  <div id="explore" class="row">
+    <div class="hidden-xs col-sm-2">
+      <img src="/assets/imgs/projects/tx.png" class="img-responsive img-circle margin-top-extra">
+    </div>
+    <div class="col-sm-8">
+      <div class="h3">Tx Explore <small>In Planing</small></div>
+      <ul class="list-inline">
+        <li>
+          <a href="https://txexplore.com" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-link"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="small">Tx Explore is a multi-chain block explorer.</p>
+      <p class="small">We are developing it with many new features we feel other block explorers are missing.</p>
+      <div class="text-right"><a href="#top">Top</a></div>
+      <hr class="hr-primary">
+    </div>
+  </div>
+
+  <!-- caps -->
+  <div id="caps" class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-right">
+      <div class="h3"><small>In Planning</small> Tx Caps</div>
+      <ul class="list-inline">
+        <li>
+          <a href="https://txcaps.com" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-link"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="small">Our own branded crypto currency market cap site.</p>
+      <p class="small">We are developing it many new features we feel other market cap sites are missing.</p>
       <div class="text-left"><a href="#top">Top</a></div>
       <hr class="hr-primary">
     </div>
