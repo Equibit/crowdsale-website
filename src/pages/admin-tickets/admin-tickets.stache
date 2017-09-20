@@ -1,4 +1,5 @@
 <can-import from="grid-component" />
+<can-import from="can-stache/helpers/route" />
 
 <div class="container">
   <div class="row">
@@ -17,6 +18,7 @@
               <tr>
                 <th class="text-nowrap text-center">Email</th>
                 <th class="text-nowrap text-center">Subject</th>
+                <th class="text-nowrap text-center">Opened</th>
                 <th class="text-nowrap text-center">Responded</th>
                 <th class="text-nowrap text-center">Ticket Init</th>
                 <th class="text-nowrap text-center">Action</th>
@@ -29,19 +31,22 @@
                     <tr>
                       <td class="text-nowrap text-center"><a href="mailto:{{email}}">{{email}}</a></td>
                       <td class="text-nowrap text-center">{{shorten subject 30}}</td>
-                      <td class="text-nowrap text-center">{{^if isOpen}}<i class="fa fa-check text-success"></i>{{else}}<i class="fa fa-close text-danger"></i>{{/if}}</td>
+                      <td class="text-nowrap text-center">{{#if isOpen}}<i class="fa fa-check text-success"></i>{{else}}<i class="fa fa-close text-danger"></i>{{/if}}</td>
+                      <td class="text-nowrap text-center">{{#if responded}}<i class="fa fa-check text-success"></i>{{else}}<i class="fa fa-close text-danger"></i>{{/if}}</td>
                       <td class="text-nowrap text-center">{{timestampDetailed creationDate}}</td>
-                      <td class="text-nowrap text-center"></td>
+                      <td class="text-nowrap text-center">
+                        <a href="{{routeUrl page='admin-tickets' slug=linkSubject}}" class="btn btn-primary btn-sm" type="button">View</a>
+                      </td>
                     </tr>
                   {{/each}}
                 {{else}}
                   <tr class="no-hover no-bg">
-                    <td colspan="5" class="text-center"><h3>There are currently no tickets</h3></td>
+                    <td colspan="6" class="text-center"><h3>There are currently no tickets</h3></td>
                   </tr>
                 {{/if}}
               {{else}}
                 <tr class="no-hover no-bg">
-                  <td colspan="5"><div class="text-center top-bottom-padding"><i class="fa fa-spin fa-spinner fa-5x"></i></div></td>
+                  <td colspan="6"><div class="text-center top-bottom-padding"><i class="fa fa-spin fa-spinner fa-5x"></i></div></td>
                 </tr>
               {{/if}}
               </tbody>

@@ -135,9 +135,15 @@
   {{/case}}
   {{#case 'admin-tickets'}}
     {{#if appState.isAdmin}}
-      <can-import from="~/pages/admin-tickets/" can-tag="tag-loading">
-        <admin-tickets {app-state}="appState" />
-      </can-import>
+      {{#if slug}}
+        <can-import from="~/pages/admin-tickets/ticket-details/" can-tag="tag-loading">
+          <ticket-details {link-subject}="slug" {app-state}="appState" />
+        </can-import>
+      {{else}}
+        <can-import from="~/pages/admin-tickets/" can-tag="tag-loading">
+          <admin-tickets {app-state}="appState" />
+        </can-import>
+      {{/if}}
     {{else}}
       <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
         <page-unauthorized />
