@@ -10,7 +10,11 @@
     <div class="col-sm-12 col-md-12">
       <div class="well">
 
-        details here
+        {{#if loadingTicket}}
+
+
+
+        {{/if}}
 
       </div>
     </div>

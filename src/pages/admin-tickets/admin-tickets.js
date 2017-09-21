@@ -5,6 +5,7 @@ import view from './admin-tickets.stache'
 import Ticket from '~/models/admin-ticket'
 
 export const ViewModel = DefineMap.extend({
+	search: 'string',
 	appState: {
 		type: 'any'
 	},
@@ -19,12 +20,17 @@ export const ViewModel = DefineMap.extend({
 			skip: 'number',
 			limit: 'number',
 			total: 'number'
-		}))({skip: 0, limit: 30})
+		}))({skip: 0, limit: 50})
 	},
-	loadPage () {
+	loadPage (params) {
 		this.loadingTickets = true
 		let pagination = this.pagination
-		Ticket.getList({$skip: pagination.skip, $limit: pagination.limit})
+		const query = {$skip: pagination.skip, $limit: pagination.limit}
+		params = Object.assign({search: this.search}, params)
+		if (params.search) {
+			query['$search'] = params.search
+		}
+		Ticket.getList(query)
 			.then(tickets => {
 				this.rows = tickets
 				this.pagination.total = tickets.total
@@ -34,6 +40,11 @@ export const ViewModel = DefineMap.extend({
 				if (err.status === 401) this.appState.error401()
 				else console.log(err)
 			})
+	},
+	doSearch() {
+		if (!this.loadingTickets) {
+			this.loadPage({search: this.search})
+		}
 	}
 })
 
