@@ -1,0 +1,18 @@
+<can-import from="can-stache/helpers/route" />
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h1>Ticket Details <small><a href="{{routeUrl page='admin-tickets'}}">Return to Tickets</a></small></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div class="well">
+
+        details here
+
+      </div>
+    </div>
+  </div>
+</div>

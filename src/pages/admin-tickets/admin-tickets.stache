@@ -36,6 +36,7 @@
                       <td class="text-nowrap text-center">{{timestampDetailed creationDate}}</td>
                       <td class="text-nowrap text-center">
                         <a href="{{routeUrl page='admin-tickets' slug=linkSubject}}" class="btn btn-primary btn-sm" type="button">View</a>
+                        {{#if isOpen}}<button class="btn btn-danger btn-sm" type="button">Closed</button>{{/if}}
                       </td>
                     </tr>
                   {{/each}}
