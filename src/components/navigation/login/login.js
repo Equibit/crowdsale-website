@@ -4,6 +4,8 @@ import './login.less'
 import view from './login.stache'
 import feathersClient from '~/models/feathers-client'
 import validate from '~/utils/validators'
+import route from 'can-route'
+import 'can-route-pushstate'
 
 export const ViewModel = DefineMap.extend({
 	loginError: 'boolean',
@@ -70,6 +72,8 @@ export const ViewModel = DefineMap.extend({
 				this.appState.locked = (user.locked === 1 || user.locked)
 
 				$('#login-modal').modal("hide")
+
+				route.data.set({page: 'dash'}, true);
 
 				if (user.setPassword === 1 || user.setPassword) {
 					this.appState.loggedIn = true

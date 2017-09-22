@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{routeUrl page='home'}}" ($click)="closeMenu()"><img src="/assets/imgs/tx-logo.png" /><span>Universe</span></a>
+      <a class="navbar-brand" {{^if appState.loggedIn}}href="{{routeUrl page='home'}}"{{else}}href="{{routeUrl page='dash'}}"{{/if}} ($click)="closeMenu()"><img src="/assets/imgs/tx-logo.png" /><span>Universe</span></a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbar-collapse">

@@ -2,6 +2,7 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './navigation.less'
 import view from './navigation.stache'
+import route from 'can-route'
 import 'can-route-pushstate'
 
 export const ViewModel = DefineMap.extend({
@@ -23,6 +24,7 @@ export const ViewModel = DefineMap.extend({
 	logout () {
 		this.closeMenu()
 		this.appState.logout()
+		route.data.set({page: 'home'}, true);
 	}
 })
 

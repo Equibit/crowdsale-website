@@ -14,6 +14,9 @@ export default new set.Algebra(
     },
     '$search': function () {
       return true;
+    },
+    '$filter': function () {
+      return true;
     }
   }
 )

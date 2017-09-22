@@ -18,6 +18,10 @@ import 'tx/pages/admin-tickets/admin-tickets-test';
 
 import 'tx/pages/admin-tickets/ticket-details/ticket-details-test';
 
+import 'tx/pages/page-faq/page-faq-test';
+
+import 'tx/pages/admin-faq/admin-faq-test';
+
 F.attach(QUnit)
 
 QUnit.module('tx functional smoke test', {

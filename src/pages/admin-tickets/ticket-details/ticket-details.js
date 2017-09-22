@@ -26,10 +26,11 @@ export default Component.extend({
 			Ticket.get(this.viewModel.linkSubject)
 				.then(ticket => {
 					console.log(ticket)
+					this.viewModel.ticketHistory = ticket.history
 					setTimeout(() => this.viewModel.loadingTicket = false, 25)
 				})
 				.catch(err => {
-					if (err.status === 401) this.appState.error401()
+					if (err.status === 401) this.viewModel.appState.error401()
 					else console.log(err)
 				})
 		}

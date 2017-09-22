@@ -14,7 +14,7 @@
         <div class="row margin-bottom">
           <div class="col-sm-4 col-sm-offset-8">
             <div class="input-group">
-              <input type="text" class="form-control" {($value)}="search" placeholder="Search Email And Subject" ($enter)="doSearch()">
+              <input type="text" class="form-control" {($value)}="search" placeholder="Search Email and Subject" ($enter)="doSearch()">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button" ($click)="doSearch()">Search</button>
               </span>
@@ -47,7 +47,7 @@
                       <td class="text-nowrap text-center">{{timestampDetailed creationDate}}</td>
                       <td class="text-nowrap text-center">
                         <a href="{{routeUrl page='admin-tickets' slug=linkSubject}}" class="btn btn-primary btn-sm" type="button">View</a>
-                        {{#if isOpen}}<button class="btn btn-danger btn-sm" type="button">Closed</button>{{/if}}
+                        {{#if isOpen}}<button class="btn btn-danger btn-sm" type="button" ($click)="closeTicket(.)">Closed</button>{{/if}}
                       </td>
                     </tr>
                   {{/each}}

@@ -11,9 +11,12 @@
       <div class="well">
 
         {{#if loadingTicket}}
-
-
-
+          <div class="text-center top-bottom-padding"><i class="fa fa-spin fa-spinner fa-5x"></i></div>
+        {{else}}
+          {{#each ticketHistory}}
+            {{ticketText}}
+            <hr>
+          {{/each}}
         {{/if}}
 
       </div>

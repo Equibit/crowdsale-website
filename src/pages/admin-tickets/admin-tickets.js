@@ -45,6 +45,14 @@ export const ViewModel = DefineMap.extend({
 		if (!this.loadingTickets) {
 			this.loadPage({search: this.search})
 		}
+	},
+	closeTicket(ticket) {
+		ticket.isOpen = false;
+		ticket.save()
+			.catch(err => {
+				if (err.status === 401) this.appState.error401()
+				else console.log(err)
+			})
 	}
 })
 
