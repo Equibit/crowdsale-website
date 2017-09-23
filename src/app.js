@@ -6,7 +6,7 @@ To switch to feathers todo: create config file to manage this
 
  */
 
-import '~/utils/polyfill'
+// import '~/utils/polyfill'
 import '~/utils/helpers'
 import '~/utils/analytics'
 import DefineMap from 'can-define/map/map'

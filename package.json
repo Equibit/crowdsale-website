@@ -50,7 +50,6 @@
     "serviceBaseURL": "https://txuniverse.com/api"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
     "bootstrap": "^3.3.7",
     "bootstrap-select": "^1.12.4",
     "can-component": "^3.3.4",
@@ -70,7 +69,6 @@
     "done-serve": "^1.4.0",
     "donejs-feathers": "^2.1.5",
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
-    "es6-object-assign": "^1.1.0",
     "feathers": "^2.2.0",
     "feathers-authentication-client": "^0.3.3",
     "feathers-hooks": "^2.0.2",
@@ -86,7 +84,6 @@
     "steal-less": "^1.2.0",
     "steal-socket.io": "^4.0.9",
     "steal-stache": "^3.1.1",
-    "string.prototype.includes": "^1.0.0",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
