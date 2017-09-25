@@ -100,7 +100,7 @@ export default Component.extend({
 				[{ 'color': [] }, { 'background': [] }],
 				[{ 'align': [] }],
 				['clean']
-			];
+			]
 
 			this.viewModel.quill = new Quill('#blog-post', {
 				modules: {

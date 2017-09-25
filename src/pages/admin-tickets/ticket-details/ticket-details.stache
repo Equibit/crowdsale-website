@@ -8,18 +8,39 @@
   </div>
   <div class="row">
     <div class="col-sm-12 col-md-12">
-      <div class="well">
 
-        {{#if loadingTicket}}
-          <div class="text-center top-bottom-padding"><i class="fa fa-spin fa-spinner fa-5x"></i></div>
-        {{else}}
-          {{#each ticketHistory}}
-            {{ticketText}}
-            <hr>
-          {{/each}}
-        {{/if}}
+      {{#if ticketData.isOpen}}
+        <div class="well">
+          <h4>Tx Universe</h4>
+          <div id="ticket-response"></div>
+          <div class="row margin-top">
+            <div class="col-sm-3 col-sm-offset-9">
+              <button class="btn btn-primary pull-right">Send Response</button>
+            </div>
+          </div>
+        </div>
+      {{/if}}
 
-      </div>
+      {{#if loadingTicket}}
+        <div class="text-center top-bottom-padding"><i class="fa fa-spin fa-spinner fa-5x"></i></div>
+      {{else}}
+
+        {{#each ticketHistory}}
+          {{#if fromClient}}
+            <div class="well">
+              <h4>{{../ticketData.email}} <small>On {{timestampDetailed ticketDatetime}}</small></h4>
+              <blockquote>{{ticketText}}</blockquote>
+            </div>
+          {{else}}
+            <div class="well well-primary">
+              <h4>Tx Universe <small>On {{timestampDetailed ticketDatetime}}</small></h4>
+              <blockquote>{{ticketText}}</blockquote>
+            </div>
+          {{/if}}
+        {{/each}}
+      {{/if}}
+
     </div>
   </div>
+</div>
 </div>
