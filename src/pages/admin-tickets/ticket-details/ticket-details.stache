@@ -8,6 +8,32 @@
   </div>
   <div class="row">
     <div class="col-sm-12 col-md-12">
+      {{^if loadingTicket}}
+        <div class="well">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th class="text-nowrap text-center">Email</th>
+                <th class="text-nowrap text-center">Subject</th>
+                <th class="text-nowrap text-center">Open</th>
+                <th class="text-nowrap text-center">Responded</th>
+                <th class="text-nowrap text-center">Ticket Init</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="text-nowrap text-center"><a href="mailto:{{ticketData.email}}">{{ticketData.email}}</a></td>
+                <td class="text-nowrap text-center">{{shorten ticketData.subject 30}}</td>
+                <td class="text-nowrap text-center">{{#if ticketData.isOpen}}<i class="fa fa-check text-success"></i>{{else}}<i class="fa fa-close text-danger"></i>{{/if}}</td>
+                <td class="text-nowrap text-center">{{#if ticketData.responded}}<i class="fa fa-check text-success"></i>{{else}}<i class="fa fa-close text-danger"></i>{{/if}}</td>
+                <td class="text-nowrap text-center">{{timestampDetailed ticketData.creationDate}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      {{/if}}
 
       {{#if ticketData.isOpen}}
         <div class="well">
@@ -15,7 +41,7 @@
           <div id="ticket-response"></div>
           <div class="row margin-top">
             <div class="col-sm-3 col-sm-offset-9">
-              <button class="btn btn-primary pull-right" ($click)="updateResponse()">Send Response</button>
+              <button class="btn btn-primary pull-right" ($click)="updateResponse()" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Send Response{{/if}}</button>
             </div>
           </div>
         </div>
@@ -29,12 +55,12 @@
           {{#if fromClient}}
             <div class="well">
               <h4>{{../ticketData.email}} <small>On {{timestampDetailed ticketDatetime}}</small></h4>
-              <blockquote>{{ticketText}}</blockquote>
+              <blockquote>{{{ticketText}}}</blockquote>
             </div>
           {{else}}
-            <div class="well well-primary">
-              <h4>Tx Universe <small>On {{timestampDetailed ticketDatetime}}</small></h4>
-              <blockquote>{{ticketText}}</blockquote>
+            <div class="well well-tx">
+              <h4><img src="/assets/imgs/tx-logo.png" /> Tx Universe <small>On {{timestampDetailed ticketDatetime}}</small></h4>
+              <blockquote>{{{ticketText}}}</blockquote>
             </div>
           {{/if}}
         {{/each}}

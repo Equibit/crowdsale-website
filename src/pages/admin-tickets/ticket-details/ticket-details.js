@@ -22,10 +22,24 @@ export const ViewModel = DefineMap.extend({
 	ticketData: {
 		Type: Ticket
 	},
+	processing: 'boolean',
+	disableForm: 'boolean',
 	updateResponse() {
-		console.log("here")
-		this.ticketData.response = 'bla bla'
-		this.ticketData.save()
+		this.processing = true
+		this.disableForm = true
+		this.quill.enable(false)
+		this.ticketData.response = $('.ql-editor').html()
+		if (this.ticketData.response.length > 1) {
+			this.ticketData.save()
+				.then(() => {
+					this.processing = false
+					this.disableForm = false
+					let tempText = ($('.ql-editor').text() + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ "<br />" +'$2')
+					this.quill.enable(true)
+					this.quill.setContents(JSON.parse("{\"ops\":[{\"insert\":\"\\n\"}]}"))
+					this.ticketHistory.unshift({fromClient: 0, ticketDatetime: Date.now(), ticketText: tempText})
+				})
+		}
 	}
 })
 

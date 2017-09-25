@@ -6,6 +6,7 @@ import Ticket from '~/models/admin-ticket'
 
 export const ViewModel = DefineMap.extend({
 	search: 'string',
+	filter: 'string',
 	appState: {
 		type: 'any'
 	},
@@ -26,9 +27,12 @@ export const ViewModel = DefineMap.extend({
 		this.loadingTickets = true
 		let pagination = this.pagination
 		const query = {$skip: pagination.skip, $limit: pagination.limit}
-		params = Object.assign({search: this.search}, params)
+		params = Object.assign({search: this.search, filter: this.filter}, params)
 		if (params.search) {
 			query['$search'] = params.search
+		}
+		if (params.filter) {
+			query['$filter'] = params.filter
 		}
 		Ticket.getList(query)
 			.then(tickets => {
@@ -43,7 +47,14 @@ export const ViewModel = DefineMap.extend({
 	},
 	doSearch() {
 		if (!this.loadingTickets) {
+			this.filter = null
 			this.loadPage({search: this.search})
+		}
+	},
+	doFilter(filter) {
+		if (!this.loadingTickets) {
+			this.filter = filter
+			this.loadPage({search: this.search, filter: this.filter})
 		}
 	},
 	closeTicket(ticket) {
