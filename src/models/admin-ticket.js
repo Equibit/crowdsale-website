@@ -8,6 +8,9 @@ import algebra from './algebra'
 
 const Ticket = DefineMap.extend('Ticket', {
   id: 'any',
+  response: 'string',
+  isOpen: 'boolean',
+  responded: 'boolean'
 })
 
 Ticket.List = DefineList.extend({

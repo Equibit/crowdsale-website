@@ -20,7 +20,12 @@ export const ViewModel = DefineMap.extend({
 		type: 'any'
 	},
 	ticketData: {
-		type: 'any'
+		Type: Ticket
+	},
+	updateResponse() {
+		console.log("here")
+		this.ticketData.response = 'bla bla'
+		this.ticketData.save()
 	}
 })
 
@@ -34,10 +39,10 @@ export default Component.extend({
 			Ticket.get(this.viewModel.linkSubject)
 				.then(ticket => {
 					this.viewModel.ticketHistory = ticket.history
-					this.viewModel.ticketData = ticket.ticket
+					this.viewModel.ticketData = ticket
 					setTimeout(() => this.viewModel.loadingTicket = false, 25)
 
-					if (ticket.ticket.isOpen) {
+					if (ticket.isOpen) {
 						let toolbarOptions = [
 							[{ 'header': [1, 2, 3, 4, 5, 6, false] }],
 							['bold', 'italic', 'underline', 'strike'],

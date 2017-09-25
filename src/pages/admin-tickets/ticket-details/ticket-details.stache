@@ -11,11 +11,11 @@
 
       {{#if ticketData.isOpen}}
         <div class="well">
-          <h4>Tx Universe</h4>
+          <h4>Tx Universe <small>Send Response</small></h4>
           <div id="ticket-response"></div>
           <div class="row margin-top">
             <div class="col-sm-3 col-sm-offset-9">
-              <button class="btn btn-primary pull-right">Send Response</button>
+              <button class="btn btn-primary pull-right" ($click)="updateResponse()">Send Response</button>
             </div>
           </div>
         </div>
@@ -42,5 +42,4 @@
 
     </div>
   </div>
-</div>
 </div>
