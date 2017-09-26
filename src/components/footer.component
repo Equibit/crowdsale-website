@@ -26,7 +26,7 @@
 
     export default DefineMap.extend({
       copyMessage: {
-        value: '&copy; Copyright 2017 Tx Universe Inc. All Rights Reserved'
+        value: '&copy; Copyright 2017 <strong>Tx Universe Inc.</strong> All Rights Reserved'
       }
     })
   </script>

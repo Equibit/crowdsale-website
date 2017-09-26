@@ -34,7 +34,8 @@ export const ViewModel = DefineMap.extend({
 				.then(() => {
 					this.processing = false
 					this.disableForm = false
-					let tempText = ($('.ql-editor').text() + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ "<br />" +'$2')
+					let tempText = $('.ql-editor').html()
+					//let tempText = ($('.ql-editor').text() + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ "<br />" +'$2')
 					this.quill.enable(true)
 					this.quill.setContents(JSON.parse("{\"ops\":[{\"insert\":\"\\n\"}]}"))
 					this.ticketHistory.unshift({fromClient: 0, ticketDatetime: Date.now(), ticketText: tempText})
@@ -63,9 +64,9 @@ export default Component.extend({
 							['blockquote', 'image', 'code-block'],
 							[{ 'list': 'ordered'}, { 'list': 'bullet' }],
 							[{ 'script': 'sub'}, { 'script': 'super' }],
-							[{ 'indent': '-1'}, { 'indent': '+1' }],
 							[{ 'color': [] }, { 'background': [] }],
 							[{ 'align': [] }],
+							["link"],
 							['clean']
 						]
 

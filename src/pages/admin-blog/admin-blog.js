@@ -99,6 +99,7 @@ export default Component.extend({
 				[{ 'indent': '-1'}, { 'indent': '+1' }],
 				[{ 'color': [] }, { 'background': [] }],
 				[{ 'align': [] }],
+				["link"],
 				['clean']
 			]
 
