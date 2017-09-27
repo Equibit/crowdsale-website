@@ -47,7 +47,7 @@ const AppViewModel = DefineMap.extend({
 			} else if (this.page === "terms") {
 				return "Tx Universe | Terms of Service"
 			} else {
-				return "Tx Universe"
+				return "Tx Universe | Built with Blocks"
 			}
 		}
 	}
