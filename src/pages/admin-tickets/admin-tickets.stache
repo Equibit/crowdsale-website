@@ -14,7 +14,7 @@
         <div class="row margin-bottom">
           <div class="col-sm-6 col-sm-offset-6">
             <div class="input-group">
-              <input type="text" class="form-control" value:bind="search" placeholder="Search Email and Subject"on:enter="doSearch()">
+              <input type="text" class="form-control" value:bind="search" placeholder="Search Email and Subject" on:enter="doSearch()">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button" on:click="doSearch()">Search</button>
                 <button class="btn btn-warning" on:click="doFilter('open')">Open</button>
