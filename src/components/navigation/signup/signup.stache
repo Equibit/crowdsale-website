@@ -16,7 +16,7 @@
           </div>
           <div class="form-group">
             <div class="checkbox checkbox-primary">
-              <input type="checkbox" id="checkbox-accept-terms" {($checked)}="agreeTerms" {{#if disableForm}}disabled{{/if}}>
+              <input type="checkbox" id="checkbox-accept-terms" checked:bind="agreeTerms" {{#if disableForm}}disabled{{/if}}>
               <label for="checkbox-accept-terms">
                 Accept Terms of Service
               </label>

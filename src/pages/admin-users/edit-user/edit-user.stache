@@ -11,7 +11,7 @@
             <div class="col-sm-5 col-sm-offset-1">
               <div class="form-group no-margin-bottom">
                 <div class="checkbox checkbox-primary">
-                  <input type="checkbox" id="checkbox-set-password" {($checked)}="editUser.setPassword" {{#if disableForm}}disabled{{/if}}>
+                  <input type="checkbox" id="checkbox-set-password" checked:bind="editUser.setPassword" {{#if disableForm}}disabled{{/if}}>
                   <label for="checkbox-set-password">
                     Reset Password
                   </label>
@@ -21,7 +21,7 @@
             <div class="col-sm-5 col-sm-offset-1">
               <div class="form-group no-margin-bottom">
                 <div class="checkbox checkbox-danger">
-                  <input type="checkbox" id="checkbox-lock" {($checked)}="editUser.locked" {{#if disableForm}}disabled{{/if}}>
+                  <input type="checkbox" id="checkbox-lock" checked:bind="editUser.locked" {{#if disableForm}}disabled{{/if}}>
                   <label for="checkbox-lock">
                     Lock Down Account
                   </label>

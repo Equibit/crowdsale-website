@@ -102,7 +102,7 @@
               <div class="form-group text-center">
                 <label> </label>
                 <div class="checkbox checkbox-primary">
-                  <input type="checkbox" id="blog-published" {($checked)}="published" {{#if ../disableForm}}disabled{{/if}}>
+                  <input type="checkbox" id="blog-published" checked:bind="published" {{#if ../disableForm}}disabled{{/if}}>
                   <label for="blog-published">
                     Publish Post
                   </label>
