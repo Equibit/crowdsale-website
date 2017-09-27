@@ -7,7 +7,7 @@
   </style>
   <view>
     {{#if message}}
-      <small class="form-text help-block">{message:from}</small>
+      <small class="form-text help-block">{{message}}</small>
     {{/if}}
   </view>
   <script type="view-model">
