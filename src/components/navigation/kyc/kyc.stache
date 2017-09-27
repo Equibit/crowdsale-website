@@ -17,7 +17,7 @@
                 <div class="form-group">
                   <label for="kyc-first-name">First Name or Full Name &nbsp;<button type="button" class="btn-clear text-warning" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Can't separate your name into first and last, just enter it all here."><i class="fa fa-info-circle" aria-hidden="true"></i></button></label>
                   <input type="text" class="form-control" id="kyc-first-name" placeholder="First Name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus value:bind="firstName" {{#if disableForm}}disabled{{/if}}>
-                  <validation-message {message}="firstNameError" />
+                  <validation-message message:from="firstNameError" />
                 </div>
               </div>
               <div class="col-sm-4">
@@ -91,14 +91,14 @@
                 <div class="form-group">
                   <label for="kyc-building-number">Building Number</label>
                   <input type="text" class="form-control" id="kyc-building-number" placeholder="Building" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value:bind="buildingNumber" {{#if disableForm}}disabled{{/if}}>
-                  <validation-message {message}="buildingNumberError" />
+                  <validation-message message:from="buildingNumberError" />
                 </div>
               </div>
               <div class="col-sm-6 col-md-5">
                 <div class="form-group">
                   <label for="kyc-street-name">Street Name</label>
                   <input type="text" class="form-control" id="kyc-street-name" placeholder="Street Name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value:bind="streetName" {{#if disableForm}}disabled{{/if}}>
-                  <validation-message {message}="streetNameError" />
+                  <validation-message message:from="streetNameError" />
                 </div>
               </div>
               <div class="col-sm-6 col-md-3">
@@ -129,14 +129,14 @@
                 <div class="form-group">
                   <label for="kyc-city">City</label>
                   <input type="text" class="form-control" id="kyc-city" placeholder="City" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value:bind="city" {{#if disableForm}}disabled{{/if}}>
-                  <validation-message {message}="cityError" />
+                  <validation-message message:from="cityError" />
                 </div>
               </div>
               <div class="col-sm-2">
                 <div class="form-group">
                   <label for="kyc-province-state">Postal / Zip Code</label>
                   <input type="text" class="form-control" id="kyc-province-state" placeholder="Code" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value:bind="postalCode" {{#if disableForm}}disabled{{/if}}>
-                  <validation-message {message}="postalCodeError" />
+                  <validation-message message:from="postalCodeError" />
                 </div>
               </div>
               <div class="col-sm-4">
@@ -150,7 +150,7 @@
                       {{/each}}
                     </select>
                   {{/if}}
-                  <validation-message {message}="countryCodeError" />
+                  <validation-message message:from="countryCodeError" />
                 </div>
               </div>
               <div class="col-sm-3">
@@ -169,7 +169,7 @@
                       {{/if}}
                     {{/if}}
                   {{/if}}
-                  <validation-message {message}="stateProvinceCodeError" />
+                  <validation-message message:from="stateProvinceCodeError" />
                 </div>
               </div>
             </div>

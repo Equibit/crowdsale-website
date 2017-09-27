@@ -32,7 +32,7 @@
 <can-import from="~/components/session-error.component!" />
 <can-import from="~/components/navigation/" />
 
-<navigation-bar {app-state}="appState" />
+<navigation-bar appState:from="appState" />
 
 {{#if appState.sessionError}}
   <can-import from="~/components/session-error.component!" can-tag="tag-loading">
@@ -100,7 +100,7 @@
   {{#case 'dash'}}
     {{#if appState.loggedIn}}
       <can-import from="~/pages/page-dash/" can-tag="tag-loading">
-        <page-dash {app-state}="appState" />
+        <page-dash appState:from="appState" />
       </can-import>
     {{else}}
       <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
@@ -114,7 +114,7 @@
   {{#case 'admin-users'}}
     {{#if appState.isAdmin}}
       <can-import from="~/pages/admin-users/" can-tag="tag-loading">
-        <admin-users {app-state}="appState" />
+        <admin-users appState:from="appState" />
       </can-import>
     {{else}}
       <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
@@ -125,7 +125,7 @@
   {{#case 'admin-blog'}}
     {{#if appState.isAdmin}}
       <can-import from="~/pages/admin-blog/" can-tag="tag-loading">
-        <admin-blog {app-state}="appState" />
+        <admin-blog appState:from="appState" />
       </can-import>
     {{else}}
       <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
@@ -137,11 +137,11 @@
     {{#if appState.isAdmin}}
       {{#if slug}}
         <can-import from="~/pages/admin-tickets/ticket-details/" can-tag="tag-loading">
-          <ticket-details {link-subject}="slug" {app-state}="appState" />
+          <ticket-details {link-subject}="slug" appState:from="appState" />
         </can-import>
       {{else}}
         <can-import from="~/pages/admin-tickets/" can-tag="tag-loading">
-          <admin-tickets {app-state}="appState" />
+          <admin-tickets appState:from="appState" />
         </can-import>
       {{/if}}
     {{else}}

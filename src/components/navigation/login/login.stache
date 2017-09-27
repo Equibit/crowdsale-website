@@ -12,12 +12,12 @@
           <div class="form-group">
             <label for="login-email">Email Address</label>
             <input type="email" class="form-control" id="login-email" placeholder="Email Address" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus value:bind="email" {{#if disableForm}}disabled{{/if}}>
-            <validation-message {message}="emailError" />
+            <validation-message message:from="emailError" />
           </div>
           <div class="form-group">
             <label for="login-password">Password<span class="show-password" on:click="toggleType()"><i class="fa fa-eye{{#if passwordVisible}}-slash{{/if}}" aria-hidden="true"></i></span></label>
             <input type="{{#if passwordVisible}}text{{else}}password{{/if}}" class="form-control" id="login-password" placeholder="Password" value:bind="password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"on:enter="handleLogin(%event, email, password)" {{#if disableForm}}disabled{{/if}}>
-            <validation-message {message}="passwordError" />
+            <validation-message message:from="passwordError" />
           </div>
           <a href="#" data-toggle="modal" data-target="#forgot-password-modal" data-dismiss="modal">Forgot Password?</a>
           {{#if loginError}}

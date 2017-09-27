@@ -11,12 +11,12 @@
         <div class="form-group">
           <label for="change-email-password">Password<span class="show-password" on:click="toggleType()"><i class="fa fa-eye{{#if passwordVisible}}-slash{{/if}}" aria-hidden="true"></i></span></label>
           <input type="{{#if passwordVisible}}text{{else}}password{{/if}}" class="form-control" id="change-email-password" value:bind="password" placeholder="Password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus {{#if verificationCodeVisible}}disabled{{/if}}>
-          <validation-message {message}="passwordError" />
+          <validation-message message:from="passwordError" />
         </div>
         <div class="form-group">
           <label for="change-email-address">New Email Address</label>
           <input type="text" class="form-control" id="change-email-address" value:bind="newEmail" placeholder="New Email Address" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" {{#if verificationCodeVisible}}disabled{{/if}}on:enter="handleChangeEmail(%event, password, newEmail, emailCode)">
-          <validation-message {message}="newEmailError" />
+          <validation-message message:from="newEmailError" />
         </div>
         {{#if verificationCodeVisible}}
           <div class="form-group">

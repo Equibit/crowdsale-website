@@ -71,12 +71,12 @@
   <can-import from="~/components/navigation/set-password/" />
   <can-import from="~/components/navigation/change-password/" />
   <can-import from="~/components/navigation/change-email/" />
-  <kyc-modal {app-state}="appState" />
-  <set-password-modal {app-state}="appState" />
-  <change-password-modal {app-state}="appState" />
-  <change-email-modal {app-state}="appState" />
+  <kyc-modal appState:from="appState" />
+  <set-password-modal appState:from="appState" />
+  <change-password-modal appState:from="appState" />
+  <change-email-modal appState:from="appState" />
 
 {{/if}}
 
 <can-import from="~/components/navigation/login/" />
-<login-modal {app-state}="appState" />
+<login-modal appState:from="appState" />
