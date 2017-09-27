@@ -9,46 +9,46 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" {{^if appState.loggedIn}}href="{{routeUrl page='home'}}"{{else}}href="{{routeUrl page='dash'}}"{{/if}} ($click)="closeMenu()"><img src="/assets/imgs/tx-logo.png" /><span>Universe</span></a>
+      <a class="navbar-brand" {{^if appState.loggedIn}}href="{{routeUrl page='home'}}"{{else}}href="{{routeUrl page='dash'}}"{{/if}} on:click="closeMenu()"><img src="/assets/imgs/tx-logo.png" /><span>Universe</span></a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbar-collapse">
       {{^if appState.loggedIn}}
         <ul class="nav navbar-nav">
-          <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}}"><a href="{{routeUrl page='home'}}" ($click)="closeMenu()">Home{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
-          <li class="{{#routeCurrent page='about'}}active{{/routeCurrent}}"><a href="{{routeUrl page='about'}}" ($click)="closeMenu()">About{{#routeCurrent page='about'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
-          <li class="{{#routeCurrent page='team'}}active{{/routeCurrent}}"><a href="{{routeUrl page='team'}}" ($click)="closeMenu()">Team{{#routeCurrent page='team'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
-          <li class="{{#routeCurrent page='blog'}}active{{/routeCurrent}}"><a href="{{routeUrl page='blog'}}" ($click)="closeMenu()">Blog{{#routeCurrent page='blog'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
-          <li class="{{#routeCurrent page='projects'}}active{{/routeCurrent}}"><a href="{{routeUrl page='projects'}}" ($click)="closeMenu()">Projects For Sale{{#routeCurrent page='projects'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
-          <li class="{{#routeCurrent page='universe'}}active{{/routeCurrent}}"><a href="{{routeUrl page='universe'}}" ($click)="closeMenu()">Universe{{#routeCurrent page='universe'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}}"><a href="{{routeUrl page='home'}}" on:click="closeMenu()">Home{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='about'}}active{{/routeCurrent}}"><a href="{{routeUrl page='about'}}" on:click="closeMenu()">About{{#routeCurrent page='about'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='team'}}active{{/routeCurrent}}"><a href="{{routeUrl page='team'}}" on:click="closeMenu()">Team{{#routeCurrent page='team'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='blog'}}active{{/routeCurrent}}"><a href="{{routeUrl page='blog'}}" on:click="closeMenu()">Blog{{#routeCurrent page='blog'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='projects'}}active{{/routeCurrent}}"><a href="{{routeUrl page='projects'}}" on:click="closeMenu()">Projects For Sale{{#routeCurrent page='projects'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='universe'}}active{{/routeCurrent}}"><a href="{{routeUrl page='universe'}}" on:click="closeMenu()">Universe{{#routeCurrent page='universe'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="" data-toggle="modal" data-target="#sign-up-modal" ($click)="closeMenu()">Become a Client</a></li>
-          <li><a href="" data-toggle="modal" data-target="#login-modal" ($click)="closeMenu()">Client Login</a></li>
+          <li><a href="" data-toggle="modal" data-target="#sign-up-modal" on:click="closeMenu()">Become a Client</a></li>
+          <li><a href="" data-toggle="modal" data-target="#login-modal" on:click="closeMenu()">Client Login</a></li>
         </ul>
       {{else}}
         <ul class="nav navbar-nav">
-          <li class="{{#routeCurrent page='dash'}}active{{/routeCurrent}}"><a href="{{routeUrl page='dash'}}" ($click)="closeMenu()">Dashboard{{#routeCurrent page='dash'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='dash'}}active{{/routeCurrent}}"><a href="{{routeUrl page='dash'}}" on:click="closeMenu()">Dashboard{{#routeCurrent page='dash'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User Menu <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="" data-toggle="modal" data-target="#kyc-modal" ($click)="closeMenu()">Identity Verification</a></li>
+              <li><a href="" data-toggle="modal" data-target="#kyc-modal" on:click="closeMenu()">Identity Verification</a></li>
               <li class="divider"></li>
-              <li><a href="" data-toggle="modal" data-target="#change-password-modal" ($click)="closeMenu()">Change Password</a></li>
-              <li><a href="" data-toggle="modal" data-target="#change-email-modal" ($click)="closeMenu()">Change Email Address</a></li>
+              <li><a href="" data-toggle="modal" data-target="#change-password-modal" on:click="closeMenu()">Change Password</a></li>
+              <li><a href="" data-toggle="modal" data-target="#change-email-modal" on:click="closeMenu()">Change Email Address</a></li>
               <li class="divider"></li>
-              <li><a href="" ($click)="logout()">Logout</a></li>
+              <li><a href="" on:click="logout()">Logout</a></li>
             </ul>
           </li>
           {{#if appState.isAdmin}}
           <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li class="{{#routeCurrent page='admin-users'}}active{{/routeCurrent}}"><a href="{{routeUrl page='admin-users'}}" ($click)="closeMenu()">Users{{#routeCurrent page='admin-users'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
-              <li class="{{#routeCurrent page='admin-blog'}}active{{/routeCurrent}}"><a href="{{routeUrl page='admin-blog'}}" ($click)="closeMenu()">Blog{{#routeCurrent page='admin-blog'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
-              <li class="{{#routeCurrent page='admin-tickets'}}active{{/routeCurrent}}"><a href="{{routeUrl page='admin-tickets'}}" ($click)="closeMenu()">Tickets{{#routeCurrent page='admin-tickets'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+              <li class="{{#routeCurrent page='admin-users'}}active{{/routeCurrent}}"><a href="{{routeUrl page='admin-users'}}" on:click="closeMenu()">Users{{#routeCurrent page='admin-users'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+              <li class="{{#routeCurrent page='admin-blog'}}active{{/routeCurrent}}"><a href="{{routeUrl page='admin-blog'}}" on:click="closeMenu()">Blog{{#routeCurrent page='admin-blog'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+              <li class="{{#routeCurrent page='admin-tickets'}}active{{/routeCurrent}}"><a href="{{routeUrl page='admin-tickets'}}" on:click="closeMenu()">Tickets{{#routeCurrent page='admin-tickets'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
             </ul>
           </li>
           {{/if}}

@@ -14,11 +14,11 @@
         <div class="row margin-bottom">
           <div class="col-sm-6 col-sm-offset-6">
             <div class="input-group">
-              <input type="text" class="form-control" {($value)}="search" placeholder="Search Email and Subject" ($enter)="doSearch()">
+              <input type="text" class="form-control" value:bind="search" placeholder="Search Email and Subject"on:enter="doSearch()">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button" ($click)="doSearch()">Search</button>
-                <button class="btn btn-warning" ($click)="doFilter('open')">Open</button>
-                <button class="btn btn-danger" ($click)="doFilter('respond')">Response Required</button>
+                <button class="btn btn-default" type="button" on:click="doSearch()">Search</button>
+                <button class="btn btn-warning" on:click="doFilter('open')">Open</button>
+                <button class="btn btn-danger" on:click="doFilter('respond')">Response Required</button>
               </span>
             </div>
           </div>
@@ -49,7 +49,7 @@
                       <td class="text-nowrap text-center">{{timestampDetailed creationDate}}</td>
                       <td class="text-nowrap text-center">
                         <a href="{{routeUrl page='admin-tickets' slug=linkSubject}}" class="btn btn-primary btn-sm" type="button">View</a>
-                        {{#if isOpen}}<button class="btn btn-danger btn-sm" type="button" ($click)="closeTicket(.)">Closed</button>{{/if}}
+                        {{#if isOpen}}<button class="btn btn-danger btn-sm" type="button" on:click="closeTicket(.)">Closed</button>{{/if}}
                       </td>
                     </tr>
                   {{/each}}
@@ -69,11 +69,11 @@
             {{#if hasPages}}
               <nav aria-label="Page navigation" class="pull-right">
                 <ul class="pagination">
-                  <li class="{{^if isPrevActive}}disabled{{/if}}"><a href="" ($click)="prev()" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                  <li class="{{^if isPrevActive}}disabled{{/if}}"><a href="" on:click="prev()" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
                   {{#each pages}}
-                    <li class="{{#if isActive}}active{{/if}}"><a href="" ($click)=changePage(pageNumber)>{{pageTitle}}</a></li>
+                    <li class="{{#if isActive}}active{{/if}}"><a href="" on:click=changePage(pageNumber)>{{pageTitle}}</a></li>
                   {{/each}}
-                  <li class="{{^if isNextActive}}disabled{{/if}}"><a href="" ($click)="next()" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                  <li class="{{^if isNextActive}}disabled{{/if}}"><a href="" on:click="next()" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
                 </ul>
               </nav>
             {{/if}}

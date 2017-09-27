@@ -32,8 +32,8 @@
                       <td class="text-nowrap text-center">{{#if published}}<i class="fa fa-check text-success"></i>{{else}}<i class="fa fa-close text-danger"></i>{{/if}}</td>
                       <td class="text-nowrap text-center">{{timestampDetailed datetime}}</td>
                       <td class="text-nowrap text-center">
-                        <button class="btn btn-primary btn-sm" type="button" ($click)="editBlog(.)">Edit</button>
-                        <button class="btn btn-danger btn-sm" type="button" ($click)="deleteBlog(.)">Delete</button>
+                        <button class="btn btn-primary btn-sm" type="button" on:click="editBlog(.)">Edit</button>
+                        <button class="btn btn-danger btn-sm" type="button" on:click="deleteBlog(.)">Delete</button>
                       </td>
                     </tr>
                   {{/each}}
@@ -53,11 +53,11 @@
             {{#if hasPages}}
               <nav aria-label="Page navigation" class="pull-right">
                 <ul class="pagination">
-                  <li class="{{^if isPrevActive}}disabled{{/if}}"><a href="" ($click)="prev()" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                  <li class="{{^if isPrevActive}}disabled{{/if}}"><a href="" on:click="prev()" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
                   {{#each pages}}
-                    <li class="{{#if isActive}}active{{/if}}"><a href="" ($click)=changePage(pageNumber)>{{pageTitle}}</a></li>
+                    <li class="{{#if isActive}}active{{/if}}"><a href="" on:click=changePage(pageNumber)>{{pageTitle}}</a></li>
                   {{/each}}
-                  <li class="{{^if isNextActive}}disabled{{/if}}"><a href="" ($click)="next()" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                  <li class="{{^if isNextActive}}disabled{{/if}}"><a href="" on:click="next()" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
                 </ul>
               </nav>
             {{/if}}
@@ -81,21 +81,21 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" aria-label="Close" ($click)="clearForm()"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" aria-label="Close" on:click="clearForm()"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Edit Blog Post</h4>
       </div>
       <div class="modal-body">
         {{#newEditBlog}}
           <div class="form-group">
             <label for="blog-title">Post Title</label>
-            <input type="text" class="form-control" id="blog-title" {($value)}="title" placeholder="Post Title" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus {{#if ../disableForm}}disabled{{/if}}>
+            <input type="text" class="form-control" id="blog-title" value:bind="title" placeholder="Post Title" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus {{#if ../disableForm}}disabled{{/if}}>
           </div>
 
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="blog-author">Post Author</label>
-                <input type="text" class="form-control" id="blog-author" {($value)}="author" placeholder="Post Author" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" {{#if ../disableForm}}disabled{{/if}}>
+                <input type="text" class="form-control" id="blog-author" value:bind="author" placeholder="Post Author" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" {{#if ../disableForm}}disabled{{/if}}>
               </div>
             </div>
             <div class="col-sm-6">
@@ -113,7 +113,7 @@
 
           <div class="form-group">
             <label for="blog-title">Short Post</label>
-            <textarea class="form-control" id="blog-title" {($value)}="shortPost" placeholder="Short Post" {{#if ../disableForm}}disabled{{/if}}></textarea>
+            <textarea class="form-control" id="blog-title" value:bind="shortPost" placeholder="Short Post" {{#if ../disableForm}}disabled{{/if}}></textarea>
           </div>
         {{/newEditBlog}}
 
@@ -124,8 +124,8 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" ($click)="clearForm()">Cancel</button>
-        <button type="button" class="btn btn-primary" ($click)="saveBlog()" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Save Blog Post{{/if}}</button>
+        <button type="button" class="btn btn-default" on:click="clearForm()">Cancel</button>
+        <button type="button" class="btn btn-primary" on:click="saveBlog()" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Save Blog Post{{/if}}</button>
       </div>
     </div>
   </div>

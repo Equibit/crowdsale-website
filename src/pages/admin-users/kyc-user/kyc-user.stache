@@ -10,7 +10,7 @@
 {{kycUser.firstName}}
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" ($click)="approveUser()" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Manually Approve{{/if}}</button>
+          <button type="button" class="btn btn-primary" on:click="approveUser()" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Manually Approve{{/if}}</button>
         </div>
       {{/if}}
     </div>

@@ -5,7 +5,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" aria-label="Close" ($click)="clearForm()"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" aria-label="Close" on:click="clearForm()"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Identity Verification</h4>
       </div>
       <form novalidate>
@@ -16,20 +16,20 @@
               <div class="col-sm-4">
                 <div class="form-group">
                   <label for="kyc-first-name">First Name or Full Name &nbsp;<button type="button" class="btn-clear text-warning" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Can't separate your name into first and last, just enter it all here."><i class="fa fa-info-circle" aria-hidden="true"></i></button></label>
-                  <input type="text" class="form-control" id="kyc-first-name" placeholder="First Name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus {($value)}="firstName" {{#if disableForm}}disabled{{/if}}>
+                  <input type="text" class="form-control" id="kyc-first-name" placeholder="First Name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus value:bind="firstName" {{#if disableForm}}disabled{{/if}}>
                   <validation-message {message}="firstNameError" />
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="form-group">
                   <label for="kyc-last-name">Middle Name or Initial</label>
-                  <input type="text" class="form-control" id="kyc-middle-name" placeholder="Middle Name of Initial" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" {($value)}="middleName" {{#if disableForm}}disabled{{/if}}>
+                  <input type="text" class="form-control" id="kyc-middle-name" placeholder="Middle Name of Initial" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value:bind="middleName" {{#if disableForm}}disabled{{/if}}>
                 </div>
               </div>
               <div class="col-sm-4">
                 <div class="form-group">
                   <label for="kyc-last-name">Last Name</label>
-                  <input type="text" class="form-control" id="kyc-last-name" placeholder="Last Name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" {($value)}="lastName" {{#if disableForm}}disabled{{/if}}>
+                  <input type="text" class="form-control" id="kyc-last-name" placeholder="Last Name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value:bind="lastName" {{#if disableForm}}disabled{{/if}}>
                 </div>
               </div>
             </div>
@@ -37,7 +37,7 @@
               <div class="col-xs-6 col-sm-3">
                 <div class="form-group">
                   <label for="kyc-select-gender">Gender</label>
-                  <select id="kyc-select-gender" selectpicker="btn btn-default" {($value)}="gender" class="bootstrap-select form-control show-tick" {{#if disableForm}}disabled{{/if}}>
+                  <select id="kyc-select-gender" selectpicker="btn btn-default" value:bind="gender" class="bootstrap-select form-control show-tick" {{#if disableForm}}disabled{{/if}}>
                     <option value="M">Male</option>
                     <option value="F">Female</option>
                   </select>
@@ -47,7 +47,7 @@
                 <div class="form-group">
                   <label for="kyc-select-gender">Day of Birth</label>
                   {{#if daysOfMonthList}}
-                    <select id="kyc-select-gender" selectpicker="btn btn-default" {($value)}="dayOfBirth" class="bootstrap-select form-control show-tick" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
+                    <select id="kyc-select-gender" selectpicker="btn btn-default" value:bind="dayOfBirth" class="bootstrap-select form-control show-tick" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
                       {{#each daysOfMonthList}}
                         <option>{{this}}</option>
                       {{/each}}
@@ -59,7 +59,7 @@
                 <div class="form-group">
                   <label for="kyc-select-gender">Month of Birth</label>
                   {{#if monthsList}}
-                    <select id="kyc-select-gender" selectpicker="btn btn-default" {($value)}="monthOfBirth" class="bootstrap-select form-control show-tick" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
+                    <select id="kyc-select-gender" selectpicker="btn btn-default" value:bind="monthOfBirth" class="bootstrap-select form-control show-tick" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
                       {{#each monthsList}}
                         <option value="{{number}}">{{full}}</option>
                       {{/each}}
@@ -71,7 +71,7 @@
                 <div class="form-group">
                   <label for="kyc-select-gender">Year of Birth</label>
                   {{#if yearsList}}
-                    <select id="kyc-select-gender" selectpicker="btn btn-default" {($value)}="yearOfBirth" class="bootstrap-select form-control show-tick" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
+                    <select id="kyc-select-gender" selectpicker="btn btn-default" value:bind="yearOfBirth" class="bootstrap-select form-control show-tick" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
                       {{#each yearsList}}
                         <option>{{this}}</option>
                       {{/each}}
@@ -84,20 +84,20 @@
               <div class="col-xs-6 col-sm-6 col-md-2">
                 <div class="form-group">
                   <label for="kyc-unit-number">Unit Number</label>
-                  <input type="text" class="form-control" id="kyc-unit-number" placeholder="Unit" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" {($value)}="unitNumber" {{#if disableForm}}disabled{{/if}}>
+                  <input type="text" class="form-control" id="kyc-unit-number" placeholder="Unit" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value:bind="unitNumber" {{#if disableForm}}disabled{{/if}}>
                 </div>
               </div>
               <div class="col-xs-6 col-sm-6 col-md-2">
                 <div class="form-group">
                   <label for="kyc-building-number">Building Number</label>
-                  <input type="text" class="form-control" id="kyc-building-number" placeholder="Building" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" {($value)}="buildingNumber" {{#if disableForm}}disabled{{/if}}>
+                  <input type="text" class="form-control" id="kyc-building-number" placeholder="Building" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value:bind="buildingNumber" {{#if disableForm}}disabled{{/if}}>
                   <validation-message {message}="buildingNumberError" />
                 </div>
               </div>
               <div class="col-sm-6 col-md-5">
                 <div class="form-group">
                   <label for="kyc-street-name">Street Name</label>
-                  <input type="text" class="form-control" id="kyc-street-name" placeholder="Street Name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" {($value)}="streetName" {{#if disableForm}}disabled{{/if}}>
+                  <input type="text" class="form-control" id="kyc-street-name" placeholder="Street Name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value:bind="streetName" {{#if disableForm}}disabled{{/if}}>
                   <validation-message {message}="streetNameError" />
                 </div>
               </div>
@@ -105,7 +105,7 @@
                 <div class="form-group">
                   <label for="kyc-street-type">Street Type</label>
                   {{#if streetTypeList}}
-                    <select id="kyc-street-type" selectpicker="btn btn-default" {($value)}="streetType" class="bootstrap-select form-control show-tick" title="Search Street Type" data-live-search="true" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
+                    <select id="kyc-street-type" selectpicker="btn btn-default" value:bind="streetType" class="bootstrap-select form-control show-tick" title="Search Street Type" data-live-search="true" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
                       <option data-hidden="true"></option>
                       <option value="">None</option>
                       {{#each streetTypeList}}
@@ -120,7 +120,7 @@
               <div class="col-sm-12">
                 <div class="form-group">
                   <label for="kyc-address-line-one">Address Line &nbsp;<button type="button" class="btn-clear text-warning" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="If you have additional address information, you can enter it here."><i class="fa fa-info-circle" aria-hidden="true"></i></button></label>
-                  <input type="text" class="form-control" id="kyc-address-line-one" placeholder="Address Line" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" {($value)}="addressLine" {{#if disableForm}}disabled{{/if}}>
+                  <input type="text" class="form-control" id="kyc-address-line-one" placeholder="Address Line" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value:bind="addressLine" {{#if disableForm}}disabled{{/if}}>
                 </div>
               </div>
             </div>
@@ -128,14 +128,14 @@
               <div class="col-sm-3">
                 <div class="form-group">
                   <label for="kyc-city">City</label>
-                  <input type="text" class="form-control" id="kyc-city" placeholder="City" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" {($value)}="city" {{#if disableForm}}disabled{{/if}}>
+                  <input type="text" class="form-control" id="kyc-city" placeholder="City" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value:bind="city" {{#if disableForm}}disabled{{/if}}>
                   <validation-message {message}="cityError" />
                 </div>
               </div>
               <div class="col-sm-2">
                 <div class="form-group">
                   <label for="kyc-province-state">Postal / Zip Code</label>
-                  <input type="text" class="form-control" id="kyc-province-state" placeholder="Code" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" {($value)}="postalCode" {{#if disableForm}}disabled{{/if}}>
+                  <input type="text" class="form-control" id="kyc-province-state" placeholder="Code" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value:bind="postalCode" {{#if disableForm}}disabled{{/if}}>
                   <validation-message {message}="postalCodeError" />
                 </div>
               </div>
@@ -143,7 +143,7 @@
                 <div class="form-group">
                   <label for="kyc-country">Country &nbsp;<button type="button" class="btn-clear text-warning" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Can't find your country? Please contact us."><i class="fa fa-info-circle" aria-hidden="true"></i></button></label>
                   {{#if countryList}}
-                    <select id="kyc-country" selectpicker="btn btn-default" {($value)}="countryCode" ($change)="populateProvState(%element.value)" class="bootstrap-select form-control show-tick" title="Search and Select a Country" data-live-search="{{countryListSearch}}" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
+                    <select id="kyc-country" selectpicker="btn btn-default" value:bind="countryCode" ($change)="populateProvState(%element.value)" class="bootstrap-select form-control show-tick" title="Search and Select a Country" data-live-search="{{countryListSearch}}" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
                       <option data-hidden="true"></option>
                       {{#each countryList}}
                         <option value="{{code}}">{{name}}</option>
@@ -157,7 +157,7 @@
                 <div class="form-group">
                   {{#if provStateList}}
                     <label for="kyc-province-state-select">Province / State</label>
-                    <select id="kyc-province-state-select" selectpicker="btn btn-default" {($value)}="stateProvinceCode" class="bootstrap-select form-control show-tick" title="Province / State" data-live-search="true" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
+                    <select id="kyc-province-state-select" selectpicker="btn btn-default" value:bind="stateProvinceCode" class="bootstrap-select form-control show-tick" title="Province / State" data-live-search="true" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
                       <option data-hidden="true"></option>
                       {{#each provStateList}}
                         <option value="{{#if short}}{{short}}{{else}}{{name}}{{/if}}">{{name}}</option>
@@ -165,7 +165,7 @@
                     </select>
                     {{#if provStateListHidden}}
                       {{#if countryCode}}
-                        <input type="text" class="form-control" id="kyc-province-state" placeholder="Province / State" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" {($value)}="stateProvinceCode" {{#if disableForm}}disabled{{/if}}>
+                        <input type="text" class="form-control" id="kyc-province-state" placeholder="Province / State" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value:bind="stateProvinceCode" {{#if disableForm}}disabled{{/if}}>
                       {{/if}}
                     {{/if}}
                   {{/if}}
@@ -185,8 +185,8 @@
           {{#if appState.kycComplete}}
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           {{else}}
-            <button type="button" class="btn btn-default" ($click)="clearForm()">Cancel</button>
-            <button type="button" class="btn btn-primary" ($click)="handleKYC(%event)" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Submit{{/if}}</button>
+            <button type="button" class="btn btn-default" on:click="clearForm()">Cancel</button>
+            <button type="button" class="btn btn-primary" on:click="handleKYC(%event)" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Submit{{/if}}</button>
           {{/if}}
         </div>
       </form>

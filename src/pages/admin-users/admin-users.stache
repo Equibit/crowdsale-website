@@ -16,9 +16,9 @@
         <div class="row margin-bottom">
           <div class="col-sm-4 col-sm-offset-8">
             <div class="input-group">
-              <input type="text" class="form-control" {($value)}="search" placeholder="Search Email" ($enter)="doSearch()">
+              <input type="text" class="form-control" value:bind="search" placeholder="Search Email"on:enter="doSearch()">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button" ($click)="doSearch()">Search</button>
+                <button class="btn btn-default" type="button" on:click="doSearch()">Search</button>
               </span>
             </div>
           </div>
@@ -48,10 +48,10 @@
                       <td class="text-nowrap text-center">{{timestampDetailed lastLogin}}</td>
                       <td class="text-nowrap text-center">{{timestampDetailed accountCreated}}</td>
                       <td class="text-nowrap text-center">
-                        <button class="btn btn-primary btn-sm" type="button" ($click)="openUser(.)">Edit</button>
-                        <!--{{#if kycComplete}}<button class="btn btn-info btn-sm" type="button" ($click)="openUserKYC(.)">{{#if kycUserLoading}}<i class="fa fa-spin fa-spinner"></i>{{else}}KYC{{/if}}</button>{{/if}}-->
-                        {{#if locked}}<button class="btn btn-danger btn-sm" type="button" ($click)="deleteUser(.)">Delete</button>{{/if}}
-                        {{^if lastLogin}}{{^if locked}}<button class="btn btn-danger btn-sm" type="button" ($click)="deleteUser(.)">Delete</button>{{/if}}{{/if}}
+                        <button class="btn btn-primary btn-sm" type="button" on:click="openUser(.)">Edit</button>
+                        <!--{{#if kycComplete}}<button class="btn btn-info btn-sm" type="button" on:click="openUserKYC(.)">{{#if kycUserLoading}}<i class="fa fa-spin fa-spinner"></i>{{else}}KYC{{/if}}</button>{{/if}}-->
+                        {{#if locked}}<button class="btn btn-danger btn-sm" type="button" on:click="deleteUser(.)">Delete</button>{{/if}}
+                        {{^if lastLogin}}{{^if locked}}<button class="btn btn-danger btn-sm" type="button" on:click="deleteUser(.)">Delete</button>{{/if}}{{/if}}
                       </td>
                     </tr>
                   {{/each}}
@@ -71,11 +71,11 @@
             {{#if hasPages}}
               <nav aria-label="Page navigation" class="pull-right">
                 <ul class="pagination">
-                  <li class="{{^if isPrevActive}}disabled{{/if}}"><a href="" ($click)="prev()" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                  <li class="{{^if isPrevActive}}disabled{{/if}}"><a href="" on:click="prev()" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
                   {{#each pages}}
-                    <li class="{{#if isActive}}active{{/if}}"><a href="" ($click)=changePage(pageNumber)>{{pageTitle}}</a></li>
+                    <li class="{{#if isActive}}active{{/if}}"><a href="" on:click=changePage(pageNumber)>{{pageTitle}}</a></li>
                   {{/each}}
-                  <li class="{{^if isNextActive}}disabled{{/if}}"><a href="" ($click)="next()" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                  <li class="{{^if isNextActive}}disabled{{/if}}"><a href="" on:click="next()" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
                 </ul>
               </nav>
             {{/if}}
