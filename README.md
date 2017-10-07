@@ -1,4 +1,4 @@
-# tx
+# tx-univsrse-website
 
 Welcome to the tx DoneJS application!
 
