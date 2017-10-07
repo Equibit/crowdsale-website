@@ -8,7 +8,7 @@
     <can-import from="can-stache/helpers/route" />
     <can-import from="~/components/social-media.component!" />
 
-    <footer class="container-fluid bottom-padding">
+    <footer class="container-fluid bottom-padding margin-bottom-small">
       <div class="row">
         <div class="col-sm-12 text-center"><social-media size="small" /></div>
       </div>

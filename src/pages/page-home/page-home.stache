@@ -5,13 +5,16 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
+      <img src="/assets/imgs/universe_head.png" class="img-responsive">
       <div class="jumbotron">
-        <h1>Tx Universe <small>Built with Blocks</small></h1>
         <p>We are a comprehensive consulting group of freelance developers, writers, marketers, and entrepreneurs with a strong passion for cryptocurrencies and token development. Together we help develop your ideas into action steps and results.</p>
         <p>Our developers can assist you with your crypto projects. Currently <strong>Tx Universe</strong> is creating several projects to sell, as well as working on our own Tx branded projects for our clients and members.</p>
 
         <div class="row">
           <div class="col-sm-6"><a href="{{routeUrl page='about'}}" class="btn btn-primary btn-lg" role="button">Learn more</a></div>
+          <div class="col-xs-12 visible-xs-block">
+            <br>
+          </div>
           <div class="col-sm-6 text-right">
 
             <social-media />

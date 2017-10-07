@@ -1,11 +1,18 @@
-import Component from 'can-component';
-import DefineMap from 'can-define/map/';
-import './page-dash.less';
-import view from './page-dash.stache';
+import Component from 'can-component'
+import DefineMap from 'can-define/map/map'
+import './page-dash.less'
+import view from './page-dash.stache'
+import Ticket from '~/models/ticket'
 
 export const ViewModel = DefineMap.extend({
-  message: {
-    value: 'This is the page-dash component'
+  openTicket: {
+    Type: Ticket
+  },
+  closedTicket: {
+    Type: Ticket
+  },
+  disableForm: {
+    value: false
   }
 });
 

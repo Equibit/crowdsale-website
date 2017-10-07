@@ -5,7 +5,7 @@
     <div class="col-sm-12">
       <div class="jumbotron">
         <h1>Team</h1>
-        <p>Our independent consultants work together to bring you the most reliable team in crypto token, business, and project development. Call us today to find out how we can turn your ideas into action steps.</p>
+          <p>Our independent consultants work together to bring you the most reliable team in crypto token, business, and project development. <a href="" data-toggle="modal" data-target="#sign-up-modal">Become a client</a> us today to find out how we can turn your ideas into action steps.</p>
 
         <ul class="nav nav-justified">
           <li><a href="#marc">Marc</a></li>
