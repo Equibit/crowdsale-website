@@ -260,6 +260,106 @@
     </div>
   </div>
 
+  <!-- Paul -->
+  <div id="adrianna" class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-right">
+      <div class="h3">Paul Michailidis</div>
+      <ul class="list-inline">
+        <!--li>
+          <a href="https://www.facebook.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-facebook"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-twitter"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-youtube"></i>
+            </div>
+          </a>
+        </li-->
+        <li>
+          <a href="https://github.com/Paulidis" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-github"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:paul@txuniverse.com" class="flip" data-autocms="Mail link">
+            <div class="circle-flip">
+              <i class="fa fa-envelope"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="small">Paul will have a paragraph soon.</p>
+      <div class="text-left"><a href="#top">Top</a></div>
+      <hr class="hr-primary">
+    </div>
+    <div class="hidden-xs col-sm-2">
+      <img src="/assets/imgs/team/none.png" class="img-responsive img-circle margin-top-extra">
+    </div>
+  </div>
+
+  <!-- Anastasiya -->
+  <div id="anastasiya" class="row">
+    <div class="hidden-xs col-sm-2">
+      <img src="/assets/imgs/team/jacob.png" class="img-responsive img-circle margin-top-extra">
+    </div>
+    <div class="col-sm-8">
+      <div class="h3">Jacob Robinson</div>
+      <ul class="list-inline">
+        <!--li>
+          <a href="https://www.facebook.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-facebook"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-twitter"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com/" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-youtube"></i>
+            </div>
+          </a>
+        </li-->
+        <li>
+          <a href="https://github.com/JacobRobinson" target="_blank" class="flip">
+            <div class="circle-flip">
+              <i class="fa fa-github"></i>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:jacob@txuniverse.com" class="flip" data-autocms="Mail link">
+            <div class="circle-flip">
+              <i class="fa fa-envelope"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="small">Jacob is a software developer who loves a challenge. After a degree in Engineering Physics and a stint in the Middle Eastern oil field, turned to writing engineering analysis & simulation software. He now focuses on web and crypto development, notably his work on Ubitquity’s blockchain-based real estate platform. Jacob travels in his spare time. He especially liked Moscow and Greece.</p>
+      <div class="text-right"><a href="#top">Top</a></div>
+      <hr class="hr-primary">
+    </div>
+  </div>
+
   <!-- Peter -->
   <div id="peter" class="row">
     <div class="col-sm-8 col-sm-offset-2 text-right">
