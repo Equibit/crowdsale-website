@@ -1,0 +1,4 @@
+applications:
+- name: Tx-Universe-Website
+  random-route: true
+  memory: 128M
