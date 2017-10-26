@@ -5,13 +5,13 @@
   <view>
 
     <ul class="list-inline {{size}}">
-      <li>
+      <!--li>
         <a href="https://join.slack.com/t/txuniverse/shared_invite/enQtMjQzNjMyOTQ1NTA1LTQyNGJlMjQxYmZjM2MwNmM1MTc3NzIwMGJlOTIzMjRjZTcyZWI4OWZlNDNjMmVmMThiODg4OTg0NmU1Y2I5N2E" target="_blank" class="flip">
           <div class="circle-flip">
             <i class="fa fa-slack"></i>
           </div>
         </a>
-      </li>
+      </li-->
       <li>
         <a href="https://www.facebook.com/Tx-Universe-1484947874918334/" target="_blank" class="flip">
           <div class="circle-flip">

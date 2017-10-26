@@ -1,5 +1,7 @@
 # tx-univsrse-website
 
+[![Build Status](https://travis-ci.org/TxUniverse/tx-universe-website.svg?branch=master)](https://travis-ci.org/TxUniverse/tx-universe-website)
+
 Welcome to the tx DoneJS application!
 
 ## Getting started

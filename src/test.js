@@ -1,26 +1,21 @@
 import F from 'funcunit'
 import QUnit from 'steal-qunit'
 import '~/models/test'
-import 'tx/pages/admin-users/edit-user/edit-user-test'
 import 'tx/components/navigation/kyc/kyc-test'
-import 'tx/pages/admin-users/kyc-user/kyc-user-test'
 import 'tx/components/navigation/change-password/change-password-test'
 import 'tx/components/navigation/change-email/change-email-test'
+import 'tx/pages/admin-users/edit-user/edit-user-test'
+import 'tx/pages/admin-users/kyc-user/kyc-user-test'
 import 'tx/pages/page-about/page-about-test'
 import 'tx/pages/page-blog/page-blog-test'
 import 'tx/pages/page-universe/page-universe-test'
 import 'tx/pages/admin-blog/admin-blog-test'
 import 'tx/pages/page-blog/blog-post/blog-post-test'
-
-import 'tx/pages/page-dash/page-dash-test';
-
-import 'tx/pages/admin-tickets/admin-tickets-test';
-
-import 'tx/pages/admin-tickets/ticket-details/ticket-details-test';
-
-import 'tx/pages/page-faq/page-faq-test';
-
-import 'tx/pages/admin-faq/admin-faq-test';
+import 'tx/pages/page-dash/page-dash-test'
+import 'tx/pages/admin-tickets/admin-tickets-test'
+import 'tx/pages/admin-tickets/ticket-details/ticket-details-test'
+import 'tx/pages/page-faq/page-faq-test'
+import 'tx/pages/admin-faq/admin-faq-test'
 
 F.attach(QUnit)
 
