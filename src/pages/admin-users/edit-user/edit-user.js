@@ -12,7 +12,7 @@ export const ViewModel = DefineMap.extend({
 	editUser: {
 		Type: User
 	},
-	state: {
+	appState: {
 		type: 'any'
 	},
 	saveUser() {
@@ -30,7 +30,7 @@ export const ViewModel = DefineMap.extend({
 				this.processing = false
 				this.disableForm = false
 
-				if (err.status === 401) this.state.error401()
+				if (err.status === 401) this.appState.error401()
 				else console.log(err)
 			})
 	}

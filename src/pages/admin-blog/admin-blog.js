@@ -5,6 +5,7 @@ import './admin-blog.less'
 import view from './admin-blog.stache'
 import Blog from '~/models/admin-blog'
 import Quill from 'quill'
+import Pagination from '~/models/pagination'
 
 export const ViewModel = DefineMap.extend({
 	newEditBlog: {
@@ -25,13 +26,12 @@ export const ViewModel = DefineMap.extend({
 	rows: {
 		Type: Blog.List
 	},
-	pagination: {
-		value: new (DefineMap.extend({
-			skip: 'number',
-			limit: 'number',
-			total: 'number'
-		}))({skip: 0, limit: 15})
-	},
+  pagination: {
+    Type: Pagination,
+    value () {
+      return {skip: 0, limit: 10}
+    }
+  },
 	loadPage () {
 		this.loadingBlog = true
 		let pagination = this.pagination

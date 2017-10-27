@@ -143,7 +143,7 @@
                 <div class="form-group">
                   <label for="kyc-country">Country &nbsp;<button type="button" class="btn-clear text-warning" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Can't find your country? Please contact us."><i class="fa fa-info-circle" aria-hidden="true"></i></button></label>
                   {{#if countryList}}
-                    <select id="kyc-country" selectpicker="btn btn-default" value:bind="countryCode" ($change)="populateProvState(%element.value)" class="bootstrap-select form-control show-tick" title="Search and Select a Country" data-live-search="{{countryListSearch}}" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
+                    <select id="kyc-country" selectpicker="btn btn-default" value:bind="countryCode" on:change="populateProvState(%element.value)" class="bootstrap-select form-control show-tick" title="Search and Select a Country" data-live-search="{{countryListSearch}}" data-size="{{dropDownSize}}" {{#if disableForm}}disabled{{/if}}>
                       <option data-hidden="true"></option>
                       {{#each countryList}}
                         <option value="{{code}}">{{name}}</option>

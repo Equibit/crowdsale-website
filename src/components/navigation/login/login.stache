@@ -5,7 +5,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" aria-label="Close" on:click="clearForm()"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Client Login</h4>
+        <h4 class="modal-title" id="myModalLabel">Login</h4>
       </div>
       <form novalidate>
         <div class="modal-body">
@@ -26,7 +26,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" on:click="clearForm()">Close</button>
-          <button type="button" class="btn btn-primary" on:click="handleLogin(%event, email, password)" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Client Login{{/if}}</button>
+          <button type="button" class="btn btn-primary" on:click="handleLogin(%event, email, password)" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Login{{/if}}</button>
         </div>
       </form>
     </div>

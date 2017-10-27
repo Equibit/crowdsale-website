@@ -1,6 +1,61 @@
 <can-component tag="social-media">
   <style type="less">
-    display: block;
+    @import "../../node_modules/bootstrap/less/variables.less";
+    @import "../less/_variables.less";
+
+    a.flip {
+      display: block;
+      width: 40px;
+      height: 40px;
+      font-size: 22px;
+      line-height: 38px;
+      text-align: center;
+    }
+    a.flip .circle-flip {
+      width: 40px;
+      height: 40px;
+    }
+    a.flip .circle-flip {
+      border-radius: 50%;
+      color: white;
+      background-color: black;
+      border: 3px solid #445363;
+
+      -webkit-transition: 0.8s;
+      -webkit-transform-style: preserve-3d;
+      -moz-transition: 0.8s;
+      -moz-transform-style: preserve-3d;
+      -o-transition: 0.8s;
+      -o-transform-style: preserve-3d;
+      transition: 0.8s;
+      transform-style: preserve-3d;
+    }
+    a.flip:hover .circle-flip {
+      color: black;
+      background-color: @brand-primary;
+      border: 3px solid @brand-primary;
+
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+    ul.small {
+      a.flip {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+        line-height: 20px;
+      }
+      a.flip .circle-flip {
+        width: 20px;
+        height: 20px;
+      }
+
+      a.flip .circle-flip {
+        border: 1px solid #445363;
+      }
+    }
   </style>
   <view>
 
@@ -60,11 +115,15 @@
   <script type="view-model">
     import DefineMap from 'can-define/map/map'
 
-    export default DefineMap.extend({
+    const SocialMediaModel = DefineMap.extend('SocialMediaModel', {
       size: {
         type: 'string',
         value: 'normal'
       }
     })
+
+    export default function (opt) {
+      return new SocialMediaModel(opt)
+    }
   </script>
 </can-component>

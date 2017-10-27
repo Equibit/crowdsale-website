@@ -24,7 +24,7 @@
           </div>
         </div>
 
-        <grid-component {(rows)}="rows" {(pagination)}="pagination" (onpage)="loadPage()">
+        <grid-component rows:bind="rows" pagination:bind="pagination" on:onpage="loadPage()">
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>

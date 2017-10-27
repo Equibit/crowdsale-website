@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" {{^if appState.loggedIn}}href="{{routeUrl page='home'}}"{{else}}href="{{routeUrl page='dash'}}"{{/if}} on:click="closeMenu()"><img src="/assets/imgs/tx-logo.png" /><span>Universe</span></a>
+      <a class="navbar-brand" {{^if appState.loggedIn}}href="{{routeUrl page='home'}}"{{else}}href="{{routeUrl page='dash'}}"{{/if}} on:click="closeMenu()"><img src="/assets/imgs/tx-logo.png" /><span>Base Website</span></a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -19,8 +19,8 @@
           <li class="{{#routeCurrent page='blog'}}active{{/routeCurrent}}"><a href="{{routeUrl page='blog'}}" on:click="closeMenu()">Blog{{#routeCurrent page='blog'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="" data-toggle="modal" data-target="#sign-up-modal" on:click="closeMenu()">Become a Client</a></li>
-          <li><a href="" data-toggle="modal" data-target="#login-modal" on:click="closeMenu()">Client Login</a></li>
+          <li><a href="" data-toggle="modal" data-target="#sign-up-modal" on:click="closeMenu()">Sign Up</a></li>
+          <li><a href="" data-toggle="modal" data-target="#login-modal" on:click="closeMenu()">Login</a></li>
         </ul>
       {{else}}
         <ul class="nav navbar-nav">

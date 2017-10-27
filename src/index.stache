@@ -43,7 +43,7 @@
 {{#if appState.loggedIn}}
   {{^if appState.kycApproved}}
     <can-import from="~/components/kyc-warnings.component!" />
-    <kyc-warnings {kyc-complete}="appState.kycComplete" />
+    <kyc-warnings kycComplete:from="appState.kycComplete" />
   {{/if}}
 {{/if}}
 

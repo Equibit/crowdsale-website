@@ -3,6 +3,7 @@ import DefineMap from 'can-define/map/map'
 import './admin-tickets.less'
 import view from './admin-tickets.stache'
 import Ticket from '~/models/admin-ticket'
+import Pagination from '~/models/pagination'
 
 export const ViewModel = DefineMap.extend({
 	search: 'string',
@@ -16,13 +17,12 @@ export const ViewModel = DefineMap.extend({
 	rows: {
 		Type: Ticket.List
 	},
-	pagination: {
-		value: new (DefineMap.extend({
-			skip: 'number',
-			limit: 'number',
-			total: 'number'
-		}))({skip: 0, limit: 50})
-	},
+  pagination: {
+    Type: Pagination,
+    value () {
+      return {skip: 0, limit: 10}
+    }
+  },
 	loadPage (params) {
 		this.loadingTickets = true
 		let pagination = this.pagination

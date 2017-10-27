@@ -24,7 +24,7 @@
           </div>
         </div>
 
-        <grid-component {(rows)}="rows" {(pagination)}="pagination" (onpage)="loadPage()">
+        <grid-component rows:bind="rows" pagination:bind="pagination" on:onpage="loadPage()">
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -89,5 +89,5 @@
   </div>
 </div>
 
-<edit-user {(edit-user)}="editUser" {state}="state"/>
+<edit-user {(edit-user)}="editUser" {app-state}="appState"/>
 <kyc-user {(edit-user)}="editUser" {(kyc-user)}="kycUser"/>

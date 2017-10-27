@@ -47,7 +47,7 @@
         "renderingBaseURL": "/dist"
       }
     },
-    "serviceBaseURL": "https://txbasewebsite.com/api"
+    "serviceBaseURL": "https://txuniverse.com/api"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
