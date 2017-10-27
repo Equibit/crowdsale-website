@@ -11,12 +11,16 @@
     {{/if}}
   </view>
   <script type="view-model">
-    import DefineMap from 'can-define/map/map';
+    import DefineMap from 'can-define/map/map'
 
-    export default DefineMap.extend({
+    const ValidationMessageViewModel = DefineMap.extend('ValidationMessageViewModel', {
       message: {
         value: null
       }
-    });
+    })
+
+    export default function (opt) {
+      return new ValidationMessageViewModel(opt)
+    }
   </script>
 </can-component>

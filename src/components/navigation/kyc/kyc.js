@@ -32,11 +32,15 @@ export const ViewModel = DefineMap.extend({
 	},
 	countryList: {
 		Type: DefineList,
-		value: new DefineList(countryData)
+		value () {
+      return countryData
+    }
 	},
 	provStateListData: {
 		Type: DefineList,
-		value: new DefineList(provStateData)
+		value () {
+			return provStateData
+    }
 	},
 	provStateList: {
 		Type: DefineList,
@@ -52,11 +56,15 @@ export const ViewModel = DefineMap.extend({
 	},
 	monthsList: {
 		Type: DefineList,
-		value: new DefineList(monthsData)
+		value () {
+			return monthsData
+    }
 	},
 	streetTypeList: {
 		Type: DefineList,
-		value: new DefineList(streetTypeData)
+		value () {
+			return streetTypeData
+    }
 	},
 	daysOfMonthList: {
 		get() {

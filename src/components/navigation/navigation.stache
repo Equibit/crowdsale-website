@@ -16,11 +16,7 @@
       {{^if appState.loggedIn}}
         <ul class="nav navbar-nav">
           <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}}"><a href="{{routeUrl page='home'}}" on:click="closeMenu()">Home{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
-          <li class="{{#routeCurrent page='about'}}active{{/routeCurrent}}"><a href="{{routeUrl page='about'}}" on:click="closeMenu()">About{{#routeCurrent page='about'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
-          <li class="{{#routeCurrent page='team'}}active{{/routeCurrent}}"><a href="{{routeUrl page='team'}}" on:click="closeMenu()">Team{{#routeCurrent page='team'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
           <li class="{{#routeCurrent page='blog'}}active{{/routeCurrent}}"><a href="{{routeUrl page='blog'}}" on:click="closeMenu()">Blog{{#routeCurrent page='blog'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
-          <!--li class="{{#routeCurrent page='projects'}}active{{/routeCurrent}}"><a href="{{routeUrl page='projects'}}" on:click="closeMenu()">Projects For Sale{{#routeCurrent page='projects'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li-->
-          <li class="{{#routeCurrent page='universe'}}active{{/routeCurrent}}"><a href="{{routeUrl page='universe'}}" on:click="closeMenu()">Universe{{#routeCurrent page='universe'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="" data-toggle="modal" data-target="#sign-up-modal" on:click="closeMenu()">Become a Client</a></li>

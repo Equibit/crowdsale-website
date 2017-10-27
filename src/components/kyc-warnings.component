@@ -24,8 +24,12 @@
   <script type="view-model">
     import DefineMap from 'can-define/map/map'
 
-    export default DefineMap.extend({
+    const KycWarningsViewModel = DefineMap.extend('KycWarningsViewModel', {
       kycComplete: 'boolean'
     })
+
+    export default function (opt) {
+      return new KycWarningsViewModel(opt)
+    }
   </script>
 </can-component>

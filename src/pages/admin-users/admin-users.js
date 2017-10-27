@@ -3,6 +3,7 @@ import DefineMap from 'can-define/map/map'
 import './admin-users.less'
 import view from './admin-users.stache'
 import User from '~/models/user'
+import Pagination from '~/models/pagination'
 
 export const ViewModel = DefineMap.extend({
 	search: 'string',
@@ -25,11 +26,10 @@ export const ViewModel = DefineMap.extend({
 		Type: User.List
 	},
 	pagination: {
-		value: new (DefineMap.extend({
-			skip: 'number',
-			limit: 'number',
-			total: 'number'
-		}))({skip: 0, limit: 50})
+    Type: Pagination,
+    value () {
+      return {skip: 0, limit: 10}
+    }
 	},
 	loadPage (params) {
 		this.loadingUsers = true

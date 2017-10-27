@@ -1,7 +1,7 @@
 import DefineMap from 'can-define/map/map'
 import feathersClient from '~/models/feathers-client'
 
-const AppState = DefineMap.extend({
+const AppState = DefineMap.extend('AppState', {
 	loggedIn: {
 		set(val) {
 			if (!val) {

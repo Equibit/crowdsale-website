@@ -5,14 +5,11 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <img src="/assets/imgs/universe_head.png" class="img-responsive">
       <div class="jumbotron">
-        <p>We are a comprehensive consulting group of freelance developers, writers, marketers, and entrepreneurs with a strong passion for cryptocurrencies and token development. Together we help develop your ideas into action steps and results.</p>
-        <p>Our developers can assist you with your crypto projects. Currently <strong>Tx Universe</strong> is creating several projects to sell, as well as working on our own Tx branded projects for our clients and members.</p>
-        <p>We primarily accept Bitcoin for all our consulting.</p>
+        <p>This is the base site for testing Tx Projects</p>
         <div class="row">
           <div class="col-sm-6">
-            <form action="https://txuniverse.us17.list-manage.com/subscribe/post?u=8458e37fe0079c47986ec0257&amp;id=120f044a68" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <!--form action="https://txuniverse.us17.list-manage.com/subscribe/post?u=8458e37fe0079c47986ec0257&amp;id=120f044a68" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
               <div class="input-group">
                 <input type="email" value="" name="EMAIL" class="form-control required" placeholder="Email Address" id="mce-EMAIL">
                 <span class="input-group-btn"><button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">Get Tx Updates</button></span>

@@ -12,17 +12,17 @@
   <meta name="theme-color" content="#ffffff">
 
   <meta property="fb:app_id" content="1188163631300990" />
-  <meta property="og:url" content="https://txuniverse.com/" />
+  <meta property="og:url" content="https://txbasewebsite.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Tx Universe" />
-  <meta property="og:description" content="Crypto-Currency and Crypto-Token Consultants and Software Developers" />
-  <meta property="og:image" content="https://txuniverse.com/assets/social/facebook-share.png" />
+  <meta property="og:title" content="Tx Base Website" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="https://txbasewebsite.com/assets/social/facebook-share.png" />
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@fsm_info">
-  <meta name="twitter:title" content="Tx Universe">
-  <meta name="twitter:description" content="Crypto-Currency and Crypto-Token Consultants and Software Developers">
-  <meta name="twitter:image" content="https://txuniverse.com/assets/social/twitter-share.png">
+  <meta name="twitter:title" content="Tx Base Website">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://txbasewebsite.com/assets/social/twitter-share.png">
 </head>
 <body>
 <can-import from="~/app" export-as="viewModel" />
@@ -53,21 +53,6 @@
       <page-home />
     </can-import>
   {{/case}}
-  {{#case 'team'}}
-    <can-import from="~/pages/page-team/" can-tag="tag-loading">
-      <page-team />
-    </can-import>
-  {{/case}}
-  {{#case 'projects'}}
-    <can-import from="~/pages/page-projects/" can-tag="tag-loading">
-      <page-projects />
-    </can-import>
-  {{/case}}
-  {{#case 'about'}}
-    <can-import from="~/pages/page-about/" can-tag="tag-loading">
-      <page-about />
-    </can-import>
-  {{/case}}
   {{#case 'blog'}}
     {{#if slug}}
       <can-import from="~/pages/page-blog/blog-post/" can-tag="tag-loading">
@@ -78,11 +63,6 @@
         <page-blog />
       </can-import>
     {{/if}}
-  {{/case}}
-  {{#case 'universe'}}
-    <can-import from="~/pages/page-universe/" can-tag="tag-loading">
-      <page-universe />
-    </can-import>
   {{/case}}
   {{#case 'terms'}}
     <can-import from="~/pages/page-tos/" can-tag="tag-loading">

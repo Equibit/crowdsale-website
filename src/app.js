@@ -30,7 +30,7 @@ const AppViewModel = DefineMap.extend({
 	},
 	appState: {
 		Type: State,
-		value: new State({}),
+    Value: State,
 		set (val) {
 			if (this.appState) {
 				this.appState.clearAuthInterval()
@@ -43,11 +43,11 @@ const AppViewModel = DefineMap.extend({
 	title: {
 		get() {
 			if (this.page === "privacy") {
-				return "Tx Universe | Privacy Statement"
+				return "Tx Base | Privacy Statement"
 			} else if (this.page === "terms") {
-				return "Tx Universe | Terms of Service"
+				return "Tx Base | Terms of Service"
 			} else {
-				return "Tx Universe | Built with Blocks"
+				return "Tx Base | Built with Blocks"
 			}
 		}
 	}

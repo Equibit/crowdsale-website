@@ -22,12 +22,16 @@
     </footer>
   </view>
   <script type="view-model">
-    import DefineMap from 'can-define/map/'
+    import DefineMap from 'can-define/map/map'
 
-    export default DefineMap.extend({
+    const PageFooterViewModel = DefineMap.extend('PageFooterViewModel', {
       copyMessage: {
         value: '&copy; Copyright 2017 <strong>Tx Universe</strong> All Rights Reserved'
       }
     })
+
+    export default function (opt) {
+      return new PageFooterViewModel(opt)
+    }
   </script>
 </can-component>
