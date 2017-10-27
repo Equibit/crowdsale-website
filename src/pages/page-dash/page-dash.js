@@ -13,6 +13,9 @@ export const ViewModel = DefineMap.extend({
   },
   disableForm: {
     value: false
+  },
+  appState: {
+    type: 'any'
   }
 });
 

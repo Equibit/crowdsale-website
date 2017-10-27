@@ -1,5 +1,5 @@
 <br>
-{{#post}}
+{{#blogPost}}
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -14,4 +14,4 @@
       </div>
     </div>
   </div>
-{{/post}}
+{{/blogPost}}

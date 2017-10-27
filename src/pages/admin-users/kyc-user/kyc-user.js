@@ -5,16 +5,19 @@ import view from './kyc-user.stache'
 import User from '~/models/user'
 
 export const ViewModel = DefineMap.extend({
-	disableForm: {
-		value: false
-	},
-	processing: 'boolean',
-	kycUser: {
-	  type: 'any'
-	},
-	editUser: {
-		Type: User
-	},
+  disableForm: {
+    value: false
+  },
+  processing: 'boolean',
+  kycUser: {
+    type: 'any'
+  },
+  editUser: {
+    Type: User
+  },
+  appState: {
+    type: 'any'
+  }
 })
 
 export default Component.extend({

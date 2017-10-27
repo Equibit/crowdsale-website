@@ -12,7 +12,7 @@ export const ViewModel = DefineMap.extend({
 	quill: {
 		type: 'any'
 	},
-  linkSubject: 'string',
+  slug: 'string',
 	loadingTicket: {
 		value: true
 	},
@@ -51,7 +51,7 @@ export default Component.extend({
 	events: {
 		inserted: function(){
 
-			Ticket.get(this.viewModel.linkSubject)
+			Ticket.get(this.viewModel.slug)
 				.then(ticket => {
 					this.viewModel.ticketHistory = ticket.history
 					this.viewModel.ticketData = ticket

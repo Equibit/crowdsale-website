@@ -5,10 +5,10 @@ import view from './blog-post.stache'
 import Blog from '~/models/blog'
 
 export const ViewModel = DefineMap.extend({
-  post: {
+  blogPost: {
     Type: Blog
   },
-	linkTitle: 'string',
+	slug: 'string',
 	loadingBlog: {
     value: true
   }
@@ -20,9 +20,9 @@ export default Component.extend({
   view,
 	events: {
 		inserted: function(){
-			Blog.get(this.viewModel.linkTitle)
+			Blog.get(this.viewModel.slug)
 				.then(blog => {
-					this.viewModel.post = blog
+					this.viewModel.blogPost = blog
 					setTimeout(() => this.viewModel.loadingBlog = false, 25)
 				})
 				.catch(err => console.log(err))

@@ -4,8 +4,8 @@ import './admin-faq.less';
 import view from './admin-faq.stache';
 
 export const ViewModel = DefineMap.extend({
-  message: {
-    value: 'This is the admin-faq component'
+  appState: {
+    type: 'any'
   }
 });
 

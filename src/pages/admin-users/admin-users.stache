@@ -89,5 +89,5 @@
   </div>
 </div>
 
-<edit-user {(edit-user)}="editUser" {app-state}="appState"/>
-<kyc-user {(edit-user)}="editUser" {(kyc-user)}="kycUser"/>
+<edit-user editUser:bind="editUser" appState:from="appState"/>
+<kyc-user editUser:bind="editUser" kycUser:bind="kycUser"/>

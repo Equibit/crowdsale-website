@@ -5,7 +5,6 @@ import view from './set-password.stache'
 import feathersClient from '~/models/feathers-client'
 import validate from '~/utils/validators'
 import User from '~/models/user'
-import State from '~/models/state'
 
 export const ViewModel = DefineMap.extend({
 	currentUser: {

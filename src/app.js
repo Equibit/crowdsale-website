@@ -14,7 +14,7 @@ import route from 'can-route'
 import 'can-route-pushstate'
 import 'jquery'
 import 'bootstrap'
-import State from '~/models/state'
+import AppState from '~/models/appState'
 
 const AppViewModel = DefineMap.extend({
 	'*': {
@@ -29,8 +29,8 @@ const AppViewModel = DefineMap.extend({
 		serialize: true
 	},
 	appState: {
-		Type: State,
-    Value: State,
+		Type: AppState,
+    Value: AppState,
 		set (val) {
 			if (this.appState) {
 				this.appState.clearAuthInterval()

@@ -42,8 +42,9 @@
 
 {{#if appState.loggedIn}}
   {{^if appState.kycApproved}}
-    <can-import from="~/components/kyc-warnings.component!" />
-    <kyc-warnings kycComplete:from="appState.kycComplete" />
+    <can-import from="~/components/kyc-warnings.component!" can-tag="tag-loading">
+      <kyc-warnings kycComplete:from="appState.kycComplete" />
+    </can-import>
   {{/if}}
 {{/if}}
 
@@ -56,7 +57,7 @@
   {{#case 'blog'}}
     {{#if slug}}
       <can-import from="~/pages/page-blog/blog-post/" can-tag="tag-loading">
-        <blog-post {link-title}="slug" />
+        <blog-post slug:from="slug" />
       </can-import>
     {{else}}
       <can-import from="~/pages/page-blog/" can-tag="tag-loading">
@@ -117,7 +118,7 @@
     {{#if appState.isAdmin}}
       {{#if slug}}
         <can-import from="~/pages/admin-tickets/ticket-details/" can-tag="tag-loading">
-          <ticket-details {link-subject}="slug" appState:from="appState" />
+          <ticket-details slug:from="slug" appState:from="appState" />
         </can-import>
       {{else}}
         <can-import from="~/pages/admin-tickets/" can-tag="tag-loading">

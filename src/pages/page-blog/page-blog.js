@@ -3,6 +3,7 @@ import DefineMap from 'can-define/map/map'
 import './page-blog.less'
 import view from './page-blog.stache'
 import Blog from '~/models/blog'
+import Pagination from '~/models/pagination'
 
 export const ViewModel = DefineMap.extend({
 	loadingBlog: {
@@ -11,13 +12,12 @@ export const ViewModel = DefineMap.extend({
 	rows: {
 		Type: Blog.List
 	},
-	pagination: {
-		value: new (DefineMap.extend({
-			skip: 'number',
-			limit: 'number',
-			total: 'number'
-		}))({skip: 0, limit: 5})
-	}
+  pagination: {
+    Type: Pagination,
+    value () {
+      return {skip: 0, limit: 10}
+    }
+  }
 })
 
 export default Component.extend({
