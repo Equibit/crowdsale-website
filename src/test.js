@@ -33,7 +33,7 @@ describe('tx functional smoke test', function () {
     F('a.navbar-brand').visible(function () {
       const title = F('title').text()
       console.log(`title = ${title}`)
-      assert.equal(title, 'Tx Notify | Built with Blocks')
+      assert.equal(title, 'Tx Base | Built with Blocks')
       done()
     })
   })
