@@ -6,11 +6,11 @@ import zxcvbn from 'zxcvbn'
 
 export const ViewModel = DefineMap.extend({
   password: 'string',
-	passwordScore: {
+  passwordScore: {
     type: 'number',
-		get () {
-			return this.password && (zxcvbn(this.password).score + 1)
-		}
+    get () {
+      return this.password && (zxcvbn(this.password).score + 1)
+    }
   }
 })
 

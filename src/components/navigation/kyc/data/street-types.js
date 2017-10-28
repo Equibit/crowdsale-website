@@ -121,5 +121,5 @@ export default [
 	{full: 'Bypass', short: 'BYP', others: ['BYPA', 'BYPAS', 'BYPS']},
 	{full: 'Bypass', short: 'BYP', others: ['BYPA', 'BYPAS', 'BYPS']},
 	{full: 'Bypass', short: 'BYP', others: ['BYPA', 'BYPAS', 'BYPS']},
-	{full: 'Bypass', short: 'BYP', others: ['BYPA', 'BYPAS', 'BYPS']},
+	{full: 'Bypass', short: 'BYP', others: ['BYPA', 'BYPAS', 'BYPS']}
 ]

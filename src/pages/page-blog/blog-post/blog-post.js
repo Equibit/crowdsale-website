@@ -8,8 +8,8 @@ export const ViewModel = DefineMap.extend({
   blogPost: {
     Type: Blog
   },
-	slug: 'string',
-	loadingBlog: {
+  slug: 'string',
+  loadingBlog: {
     value: true
   }
 })
@@ -18,14 +18,14 @@ export default Component.extend({
   tag: 'blog-post',
   ViewModel,
   view,
-	events: {
-		inserted: function(){
-			Blog.get(this.viewModel.slug)
+  events: {
+    inserted: function () {
+      Blog.get(this.viewModel.slug)
 				.then(blog => {
-					this.viewModel.blogPost = blog
-					setTimeout(() => this.viewModel.loadingBlog = false, 25)
-				})
+  this.viewModel.blogPost = blog
+  setTimeout(() => this.viewModel.loadingBlog = false, 25)
+})
 				.catch(err => console.log(err))
-		}
-	}
+    }
+  }
 })

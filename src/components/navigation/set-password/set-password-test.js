@@ -4,7 +4,7 @@ import { ViewModel } from './set-password'
 // ViewModel unit tests
 QUnit.module('tx/components/navigation/set-password')
 
-QUnit.test('Has message', function(){
+QUnit.test('Has message', function () {
   var vm = new ViewModel()
   QUnit.equal(vm.message, 'This is the set-password-modal component')
-});
+})

@@ -5,10 +5,11 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="jumbotron">
+        <h1>Base Website</h1>
         <p>This is the base site for testing Tx Projects</p>
         <div class="row">
           <div class="col-sm-6">
-            <!--form action="https://txuniverse.us17.list-manage.com/subscribe/post?u=8458e37fe0079c47986ec0257&amp;id=120f044a68" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <form action="https://txuniverse.us17.list-manage.com/subscribe/post?u=8458e37fe0079c47986ec0257&amp;id=120f044a68" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
               <div class="input-group">
                 <input type="email" value="" name="EMAIL" class="form-control required" placeholder="Email Address" id="mce-EMAIL">
                 <span class="input-group-btn"><button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">Get Tx Updates</button></span>

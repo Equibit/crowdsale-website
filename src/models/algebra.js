@@ -10,13 +10,13 @@ export default new set.Algebra(
   set.comparators.sort('$sort', defaultSort),
   {
     '$populate': function () {
-      return true;
+      return true
     },
     '$search': function () {
-      return true;
+      return true
     },
     '$filter': function () {
-      return true;
+      return true
     }
   }
 )

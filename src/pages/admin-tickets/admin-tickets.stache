@@ -71,7 +71,7 @@
                 <ul class="pagination">
                   <li class="{{^if isPrevActive}}disabled{{/if}}"><a href="" on:click="prev()" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
                   {{#each pages}}
-                    <li class="{{#if isActive}}active{{/if}}"><a href="" on:click=changePage(pageNumber)>{{pageTitle}}</a></li>
+                    <li class="{{#if isActive}}active{{/if}}"><a href="" on:click="changePage(pageNumber)">{{pageTitle}}</a></li>
                   {{/each}}
                   <li class="{{^if isNextActive}}disabled{{/if}}"><a href="" on:click="next()" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
                 </ul>

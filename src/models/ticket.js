@@ -7,7 +7,7 @@ import behaviors from './behaviors'
 import algebra from './algebra'
 
 const Ticket = DefineMap.extend('Ticket', {
-  id: 'any',
+  id: 'any'
 })
 
 Ticket.List = DefineList.extend({

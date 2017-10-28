@@ -13,10 +13,10 @@ export const Session = DefineMap.extend('Session', {
     Type: User,
     get (lastSetVal, resolve) {
       if (lastSetVal) {
-        return lastSetVal;
+        return lastSetVal
       }
       if (this.userId) {
-        User.get(this.userId).then(resolve);
+        User.get(this.userId).then(resolve)
       }
     }
   },

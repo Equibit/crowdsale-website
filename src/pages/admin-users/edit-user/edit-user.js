@@ -5,35 +5,35 @@ import view from './edit-user.stache'
 import User from '~/models/user'
 
 export const ViewModel = DefineMap.extend({
-	disableForm: {
-		value: false
-	},
-	processing: 'boolean',
-	editUser: {
-		Type: User
-	},
-	appState: {
-		type: 'any'
-	},
-	saveUser() {
-		this.processing = true
-		this.disableForm = true
+  disableForm: {
+    value: false
+  },
+  processing: 'boolean',
+  editUser: {
+    Type: User
+  },
+  appState: {
+    type: 'any'
+  },
+  saveUser () {
+    this.processing = true
+    this.disableForm = true
 
-		this.editUser.save()
+    this.editUser.save()
 			.then(() => {
-				this.processing = false
-				this.disableForm = false
+  this.processing = false
+  this.disableForm = false
 
-				$('#EditUser').modal("hide")
-			})
+  $('#EditUser').modal('hide')
+})
 			.catch(err => {
-				this.processing = false
-				this.disableForm = false
+  this.processing = false
+  this.disableForm = false
 
-				if (err.status === 401) this.appState.error401()
-				else console.log(err)
-			})
-	}
+  if (err.status === 401) this.appState.error401()
+  else console.log(err)
+})
+  }
 })
 
 export default Component.extend({

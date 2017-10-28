@@ -9,13 +9,13 @@ import algebra from './algebra'
 const Blog = DefineMap.extend('Blog', {
   id: 'any',
   title: 'string',
-	shortPost: 'string',
-	published: 'boolean',
-	datetime: 'number',
-	post: 'string',
-	delta: 'string',
-	author: 'string',
-	linkTitle: 'string'
+  shortPost: 'string',
+  published: 'boolean',
+  datetime: 'number',
+  post: 'string',
+  delta: 'string',
+  author: 'string',
+  linkTitle: 'string'
 })
 
 Blog.List = DefineList.extend({

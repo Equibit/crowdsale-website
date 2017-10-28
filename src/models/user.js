@@ -10,28 +10,28 @@ const User = DefineMap.extend('User', {
   id: 'any',
   email: 'string',
   password: 'string',
-	setPassword: 'boolean',
-	accountCreated: 'number',
-	lastLogin: 'number',
-	locked: 'boolean',
-	signUp (email) {
-		return feathersClient.service('sign-up').create({email})
-	},
-	forgotPassword (email) {
-		return feathersClient.service('forgot-password').create({email})
-	},
-	changePassword(newPassword, oldPassword) {
-		return feathersClient.service('change-password').create({newPassword, oldPassword})
-	},
-	changeEmail(password, newEmail, emailCode) {
-		return feathersClient.service('change-email').create({password, newEmail, emailCode})
-	},
-	addKyc(kycObj) {
-		return feathersClient.service('user-kyc').create(kycObj)
-	},
-	getKyc() {
-		return feathersClient.service('user-kyc').get(this.id)
-	}
+  setPassword: 'boolean',
+  accountCreated: 'number',
+  lastLogin: 'number',
+  locked: 'boolean',
+  signUp (email) {
+    return feathersClient.service('users').create({email})
+  },
+  forgotPassword (email) {
+    return feathersClient.service('forgot-password').create({email})
+  },
+  changePassword (newPassword, oldPassword) {
+    return feathersClient.service('users').patch(this.id, {password: newPassword, oldPassword})
+  },
+  changeEmail (password, newEmail, emailCode) {
+    return feathersClient.service('users').patch(this.id, {password, newEmail, emailCode})
+  },
+  addKyc (kycObj) {
+    return feathersClient.service('user-kyc').create(kycObj)
+  },
+  getKyc () {
+    return feathersClient.service('user-kyc').get(this.id)
+  }
 })
 
 User.List = DefineList.extend({

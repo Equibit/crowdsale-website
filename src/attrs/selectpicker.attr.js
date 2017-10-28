@@ -1,3 +1,4 @@
+import $ from 'jquery'
 import callback from 'can-view-callbacks'
 import 'bootstrap-select'
 
@@ -13,23 +14,22 @@ import 'bootstrap-select'
  * ```
  */
 callback.attr('selectpicker', (el, attrData) => {
-
   let $el = $(el),
-      value = el.getAttribute('selectpicker')
+    value = el.getAttribute('selectpicker')
 
-	setTimeout(() => {
-		$el.selectpicker({style: value, showSubtext: true})
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-			$el.selectpicker('mobile');
-		}
-	}, 50);
+  setTimeout(() => {
+    $el.selectpicker({style: value, showSubtext: true})
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+      $el.selectpicker('mobile')
+    }
+  }, 50)
 
-  $el.on('reset-select-picker', function() {
-    $el.find('option').each((i,a) => {
+  $el.on('reset-select-picker', function () {
+    $el.find('option').each((i, a) => {
       if (a.getAttribute('data-subtext')) {
         $(a).data('subtext', a.getAttribute('data-subtext'))
       }
-    });
-    $el.selectpicker('refresh');
+    })
+    $el.selectpicker('refresh')
   })
-});
+})

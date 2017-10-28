@@ -17,15 +17,15 @@ export const ViewModel = DefineMap.extend({
   appState: {
     type: 'any'
   }
-});
+})
 
 export default Component.extend({
   tag: 'page-dash',
   ViewModel,
   view,
   events: {
-    inserted: function() {
+    inserted: function () {
       // todo: get recent tickets
     }
   }
-});
+})
