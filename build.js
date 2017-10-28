@@ -1,7 +1,8 @@
 var stealTools = require('steal-tools')
+var path = require('path')
 
-var buildPromise = stealTools.build({
-  config: __dirname + '/package.json!npm'
+stealTools.build({
+  config: path.join(__dirname, '/package.json!npm')
 }, {
   bundleAssets: true
 })

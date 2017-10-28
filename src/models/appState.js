@@ -44,14 +44,14 @@ const AppState = DefineMap.extend('AppState', {
     return feathersClient.passport.getJWT()
       .then(token => {
         if (!token) {
-          return Promise.reject('no token')
+          return Promise.reject(new Error('no token'))
         } else {
           return feathersClient.passport.payloadIsValid(token)
             ? feathersClient.authenticate({
               strategy: 'jwt',
               accessToken: token
             })
-            : Promise.reject('Token is expired')
+            : Promise.reject(new Error('Token is expired'))
         }
       })
       .then(data => {
@@ -74,7 +74,7 @@ const AppState = DefineMap.extend('AppState', {
       .catch(err => {
         this.logout()
         if (err !== 'no token') this.sessionError = true
-        return Promise.reject('Rejected Parent Promise')
+        return Promise.reject(err)
       })
   },
   logout () {
