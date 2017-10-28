@@ -1,10 +1,3 @@
-/*
-
-To switch to feathers todo: create config file to manage this
-- make sure bearer tokens use proper time stamp (not unit)
-- make sure to switch feather-client to use websockets
-
- */
 // import '~/utils/polyfill'
 import '~/utils/helpers'
 import '~/utils/analytics'
