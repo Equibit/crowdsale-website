@@ -28,12 +28,12 @@ export default Component.extend({
     inserted: function () {
       let pagination = this.viewModel.pagination
       Blog.getList({$skip: pagination.skip, $limit: pagination.limit})
-				.then(blog => {
-  this.viewModel.rows = blog
-  this.viewModel.pagination.total = blog.total
-  setTimeout(() => this.viewModel.loadingBlog = false, 25)
-})
-				.catch(err => console.log(err))
+        .then(blog => {
+          this.viewModel.rows = blog
+          this.viewModel.pagination.total = blog.total
+          setTimeout(() => { this.viewModel.loadingBlog = false }, 25)
+        })
+        .catch(err => console.log(err))
     }
   }
 })

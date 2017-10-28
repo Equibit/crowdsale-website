@@ -35,15 +35,15 @@ export const ViewModel = DefineMap.extend({
       query['$filter'] = params.filter
     }
     Ticket.getList(query)
-			.then(tickets => {
-  this.rows = tickets
-  this.pagination.total = tickets.total
-  setTimeout(() => this.loadingTickets = false, 25)
-})
-			.catch(err => {
-  if (err.status === 401) this.appState.error401()
-  else console.log(err)
-})
+      .then(tickets => {
+        this.rows = tickets
+        this.pagination.total = tickets.total
+        setTimeout(() => { this.loadingTickets = false }, 25)
+      })
+      .catch(err => {
+        if (err.status === 401) this.appState.error401()
+        else console.log(err)
+      })
   },
   doSearch () {
     if (!this.loadingTickets) {
@@ -60,10 +60,10 @@ export const ViewModel = DefineMap.extend({
   closeTicket (ticket) {
     ticket.isOpen = false
     ticket.save()
-			.catch(err => {
-  if (err.status === 401) this.appState.error401()
-  else console.log(err)
-})
+      .catch(err => {
+        if (err.status === 401) this.appState.error401()
+        else console.log(err)
+      })
   }
 })
 
@@ -75,15 +75,15 @@ export default Component.extend({
     inserted: function () {
       let pagination = this.viewModel.pagination
       Ticket.getList({$skip: pagination.skip, $limit: pagination.limit})
-				.then(tickets => {
-  this.viewModel.rows = tickets
-  this.viewModel.pagination.total = tickets.total
-  setTimeout(() => this.viewModel.loadingTickets = false, 25)
-})
-				.catch(err => {
-  if (err.status === 401) this.viewModel.appState.error401()
-  else console.log(err)
-})
+        .then(tickets => {
+          this.viewModel.rows = tickets
+          this.viewModel.pagination.total = tickets.total
+          setTimeout(() => { this.viewModel.loadingTickets = false }, 25)
+        })
+        .catch(err => {
+          if (err.status === 401) this.viewModel.appState.error401()
+          else console.log(err)
+        })
     }
   }
 })

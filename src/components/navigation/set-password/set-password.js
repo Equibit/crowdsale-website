@@ -49,22 +49,22 @@ export const ViewModel = DefineMap.extend({
 
     this.currentUser = feathersClient.get('user')
     this.currentUser.changePassword(password)
-			.then(() => {
-  this.processing = false
-  this.changeError = false
-  this.disableForm = false
-  this.password = null
+      .then(() => {
+        this.processing = false
+        this.changeError = false
+        this.disableForm = false
+        this.password = null
 
-  $('#set-password-modal').modal('hide')
-})
-			.catch(err => {
-  this.disableForm = false
-  this.processing = false
-  this.changeError = true
+        $('#set-password-modal').modal('hide')
+      })
+      .catch(err => {
+        this.disableForm = false
+        this.processing = false
+        this.changeError = true
 
-  if (err.status === 401) this.appState.error401()
-  else console.log(err)
-})
+        if (err.status === 401) this.appState.error401()
+        else console.log(err)
+      })
   }
 })
 

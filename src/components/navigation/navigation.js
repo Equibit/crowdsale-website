@@ -1,3 +1,4 @@
+import $ from 'jquery'
 import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './navigation.less'

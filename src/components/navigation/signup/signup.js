@@ -46,15 +46,15 @@ export const ViewModel = DefineMap.extend({
 
     let newUser = new User()
     newUser.signUp(email)
-			.then(() => {
-  this.isAccountCreated = true
-  this.processing = false
-})
-			.catch(() => {
-  this.disableForm = false
-  this.processing = false
-  this.signUpError = true
-})
+      .then(() => {
+        this.isAccountCreated = true
+        this.processing = false
+      })
+      .catch(() => {
+        this.disableForm = false
+        this.processing = false
+        this.signUpError = true
+      })
   },
   clearForm () {
     this.isAccountCreated = false

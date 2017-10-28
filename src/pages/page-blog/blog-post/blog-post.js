@@ -21,11 +21,11 @@ export default Component.extend({
   events: {
     inserted: function () {
       Blog.get(this.viewModel.slug)
-				.then(blog => {
-  this.viewModel.blogPost = blog
-  setTimeout(() => this.viewModel.loadingBlog = false, 25)
-})
-				.catch(err => console.log(err))
+        .then(blog => {
+          this.viewModel.blogPost = blog
+          setTimeout(() => { this.viewModel.loadingBlog = false }, 25)
+        })
+        .catch(err => console.log(err))
     }
   }
 })

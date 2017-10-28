@@ -1,3 +1,4 @@
+import $ from 'jquery'
 import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './count-down.less'
@@ -9,7 +10,7 @@ export const ViewModel = DefineMap.extend({
     value: false
   },
   showLabels: {
-	  value: false
+    value: false
   },
   showZeros: {
     value: false
@@ -118,12 +119,12 @@ export default Component.extend({
       let startInterval = setInterval(() => {
         if (typeof this.viewModel.timestamp !== 'undefined' && typeof this.viewModel.current !== 'undefined') {
           clearInterval(startInterval)
-          let eventTime = this.viewModel.timestamp,
-            currentTime = this.viewModel.current,
-            timeOffset = this.viewModel.current - Math.floor(Date.now()),
-            diffTime = eventTime - currentTime,
-            duration = moment.duration(diffTime, 'milliseconds'),
-            interval = 1000
+          let eventTime = this.viewModel.timestamp
+          let currentTime = this.viewModel.current
+          let timeOffset = this.viewModel.current - Math.floor(Date.now())
+          let diffTime = eventTime - currentTime
+          let duration = moment.duration(diffTime, 'milliseconds')
+          let interval = 1000
 
           if (diffTime > 0) {
             let countdownInterval = setInterval(() => {
@@ -134,11 +135,11 @@ export default Component.extend({
               duration = moment.duration(duration.asMilliseconds() - interval, 'milliseconds')
 
               if (duration._milliseconds >= 0) {
-                let o = moment.duration(duration).months(),
-                  d = moment.duration(duration).days(),
-                  h = moment.duration(duration).hours(),
-                  m = moment.duration(duration).minutes(),
-                  s = moment.duration(duration).seconds()
+                let o = moment.duration(duration).months()
+                let d = moment.duration(duration).days()
+                let h = moment.duration(duration).hours()
+                let m = moment.duration(duration).minutes()
+                let s = moment.duration(duration).seconds()
 
                 if (this.viewModel.showZeros) {
                   o = $.trim(o).length === 1 ? '0' + o : o

@@ -1,3 +1,4 @@
+import $ from 'jquery'
 import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './edit-user.less'
@@ -20,19 +21,19 @@ export const ViewModel = DefineMap.extend({
     this.disableForm = true
 
     this.editUser.save()
-			.then(() => {
-  this.processing = false
-  this.disableForm = false
+      .then(() => {
+        this.processing = false
+        this.disableForm = false
 
-  $('#EditUser').modal('hide')
-})
-			.catch(err => {
-  this.processing = false
-  this.disableForm = false
+        $('#EditUser').modal('hide')
+      })
+      .catch(err => {
+        this.processing = false
+        this.disableForm = false
 
-  if (err.status === 401) this.appState.error401()
-  else console.log(err)
-})
+        if (err.status === 401) this.appState.error401()
+        else console.log(err)
+      })
   }
 })
 

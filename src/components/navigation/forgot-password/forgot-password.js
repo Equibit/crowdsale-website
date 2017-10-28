@@ -31,14 +31,14 @@ export const ViewModel = DefineMap.extend({
 
     let newUser = new User()
     newUser.forgotPassword(email)
-			.then(() => {
-  this.clearForm()
-})
-			.catch(() => {
-  this.disableForm = false
-  this.processing = false
-  this.forgotError = true
-})
+      .then(() => {
+        this.clearForm()
+      })
+      .catch(() => {
+        this.disableForm = false
+        this.processing = false
+        this.forgotError = true
+      })
   },
   clearForm () {
     this.isSent = false

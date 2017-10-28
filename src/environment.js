@@ -5,5 +5,5 @@ let host = hostname === 'localhost' ? 'localhost:3030' : `api-${hostname}`
 export default {
   apiUrl: `${proto}//${host}`,
   isLocal: hostname === 'localhost',
-  useXhrTransport: window.useXhrTransport
+  useXhrTransport: true // window.useXhrTransport
 }

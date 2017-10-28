@@ -14,8 +14,8 @@ import 'bootstrap-select'
  * ```
  */
 callback.attr('selectpicker', (el, attrData) => {
-  let $el = $(el),
-    value = el.getAttribute('selectpicker')
+  let $el = $(el)
+  let value = el.getAttribute('selectpicker')
 
   setTimeout(() => {
     $el.selectpicker({style: value, showSubtext: true})

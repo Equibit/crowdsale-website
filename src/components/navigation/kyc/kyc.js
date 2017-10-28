@@ -116,8 +116,8 @@ export const ViewModel = DefineMap.extend({
   identityAge: {
     get () {
       return (this.yearOfBirth && this.monthOfBirth && this.dayOfBirth
-				? moment().diff(moment(this.yearOfBirth + '' + this.monthOfBirthString + '' + this.dayOfBirthString, 'YYYYMMDD'), 'years')
-				: 0)
+        ? moment().diff(moment(this.yearOfBirth + '' + this.monthOfBirthString + '' + this.dayOfBirthString, 'YYYYMMDD'), 'years')
+        : 0)
     }
   },
   unitNumber: 'string',
@@ -251,19 +251,19 @@ export const ViewModel = DefineMap.extend({
 
       this.currentUser = feathersClient.get('user')
       this.currentUser.addKyc(sendObj)
-				.then(() => {
-  this.processing = false
-  this.disableForm = false
-  this.appState.kycComplete = true
-})
-				.catch(err => {
-  this.disableForm = false
-  this.processing = false
-  $bs.trigger('reset-select-picker')
+        .then(() => {
+          this.processing = false
+          this.disableForm = false
+          this.appState.kycComplete = true
+        })
+        .catch(err => {
+          this.disableForm = false
+          this.processing = false
+          $bs.trigger('reset-select-picker')
 
-  if (err.status === 401) this.appState.error401()
-  else console.log(err)
-})
+          if (err.status === 401) this.appState.error401()
+          else console.log(err)
+        })
     } else {
       this.disableForm = false
       this.processing = false
@@ -277,8 +277,8 @@ export default Component.extend({
   ViewModel,
   view,
   events: {
-  	inserted: function () {
-    $('[data-toggle="popover"]').popover()
-  }
+    inserted: function () {
+      $('[data-toggle="popover"]').popover()
+    }
   }
 })

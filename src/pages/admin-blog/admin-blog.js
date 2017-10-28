@@ -36,15 +36,15 @@ export const ViewModel = DefineMap.extend({
     this.loadingBlog = true
     let pagination = this.pagination
     Blog.getList({$skip: pagination.skip, $limit: pagination.limit})
-			.then(blog => {
-  this.rows = blog
-  this.pagination.total = blog.total
-  setTimeout(() => this.loadingBlog = false, 25)
-})
-			.catch(err => {
-  if (err.status === 401) this.appState.error401()
-  else console.log(err)
-})
+      .then(blog => {
+        this.rows = blog
+        this.pagination.total = blog.total
+        setTimeout(() => { this.loadingBlog = false }, 25)
+      })
+      .catch(err => {
+        if (err.status === 401) this.appState.error401()
+        else console.log(err)
+      })
   },
   disableForm: {
     value: false
@@ -59,12 +59,12 @@ export const ViewModel = DefineMap.extend({
     this.newEditBlog.delta = JSON.stringify(this.quill.getContents())
     this.newEditBlog.post = $('.ql-editor').html()
     this.newEditBlog.save()
-		.then(() => {
-  this.processing = false
-  this.disableForm = false
-  this.quill.enable(true)
-  $('#edit-modal').modal('hide')
-})
+      .then(() => {
+        this.processing = false
+        this.disableForm = false
+        this.quill.enable(true)
+        $('#edit-modal').modal('hide')
+      })
   },
   deleteBlog (blog) {
     blog.destroy()
@@ -91,16 +91,16 @@ export default Component.extend({
   events: {
     inserted: function () {
       let toolbarOptions = [
-				[{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-				['bold', 'italic', 'underline', 'strike'],
-				['blockquote', 'image', 'code-block'],
-				[{ 'list': 'ordered'}, { 'list': 'bullet' }],
-				[{ 'script': 'sub'}, { 'script': 'super' }],
-				[{ 'indent': '-1'}, { 'indent': '+1' }],
-				[{ 'color': [] }, { 'background': [] }],
-				[{ 'align': [] }],
-				['link'],
-				['clean']
+        [{'header': [1, 2, 3, 4, 5, 6, false]}],
+        ['bold', 'italic', 'underline', 'strike'],
+        ['blockquote', 'image', 'code-block'],
+        [{'list': 'ordered'}, {'list': 'bullet'}],
+        [{'script': 'sub'}, {'script': 'super'}],
+        [{'indent': '-1'}, {'indent': '+1'}],
+        [{'color': []}, {'background': []}],
+        [{'align': []}],
+        ['link'],
+        ['clean']
       ]
 
       this.viewModel.quill = new Quill('#blog-post', {
@@ -112,15 +112,15 @@ export default Component.extend({
 
       let pagination = this.viewModel.pagination
       Blog.getList({$skip: pagination.skip, $limit: pagination.limit})
-				.then(blog => {
-  this.viewModel.rows = blog
-  this.viewModel.pagination.total = blog.total
-  setTimeout(() => this.viewModel.loadingBlog = false, 25)
-})
-				.catch(err => {
-  if (err.status === 401) this.viewModel.appState.error401()
-  else console.log(err)
-})
+        .then(blog => {
+          this.viewModel.rows = blog
+          this.viewModel.pagination.total = blog.total
+          setTimeout(() => { this.viewModel.loadingBlog = false }, 25)
+        })
+        .catch(err => {
+          if (err.status === 401) this.viewModel.appState.error401()
+          else console.log(err)
+        })
     }
   }
 })

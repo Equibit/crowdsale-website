@@ -47,22 +47,22 @@ export const ViewModel = DefineMap.extend({
 
     this.currentUser = feathersClient.get('user')
     this.currentUser.changeEmail(password, email, emailCode)
-			.then(() => {
-  if (this.verificationCodeVisible) {
-    this.clearForm()
-  } else {
-    this.disableForm = false
-    this.processing = false
-    this.verificationCodeVisible = true
-  }
-})
-			.catch(err => {
-  this.disableForm = false
-  this.processing = false
-  this.changeError = true
-  if (err.status === 401) this.appState.error401()
-  else console.log(err)
-})
+      .then(() => {
+        if (this.verificationCodeVisible) {
+          this.clearForm()
+        } else {
+          this.disableForm = false
+          this.processing = false
+          this.verificationCodeVisible = true
+        }
+      })
+      .catch(err => {
+        this.disableForm = false
+        this.processing = false
+        this.changeError = true
+        if (err.status === 401) this.appState.error401()
+        else console.log(err)
+      })
   },
   clearForm () {
     this.processing = false

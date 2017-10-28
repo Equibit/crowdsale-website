@@ -58,32 +58,32 @@ export const ViewModel = DefineMap.extend({
     this.disableForm = true
 
     feathersClient.authenticate({ strategy: 'local', email: email, password: password })
-			.then(({user, tmpPasswordUsed}) => {
-  this.processing = false
-  feathersClient.set('user', user)
-  this.appState.kycComplete = (user.kycComplete === 1 || user.kycComplete)
-  this.appState.kycApproved = (user.kycApproved === 1 || user.kycApproved)
-  this.appState.locked = (user.locked === 1 || user.locked)
+      .then(({user, tmpPasswordUsed}) => {
+        this.processing = false
+        feathersClient.set('user', user)
+        this.appState.kycComplete = (user.kycComplete === 1 || user.kycComplete)
+        this.appState.kycApproved = (user.kycApproved === 1 || user.kycApproved)
+        this.appState.locked = (user.locked === 1 || user.locked)
 
-  $('#login-modal').modal('hide')
+        $('#login-modal').modal('hide')
 
-  route.data.set({page: 'dash'}, true)
+        route.data.set({page: 'dash'}, true)
 
-  if (tmpPasswordUsed) {
-    this.appState.loggedIn = true
-    $('#set-password-modal').modal('show')
-  } else {
-    this.appState.loggedIn = true
-  }
-  this.clearForm()
-})
-			.catch(() => {
-  this.loginError = true
-  this.processing = false
-  this.disableForm = false
-  this.appState.loggedIn = false
-  this.appState.isAdmin = false
-})
+        if (tmpPasswordUsed) {
+          this.appState.loggedIn = true
+          $('#set-password-modal').modal('show')
+        } else {
+          this.appState.loggedIn = true
+        }
+        this.clearForm()
+      })
+      .catch(() => {
+        this.loginError = true
+        this.processing = false
+        this.disableForm = false
+        this.appState.loggedIn = false
+        this.appState.isAdmin = false
+      })
   },
   clearForm () {
     this.processing = false

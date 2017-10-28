@@ -42,40 +42,40 @@ const AppState = DefineMap.extend('AppState', {
   // todo: move this to the user model to have auth stuff in one place.
   authenticate () {
     return feathersClient.passport.getJWT()
-			.then(token => {
-  if (!token) {
-    return Promise.reject('no token')
-  } else {
-    return feathersClient.passport.payloadIsValid(token)
-						? feathersClient.authenticate({
-  strategy: 'jwt',
-  accessToken: token
-})
-						: Promise.reject('Token is expired')
-  }
-})
-			.then(data => {
-  return feathersClient.passport.verifyJWT(data.accessToken)
-})
-			.then(payload => {
-  if (!this.loggedIn) {
-    this.loggedIn = true
-  }
-  this.isAdmin = payload.admin
-  return feathersClient.service('users').get(payload.userId)
-})
-			.then(user => {
-  this.kycComplete = (user.kycComplete === 1 || user.kycComplete)
-  this.kycApproved = (user.kycApproved === 1 || user.kycApproved)
-  this.locked = (user.locked === 1 || user.locked)
+      .then(token => {
+        if (!token) {
+          return Promise.reject('no token')
+        } else {
+          return feathersClient.passport.payloadIsValid(token)
+            ? feathersClient.authenticate({
+              strategy: 'jwt',
+              accessToken: token
+            })
+            : Promise.reject('Token is expired')
+        }
+      })
+      .then(data => {
+        return feathersClient.passport.verifyJWT(data.accessToken)
+      })
+      .then(payload => {
+        if (!this.loggedIn) {
+          this.loggedIn = true
+        }
+        this.isAdmin = payload.admin
+        return feathersClient.service('users').get(payload.userId)
+      })
+      .then(user => {
+        this.kycComplete = (user.kycComplete === 1 || user.kycComplete)
+        this.kycApproved = (user.kycApproved === 1 || user.kycApproved)
+        this.locked = (user.locked === 1 || user.locked)
 
-  return feathersClient.set('user', user)
-})
-			.catch(err => {
-  this.logout()
-  if (err !== 'no token') this.sessionError = true
-  return Promise.reject()
-})
+        return feathersClient.set('user', user)
+      })
+      .catch(err => {
+        this.logout()
+        if (err !== 'no token') this.sessionError = true
+        return Promise.reject('Rejected Parent Promise')
+      })
   },
   logout () {
     this.loggedIn = false
