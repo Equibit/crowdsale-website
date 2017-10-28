@@ -16,7 +16,7 @@
   "scripts": {
     "build": "node build",
     "develop": "done-serve --static --develop --port 8080",
-    "lint": "standard --silent || exit 0",
+    "lint": "standard || exit 0",
     "lint:fix": "standard --fix || exit 0",
     "start": "done-serve --port 8080",
     "test": "npm run lint && npm run testee",
@@ -50,7 +50,7 @@
         "renderingBaseURL": "/dist"
       }
     },
-    "serviceBaseURL": "https://txuniverse.com/api"
+    "serviceBaseURL": "http://localhost:3030"
   },
   "standard": {
     "env": [

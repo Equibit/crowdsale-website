@@ -2,8 +2,8 @@
 import '~/utils/helpers'
 import '~/utils/analytics'
 import DefineMap from 'can-define/map/map'
-import route from 'can-route'
-import 'can-route-pushstate'
+import 'can-route'
+import route from 'can-route-pushstate'
 import 'jquery'
 import 'bootstrap'
 import AppState from './models/appState'
@@ -47,5 +47,6 @@ const AppViewModel = DefineMap.extend({
 
 route('{page}', { page: 'home' })
 route('{page}/{slug}', { slug: null })
+route.ready()
 
 export default AppViewModel
