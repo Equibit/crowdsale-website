@@ -11,6 +11,7 @@ const store = fixture.store([{
   locked: false,
   kycComplete: true,
   kycApproved: true,
+  kycId: 1,
   isAdmin: false
 }, {
   id: 2,
@@ -22,6 +23,7 @@ const store = fixture.store([{
   locked: false,
   kycComplete: true,
   kycApproved: true,
+  kycId: 2,
   isAdmin: true
 }, {
   id: 3,
@@ -33,6 +35,7 @@ const store = fixture.store([{
   locked: true,
   kycComplete: true,
   kycApproved: true,
+  kycId: 3,
   isAdmin: false
 }, {
   id: 4,
@@ -44,6 +47,7 @@ const store = fixture.store([{
   locked: false,
   kycComplete: true,
   kycApproved: true,
+  kycId: 4,
   isAdmin: false
 }, {
   id: 5,
@@ -55,6 +59,7 @@ const store = fixture.store([{
   locked: false,
   kycComplete: false,
   kycApproved: false,
+  kycId: null,
   isAdmin: false
 }, {
   id: 6,
@@ -66,6 +71,7 @@ const store = fixture.store([{
   locked: false,
   kycComplete: true,
   kycApproved: false,
+  kycId: 6,
   isAdmin: false
 }], User.connection.algebra)
 
