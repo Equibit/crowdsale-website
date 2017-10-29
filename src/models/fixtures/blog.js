@@ -2,7 +2,7 @@ import fixture from 'can-fixture'
 import Blog from '../blog'
 
 const store = fixture.store([{
-  id: 1,
+  id: 'some-blog-title',
   title: 'Some blog title',
   shortPost: 'This is the short info for the blog post',
   published: true,
@@ -12,7 +12,7 @@ const store = fixture.store([{
   author: 'Marc',
   linkTitle: 'some-blog-title'
 }, {
-  id: 2,
+  id: 'some-other-blog-title',
   title: 'Some other blog title',
   shortPost: 'This is the short info for the blog post',
   published: false,
@@ -23,6 +23,6 @@ const store = fixture.store([{
   linkTitle: 'some-other-blog-title'
 }], Blog.connection.algebra)
 
-fixture('/arena/{id}', store)
+fixture('/blog/{id}', store)
 
 export default store
