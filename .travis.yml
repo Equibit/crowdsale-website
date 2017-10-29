@@ -1,14 +1,16 @@
+sudo: required
+dist: trusty
 language: node_js
 node_js: 7.3
 addons:
   firefox: "52.3.0"
-  apt:
-    packages:
-      - dbus-x11
 cache: yarn
 before_install:
   - "export DISPLAY=:99.0"
   - "export DEBUG=testee:*"
   - "sh -e /etc/init.d/xvfb start"
+script:
+  - sudo sh -c "dbus-uuidgen > /etc/machine-id"
+  - npm run test
 notifications:
   slack: txuniverse:O1XW4GuJH91iHr71md4n7rsl
