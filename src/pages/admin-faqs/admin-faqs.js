@@ -21,6 +21,20 @@ export const ViewModel = DefineMap.extend({
     value () {
       return {skip: 0, limit: 10}
     }
+  },
+  loadPage () {
+    this.loadingBlog = true
+    let pagination = this.pagination
+    FAQs.getList({$skip: pagination.skip, $limit: pagination.limit})
+      .then(faqs => {
+        this.rows = faqs
+        this.pagination.total = faqs.total
+        setTimeout(() => { this.loadingFAQs = false }, 25)
+      })
+      .catch(err => {
+        if (err.status === 401) this.appState.error401()
+        else console.log(err)
+      })
   }
 })
 
