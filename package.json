@@ -103,6 +103,6 @@
     "standard": "^10.0.3",
     "steal-mocha": "^1.0.0",
     "steal-tools": "^1.2.0",
-    "testee": "^0.3.0"
+    "testee": "^0.7.0"
   }
 }
