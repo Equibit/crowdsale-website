@@ -3,8 +3,9 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './forgot-password.less'
 import view from './forgot-password.stache'
-import User from '~/models/user'
 import validate from '~/utils/validators'
+import Users from '~/models/users'
+import '~/models/fixtures/users'
 
 export const ViewModel = DefineMap.extend({
   isSent: 'boolean',
@@ -29,7 +30,7 @@ export const ViewModel = DefineMap.extend({
     this.processing = true
     this.disableForm = true
 
-    let newUser = new User()
+    let newUser = new Users()
     newUser.forgotPassword(email)
       .then(() => {
         this.clearForm()

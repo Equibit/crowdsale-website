@@ -6,7 +6,7 @@ import feathersServiceBehavior from 'can-connect-feathers/service/service'
 import behaviors from './behaviors'
 import algebra from './algebra'
 
-const User = DefineMap.extend('User', {
+const User = DefineMap.extend('Users', {
   id: 'any',
   email: 'string',
   password: 'string',

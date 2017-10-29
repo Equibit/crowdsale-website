@@ -5,11 +5,12 @@ import './change-email.less'
 import view from './change-email.stache'
 import feathersClient from '~/models/feathers-client'
 import validate from '~/utils/validators'
-import User from '~/models/user'
+import Users from '~/models/users'
+import '~/models/fixtures/users'
 
 export const ViewModel = DefineMap.extend({
   currentUser: {
-    Type: User
+    Type: Users
   },
   appState: {
     type: 'any'
@@ -45,7 +46,7 @@ export const ViewModel = DefineMap.extend({
     this.processing = true
     this.disableForm = true
 
-    this.currentUser = feathersClient.get('user')
+    this.currentUser = feathersClient.get('users')
     this.currentUser.changeEmail(password, email, emailCode)
       .then(() => {
         if (this.verificationCodeVisible) {

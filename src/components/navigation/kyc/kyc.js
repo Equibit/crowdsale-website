@@ -13,7 +13,8 @@ import moment from 'moment'
 import 'bootstrap-select'
 import feathersClient from '~/models/feathers-client'
 import validate from '~/utils/validators'
-import User from '~/models/user'
+import Users from '~/models/users'
+import '~/models/fixtures/users'
 
 export const ViewModel = DefineMap.extend({
   startYear: {
@@ -26,7 +27,7 @@ export const ViewModel = DefineMap.extend({
     value: 12
   },
   currentUser: {
-    Type: User
+    Type: Users
   },
   appState: {
     type: 'any'
@@ -250,20 +251,21 @@ export const ViewModel = DefineMap.extend({
       }
 
       this.currentUser = feathersClient.get('user')
-      this.currentUser.addKyc(sendObj)
-        .then(() => {
-          this.processing = false
-          this.disableForm = false
-          this.appState.kycComplete = true
-        })
-        .catch(err => {
-          this.disableForm = false
-          this.processing = false
-          $bs.trigger('reset-select-picker')
-
-          if (err.status === 401) this.appState.error401()
-          else console.log(err)
-        })
+      // todo: use KYC model
+      // this.currentUser.addKyc(sendObj)
+      //   .then(() => {
+      //     this.processing = false
+      //     this.disableForm = false
+      //     this.appState.kycComplete = true
+      //   })
+      //   .catch(err => {
+      //     this.disableForm = false
+      //     this.processing = false
+      //     $bs.trigger('reset-select-picker')
+      //
+      //     if (err.status === 401) this.appState.error401()
+      //     else console.log(err)
+      //   })
     } else {
       this.disableForm = false
       this.processing = false

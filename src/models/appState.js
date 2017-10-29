@@ -69,7 +69,7 @@ const AppState = DefineMap.extend('AppState', {
         this.kycApproved = (user.kycApproved === 1 || user.kycApproved)
         this.locked = (user.locked === 1 || user.locked)
 
-        return feathersClient.set('user', user)
+        return feathersClient.set('users', user)
       })
       .catch(err => {
         this.logout()

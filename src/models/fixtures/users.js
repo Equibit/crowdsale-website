@@ -69,6 +69,6 @@ const store = fixture.store([{
   isAdmin: false
 }], User.connection.algebra)
 
-fixture('/user/{id}', store)
+fixture('/users/{id}', store)
 
 export default store
