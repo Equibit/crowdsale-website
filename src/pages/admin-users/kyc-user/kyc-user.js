@@ -2,7 +2,7 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './kyc-user.less'
 import view from './kyc-user.stache'
-import User from '~/models/user'
+import Users from '~/models/users'
 
 export const ViewModel = DefineMap.extend({
   disableForm: {
@@ -13,7 +13,7 @@ export const ViewModel = DefineMap.extend({
     type: 'any'
   },
   editUser: {
-    Type: User
+    Type: Users
   },
   appState: {
     type: 'any'

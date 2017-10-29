@@ -3,13 +3,14 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './admin-users.less'
 import view from './admin-users.stache'
-import User from '~/models/user'
 import Pagination from '~/models/pagination'
+import Users from '~/models/users'
+import '~/models/fixtures/users'
 
 export const ViewModel = DefineMap.extend({
   search: 'string',
   editUser: {
-    Type: User
+    Type: Users
   },
   appState: {
     type: 'any'
@@ -40,7 +41,7 @@ export const ViewModel = DefineMap.extend({
     if (params.search) {
       query['$search'] = params.search
     }
-    User.getList(query)
+    Users.getList(query)
       .then(users => {
         this.rows = users
         this.pagination.total = users.total
@@ -58,17 +59,18 @@ export const ViewModel = DefineMap.extend({
   openUserKYC (editUser) {
     this.kycUserLoading = true
     this.editUser = editUser
-    editUser.getKyc()
-      .then(data => {
-        this.kycUser = data
-        this.kycUserLoading = false
-
-        $('#KYCUser').modal('show')
-      })
-      .catch(err => {
-        if (err.status === 401) this.appState.error401()
-        else console.log(err)
-      })
+    // todo: use a KYC model
+    // editUser.getKyc()
+    //   .then(data => {
+    //     this.kycUser = data
+    //     this.kycUserLoading = false
+    //
+    //     $('#KYCUser').modal('show')
+    //   })
+    //   .catch(err => {
+    //     if (err.status === 401) this.appState.error401()
+    //     else console.log(err)
+    //   })
   },
   deleteUser (delUser) {
     delUser.destroy()
@@ -87,7 +89,7 @@ export default Component.extend({
   events: {
     inserted: function () {
       let pagination = this.viewModel.pagination
-      User.getList({$skip: pagination.skip, $limit: pagination.limit})
+      Users.getList({$skip: pagination.skip, $limit: pagination.limit})
         .then(users => {
           this.viewModel.rows = users
           this.viewModel.pagination.total = users.total

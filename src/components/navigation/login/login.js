@@ -64,6 +64,7 @@ export const ViewModel = DefineMap.extend({
         this.appState.kycComplete = (user.kycComplete === 1 || user.kycComplete)
         this.appState.kycApproved = (user.kycApproved === 1 || user.kycApproved)
         this.appState.locked = (user.locked === 1 || user.locked)
+        this.appState.isAdmin = (user.isAdmin === 1 || user.isAdmin)
 
         $('#login-modal').modal('hide')
 

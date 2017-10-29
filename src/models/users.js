@@ -25,12 +25,6 @@ const User = DefineMap.extend('User', {
   },
   changeEmail (password, newEmail, emailCode) {
     return feathersClient.service('users').patch(this.id, {password, newEmail, emailCode})
-  },
-  addKyc (kycObj) {
-    return feathersClient.service('user-kyc').create(kycObj)
-  },
-  getKyc () {
-    return feathersClient.service('user-kyc').get(this.id)
   }
 })
 
