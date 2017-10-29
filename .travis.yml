@@ -8,6 +8,7 @@ addons:
 cache: yarn
 before_install:
   - "export DISPLAY=:99.0"
+  - "export DEBUG=testee:*"
   - "sh -e /etc/init.d/xvfb start"
 notifications:
   slack: txuniverse:O1XW4GuJH91iHr71md4n7rsl
