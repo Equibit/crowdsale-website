@@ -16,6 +16,7 @@
       {{^if appState.loggedIn}}
         <ul class="nav navbar-nav">
           <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}}"><a href="{{routeUrl page='home'}}" on:click="closeMenu()">Home{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='faqs'}}active{{/routeCurrent}}"><a href="{{routeUrl page='faqs'}}" on:click="closeMenu()">FAQs{{#routeCurrent page='faqs'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
           <li class="{{#routeCurrent page='blog'}}active{{/routeCurrent}}"><a href="{{routeUrl page='blog'}}" on:click="closeMenu()">Blog{{#routeCurrent page='blog'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">

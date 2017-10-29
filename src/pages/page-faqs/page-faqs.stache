@@ -1,0 +1,28 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="jumbotron">
+        <h1>FAQs</h1>
+        <p>Some questions and answers.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{{^if loadingFAQs}}
+  <div class="container">
+
+    {{#each rows}}
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <div class="h3">{{question}}</div>
+          <p class="small">{{answer}}</p>
+          <hr class="hr-primary">
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
+{{else}}
+  <div class="text-center top-bottom-padding"><i class="fa fa-spin fa-spinner fa-5x"></i></div>
+{{/if}}

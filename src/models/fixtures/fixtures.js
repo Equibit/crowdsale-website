@@ -1,3 +1,3 @@
-import 'tx/models/fixtures/users'
+import 'tx/models/fixtures/faqs'
 
 // Main file that loads all model fixtures
