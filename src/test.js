@@ -1,6 +1,8 @@
 import F from 'funcunit'
 import Mocha from 'steal-mocha'
-import { assert } from 'chai'
+// This is faster for browser:
+import chai from 'chai/chai'
+const assert = chai.assert
 
 //
 // import '~/models/test'
