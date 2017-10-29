@@ -231,24 +231,24 @@ export const ViewModel = DefineMap.extend({
     let validAge = validate.ageValid(this.identityAge, this.countryCode, this.stateProvinceCode, ageRestriction)
 
     if (validAge) {
-      let sendObj = {
-        firstName: this.firstName,
-        middleName: this.middleName,
-        lastName: this.lastName,
-        gender: this.gender,
-        dayOfBirth: this.dayOfBirth,
-        monthOfBirth: this.monthOfBirth,
-        yearOfBirth: this.yearOfBirth,
-        unitNumber: this.unitNumber,
-        buildingNumber: this.buildingNumber,
-        streetName: this.streetName,
-        streetType: this.streetType,
-        addressLine: this.addressLine,
-        city: this.city,
-        stateProvinceCode: this.stateProvinceCode,
-        postalCode: this.postalCode,
-        countryCode: this.countryCode
-      }
+      // let sendObj = {
+      //   firstName: this.firstName,
+      //   middleName: this.middleName,
+      //   lastName: this.lastName,
+      //   gender: this.gender,
+      //   dayOfBirth: this.dayOfBirth,
+      //   monthOfBirth: this.monthOfBirth,
+      //   yearOfBirth: this.yearOfBirth,
+      //   unitNumber: this.unitNumber,
+      //   buildingNumber: this.buildingNumber,
+      //   streetName: this.streetName,
+      //   streetType: this.streetType,
+      //   addressLine: this.addressLine,
+      //   city: this.city,
+      //   stateProvinceCode: this.stateProvinceCode,
+      //   postalCode: this.postalCode,
+      //   countryCode: this.countryCode
+      // }
 
       this.currentUser = feathersClient.get('user')
       // todo: use KYC model

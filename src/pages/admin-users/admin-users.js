@@ -25,7 +25,7 @@ export const ViewModel = DefineMap.extend({
     value: true
   },
   rows: {
-    Type: User.List
+    Type: Users.List
   },
   pagination: {
     Type: Pagination,
