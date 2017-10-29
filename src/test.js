@@ -1,5 +1,8 @@
-import F from 'funcunit'
-import Mocha from 'steal-mocha'
+// import F from 'funcunit'
+// import Mocha from 'steal-mocha'
+import 'steal-mocha'
+import AppVM from './app'
+// import stache from 'can-stache'
 // This is faster for browser:
 import chai from 'chai/chai'
 const assert = chai.assert
@@ -22,21 +25,28 @@ const assert = chai.assert
 // import 'tx/pages/page-faq/page-faq-test'
 // import 'tx/pages/admin-faq/admin-faq-test'
 
-F.attach(Mocha)
+// F.attach(Mocha)
 
-describe('tx functional smoke test', function () {
-  this.timeout(15000)
+// describe('tx functional smoke test', function () {
+//   this.timeout(15000)
+//
+//   beforeEach(function (done) {
+//     F.open('./development.html', done)
+//   })
+//
+//   it('Main page shows up', function (done) {
+//     F('a.navbar-brand').visible(function () {
+//       const title = F('title').text()
+//       console.log(`title = ${title}`)
+//       assert.equal(title, 'Tx Base | Built with Blocks')
+//       done()
+//     })
+//   })
+// })
 
-  beforeEach(function (done) {
-    F.open('./development.html', done)
-  })
-
-  it('Main page shows up', function (done) {
-    F('a.navbar-brand').visible(function () {
-      const title = F('title').text()
-      console.log(`title = ${title}`)
-      assert.equal(title, 'Tx Base | Built with Blocks')
-      done()
-    })
+describe('app vm', function () {
+  it('should set the correct title', function () {
+    const appVM = new AppVM()
+    assert.equal(appVM.title, 'Tx Base | Built with Blocks')
   })
 })
