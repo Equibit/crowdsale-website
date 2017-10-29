@@ -3,14 +3,17 @@ import DefineMap from 'can-define/map/map'
 import './kyc-user.less'
 import view from './kyc-user.stache'
 import Users from '~/models/users'
+import '~/models/fixtures/users'
+import KYC from '~/models/kyc'
+import '~/models/fixtures/kyc'
 
 export const ViewModel = DefineMap.extend({
   disableForm: {
     value: false
   },
   processing: 'boolean',
-  kycUser: {
-    type: 'any'
+  kyc: {
+    Type: KYC
   },
   editUser: {
     Type: Users

@@ -30,14 +30,14 @@ KYC.List = DefineList.extend({
   '#': KYC
 })
 
-User.connection = connect([
+KYC.connection = connect([
   feathersServiceBehavior,
   ...behaviors
 ], {
   Map: KYC,
   List: KYC.List,
   feathersService: feathersClient.service('kyc'),
-  name: 'users',
+  name: 'kyc',
   algebra
 })
 

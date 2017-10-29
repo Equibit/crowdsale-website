@@ -17,10 +17,10 @@ export const ViewModel = DefineMap.extend({
   appState: {
     type: 'any'
   },
-  kycUser: {
-    Type: DefineMap
+  kyc: {
+    Type: KYC
   },
-  kycUserLoading: {
+  kycLoading: {
     value: false
   },
   loadingUsers: {
@@ -59,20 +59,19 @@ export const ViewModel = DefineMap.extend({
     $('#EditUser').modal('show')
   },
   openUserKYC (editUser) {
-    this.kycUserLoading = true
+    this.kycLoading = true
     this.editUser = editUser
-    // todo: use a KYC model
-    // editUser.getKyc()
-    //   .then(data => {
-    //     this.kycUser = data
-    //     this.kycUserLoading = false
-    //
-    //     $('#KYCUser').modal('show')
-    //   })
-    //   .catch(err => {
-    //     if (err.status === 401) this.appState.error401()
-    //     else console.log(err)
-    //   })
+    KYC.get(editUser.kycId)
+      .then(data => {
+        this.kyc = data
+        this.kycLoading = false
+
+        $('#KYCUser').modal('show')
+      })
+      .catch(err => {
+        if (err.status === 401) this.appState.error401()
+        else console.log(err)
+      })
   },
   deleteUser (delUser) {
     delUser.destroy()
