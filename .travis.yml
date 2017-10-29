@@ -1,7 +1,7 @@
 language: node_js
 node_js: 7.3
 addons:
-  firefox: "latest-esr"
+  firefox: "52.3.0"
   apt:
     packages:
       - dbus-x11
