@@ -11,8 +11,20 @@
 </div>
 {{^if loadingFAQs}}
   <div class="container">
+    {{#if hasCategories}}
+      <div class="row">
+        <div class="col-sm-3 col-sm-offset-9">
+          <select id="kyc-select-gender" selectpicker="btn btn-default" value:bind="filterBy" on:change="runFilter()" class="bootstrap-select form-control show-tick">
+            <option value="">None</option>
+            {{#each categories}}
+              <option>{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+    {{/if}}
 
-    {{#each rows}}
+    {{#each filteredRows}}
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
           <div class="h3">{{question}}</div>

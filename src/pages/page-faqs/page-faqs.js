@@ -2,7 +2,6 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './page-faqs.less'
 import view from './page-faqs.stache'
-import Pagination from '~/models/pagination'
 import FAQs from '~/models/faqs'
 import '~/models/fixtures/faqs'
 
@@ -13,10 +12,30 @@ export const ViewModel = DefineMap.extend({
   rows: {
     Type: FAQs.List
   },
-  pagination: {
-    Type: Pagination,
+  filteredRows: {
+    Type: FAQs.List
+  },
+  filterBy: {
+    type: 'string'
+  },
+  hasCategories: {
     value () {
-      return {skip: 0, limit: 10}
+      return this.rows.filter(item => item.category !== '').length
+    }
+  },
+  categories: {
+    value () {
+      return this.rows.reduce((list, item) => {
+        if (item.category !== '' && !list.includes(item.category)) list.push(item.category)
+        return list
+      }, [])
+    }
+  },
+  runFilter () {
+    if (this.filterBy !== '') {
+      this.filteredRows = this.rows.filter(item => item.category === this.filterBy)
+    } else {
+      this.filteredRows = this.rows
     }
   }
 })
@@ -27,11 +46,10 @@ export default Component.extend({
   view,
   events: {
     inserted: function () {
-      let pagination = this.viewModel.pagination
-      FAQs.getList({$skip: pagination.skip, $limit: pagination.limit})
+      FAQs.getList()
         .then(faqs => {
           this.viewModel.rows = faqs
-          this.viewModel.pagination.total = faqs.total
+          this.viewModel.filteredRows = faqs
           setTimeout(() => { this.viewModel.loadingFAQs = false }, 25)
         })
         .catch(err => console.log(err))
