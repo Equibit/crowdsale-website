@@ -2,8 +2,9 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './page-blog.less'
 import view from './page-blog.stache'
-import Blog from '~/models/blog'
 import Pagination from '~/models/pagination'
+import Blog from '~/models/blog'
+import '~/models/fixtures/blog'
 
 export const ViewModel = DefineMap.extend({
   loadingBlog: {
