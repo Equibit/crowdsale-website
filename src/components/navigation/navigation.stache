@@ -14,14 +14,16 @@
 
     <div class="collapse navbar-collapse" id="navbar-collapse">
       {{^if appState.loggedIn}}
-        <ul class="nav navbar-nav">
-          <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}}"><a href="{{routeUrl page='home'}}" on:click="closeMenu()">Home{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
-          <li class="{{#routeCurrent page='blog'}}active{{/routeCurrent}}"><a href="{{routeUrl page='blog'}}" on:click="closeMenu()">Blog{{#routeCurrent page='blog'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="" data-toggle="modal" data-target="#sign-up-modal" on:click="closeMenu()">Sign Up</a></li>
-          <li><a href="" data-toggle="modal" data-target="#login-modal" on:click="closeMenu()">Login</a></li>
-        </ul>
+        {{^if isSsr}}
+          <ul class="nav navbar-nav">
+            <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}}"><a href="{{routeUrl page='home'}}" on:click="closeMenu()">Home{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+            <li class="{{#routeCurrent page='blog'}}active{{/routeCurrent}}"><a href="{{routeUrl page='blog'}}" on:click="closeMenu()">Blog{{#routeCurrent page='blog'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="" data-toggle="modal" data-target="#sign-up-modal" on:click="closeMenu()">Sign Up</a></li>
+            <li><a href="" data-toggle="modal" data-target="#login-modal" on:click="closeMenu()">Login</a></li>
+          </ul>
+        {{/if}}
       {{else}}
         <ul class="nav navbar-nav">
           <li class="{{#routeCurrent page='dash'}}active{{/routeCurrent}}"><a href="{{routeUrl page='dash'}}" on:click="closeMenu()">Dashboard{{#routeCurrent page='dash'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>

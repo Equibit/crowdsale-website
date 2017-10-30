@@ -10,6 +10,9 @@ export const ViewModel = DefineMap.extend({
   listenerAdded: {
     value: false
   },
+  isSsr: {
+    value: typeof process === 'object' && {}.toString.call(process) === '[object process]'
+  },
   appState: {
     type: 'any'
   },
