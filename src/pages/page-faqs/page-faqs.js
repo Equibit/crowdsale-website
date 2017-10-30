@@ -2,7 +2,7 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './page-faqs.less'
 import view from './page-faqs.stache'
-import FAQs from '~/models/faqs'
+import Faq from '~/models/faq'
 import '~/models/fixtures/faqs'
 
 export const ViewModel = DefineMap.extend({
@@ -10,10 +10,10 @@ export const ViewModel = DefineMap.extend({
     value: true
   },
   rows: {
-    Type: FAQs.List
+    Type: Faq.List
   },
   filteredRows: {
-    Type: FAQs.List
+    Type: Faq.List
   },
   filterBy: {
     type: 'string'
@@ -46,7 +46,7 @@ export default Component.extend({
   view,
   events: {
     inserted: function () {
-      FAQs.getList()
+      Faq.getList()
         .then(faqs => {
           this.viewModel.rows = faqs
           this.viewModel.filteredRows = faqs

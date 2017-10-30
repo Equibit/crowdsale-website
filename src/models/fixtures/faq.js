@@ -1,5 +1,5 @@
 import fixture from 'can-fixture'
-import FAQs from '../faqs'
+import Faq from '../faq'
 
 const store = fixture.store([{
   id: 1,
@@ -21,8 +21,8 @@ const store = fixture.store([{
   question: 'Some Question?',
   answer: 'Some Answer!',
   category: 'filler'
-}], FAQs.connection.algebra)
+}], Faq.connection.algebra)
 
-fixture('/faqs/{id}', store)
+fixture('/faq/{id}', store)
 
 export default store

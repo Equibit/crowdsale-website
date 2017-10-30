@@ -3,8 +3,8 @@ import DefineMap from 'can-define/map/map'
 import './admin-faqs.less'
 import view from './admin-faqs.stache'
 import Pagination from '~/models/pagination'
-import FAQs from '~/models/faqs'
-import '~/models/fixtures/faqs'
+import Faq from '~/models/faq'
+import '~/models/fixtures/faq'
 
 export const ViewModel = DefineMap.extend({
   appState: {
@@ -14,7 +14,7 @@ export const ViewModel = DefineMap.extend({
     value: true
   },
   rows: {
-    Type: FAQs.List
+    Type: Faq.List
   },
   pagination: {
     Type: Pagination,
@@ -25,7 +25,7 @@ export const ViewModel = DefineMap.extend({
   loadPage () {
     this.loadingBlog = true
     let pagination = this.pagination
-    FAQs.getList({$skip: pagination.skip, $limit: pagination.limit})
+    Faq.getList({$skip: pagination.skip, $limit: pagination.limit})
       .then(faqs => {
         this.rows = faqs
         this.pagination.total = faqs.total
@@ -45,7 +45,7 @@ export default Component.extend({
   events: {
     inserted: function () {
       let pagination = this.viewModel.pagination
-      FAQs.getList({$skip: pagination.skip, $limit: pagination.limit})
+      Faq.getList({$skip: pagination.skip, $limit: pagination.limit})
         .then(faqs => {
           this.viewModel.rows = faqs
           this.viewModel.pagination.total = faqs.total
