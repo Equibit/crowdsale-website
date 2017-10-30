@@ -8,7 +8,7 @@ import '~/models/fixtures/faq'
 export const ViewModel = DefineMap.extend({
   loadingFAQs: {
     value: true,
-    get(val, resolve) {
+    get (val, resolve) {
       if (!val) { return val }
       this.rowsPromise.then(resolve)
     }
@@ -25,10 +25,10 @@ export const ViewModel = DefineMap.extend({
     }
   },
   rows: {
-    Type: Faq.List,
+    Type: Faq.List
   },
   filteredRows: {
-    Type: Faq.List,
+    Type: Faq.List
   },
   filterBy: {
     type: 'string'
