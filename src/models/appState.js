@@ -62,7 +62,7 @@ const AppState = DefineMap.extend('AppState', {
           this.loggedIn = true
         }
         this.isAdmin = payload.admin
-        return feathersClient.service('users').get(payload.userId)
+        return feathersClient.service('user').get(payload.userId)
       })
       .then(user => {
         this.kycComplete = (user.kycComplete === 1 || user.kycComplete)

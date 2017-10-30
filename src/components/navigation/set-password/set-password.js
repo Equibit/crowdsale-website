@@ -6,6 +6,7 @@ import view from './set-password.stache'
 import feathersClient from '~/models/feathers-client'
 import validate from '~/utils/validators'
 import User from '~/models/user'
+import '~/models/fixtures/users'
 
 export const ViewModel = DefineMap.extend({
   currentUser: {
@@ -47,7 +48,7 @@ export const ViewModel = DefineMap.extend({
     this.processing = true
     this.disableForm = true
 
-    this.currentUser = feathersClient.get('user')
+    this.currentUser = feathersClient.get('users')
     this.currentUser.changePassword(password)
       .then(() => {
         this.processing = false
@@ -74,7 +75,7 @@ export default Component.extend({
   view,
   events: {
     inserted: function () {
-      let userVar = feathersClient.get('user')
+      let userVar = feathersClient.get('users')
       if (userVar.setPassword === 1 || userVar.setPassword) setTimeout(() => $('#set-password-modal').modal('show'), 300)
     }
   }

@@ -3,14 +3,15 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './admin-blog.less'
 import view from './admin-blog.stache'
-import Blog from '~/models/admin-blog'
 import Quill from 'quill'
 import Pagination from '~/models/pagination'
+import Blog from '~/models/blog'
+import '~/models/fixtures/blog'
 
 export const ViewModel = DefineMap.extend({
   newEditBlog: {
     Type: Blog,
-    value: new Blog({})
+    Value: Blog
   },
   quill: {
     type: 'any'
