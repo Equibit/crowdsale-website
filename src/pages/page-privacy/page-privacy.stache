@@ -2,11 +2,11 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      <div class="h1">Privacy Policy</div>
+      <div class="h1 no-margin-top">Privacy Policy</div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-12 col-lg-10 col-lg-offset-1">
+    <div class="col-md-12">
       <div class="well">
         <h3 class="no-margin-top">Introduction</h3>
         <p>This privacy policy ("Policy") describes the practices of Tx Universe ("Tx Universe") with respect to the gathering and use of personal information submitted to Tx Universe through the Tx Universe website (the "Site"). All capitalized terms not defined here, shall be given the same meaning as defined in the Tx Universe General Terms and Conditions ("Terms").  This Policy also does not apply to the practices of unrelated third-party service providers or companies accessed through links provided for your convenience from the Site.</p>
