@@ -23,8 +23,8 @@ Faq.connection = connect([
 ], {
   Map: Faq,
   List: Faq.List,
-  feathersService: feathersClient.service('faqs'),
-  name: 'faqs',
+  feathersService: feathersClient.service('faq'),
+  name: 'faq',
   algebra
 })
 

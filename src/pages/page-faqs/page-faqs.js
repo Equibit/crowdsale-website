@@ -7,13 +7,28 @@ import '~/models/fixtures/faq'
 
 export const ViewModel = DefineMap.extend({
   loadingFAQs: {
-    value: true
+    value: true,
+    get(val, resolve) {
+      if (!val) { return val }
+      this.rowsPromise.then(resolve)
+    }
+  },
+  rowsPromise: {
+    value () {
+      return Faq.getList()
+        .then(faqs => {
+          this.rows = faqs
+          this.filteredRows = faqs
+          setTimeout(() => { this.loadingFAQs = false }, 25)
+        })
+        .catch(err => console.log(err))
+    }
   },
   rows: {
-    Type: Faq.List
+    Type: Faq.List,
   },
   filteredRows: {
-    Type: Faq.List
+    Type: Faq.List,
   },
   filterBy: {
     type: 'string'
@@ -45,14 +60,14 @@ export default Component.extend({
   ViewModel,
   view,
   events: {
-    inserted: function () {
-      Faq.getList()
-        .then(faqs => {
-          this.viewModel.rows = faqs
-          this.viewModel.filteredRows = faqs
-          setTimeout(() => { this.viewModel.loadingFAQs = false }, 25)
-        })
-        .catch(err => console.log(err))
-    }
+    // inserted: function () {
+    //   Faq.getList()
+    //     .then(faqs => {
+    //       this.viewModel.rows = faqs
+    //       this.viewModel.filteredRows = faqs
+    //       setTimeout(() => { this.viewModel.loadingFAQs = false }, 25)
+    //     })
+    //     .catch(err => console.log(err))
+    // }
   }
 })
