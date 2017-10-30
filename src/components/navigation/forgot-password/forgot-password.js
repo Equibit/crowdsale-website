@@ -3,8 +3,9 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './forgot-password.less'
 import view from './forgot-password.stache'
-import User from '~/models/user'
 import validate from '~/utils/validators'
+import User from '~/models/user'
+import '~/models/fixtures/users'
 
 export const ViewModel = DefineMap.extend({
   isSent: 'boolean',

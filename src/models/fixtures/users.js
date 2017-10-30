@@ -1,0 +1,80 @@
+import fixture from 'can-fixture'
+import User from '../user'
+
+const store = fixture.store([{
+  id: 1,
+  email: 'godardm@gmail.com',
+  password: '1234',
+  setPassword: false,
+  accountCreated: '1509289536',
+  lastLogin: '1509289536',
+  locked: false,
+  kycComplete: true,
+  kycApproved: true,
+  kycId: 1,
+  isAdmin: false
+}, {
+  id: 2,
+  email: 'admin@admin.com',
+  password: '1234',
+  setPassword: false,
+  accountCreated: '1509289536',
+  lastLogin: '1509289536',
+  locked: false,
+  kycComplete: true,
+  kycApproved: true,
+  kycId: 2,
+  isAdmin: true
+}, {
+  id: 3,
+  email: 'locked@locked.com',
+  password: '1234',
+  setPassword: false,
+  accountCreated: '1509289536',
+  lastLogin: '1509289536',
+  locked: true,
+  kycComplete: true,
+  kycApproved: true,
+  kycId: 3,
+  isAdmin: false
+}, {
+  id: 4,
+  email: 'set@password.com',
+  password: '1234',
+  setPassword: true,
+  accountCreated: '1509289536',
+  lastLogin: '1509289536',
+  locked: false,
+  kycComplete: true,
+  kycApproved: true,
+  kycId: 4,
+  isAdmin: false
+}, {
+  id: 5,
+  email: 'kyc@notcomplete.com',
+  password: '1234',
+  setPassword: false,
+  accountCreated: '1509289536',
+  lastLogin: '1509289536',
+  locked: false,
+  kycComplete: false,
+  kycApproved: false,
+  kycId: null,
+  isAdmin: false
+}, {
+  id: 6,
+  email: 'kyc@notapproved.com',
+  password: '1234',
+  setPassword: true,
+  accountCreated: '1509289536',
+  lastLogin: '1509289536',
+  locked: false,
+  kycComplete: true,
+  kycApproved: false,
+  kycId: 6,
+  isAdmin: false
+}], User.connection.algebra)
+
+fixture('/users/{id}', store)
+
+export default store

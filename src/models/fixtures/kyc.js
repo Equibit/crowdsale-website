@@ -1,0 +1,118 @@
+import fixture from 'can-fixture'
+import Kyc from '../kyc'
+
+// todo: add ability for photo ID and so on
+
+const store = fixture.store([{
+  id: 1,
+  firstName: 'name',
+  middleName: '',
+  lastName: 'one',
+  gender: 'M',
+  dayOfBirth: '10',
+  monthOfBirth: '5',
+  yearOfBirth: '1980',
+  unitNumber: '1605',
+  buildingNumber: '55',
+  streetName: 'street name',
+  streetType: 'ST',
+  addressLine: '',
+  city: 'Toronto',
+  stateProvinceCode: 'Qc',
+  postalCode: 'L7M 1R1',
+  countryCode: 'CA'
+}, {
+  id: 2,
+  firstName: 'name',
+  middleName: '',
+  lastName: 'one',
+  gender: 'M',
+  dayOfBirth: '10',
+  monthOfBirth: '5',
+  yearOfBirth: '1980',
+  unitNumber: '1605',
+  buildingNumber: '55',
+  streetName: 'street name',
+  streetType: 'ST',
+  addressLine: '',
+  city: 'Toronto',
+  stateProvinceCode: 'Qc',
+  postalCode: 'L7M 1R1',
+  countryCode: 'CA'
+}, {
+  id: 3,
+  firstName: 'name',
+  middleName: '',
+  lastName: 'one',
+  gender: 'M',
+  dayOfBirth: '10',
+  monthOfBirth: '5',
+  yearOfBirth: '1980',
+  unitNumber: '1605',
+  buildingNumber: '55',
+  streetName: 'street name',
+  streetType: 'ST',
+  addressLine: '',
+  city: 'Toronto',
+  stateProvinceCode: 'Qc',
+  postalCode: 'L7M 1R1',
+  countryCode: 'CA'
+}, {
+  id: 4,
+  firstName: 'name',
+  middleName: '',
+  lastName: 'one',
+  gender: 'M',
+  dayOfBirth: '10',
+  monthOfBirth: '5',
+  yearOfBirth: '1980',
+  unitNumber: '1605',
+  buildingNumber: '55',
+  streetName: 'street name',
+  streetType: 'ST',
+  addressLine: '',
+  city: 'Toronto',
+  stateProvinceCode: 'Qc',
+  postalCode: 'L7M 1R1',
+  countryCode: 'CA'
+}, {
+  id: 5,
+  firstName: 'name',
+  middleName: '',
+  lastName: 'one',
+  gender: 'M',
+  dayOfBirth: '10',
+  monthOfBirth: '5',
+  yearOfBirth: '1980',
+  unitNumber: '1605',
+  buildingNumber: '55',
+  streetName: 'street name',
+  streetType: 'ST',
+  addressLine: '',
+  city: 'Toronto',
+  stateProvinceCode: 'Qc',
+  postalCode: 'L7M 1R1',
+  countryCode: 'CA'
+}, {
+  id: 6,
+  firstName: 'name',
+  middleName: '',
+  lastName: 'one',
+  gender: 'M',
+  dayOfBirth: '10',
+  monthOfBirth: '5',
+  yearOfBirth: '1980',
+  unitNumber: '1605',
+  buildingNumber: '55',
+  streetName: 'street name',
+  streetType: 'ST',
+  addressLine: '',
+  city: 'Toronto',
+  stateProvinceCode: 'Qc',
+  postalCode: 'L7M 1R1',
+  countryCode: 'CA'
+}], Kyc.connection.algebra)
+
+fixture('/kyc/{id}', store)
+
+export default store

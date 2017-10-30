@@ -11,9 +11,11 @@ import provStateData from './data/provinces-states'
 import ageRestriction from './data/age-restriction'
 import moment from 'moment'
 import 'bootstrap-select'
-import feathersClient from '~/models/feathers-client'
 import validate from '~/utils/validators'
 import User from '~/models/user'
+import '~/models/fixtures/users'
+import Kyc from '~/models/kyc'
+import '~/models/fixtures/kyc'
 
 export const ViewModel = DefineMap.extend({
   startYear: {
@@ -249,8 +251,8 @@ export const ViewModel = DefineMap.extend({
         countryCode: this.countryCode
       }
 
-      this.currentUser = feathersClient.get('user')
-      this.currentUser.addKyc(sendObj)
+      Kyc(sendObj)
+        .save()
         .then(() => {
           this.processing = false
           this.disableForm = false

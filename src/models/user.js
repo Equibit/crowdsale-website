@@ -6,7 +6,7 @@ import feathersServiceBehavior from 'can-connect-feathers/service/service'
 import behaviors from './behaviors'
 import algebra from './algebra'
 
-const User = DefineMap.extend('User', {
+const User = DefineMap.extend('Users', {
   id: 'any',
   email: 'string',
   password: 'string',
@@ -25,12 +25,6 @@ const User = DefineMap.extend('User', {
   },
   changeEmail (password, newEmail, emailCode) {
     return feathersClient.service('users').patch(this.id, {password, newEmail, emailCode})
-  },
-  addKyc (kycObj) {
-    return feathersClient.service('user-kyc').create(kycObj)
-  },
-  getKyc () {
-    return feathersClient.service('user-kyc').get(this.id)
   }
 })
 
@@ -44,8 +38,8 @@ User.connection = connect([
 ], {
   Map: User,
   List: User.List,
-  feathersService: feathersClient.service('users'),
-  name: 'users',
+  feathersService: feathersClient.service('user'),
+  name: 'user',
   algebra
 })
 
