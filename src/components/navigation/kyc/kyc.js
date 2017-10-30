@@ -12,9 +12,9 @@ import ageRestriction from './data/age-restriction'
 import moment from 'moment'
 import 'bootstrap-select'
 import validate from '~/utils/validators'
-import Users from '~/models/users'
+import User from '~/models/user'
 import '~/models/fixtures/users'
-import KYC from '~/models/kyc'
+import Kyc from '~/models/kyc'
 import '~/models/fixtures/kyc'
 
 export const ViewModel = DefineMap.extend({
@@ -28,7 +28,7 @@ export const ViewModel = DefineMap.extend({
     value: 12
   },
   currentUser: {
-    Type: Users
+    Type: User
   },
   appState: {
     type: 'any'
@@ -251,7 +251,7 @@ export const ViewModel = DefineMap.extend({
         countryCode: this.countryCode
       }
 
-      KYC(sendObj)
+      Kyc(sendObj)
         .save()
         .then(() => {
           this.processing = false

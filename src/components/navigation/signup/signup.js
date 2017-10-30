@@ -4,7 +4,7 @@ import DefineMap from 'can-define/map/map'
 import './signup.less'
 import view from './signup.stache'
 import validate from '~/utils/validators'
-import Users from '~/models/users'
+import User from '~/models/user'
 import '~/models/fixtures/users'
 
 export const ViewModel = DefineMap.extend({
@@ -45,7 +45,7 @@ export const ViewModel = DefineMap.extend({
     this.processing = true
     this.disableForm = true
 
-    let newUser = new Users()
+    let newUser = new User()
     newUser.signUp(email)
       .then(() => {
         this.isAccountCreated = true

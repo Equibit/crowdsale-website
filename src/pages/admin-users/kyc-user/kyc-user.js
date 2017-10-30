@@ -2,9 +2,9 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './kyc-user.less'
 import view from './kyc-user.stache'
-import Users from '~/models/users'
+import User from '~/models/user'
 import '~/models/fixtures/users'
-import KYC from '~/models/kyc'
+import Kyc from '~/models/kyc'
 import '~/models/fixtures/kyc'
 
 export const ViewModel = DefineMap.extend({
@@ -13,10 +13,10 @@ export const ViewModel = DefineMap.extend({
   },
   processing: 'boolean',
   kyc: {
-    Type: KYC
+    Type: Kyc
   },
   editUser: {
-    Type: Users
+    Type: User
   },
   appState: {
     type: 'any'

@@ -4,21 +4,21 @@ import DefineMap from 'can-define/map/map'
 import './admin-users.less'
 import view from './admin-users.stache'
 import Pagination from '~/models/pagination'
-import Users from '~/models/users'
+import User from '~/models/user'
 import '~/models/fixtures/users'
-import KYC from '~/models/kyc'
+import Kyc from '~/models/kyc'
 import '~/models/fixtures/kyc'
 
 export const ViewModel = DefineMap.extend({
   search: 'string',
   editUser: {
-    Type: Users
+    Type: User
   },
   appState: {
     type: 'any'
   },
   kyc: {
-    Type: KYC
+    Type: Kyc
   },
   kycLoading: {
     value: false
@@ -27,7 +27,7 @@ export const ViewModel = DefineMap.extend({
     value: true
   },
   rows: {
-    Type: Users.List
+    Type: User.List
   },
   pagination: {
     Type: Pagination,
@@ -43,7 +43,7 @@ export const ViewModel = DefineMap.extend({
     if (params.search) {
       query['$search'] = params.search
     }
-    Users.getList(query)
+    User.getList(query)
       .then(users => {
         this.rows = users
         this.pagination.total = users.total
@@ -61,7 +61,7 @@ export const ViewModel = DefineMap.extend({
   openUserKYC (editUser) {
     this.kycLoading = true
     this.editUser = editUser
-    KYC.get(editUser.kycId)
+    Kyc.get(editUser.kycId)
       .then(data => {
         this.kyc = data
         this.kycLoading = false
@@ -90,7 +90,7 @@ export default Component.extend({
   events: {
     inserted: function () {
       let pagination = this.viewModel.pagination
-      Users.getList({$skip: pagination.skip, $limit: pagination.limit})
+      User.getList({$skip: pagination.skip, $limit: pagination.limit})
         .then(users => {
           this.viewModel.rows = users
           this.viewModel.pagination.total = users.total

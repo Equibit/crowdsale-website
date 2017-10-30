@@ -6,7 +6,7 @@ import feathersServiceBehavior from 'can-connect-feathers/service/service'
 import behaviors from './behaviors'
 import algebra from './algebra'
 
-const Users = DefineMap.extend('Users', {
+const User = DefineMap.extend('Users', {
   id: 'any',
   email: 'string',
   password: 'string',
@@ -28,21 +28,21 @@ const Users = DefineMap.extend('Users', {
   }
 })
 
-Users.List = DefineList.extend({
-  '#': Users
+User.List = DefineList.extend({
+  '#': User
 })
 
-Users.connection = connect([
+User.connection = connect([
   feathersServiceBehavior,
   ...behaviors
 ], {
-  Map: Users,
-  List: Users.List,
-  feathersService: feathersClient.service('users'),
-  name: 'users',
+  Map: User,
+  List: User.List,
+  feathersService: feathersClient.service('user'),
+  name: 'user',
   algebra
 })
 
-Users.algebra = algebra
+User.algebra = algebra
 
-export default Users
+export default User

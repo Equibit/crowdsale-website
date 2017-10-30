@@ -3,7 +3,7 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './edit-user.less'
 import view from './edit-user.stache'
-import Users from '~/models/users'
+import User from '~/models/user'
 
 export const ViewModel = DefineMap.extend({
   disableForm: {
@@ -11,7 +11,7 @@ export const ViewModel = DefineMap.extend({
   },
   processing: 'boolean',
   editUser: {
-    Type: Users
+    Type: User
   },
   appState: {
     type: 'any'

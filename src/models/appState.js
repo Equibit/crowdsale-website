@@ -62,14 +62,14 @@ const AppState = DefineMap.extend('AppState', {
           this.loggedIn = true
         }
         this.isAdmin = payload.admin
-        return feathersClient.service('users').get(payload.userId)
+        return feathersClient.service('user').get(payload.userId)
       })
       .then(user => {
         this.kycComplete = (user.kycComplete === 1 || user.kycComplete)
         this.kycApproved = (user.kycApproved === 1 || user.kycApproved)
         this.locked = (user.locked === 1 || user.locked)
 
-        return feathersClient.set('users', user)
+        return feathersClient.set('user', user)
       })
       .catch(err => {
         this.logout()

@@ -1,5 +1,5 @@
 import fixture from 'can-fixture'
-import KYC from '../kyc'
+import Kyc from '../kyc'
 
 // todo: add ability for photo ID and so on
 
@@ -111,7 +111,7 @@ const store = fixture.store([{
   stateProvinceCode: 'Qc',
   postalCode: 'L7M 1R1',
   countryCode: 'CA'
-}], KYC.connection.algebra)
+}], Kyc.connection.algebra)
 
 fixture('/kyc/{id}', store)
 

@@ -6,7 +6,7 @@ import feathersServiceBehavior from 'can-connect-feathers/service/service'
 import behaviors from './behaviors'
 import algebra from './algebra'
 
-const KYC = DefineMap.extend('KYC', {
+const Kyc = DefineMap.extend('Kyc', {
   id: 'any',
   firstName: 'string',
   middleName: 'string',
@@ -26,21 +26,21 @@ const KYC = DefineMap.extend('KYC', {
   countryCode: 'string'
 })
 
-KYC.List = DefineList.extend({
-  '#': KYC
+Kyc.List = DefineList.extend('KycList', {
+  '#': Kyc
 })
 
-KYC.connection = connect([
+Kyc.connection = connect([
   feathersServiceBehavior,
   ...behaviors
 ], {
-  Map: KYC,
-  List: KYC.List,
+  Map: Kyc,
+  List: Kyc.List,
   feathersService: feathersClient.service('kyc'),
   name: 'kyc',
   algebra
 })
 
-KYC.algebra = algebra
+Kyc.algebra = algebra
 
-export default KYC
+export default Kyc

@@ -5,12 +5,12 @@ import './change-password.less'
 import view from './change-password.stache'
 import feathersClient from '~/models/feathers-client'
 import validate from '~/utils/validators'
-import Users from '~/models/users'
+import User from '~/models/user'
 import '~/models/fixtures/users'
 
 export const ViewModel = DefineMap.extend({
   currentUser: {
-    Type: Users
+    Type: User
   },
   appState: {
     type: 'any'

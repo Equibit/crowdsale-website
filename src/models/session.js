@@ -1,6 +1,6 @@
 import feathersClient from './feathers-client'
 import DefineMap from 'can-define/map/map'
-import User from './users'
+import User from './user'
 import behaviors from './behaviors'
 import feathersSessionBehavior from 'can-connect-feathers/session/session'
 import connect from 'can-connect'
