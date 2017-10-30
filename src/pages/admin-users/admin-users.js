@@ -3,8 +3,11 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './admin-users.less'
 import view from './admin-users.stache'
-import User from '~/models/user'
 import Pagination from '~/models/pagination'
+import User from '~/models/user'
+import '~/models/fixtures/users'
+import Kyc from '~/models/kyc'
+import '~/models/fixtures/kyc'
 
 export const ViewModel = DefineMap.extend({
   search: 'string',
@@ -14,10 +17,10 @@ export const ViewModel = DefineMap.extend({
   appState: {
     type: 'any'
   },
-  kycUser: {
-    Type: DefineMap
+  kyc: {
+    Type: Kyc
   },
-  kycUserLoading: {
+  kycLoading: {
     value: false
   },
   loadingUsers: {
@@ -56,12 +59,12 @@ export const ViewModel = DefineMap.extend({
     $('#EditUser').modal('show')
   },
   openUserKYC (editUser) {
-    this.kycUserLoading = true
+    this.kycLoading = true
     this.editUser = editUser
-    editUser.getKyc()
+    Kyc.get(editUser.kycId)
       .then(data => {
-        this.kycUser = data
-        this.kycUserLoading = false
+        this.kyc = data
+        this.kycLoading = false
 
         $('#KYCUser').modal('show')
       })

@@ -90,4 +90,4 @@
 </div>
 
 <edit-user editUser:bind="editUser" appState:from="appState"/>
-<kyc-user editUser:bind="editUser" kycUser:bind="kycUser"/>
+<kyc-user editUser:bind="editUser" kyc:bind="kycUser"/>

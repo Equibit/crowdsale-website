@@ -5,9 +5,9 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">KYC User Data</h4>
       </div>
-      {{#if kycUser}}
+      {{#if kyc}}
         <div class="modal-body">
-{{kycUser.firstName}}
+{{kyc.firstName}}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" on:click="approveUser()" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Manually Approve{{/if}}</button>

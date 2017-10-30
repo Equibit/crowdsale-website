@@ -3,8 +3,9 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './signup.less'
 import view from './signup.stache'
-import User from '~/models/user'
 import validate from '~/utils/validators'
+import User from '~/models/user'
+import '~/models/fixtures/users'
 
 export const ViewModel = DefineMap.extend({
   isAccountCreated: 'boolean',
@@ -64,7 +65,6 @@ export const ViewModel = DefineMap.extend({
     this.email = null
     this.agreeTerms = null
 
-    console.log('here')
     $('#sign-up-modal').modal('hide')
   }
 })
