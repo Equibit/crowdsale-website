@@ -15,10 +15,12 @@
       <div class="row">
         <div class="col-sm-12 text-center">{{{copyMessage}}}</div>
       </div>
-      <div class="row">
-        <div class="col-xs-6 text-right"><a href="{{routeUrl page='terms'}}">Terms and Conditions</a></div>
-        <div class="col-xs-6 text-left"><a href="{{routeUrl page='privacy'}}">Privacy Policy</a></div>
-      </div>
+      {{^if isSsr}}
+        <div class="row">
+          <div class="col-xs-6 text-right"><a href="{{routeUrl page='terms'}}">Terms and Conditions</a></div>
+          <div class="col-xs-6 text-left"><a href="{{routeUrl page='privacy'}}">Privacy Policy</a></div>
+        </div>
+      {{/if}}
     </footer>
   </view>
   <script type="view-model">
@@ -27,6 +29,9 @@
     const PageFooterViewModel = DefineMap.extend('PageFooterViewModel', {
       copyMessage: {
         value: '&copy; Copyright 2017 <strong>Tx Universe</strong> All Rights Reserved'
+      },
+      isSsr: {
+        value: typeof process === "object" && {}.toString.call(process) === "[object process]"
       }
     })
 
