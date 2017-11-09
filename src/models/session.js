@@ -18,16 +18,16 @@ const Session = DefineMap.extend('Session', {
   },
 
   get isAdmin () {
-    return user && (user.isAdmin === 1 || user.isAdmin) || false
+    return (this.user && (this.user.isAdmin === 1 || this.user.isAdmin)) || false
   },
   get kycComplete () {
-    return user && (user.kycComplete === 1 || user.kycComplete) || false
+    return (this.user && (this.user.kycComplete === 1 || this.user.kycComplete)) || false
   },
   get kycApproved () {
-    return user && (user.kycApproved === 1 || user.kycApproved) || false
+    return (this.user && (this.user.kycApproved === 1 || this.user.kycApproved)) || false
   },
   get locked () {
-    return user && (user.locked === 1 || user.locked) || false
+    return (this.user && (this.user.locked === 1 || this.user.locked)) || false
   },
 
   sessionError: {
