@@ -13,7 +13,6 @@ import moment from 'moment'
 import 'bootstrap-select'
 import validate from '~/utils/validators'
 import User from '~/models/user'
-import '~/models/fixtures/users'
 import Kyc from '~/models/kyc'
 import '~/models/fixtures/kyc'
 
