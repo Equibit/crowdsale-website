@@ -1,7 +1,9 @@
 import DefineMap from 'can-define/map/map'
-import feathersClient from '~/models/feathers-client'
+import feathersClient from './feathers-client'
+import User from './user'
 
-const AppState = DefineMap.extend('AppState', {
+const Session = DefineMap.extend('Session', {
+  user: User,
   loggedIn: {
     set (val) {
       if (!val) {
@@ -14,18 +16,20 @@ const AppState = DefineMap.extend('AppState', {
       return val
     }
   },
-  isAdmin: {
-    value: false
+
+  get isAdmin () {
+    return user && (user.isAdmin === 1 || user.isAdmin) || false
   },
-  kycComplete: {
-    value: false
+  get kycComplete () {
+    return user && (user.kycComplete === 1 || user.kycComplete) || false
   },
-  kycApproved: {
-    value: false
+  get kycApproved () {
+    return user && (user.kycApproved === 1 || user.kycApproved) || false
   },
-  locked: {
-    value: false
+  get locked () {
+    return user && (user.locked === 1 || user.locked) || false
   },
+
   sessionError: {
     value: false
   },
@@ -62,17 +66,10 @@ const AppState = DefineMap.extend('AppState', {
         return feathersClient.service('user').get(payload.userId)
       })
       .then(user => {
-        this.kycComplete = (user.kycComplete === 1 || user.kycComplete)
-        this.kycApproved = (user.kycApproved === 1 || user.kycApproved)
-        this.locked = (user.locked === 1 || user.locked)
-        this.isAdmin = (user.isAdmin === 1 || user.isAdmin)
-
-        feathersClient.set('user', user)
-
+        this.user = user
         if (!this.loggedIn) {
           this.loggedIn = true
         }
-
         return user
       })
       .catch(err => {
@@ -83,7 +80,6 @@ const AppState = DefineMap.extend('AppState', {
   },
   logout () {
     this.loggedIn = false
-    this.isAdmin = false
     feathersClient.logout()
   },
   error401 () {
@@ -92,6 +88,5 @@ const AppState = DefineMap.extend('AppState', {
   }
 })
 
-export default function (opt) {
-  return new AppState(opt)
-}
+// We need to export Session model to be used in tests
+export default Session

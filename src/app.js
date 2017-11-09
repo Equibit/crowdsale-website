@@ -6,7 +6,7 @@ import route from 'can-route'
 import 'can-route-pushstate'
 import 'jquery'
 import 'bootstrap'
-import AppState from './models/appState'
+import Session from './models/session'
 
 const AppViewModel = DefineMap.extend({
   '*': {
@@ -21,8 +21,12 @@ const AppViewModel = DefineMap.extend({
     serialize: true
   },
   appState: {
-    Type: AppState,
-    Value: AppState,
+    Type: Session,
+    value: function () {
+      const current = new Session()
+      Session.current = current
+      return current
+    },
     set (val) {
       if (this.appState) {
         this.appState.clearAuthInterval()
