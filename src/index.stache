@@ -54,6 +54,11 @@
       <page-home />
     </can-import>
   {{/case}}
+  {{#case 'faqs'}}
+    <can-import from="~/pages/page-faqs/" can-tag="tag-loading">
+      <page-faqs />
+    </can-import>
+  {{/case}}
   {{#case 'blog'}}
     {{#if slug}}
       <can-import from="~/pages/page-blog/blog-post/" can-tag="tag-loading">

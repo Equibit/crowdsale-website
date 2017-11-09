@@ -22,8 +22,9 @@ const assert = chai.assert
 // import 'tx/pages/page-dash/page-dash-test'
 // import 'tx/pages/admin-tickets/admin-tickets-test'
 // import 'tx/pages/admin-tickets/ticket-details/ticket-details-test'
-// import 'tx/pages/page-faq/page-faq-test'
-// import 'tx/pages/admin-faq/admin-faq-test'
+
+// import 'tx/pages/page-faqs/page-faqs-test'
+// import 'tx/pages/admin-faqs/admin-faqs-test'
 
 // F.attach(Mocha)
 
