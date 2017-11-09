@@ -40,6 +40,7 @@ const AppState = DefineMap.extend('AppState', {
     clearInterval(this.authInterval)
   },
   // todo: move this to the user model to have auth stuff in one place.
+
   authenticate () {
     return feathersClient.passport.getJWT()
       .then(token => {
@@ -58,18 +59,21 @@ const AppState = DefineMap.extend('AppState', {
         return feathersClient.passport.verifyJWT(data.accessToken)
       })
       .then(payload => {
-        if (!this.loggedIn) {
-          this.loggedIn = true
-        }
-        this.isAdmin = payload.admin
         return feathersClient.service('user').get(payload.userId)
       })
       .then(user => {
         this.kycComplete = (user.kycComplete === 1 || user.kycComplete)
         this.kycApproved = (user.kycApproved === 1 || user.kycApproved)
         this.locked = (user.locked === 1 || user.locked)
+        this.isAdmin = (user.isAdmin === 1 || user.isAdmin)
 
-        return feathersClient.set('user', user)
+        feathersClient.set('user', user)
+
+        if (!this.loggedIn) {
+          this.loggedIn = true
+        }
+
+        return user
       })
       .catch(err => {
         this.logout()
@@ -88,4 +92,6 @@ const AppState = DefineMap.extend('AppState', {
   }
 })
 
-export default AppState
+export default function (opt) {
+  return new AppState(opt)
+}
