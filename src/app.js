@@ -20,7 +20,7 @@ const AppViewModel = DefineMap.extend({
     type: 'string',
     serialize: true
   },
-  appState: {
+  session: {
     Type: Session,
     value: function () {
       const current = new Session()
@@ -28,8 +28,8 @@ const AppViewModel = DefineMap.extend({
       return current
     },
     set (val) {
-      if (this.appState) {
-        this.appState.clearAuthInterval()
+      if (this.session) {
+        this.session.clearAuthInterval()
       }
       val.authenticate()
         .catch(() => {})

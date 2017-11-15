@@ -32,18 +32,18 @@
 <can-import from="~/components/session-error.component!" />
 <can-import from="~/components/navigation/" />
 
-<navigation-bar appState:from="appState" />
+<navigation-bar session:from="session" />
 
-{{#if appState.sessionError}}
+{{#if session.sessionError}}
   <can-import from="~/components/session-error.component!" can-tag="tag-loading">
     <session-error />
   </can-import>
 {{/if}}
 
-{{#if appState.loggedIn}}
-  {{^if appState.kycApproved}}
+{{#if session.loggedIn}}
+  {{^if session.kycApproved}}
     <can-import from="~/components/kyc-warnings.component!" can-tag="tag-loading">
-      <kyc-warnings kycComplete:from="appState.kycComplete" />
+      <kyc-warnings kycComplete:from="session.kycComplete" />
     </can-import>
   {{/if}}
 {{/if}}
@@ -84,9 +84,9 @@
 
 
   {{#case 'dash'}}
-    {{#if appState.loggedIn}}
+    {{#if session.loggedIn}}
       <can-import from="~/pages/page-dash/" can-tag="tag-loading">
-        <page-dash appState:from="appState" />
+        <page-dash session:from="session" />
       </can-import>
     {{else}}
       <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
@@ -98,9 +98,9 @@
 
 
   {{#case 'admin-users'}}
-    {{#if appState.isAdmin}}
+    {{#if session.isAdmin}}
       <can-import from="~/pages/admin-users/" can-tag="tag-loading">
-        <admin-users appState:from="appState" />
+        <admin-users session:from="session" />
       </can-import>
     {{else}}
       <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
@@ -109,9 +109,9 @@
     {{/if}}
   {{/case}}
   {{#case 'admin-blog'}}
-    {{#if appState.isAdmin}}
+    {{#if session.isAdmin}}
       <can-import from="~/pages/admin-blog/" can-tag="tag-loading">
-        <admin-blog appState:from="appState" />
+        <admin-blog session:from="session" />
       </can-import>
     {{else}}
       <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
@@ -120,14 +120,14 @@
     {{/if}}
   {{/case}}
   {{#case 'admin-tickets'}}
-    {{#if appState.isAdmin}}
+    {{#if session.isAdmin}}
       {{#if slug}}
         <can-import from="~/pages/admin-tickets/ticket-details/" can-tag="tag-loading">
-          <ticket-details slug:from="slug" appState:from="appState" />
+          <ticket-details slug:from="slug" session:from="session" />
         </can-import>
       {{else}}
         <can-import from="~/pages/admin-tickets/" can-tag="tag-loading">
-          <admin-tickets appState:from="appState" />
+          <admin-tickets session:from="session" />
         </can-import>
       {{/if}}
     {{else}}

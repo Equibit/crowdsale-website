@@ -3,16 +3,18 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './set-password.less'
 import view from './set-password.stache'
-import feathersClient from '~/models/feathers-client'
 import validate from '~/utils/validators'
-import User from '~/models/user'
 
 export const ViewModel = DefineMap.extend({
-  currentUser: {
-    Type: User
-  },
-  appState: {
-    type: 'any'
+  session: {
+    type: 'any',
+    set (val) {
+      const user = val && val.user
+      if (user.setPassword) {
+        setTimeout(() => $('#set-password-modal').modal('show'), 300)
+      }
+      return val
+    }
   },
   changeError: 'boolean',
   processing: 'boolean',
@@ -47,8 +49,7 @@ export const ViewModel = DefineMap.extend({
     this.processing = true
     this.disableForm = true
 
-    this.currentUser = feathersClient.get('users')
-    this.currentUser.changePassword(password)
+    this.session.user.changePassword(password)
       .then(() => {
         this.processing = false
         this.changeError = false
@@ -62,7 +63,7 @@ export const ViewModel = DefineMap.extend({
         this.processing = false
         this.changeError = true
 
-        if (err.status === 401) this.appState.error401()
+        if (err.status === 401) this.session.error401()
         else console.log(err)
       })
   }
@@ -71,11 +72,5 @@ export const ViewModel = DefineMap.extend({
 export default Component.extend({
   tag: 'set-password-modal',
   ViewModel,
-  view,
-  events: {
-    inserted: function () {
-      let userVar = feathersClient.get('users')
-      if (userVar.setPassword === 1 || userVar.setPassword) setTimeout(() => $('#set-password-modal').modal('show'), 300)
-    }
-  }
+  view
 })

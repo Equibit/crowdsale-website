@@ -7,7 +7,7 @@ import Ticket from '~/models/admin-ticket'
 import Quill from 'quill'
 
 export const ViewModel = DefineMap.extend({
-  appState: {
+  session: {
     type: 'any'
   },
   quill: {
@@ -79,7 +79,7 @@ export default Component.extend({
           }
         })
         .catch(err => {
-          if (err.status === 401) this.viewModel.appState.error401()
+          if (err.status === 401) this.viewModel.session.error401()
           else console.log(err)
         })
     }

@@ -11,7 +11,7 @@ export const ViewModel = DefineMap.extend({
   currentUser: {
     Type: User
   },
-  appState: {
+  session: {
     type: 'any'
   },
   changeError: 'boolean',
@@ -60,7 +60,7 @@ export const ViewModel = DefineMap.extend({
         this.disableForm = false
         this.processing = false
         this.changeError = true
-        if (err.status === 401) this.appState.error401()
+        if (err.status === 401) this.session.error401()
         else console.log(err)
       })
   },

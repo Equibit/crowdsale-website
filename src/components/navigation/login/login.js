@@ -13,7 +13,7 @@ export const ViewModel = DefineMap.extend({
   loginError: 'boolean',
   emailError: 'string',
   passwordError: 'string',
-  appState: {
+  session: {
     type: 'any'
   },
   timeFromNow: {
@@ -70,10 +70,10 @@ export const ViewModel = DefineMap.extend({
         route.data.set({page: 'dash'}, true)
 
         if (tmpPasswordUsed) {
-          this.appState.loggedIn = true
+          this.session.loggedIn = true
           $('#set-password-modal').modal('show')
         } else {
-          this.appState.loggedIn = true
+          this.session.loggedIn = true
         }
         this.clearForm()
       })
@@ -81,7 +81,7 @@ export const ViewModel = DefineMap.extend({
         this.loginError = true
         this.processing = false
         this.disableForm = false
-        this.appState.loggedIn = false
+        this.session.loggedIn = false
       })
   },
   clearForm () {

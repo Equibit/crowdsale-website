@@ -9,11 +9,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" {{^if appState.loggedIn}}href="{{routeUrl page='home'}}"{{else}}href="{{routeUrl page='dash'}}"{{/if}} on:click="closeMenu()"><img src="/assets/imgs/tx-logo.png" /><span>Base Website</span></a>
+      <a class="navbar-brand" {{^if session.loggedIn}}href="{{routeUrl page='home'}}"{{else}}href="{{routeUrl page='dash'}}"{{/if}} on:click="closeMenu()"><img src="/assets/imgs/tx-logo.png" /><span>Base Website</span></a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbar-collapse">
-      {{^if appState.loggedIn}}
+      {{^if session.loggedIn}}
         {{^if isSsr}}
           <ul class="nav navbar-nav">
             <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}}"><a href="{{routeUrl page='home'}}" on:click="closeMenu()">Home{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
@@ -41,7 +41,7 @@
               <li><a href="" on:click="logout()">Logout</a></li>
             </ul>
           </li>
-          {{#if appState.isAdmin}}
+          {{#if session.isAdmin}}
           <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -57,7 +57,7 @@
   </div>
 </nav>
 
-{{^if appState.loggedIn}}
+{{^if session.loggedIn}}
 
   <can-import from="~/components/navigation/signup/" />
   <can-import from="~/components/navigation/forgot-password/" />
@@ -70,12 +70,12 @@
   <can-import from="~/components/navigation/set-password/" />
   <can-import from="~/components/navigation/change-password/" />
   <can-import from="~/components/navigation/change-email/" />
-  <kyc-modal appState:from="appState" />
-  <set-password-modal appState:from="appState" />
-  <change-password-modal appState:from="appState" />
-  <change-email-modal appState:from="appState" />
+  <kyc-modal session:from="session" />
+  <set-password-modal session:from="session" />
+  <change-password-modal session:from="session" />
+  <change-email-modal session:from="session" />
 
 {{/if}}
 
 <can-import from="~/components/navigation/login/" />
-<login-modal appState:from="appState" />
+<login-modal session:from="session" />

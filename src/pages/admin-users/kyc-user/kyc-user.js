@@ -17,7 +17,7 @@ export const ViewModel = DefineMap.extend({
   editUser: {
     Type: User
   },
-  appState: {
+  session: {
     type: 'any'
   }
 })
