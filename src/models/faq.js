@@ -7,7 +7,7 @@ import behaviors from './behaviors'
 import algebra from './algebra'
 
 const Faq = DefineMap.extend('Faq', {
-  id: 'any',
+  _id: 'any',
   question: 'string',
   answer: 'string',
   category: 'string'

@@ -7,9 +7,13 @@ import behaviors from './behaviors'
 import algebra from './algebra'
 
 const User = DefineMap.extend('Users', {
-  id: 'any',
+  _id: 'any',
   email: String,
-  password: String,
+  // We never send password when saving User.
+  password: {
+    String,
+    serialize: false
+  },
   setPassword: Boolean,
   accountCreated: Number,
   lastLogin: Number,
@@ -22,10 +26,10 @@ const User = DefineMap.extend('Users', {
     return feathersClient.service('forgot-password').create({email})
   },
   changePassword (newPassword, oldPassword) {
-    return feathersClient.service('users').patch(this.id, {password: newPassword, oldPassword})
+    return feathersClient.service('users').patch(this._id, {password: newPassword, oldPassword})
   },
   changeEmail (password, newEmail, emailCode) {
-    return feathersClient.service('users').patch(this.id, {password, newEmail, emailCode})
+    return feathersClient.service('users').patch(this._id, {password, newEmail, emailCode})
   }
 })
 

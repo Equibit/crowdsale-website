@@ -7,7 +7,7 @@ import behaviors from './behaviors'
 import algebra from './algebra'
 
 const Kyc = DefineMap.extend('Kyc', {
-  id: 'any',
+  _id: 'any',
   firstName: 'string',
   middleName: 'string',
   lastName: 'string',
