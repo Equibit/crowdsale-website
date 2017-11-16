@@ -8,12 +8,13 @@ import algebra from './algebra'
 
 const User = DefineMap.extend('Users', {
   id: 'any',
-  email: 'string',
-  password: 'string',
-  setPassword: 'boolean',
-  accountCreated: 'number',
-  lastLogin: 'number',
-  locked: 'boolean',
+  email: String,
+  password: String,
+  setPassword: Boolean,
+  accountCreated: Number,
+  lastLogin: Number,
+  locked: Boolean,
+  isAdmin: Boolean,
   signUp (email) {
     return feathersClient.service('users').create({email})
   },

@@ -7,12 +7,13 @@ import feathersClient from '~/models/feathers-client'
 import validate from '~/utils/validators'
 import route from 'can-route'
 import 'can-route-pushstate'
+import Session from '~/models/session'
 
 export const ViewModel = DefineMap.extend({
   loginError: 'boolean',
   emailError: 'string',
   passwordError: 'string',
-  appState: {
+  session: {
     type: 'any'
   },
   timeFromNow: {
@@ -57,24 +58,22 @@ export const ViewModel = DefineMap.extend({
     this.processing = true
     this.disableForm = true
 
+    const session = Session.current
+
     feathersClient.authenticate({ strategy: 'local', email: email, password: password })
       .then(({user, tmpPasswordUsed}) => {
         this.processing = false
-        feathersClient.set('user', user)
-        this.appState.kycComplete = (user.kycComplete === 1 || user.kycComplete)
-        this.appState.kycApproved = (user.kycApproved === 1 || user.kycApproved)
-        this.appState.locked = (user.locked === 1 || user.locked)
-        this.appState.isAdmin = (user.isAdmin === 1 || user.isAdmin)
+        session.user = user
 
         $('#login-modal').modal('hide')
 
         route.data.set({page: 'dash'}, true)
 
         if (tmpPasswordUsed) {
-          this.appState.loggedIn = true
+          this.session.loggedIn = true
           $('#set-password-modal').modal('show')
         } else {
-          this.appState.loggedIn = true
+          this.session.loggedIn = true
         }
         this.clearForm()
       })
@@ -82,8 +81,7 @@ export const ViewModel = DefineMap.extend({
         this.loginError = true
         this.processing = false
         this.disableForm = false
-        this.appState.loggedIn = false
-        this.appState.isAdmin = false
+        this.session.loggedIn = false
       })
   },
   clearForm () {

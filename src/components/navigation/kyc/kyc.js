@@ -13,7 +13,6 @@ import moment from 'moment'
 import 'bootstrap-select'
 import validate from '~/utils/validators'
 import User from '~/models/user'
-import '~/models/fixtures/users'
 import Kyc from '~/models/kyc'
 import '~/models/fixtures/kyc'
 
@@ -30,7 +29,7 @@ export const ViewModel = DefineMap.extend({
   currentUser: {
     Type: User
   },
-  appState: {
+  session: {
     type: 'any'
   },
   countryList: {
@@ -256,14 +255,14 @@ export const ViewModel = DefineMap.extend({
         .then(() => {
           this.processing = false
           this.disableForm = false
-          this.appState.kycComplete = true
+          this.session.kycComplete = true
         })
         .catch(err => {
           this.disableForm = false
           this.processing = false
           $bs.trigger('reset-select-picker')
 
-          if (err.status === 401) this.appState.error401()
+          if (err.status === 401) this.session.error401()
           else console.log(err)
         })
     } else {

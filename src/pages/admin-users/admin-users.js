@@ -5,7 +5,6 @@ import './admin-users.less'
 import view from './admin-users.stache'
 import Pagination from '~/models/pagination'
 import User from '~/models/user'
-import '~/models/fixtures/users'
 import Kyc from '~/models/kyc'
 import '~/models/fixtures/kyc'
 
@@ -14,7 +13,7 @@ export const ViewModel = DefineMap.extend({
   editUser: {
     Type: User
   },
-  appState: {
+  session: {
     type: 'any'
   },
   kyc: {
@@ -50,7 +49,7 @@ export const ViewModel = DefineMap.extend({
         setTimeout(() => { this.loadingUsers = false }, 25)
       })
       .catch(err => {
-        if (err.status === 401) this.appState.error401()
+        if (err.status === 401) this.session.error401()
         else console.log(err)
       })
   },
@@ -69,7 +68,7 @@ export const ViewModel = DefineMap.extend({
         $('#KYCUser').modal('show')
       })
       .catch(err => {
-        if (err.status === 401) this.appState.error401()
+        if (err.status === 401) this.session.error401()
         else console.log(err)
       })
   },
@@ -97,7 +96,7 @@ export default Component.extend({
           setTimeout(() => { this.viewModel.loadingUsers = false }, 25)
         })
         .catch(err => {
-          if (err.status === 401) this.viewModel.appState.error401()
+          if (err.status === 401) this.viewModel.session.error401()
           else console.log(err)
         })
     }

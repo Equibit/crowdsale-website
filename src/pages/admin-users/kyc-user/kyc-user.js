@@ -3,7 +3,6 @@ import DefineMap from 'can-define/map/map'
 import './kyc-user.less'
 import view from './kyc-user.stache'
 import User from '~/models/user'
-import '~/models/fixtures/users'
 import Kyc from '~/models/kyc'
 import '~/models/fixtures/kyc'
 
@@ -18,7 +17,7 @@ export const ViewModel = DefineMap.extend({
   editUser: {
     Type: User
   },
-  appState: {
+  session: {
     type: 'any'
   }
 })

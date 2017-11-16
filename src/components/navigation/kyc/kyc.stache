@@ -10,7 +10,7 @@
       </div>
       <form novalidate>
         <div class="modal-body">
-          {{^if appState.kycComplete}}
+          {{^if session.kycComplete}}
             <h5 class="no-margin-top">Please Complete to Verify your Identity</h5>
             <div class="row">
               <div class="col-sm-4">
@@ -174,7 +174,7 @@
               </div>
             </div>
           {{else}}
-            {{^if appState.kycApproved}}
+            {{^if session.kycApproved}}
               <h5 class="no-margin-top"><strong>Identity Verification Approval In Progress</strong> Your identity verification is being processed. Some features are disabled until verification.</h5>
             {{else}}
               <h5 class="no-margin-top">You have already verified your identity. If you wish to change your information, please contact us.</h5>
@@ -182,7 +182,7 @@
           {{/if}}
         </div>
         <div class="modal-footer">
-          {{#if appState.kycComplete}}
+          {{#if session.kycComplete}}
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           {{else}}
             <button type="button" class="btn btn-default" on:click="clearForm()">Cancel</button>

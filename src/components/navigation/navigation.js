@@ -13,7 +13,7 @@ export const ViewModel = DefineMap.extend({
   isSsr: {
     value: typeof process === 'object' && {}.toString.call(process) === '[object process]'
   },
-  appState: {
+  session: {
     type: 'any'
   },
   page: {
@@ -27,7 +27,7 @@ export const ViewModel = DefineMap.extend({
   },
   logout () {
     this.closeMenu()
-    this.appState.logout()
+    this.session.logout()
     route.data.set({page: 'home'}, true)
   }
 })

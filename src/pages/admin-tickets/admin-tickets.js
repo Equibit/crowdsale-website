@@ -8,7 +8,7 @@ import Pagination from '~/models/pagination'
 export const ViewModel = DefineMap.extend({
   search: 'string',
   filter: 'string',
-  appState: {
+  session: {
     type: 'any'
   },
   loadingTickets: {
@@ -41,7 +41,7 @@ export const ViewModel = DefineMap.extend({
         setTimeout(() => { this.loadingTickets = false }, 25)
       })
       .catch(err => {
-        if (err.status === 401) this.appState.error401()
+        if (err.status === 401) this.session.error401()
         else console.log(err)
       })
   },
@@ -61,7 +61,7 @@ export const ViewModel = DefineMap.extend({
     ticket.isOpen = false
     ticket.save()
       .catch(err => {
-        if (err.status === 401) this.appState.error401()
+        if (err.status === 401) this.session.error401()
         else console.log(err)
       })
   }
@@ -81,7 +81,7 @@ export default Component.extend({
           setTimeout(() => { this.viewModel.loadingTickets = false }, 25)
         })
         .catch(err => {
-          if (err.status === 401) this.viewModel.appState.error401()
+          if (err.status === 401) this.viewModel.session.error401()
           else console.log(err)
         })
     }

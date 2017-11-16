@@ -5,7 +5,6 @@ import './signup.less'
 import view from './signup.stache'
 import validate from '~/utils/validators'
 import User from '~/models/user'
-import '~/models/fixtures/users'
 
 export const ViewModel = DefineMap.extend({
   isAccountCreated: 'boolean',
