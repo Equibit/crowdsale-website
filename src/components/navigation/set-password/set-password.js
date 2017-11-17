@@ -49,12 +49,14 @@ export const ViewModel = DefineMap.extend({
     this.processing = true
     this.disableForm = true
 
-    this.session.user.changePassword(password)
+    this.session.user.changePassword(password, this.session.tmpPassword)
       .then(() => {
         this.processing = false
         this.changeError = false
         this.disableForm = false
         this.password = null
+
+        delete this.session.tmpPassword
 
         $('#set-password-modal').modal('hide')
       })

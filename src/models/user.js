@@ -6,15 +6,19 @@ import feathersServiceBehavior from 'can-connect-feathers/service/service'
 import behaviors from './behaviors'
 import algebra from './algebra'
 
-const User = DefineMap.extend('Users', {
-  id: 'any',
-  email: String,
-  password: String,
-  setPassword: Boolean,
-  accountCreated: Number,
-  lastLogin: Number,
-  locked: Boolean,
-  isAdmin: Boolean,
+const User = DefineMap.extend('User', {
+  _id: 'any',
+  email: 'string',
+  // We never send password when saving User.
+  password: {
+    type: 'string',
+    serialize: false
+  },
+  setPassword: 'boolean',
+  accountCreated: 'number',
+  lastLogin: 'number',
+  locked: 'boolean',
+  isAdmin: 'boolean',
   signUp (email) {
     return feathersClient.service('users').create({email})
   },
@@ -22,14 +26,14 @@ const User = DefineMap.extend('Users', {
     return feathersClient.service('forgot-password').create({email})
   },
   changePassword (newPassword, oldPassword) {
-    return feathersClient.service('users').patch(this.id, {password: newPassword, oldPassword})
+    return feathersClient.service('users').patch(this._id, {password: newPassword, oldPassword})
   },
   changeEmail (password, newEmail, emailCode) {
-    return feathersClient.service('users').patch(this.id, {password, newEmail, emailCode})
+    return feathersClient.service('users').patch(this._id, {password, newEmail, emailCode})
   }
 })
 
-User.List = DefineList.extend({
+User.List = DefineList.extend('Users', {
   '#': User
 })
 

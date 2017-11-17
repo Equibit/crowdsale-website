@@ -17,6 +17,10 @@ const Session = DefineMap.extend('Session', {
     }
   },
 
+  // This is for set-password modal
+  // todo: consider passing the tmpPassword to set-password component directly.
+  tmpPassword: String,
+
   get isAdmin () {
     return (this.user && (this.user.isAdmin === 1 || this.user.isAdmin)) || false
   },
@@ -59,18 +63,14 @@ const Session = DefineMap.extend('Session', {
             : Promise.reject(new Error('Token is expired'))
         }
       })
-      .then(data => {
-        return feathersClient.passport.verifyJWT(data.accessToken)
-      })
-      .then(payload => {
-        return feathersClient.service('user').get(payload.userId)
-      })
-      .then(user => {
-        this.user = user
+      .then(({ user }) => {
+        if (!this.user) {
+          this.user = user
+        }
         if (!this.loggedIn) {
           this.loggedIn = true
         }
-        return user
+        return this.user
       })
       .catch(err => {
         this.logout()

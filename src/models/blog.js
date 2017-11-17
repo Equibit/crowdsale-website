@@ -7,7 +7,7 @@ import behaviors from './behaviors'
 import algebra from './algebra'
 
 const Blog = DefineMap.extend('Blog', {
-  id: 'any',
+  _id: 'any',
   title: 'string',
   shortPost: 'string',
   published: 'boolean',

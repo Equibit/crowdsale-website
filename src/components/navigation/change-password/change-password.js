@@ -3,14 +3,9 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './change-password.less'
 import view from './change-password.stache'
-import feathersClient from '~/models/feathers-client'
 import validate from '~/utils/validators'
-import User from '~/models/user'
 
 export const ViewModel = DefineMap.extend({
-  currentUser: {
-    Type: User
-  },
   session: {
     type: 'any'
   },
@@ -54,8 +49,7 @@ export const ViewModel = DefineMap.extend({
     this.processing = true
     this.disableForm = true
 
-    this.currentUser = feathersClient.get('user')
-    this.currentUser.changePassword(newPassword, oldPassword)
+    this.session && this.session.user.changePassword(newPassword, oldPassword)
       .then(() => {
         this.clearForm()
       })
