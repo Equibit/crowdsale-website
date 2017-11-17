@@ -6,19 +6,19 @@ import feathersServiceBehavior from 'can-connect-feathers/service/service'
 import behaviors from './behaviors'
 import algebra from './algebra'
 
-const User = DefineMap.extend('Users', {
+const User = DefineMap.extend('User', {
   _id: 'any',
-  email: String,
+  email: 'string',
   // We never send password when saving User.
   password: {
-    String,
+    type: 'string',
     serialize: false
   },
-  setPassword: Boolean,
-  accountCreated: Number,
-  lastLogin: Number,
-  locked: Boolean,
-  isAdmin: Boolean,
+  setPassword: 'boolean',
+  accountCreated: 'number',
+  lastLogin: 'number',
+  locked: 'boolean',
+  isAdmin: 'boolean',
   signUp (email) {
     return feathersClient.service('users').create({email})
   },
@@ -33,7 +33,7 @@ const User = DefineMap.extend('Users', {
   }
 })
 
-User.List = DefineList.extend({
+User.List = DefineList.extend('Users', {
   '#': User
 })
 

@@ -8,9 +8,6 @@ import validate from '~/utils/validators'
 import User from '~/models/user'
 
 export const ViewModel = DefineMap.extend({
-  currentUser: {
-    Type: User
-  },
   session: {
     type: 'any'
   },
@@ -45,8 +42,7 @@ export const ViewModel = DefineMap.extend({
     this.processing = true
     this.disableForm = true
 
-    this.currentUser = feathersClient.get('users')
-    this.currentUser.changeEmail(password, email, emailCode)
+    this.session.user.changeEmail(password, email, emailCode)
       .then(() => {
         if (this.verificationCodeVisible) {
           this.clearForm()

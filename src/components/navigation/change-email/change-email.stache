@@ -28,7 +28,7 @@
           {{/if}}
         {{else}}
           {{#if changeError}}
-            <div class="text-center text-danger">Change email address error! Is your old password correct?</div>
+            <div class="text-center text-danger">Change email address error! Is your password correct?</div>
           {{/if}}
         {{/if}}
       </div>
