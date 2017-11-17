@@ -3,9 +3,7 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './change-email.less'
 import view from './change-email.stache'
-import feathersClient from '~/models/feathers-client'
 import validate from '~/utils/validators'
-import User from '~/models/user'
 
 export const ViewModel = DefineMap.extend({
   session: {
