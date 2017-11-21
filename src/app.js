@@ -1,6 +1,14 @@
 // import '~/utils/polyfill'
 import '~/utils/helpers'
 import '~/utils/analytics'
+/*
+
+To switch to feathers todo: create config file to manage this
+- make sure bearer tokens use proper time stamp (not unit)
+- make sure to switch feather-client to use websockets
+
+ */
+
 import DefineMap from 'can-define/map/map'
 import route from 'can-route'
 import 'can-route-pushstate'
@@ -39,11 +47,11 @@ const AppViewModel = DefineMap.extend({
   title: {
     get () {
       if (this.page === 'privacy') {
-        return 'Tx Base | Privacy Statement'
+        return 'Equibit Group | Privacy Statement'
       } else if (this.page === 'terms') {
-        return 'Tx Base | Terms of Service'
+        return 'Equibit Group | Terms of Service'
       } else {
-        return 'Tx Base | Built with Blocks'
+        return 'Equibit Group'
       }
     }
   }

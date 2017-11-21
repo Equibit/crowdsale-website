@@ -7,146 +7,131 @@
   <title>{{title}}</title>
 
   <link rel="shortcut icon" href="/assets/favicons/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-icon-180x180.png">
   <link rel="manifest" href="/assets/favicons/manifest.json">
   <meta name="theme-color" content="#ffffff">
 
-  <meta property="fb:app_id" content="1188163631300990" />
-  <meta property="og:url" content="https://txbasewebsite.com/" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:url" content="https://crowdsale.equibitgroup.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Tx Base Website" />
-  <meta property="og:description" content="" />
-  <meta property="og:image" content="https://txbasewebsite.com/assets/social/facebook-share.png" />
+  <meta property="og:title" content="Equibit Group | Crowdsale" />
+  <meta property="og:description" content="EQB (Equibits) Initial Coin Offering" />
+  <meta property="og:image" content="" />
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@fsm_info">
-  <meta name="twitter:title" content="Tx Base Website">
+  <meta name="twitter:title" content="">
   <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="https://txbasewebsite.com/assets/social/twitter-share.png">
+  <meta name="twitter:image" content="https://easyappframework.com/assets/social/twitter-share.png">
 </head>
 <body>
 <can-import from="~/app" export-as="viewModel" />
+<can-import from="~/styles-fonts.less" />
 <can-import from="~/styles.less" />
 <can-import from="~/components/loading.component!" />
-<can-import from="~/components/footer.component!" />
 <can-import from="~/components/session-error.component!" />
 <can-import from="~/components/navigation/" />
 
-<navigation-bar session:from="session" />
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2">
+      <navigation-bar session:from="session" />
+    </div>
+    <div class="col-sm-9 col-lg-10">
 
-{{#if session.sessionError}}
-  <can-import from="~/components/session-error.component!" can-tag="tag-loading">
-    <session-error />
-  </can-import>
-{{/if}}
-
-{{#if session.loggedIn}}
-  {{^if session.kycApproved}}
-    <can-import from="~/components/kyc-warnings.component!" can-tag="tag-loading">
-      <kyc-warnings kycComplete:from="session.kycComplete" />
-    </can-import>
-  {{/if}}
-{{/if}}
-
-{{#switch page}}
-  {{#case 'home'}}
-    <can-import from="~/pages/page-home/" can-tag="tag-loading">
-      <page-home />
-    </can-import>
-  {{/case}}
-  {{#case 'faqs'}}
-    <can-import from="~/pages/page-faqs/" can-tag="tag-loading">
-      <page-faqs />
-    </can-import>
-  {{/case}}
-  {{#case 'blog'}}
-    {{#if slug}}
-      <can-import from="~/pages/page-blog/blog-post/" can-tag="tag-loading">
-        <blog-post slug:from="slug" />
-      </can-import>
-    {{else}}
-      <can-import from="~/pages/page-blog/" can-tag="tag-loading">
-        <page-blog />
-      </can-import>
-    {{/if}}
-  {{/case}}
-  {{#case 'terms'}}
-    <can-import from="~/pages/page-tos/" can-tag="tag-loading">
-      <page-tos />
-    </can-import>
-  {{/case}}
-  {{#case 'privacy'}}
-    <can-import from="~/pages/page-privacy/" can-tag="tag-loading">
-      <page-privacy />
-    </can-import>
-  {{/case}}
-
-
-
-  {{#case 'dash'}}
-    {{#if session.loggedIn}}
-      <can-import from="~/pages/page-dash/" can-tag="tag-loading">
-        <page-dash session:from="session" />
-      </can-import>
-    {{else}}
-      <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
-        <page-unauthorized />
-      </can-import>
-    {{/if}}
-  {{/case}}
-
-
-
-  {{#case 'admin-users'}}
-    {{#if session.isAdmin}}
-      <can-import from="~/pages/admin-users/" can-tag="tag-loading">
-        <admin-users session:from="session" />
-      </can-import>
-    {{else}}
-      <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
-        <page-unauthorized />
-      </can-import>
-    {{/if}}
-  {{/case}}
-  {{#case 'admin-blog'}}
-    {{#if session.isAdmin}}
-      <can-import from="~/pages/admin-blog/" can-tag="tag-loading">
-        <admin-blog session:from="session" />
-      </can-import>
-    {{else}}
-      <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
-        <page-unauthorized />
-      </can-import>
-    {{/if}}
-  {{/case}}
-  {{#case 'admin-tickets'}}
-    {{#if session.isAdmin}}
-      {{#if slug}}
-        <can-import from="~/pages/admin-tickets/ticket-details/" can-tag="tag-loading">
-          <ticket-details slug:from="slug" session:from="session" />
-        </can-import>
-      {{else}}
-        <can-import from="~/pages/admin-tickets/" can-tag="tag-loading">
-          <admin-tickets session:from="session" />
+      {{#if session.sessionError}}
+        <can-import from="~/components/session-error.component!" can-tag="tag-loading">
+          <session-error />
         </can-import>
       {{/if}}
-    {{else}}
-      <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
-        <page-unauthorized />
-      </can-import>
-    {{/if}}
-  {{/case}}
 
+      {{#if session.loggedIn}}
+        {{^if session.kycApproved}}
+          <can-import from="~/components/kyc-warnings.component!" />
+          <kyc-warnings {kyc-complete}="appState.kycComplete" />
+        {{/if}}
+      {{/if}}
 
+      {{#switch page}}
+        {{#case 'home'}}
+          <can-import from="~/pages/page-home/" can-tag="tag-loading">
+            <page-home />
+          </can-import>
+        {{/case}}
+        {{#case 'about'}}
+          <can-import from="~/pages/page-about/" can-tag="tag-loading">
+            <page-about />
+          </can-import>
+        {{/case}}
+        {{#case 'mining'}}
+          <can-import from="~/pages/page-mining/" can-tag="tag-loading">
+            <page-mining />
+          </can-import>
+        {{/case}}
+        {{#case 'video'}}
+          <can-import from="~/pages/page-video/" can-tag="tag-loading">
+            <page-video />
+          </can-import>
+        {{/case}}
+        {{#case 'overview'}}
+          <can-import from="~/pages/page-overview/" can-tag="tag-loading">
+            <page-overview />
+          </can-import>
+        {{/case}}
+        {{#case 'contact'}}
+          <can-import from="~/pages/page-contact/" can-tag="tag-loading">
+            <page-contact />
+          </can-import>
+        {{/case}}
+        {{#case 'terms'}}
+          <can-import from="~/pages/page-tos/" can-tag="tag-loading">
+            <page-tos />
+          </can-import>
+        {{/case}}
+        {{#case 'privacy'}}
+          <can-import from="~/pages/page-privacy/" can-tag="tag-loading">
+            <page-privacy />
+          </can-import>
+        {{/case}}
 
-  {{#default}}
-    <can-import from="~/pages/page-missing.component" can-tag="tag-loading">
-      <page-missing />
-    </can-import>
-  {{/default}}
-{{/switch}}
+        {{#case 'admin-users'}}
+          {{#if session.isAdmin}}
+            <can-import from="~/pages/admin-users/" can-tag="tag-loading">
+              <admin-users session:from="session" />
+            </can-import>
+          {{else}}
+            <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
+              <page-unauthorized />
+            </can-import>
+          {{/if}}
+        {{/case}}
 
-<page-footer />
+        {{#default}}
+          <can-import from="~/pages/page-missing.component" can-tag="tag-loading">
+            <page-missing />
+          </can-import>
+        {{/default}}
+      {{/switch}}
+
+    </div>
+  </div>
+</div>
 
 {{#switch env.NODE_ENV}}
   {{#case "production"}}

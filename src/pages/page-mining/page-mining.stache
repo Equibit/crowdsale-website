@@ -1,0 +1,64 @@
+<can-import from="~/components/donut-chart.component!" />
+<can-import from="~/components/donut-chart-internal.component!" />
+<can-import from="~/components/count-down/" />
+
+<div class="row margin-top">
+  <div class="col-sm-6 col-md-7 col-md-offset-1 col-sm-offset-1"><h1 class="ultra">The <span class="text-primary">Mining</span></h1></div>
+  <div class="col-sm-4 col-md-3 text-right">
+    <h4 class="text-uppercase bold text-nowrap">Remaining Time</h4>
+    <div class="h2 text-primary bold text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 col-lg-7">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-7">
+            <div class="row">
+              <div class="col-sm-12 margin-top">
+                <donut-chart brand="warning" percentage="100">
+                  <donut-chart-internal brand="success" percentage="40">
+                    <donut-chart-internal brand="primary" percentage="15" />
+                  </donut-chart-internal>
+                </donut-chart>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-5 padding">
+            <h1 class="text-warning bold no-margin-top">21 Million</h1>
+            <i class="fa fa-circle text-warning" aria-hidden="true"></i> AVAILABLE EQB FOR MINING
+            <h1 class="text-success bold margin-top">1,000,000</h1>
+            <i class="fa fa-circle text-success" aria-hidden="true"></i> AVAILABLE FOR PRE-SALE
+            <h1 class="text-primary bold margin-top">310,255</h1>
+            <i class="fa fa-circle text-primary" aria-hidden="true"></i> GENESIS BLOCK
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 col-lg-5">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-5 padding">
+            <h1 class="text-primary bold">770,000</h1>
+            <i class="fa fa-circle text-primary" aria-hidden="true"></i> REMAINING EQB
+            <h1 class="text-warning bold margin-top">135,000</h1>
+            <i class="fa fa-circle text-warning" aria-hidden="true"></i> SOLD EQB
+          </div>
+          <div class="col-sm-7">
+            <div class="row">
+              <div class="col-sm-12 margin-top">
+                <donut-chart brand="primary" percentage="70">
+                  <donut-chart-internal brand="warning" percentage="30" />
+                </donut-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

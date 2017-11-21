@@ -12,5 +12,18 @@ export const ViewModel = DefineMap.extend({
 export default Component.extend({
   tag: 'page-home',
   ViewModel,
-  view
+  view,
+  events: {
+    inserted: function () {
+      $('.setsize').each(function () {
+        $(this).height($(this).width())
+      })
+
+      $(window).on('resize', function () {
+        $('.setsize').each(function () {
+          $(this).height($(this).width())
+        })
+      })
+    }
+  }
 })

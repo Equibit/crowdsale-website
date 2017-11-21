@@ -1,16 +1,14 @@
 <can-component tag="page-unauthorized">
   <view>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-lg-10 col-lg-offset-1 text-center">
-          <div class="h1">401 Not Authorized</div>
-        </div>
+    <div class="row">
+      <div class="col-md-12 col-lg-10 col-lg-offset-1 text-center">
+        <div class="h1 no-margin-top">401 Not Authorized</div>
       </div>
-      <div class="row">
-        <div class="col-md-12 col-lg-10 col-lg-offset-1">
-          <div class="well text-center">
-            <h3 style="margin-top: 15px">You need to login to see this page.</h3>
-          </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-lg-10 col-lg-offset-1">
+        <div class="well text-center">
+          <h3 style="margin-top: 15px">You need to login to see this page.</h3>
         </div>
       </div>
     </div>

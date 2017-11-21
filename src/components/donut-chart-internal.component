@@ -1,0 +1,35 @@
+<can-component tag="donut-chart-internal">
+  <style type="less">
+    display: block;
+  </style>
+  <view>
+    <div class="progress-radial-internal progress-{{percentage}} setsize brand-{{brand}}">
+      <div class="overlay setsize">
+        {{#if text}}
+          <p class="{{#if large}}larger text-{{brand}}{{/if}}">{{text}}</p>
+        {{else}}
+          <content></content>
+        {{/if}}
+      </div>
+    </div>
+  </view>
+  <script type="view-model">
+    import DefineMap from 'can-define/map/map'
+
+    export default DefineMap.extend({
+      text: 'string',
+	    large: {
+	      set(val) {
+	        return val === "true" || val
+	      }
+	    },
+      percentage: {
+        set(val) {
+          val = Math.round(val/5)
+          return (val * 5)
+        }
+      },
+      brand: 'string'
+    })
+  </script>
+</can-component>

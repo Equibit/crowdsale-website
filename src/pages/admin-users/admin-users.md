@@ -1,5 +1,5 @@
 @parent fsm
-@module {can.Component} tx/pages/admin-users <admin-users>
+@module {can.Component} easy-app/pages/admin-users <admin-users>
 
 A short description of the admin-users component
 

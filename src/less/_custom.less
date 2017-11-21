@@ -1,13 +1,10 @@
-@import "../../node_modules/bootstrap/less/variables";
-@import "_variables";
-
 html {
   position: relative;
   min-height: 100%;
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 100px;
+  /* margin-bottom: 90px; */
   padding-bottom: 0;
 }
 footer {
@@ -16,7 +13,58 @@ footer {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 80px;
+  height: 70px;
+}
+.bold {
+  font-weight: bold;
+}
+.text-shadow {
+  text-shadow: 2px 2px 8px #000000;
+}
+.text-white {
+  color: white;
+}
+.radio label, .checkbox label {
+  min-height: 16px;
+  padding-left: 10px;
+  line-height: 17px;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: white;
+}
+select[selectpicker] {
+  display: none;
+}
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+}
+.bootstrap-select > .btn-default {
+  border: none;
+  background-color: white;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.bootstrap-select.form-control {
+  border: 1px solid #ccc;
+}
+.bootstrap-select > .btn-default.disabled {
+  background-color: #eeeeee;
+}
+.bootstrap-select.open > .btn-default {
+  background-color: #cecece !important;
+}
+.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
+  top: 8px;
+}
+.bootstrap-select.open > .dropdown-toggle, .bootstrap-select.open > .dropdown-toggle.btn-default {
+  border-color: @brand-primary;
+  outline: 0;
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
+  .form-control-focus();
+}
+.bootstrap-select:not(.open) > .btn-default:focus, .bootstrap-select:not(.open) > .btn-default:hover {
+  border-color: #ccc !important;
 }
 button.btn-clear, button.btn-clear:active, button.btn-clear:focus {
   border: none;
@@ -24,30 +72,103 @@ button.btn-clear, button.btn-clear:active, button.btn-clear:focus {
   margin: 0;
   background-color: transparent;
 }
+.popover.top > .arrow:after {
+  bottom: 2px;
+}
+button > i.fa.fa-info-circle {
+  font-size: 16px;
+}
+.bs-searchbox {
+  background-color: transparent;
+}
+.modal-footer {
+  text-align: center;
+}
+.btn:not(.dropdown-toggle) {
+  padding: 5px 40px 5px 40px;
+  font-family: 'gotham_boldregular', sans-serif;
+}
+.top-right-circle {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  background-color: @brand-primary;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  line-height: 70px;
+  border: none;
+  .fa-2x {
+    font-size: 30px;
+  }
+}
+.top-left-circle {
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  background-color: @brand-primary;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  line-height: 70px;
+  border: none;
+  .fa-2x {
+    font-size: 30px;
+  }
+}
 
-/* -------------------------------------------------------------------
-        HR brands
-------------------------------------------------------------------- */
-hr {
-  &.hr-primary {
-    border-top: 1px solid @brand-primary;
+button.btn.btn-default {
+  .box-shadow(0px 0px 14px 2px rgba(0, 0, 0, 0.1))
+}
+.btn:active, .navbar, .modal-content, .well, .alert, .panel {
+  .box-shadow(0px 0px 56px -17px rgba(0,0,0,0.59))
+}
+.alert-warning, .alert-info, .well {
+  border: none;
+}
+.well, .navbar-default, .alert {
+  background-color: white;
+}
+.panel {
+  margin: 40px;
+  .panel-body {
+    position: relative;
   }
-  &.hr-info {
-    border-top: 1px solid @brand-info;
+}
+
+.text-info {
+  color: #58595B;
+  span {
+    color: #ED2F3C
   }
-  &.hr-warning {
-    border-top: 1px solid @brand-warning;
-  }
-  &.hr-danger {
-    border-top: 1px solid @brand-danger;
-  }
-  &.hr-success {
-    border-top: 1px solid @brand-success;
+}
+@media (min-width: 768px) {
+  .modal-dialog {
+    margin: 100px auto;
   }
 }
 
 
 
+.row.match-my-cols {
+  overflow: hidden;
+}
+.row.match-my-cols [class*="col-"]{
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
 
-
-
+.btn-border.btn-primary {
+  background-color: transparent;
+  color: @brand-primary;
+  border: 2px solid @brand-primary;
+  padding: 4px 69px 4px 69px;
+}
+.btn-border.btn-primary:active {
+  border-width: 1px;
+  padding: 5px 70px 5px 70px;
+}

@@ -1,8 +1,3 @@
-@import "../../node_modules/bootstrap/less/mixins";
-@import "mixins";
-@import "../../node_modules/bootstrap/less/variables";
-@import "_variables";
-
 @color-red-error: rgb(185, 74, 72);
 @color-grey-arrow: rgba(204, 204, 204, 0.2);
 
@@ -381,39 +376,4 @@ select.selectpicker {
     width: 100%;
     float: none;
   }
-}
-
-select[selectpicker] {
-  display: none;
-}
-.bootstrap-select .dropdown-toggle:focus {
-  outline: none !important;
-}
-.bootstrap-select > .btn-default {
-  border: none;
-  background-color: white;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-}
-.bootstrap-select.form-control {
-  border: 1px solid #ccc;
-}
-.bootstrap-select > .btn-default.disabled {
-  background-color: #eeeeee;
-}
-.bootstrap-select.open > .btn-default {
-  background-color: #cecece !important;
-}
-.bootstrap-select.open > .dropdown-toggle, .bootstrap-select.open > .dropdown-toggle.btn-default {
-  border-color: @brand-primary;
-  outline: 0;
-  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-  .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
-  .form-control-focus();
-}
-.bootstrap-select:not(.open) > .btn-default:focus, .bootstrap-select:not(.open) > .btn-default:hover {
-  border-color: #ccc !important;
-}
-.bootstrap-select .btn-default {
-  color: @gray-light;
 }
