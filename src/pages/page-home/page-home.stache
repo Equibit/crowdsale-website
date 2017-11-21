@@ -1,35 +1,96 @@
-<can-import from="~/components/social-media.component!" />
+<can-import from="~/components/donut-chart.component!" />
+<can-import from="~/components/count-down/" />
 
-<br>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="jumbotron">
-        <h1>Base Website</h1>
-        <p>This is the base site for testing Tx Projects</p>
+<div class="row">
+  <div class="col-md-12 col-lg-6">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="top-right-circle"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></div>
+        <div class="margin-bottom">
+          <h2 class="text-center text-info ultra">Over<span>View</span></h2>
+        </div>
+
+        <div class="row margin-bottom">
+          <div class="col-xs-6 col-sm-4 col-sm-offset-1">
+            <h5 class="text-uppercase text-center bold">INITIAL SALE TOTAL SOLD</h5>
+          </div>
+          <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+            <h5 class="text-uppercase text-center bold">FOUNDERS CLUB TOTAL AVAILABLE</h5>
+          </div>
+        </div>
         <div class="row">
-          <div class="col-sm-6">
-            <form action="https://txuniverse.us17.list-manage.com/subscribe/post?u=8458e37fe0079c47986ec0257&amp;id=120f044a68" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <div class="input-group">
-                <input type="email" value="" name="EMAIL" class="form-control required" placeholder="Email Address" id="mce-EMAIL">
-                <span class="input-group-btn"><button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">Get Tx Updates</button></span>
-              </div>
-              <div id="mce-responses" class="clear">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-              </div>
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_8458e37fe0079c47986ec0257_120f044a68" tabindex="-1" value=""></div>
-            </form>
-            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='BIRTHDAY';ftypes[3]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-            <!--End mc_embed_signup-->
+          <div class="col-xs-6 col-sm-6">
+            <donut-chart brand="primary" text="230,000" percentage="100" />
           </div>
-          <div class="col-xs-12 visible-xs-block">
-            <br>
+          <div class="col-xs-6 col-sm-6">
+            <donut-chart brand="warning" text="135,000" percentage="50" />
           </div>
-          <div class="col-sm-6 text-right">
+        </div>
 
-            <social-media />
+        <div class="margin-bottom-extra"></div>
 
+        <div class="row margin-bottom">
+          <div class="col-xs-6 col-sm-4 col-sm-offset-1">
+            <h5 class="text-uppercase text-center bold">PRIVATE SALE TOTAL AVAILABLE</h5>
+          </div>
+          <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+            <h5 class="text-uppercase text-center bold">PUBLIC SALE TOTAL AVAILABLE</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6">
+            <donut-chart brand="info" text="435,000" percentage="100" />
+          </div>
+          <div class="col-xs-6 col-sm-6">
+            <donut-chart brand="info" text="335,000" percentage="100" />
+          </div>
+        </div>
+
+        <div class="margin-bottom-extra"></div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 col-lg-6">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="top-right-circle"><i class="fa fa-play fa-2x" aria-hidden="true"></i></div>
+        <div class="margin-bottom">
+          <h2 class="text-center text-info ultra">Founders <span>Club</span></h2>
+        </div>
+
+        <div class="row margin-bottom">
+          <div class="col-xs-6 text-center">
+            <h4 class="text-uppercase bold">Current Price</h4>
+            <div class="h2 text-primary bold">$4.00</div>
+          </div>
+          <div class="col-xs-6 text-center">
+            <h4 class="text-uppercase bold">Remaining Time</h4>
+            <div class="h3 text-primary bold text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>
+          </div>
+        </div>
+
+        <div class="row margin-bottom">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <h4 class="text-uppercase text-center bold">EQB AVAILABLE</h4>
+          </div>
+        </div>
+
+        <div class="row margin-bottom">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <donut-chart brand="primary" text="135,000" percentage="50" large="true" />
+          </div>
+        </div>
+
+        <div class="row margin-bottom-extra">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <h4 class="text-uppercase text-center text-info bold">135,000 SOLD</h4>
+          </div>
+        </div>
+
+        <div class="row margin-bottom">
+          <div class="col-xs-12 text-center">
+            <button type="button" class="btn btn-primary btn-border">BUY</button>
           </div>
         </div>
 

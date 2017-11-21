@@ -1,0 +1,54 @@
+@import "../../less/_variables";
+
+page-overview {
+	display: block;
+	.panel {
+		.panel-body {
+			height: 550px;
+			overflow: scroll;
+		}
+	}
+	.list-group {
+		border: none;
+		.list-group-item {
+			border: none;
+			font-size: 22px;
+			border-bottom: 1px solid #888;
+			margin-bottom: 0;
+			&.active {
+				background-color: transparent;
+				color: @brand-primary;
+			}
+			&:last-child {
+				border: none;
+			}
+			&:hover, &:focus, &:active {
+				border-bottom: 1px solid #888;
+			}
+			&:hover {
+				background-color: #eee;
+			}
+			&:hover:last-child {
+				background-color: #eee;
+				border: none;
+			}
+		}
+	}
+	.tab-content {
+		> *:not(.active) {
+			display: none;
+		}
+	}
+
+	.panel-warning {
+		.tab-content {
+			color: white;
+		}
+		background-color: @brand-warning;
+		border-color: @brand-warning;
+		color: white;
+	}
+	p {
+		font-size: 18px;
+	}
+}

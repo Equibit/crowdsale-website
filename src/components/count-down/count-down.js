@@ -1,4 +1,3 @@
-import $ from 'jquery'
 import Component from 'can-component'
 import DefineMap from 'can-define/map/map'
 import './count-down.less'
@@ -15,6 +14,8 @@ export const ViewModel = DefineMap.extend({
   showZeros: {
     value: false
   },
+  timestamp: 'number',
+  current: 'number',
   months: {
     value: '00'
   },

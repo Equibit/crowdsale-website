@@ -1,8 +1,8 @@
-# tx-base-website
+# easy-app
 
 [![Build Status](https://travis-ci.org/TxUniverse/tx-base-website.svg?branch=master)](https://travis-ci.org/TxUniverse/tx-base-website)
 
-Welcome to the tx DoneJS application!
+Welcome to the easy-app DoneJS application!
 
 ## Getting started
 

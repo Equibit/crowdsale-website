@@ -33,7 +33,7 @@
         {{/if}}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" on:click="clearForm()">Cancel</button>
+        <!--<button type="button" class="btn btn-default" on:click="clearForm()">Cancel</button>-->
         <button type="button" class="btn btn-primary" on:click="handleChangeEmail(%event, password, newEmail, emailCode)" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Change Email{{/if}}</button>
       </div>
     </div>

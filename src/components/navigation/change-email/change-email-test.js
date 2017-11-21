@@ -2,7 +2,7 @@ import QUnit from 'steal-qunit'
 import { ViewModel } from './change-email'
 
 // ViewModel unit tests
-QUnit.module('tx/components/navigation/change-email')
+QUnit.module('easy-app/components/navigation/change-email')
 
 QUnit.test('Has message', function () {
   var vm = new ViewModel()

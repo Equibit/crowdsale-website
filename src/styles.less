@@ -1,24 +1,27 @@
 @import "../node_modules/bootstrap/less/mixins";
 @import "less/mixins";
 @import "../node_modules/bootstrap/less/variables";
-@import "less/_checkbox";
 @import "less/_variables";
+@import "less/_checkbox";
 @import "less/_bootstrap-select";
 @import "../node_modules/bootstrap/less/bootstrap";
-@import "less/_styles";
+@import "less/_bootstrap_side_menu";
 @import "../node_modules/font-awesome/less/font-awesome";
+@import "less/_donut-chart";
 @import "less/_custom";
 @import "less/_spacing";
 
 body {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: subpixel-antialiased;
-  padding-top: 70px;
 }
 html, body {
   width: 100%;
   min-height: 100%;
   overflow-y: scroll;
+  color: #666666;
+  background: #f5f5f5 url("/assets/img/background.png") right bottom fixed no-repeat;
+  background-size: 200px;
 }
 ::-moz-selection:not(input) {
   color: inherit;
@@ -64,4 +67,10 @@ a {
   }
   .transition();
   text-decoration: none;
+}
+.close {
+  font-size: 19.5px;
+}
+table.table {
+  font-size: 16px;
 }

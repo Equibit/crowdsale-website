@@ -1,0 +1,72 @@
+<can-import from="~/components/count-down/" />
+
+<div class="row margin-top">
+  <div class="col-sm-6 col-md-7 col-md-offset-1 col-sm-offset-1"><h1 class="ultra">Frequently Asked <span class="text-primary">Questions</span></h1></div>
+  <div class="col-sm-4 col-md-3 text-right">
+    <h4 class="text-uppercase bold text-nowrap">Remaining Time</h4>
+    <div class="h2 text-primary bold text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-5">
+    <div class="panel">
+      <div class="panel-body">
+
+        <div class="list-group no-margin-bottom">
+          <li class="bold list-group-item {{#eq question 1}}active{{/eq}}" on:click="changeQ(1)">Cras justo odio?</li>
+          <li class="bold list-group-item {{#eq question 2}}active{{/eq}}" on:click="changeQ(2)">Dapibus ac facilisis in?</li>
+          <li class="bold list-group-item {{#eq question 3}}active{{/eq}}" on:click="changeQ(3)">Morbi leo risus?</li>
+          <li class="bold list-group-item {{#eq question 4}}active{{/eq}}" on:click="changeQ(4)">Porta ac consectetur ac?</li>
+          <li class="bold list-group-item">Vestibulum at eros?</li>
+          <li class="bold list-group-item">Dapibus ac facilisis in?</li>
+          <li class="bold list-group-item">Morbi leo risus?</li>
+          <li class="bold list-group-item">Porta ac consectetur ac?</li>
+          <li class="bold list-group-item">Vestibulum at eros?</li>
+          <li class="bold list-group-item">Dapibus ac facilisis in?</li>
+          <li class="bold list-group-item">Morbi leo risus?</li>
+          <li class="bold list-group-item">Porta ac consectetur ac?</li>
+          <li class="bold list-group-item">Vestibulum at eros?</li>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div class="panel panel-warning">
+      <div class="panel-body">
+        <div class="tab-content">
+          <div class="{{#eq question 1}}active{{/eq}}">
+            <h2 class="bold">Cras justo odio?</h2>
+            <h3 class="text-primary margin-bottom bold">Another line?</h3>
+            <p>Have finished development and testing of our initial product suite including Equibit Core and Equibit Portfolio. Issuers can issue securities and Investors can invest – both using Equibits and our platform.</p>
+            <p>Signed an agreement with IBM to supply and co-market our Supernodes [link]</p>
+            <p>Grew the team with top tier talent in both development and marketing</p>
+            <p>Put together committees of industry leaders to support our executive in areas of Strategy and Security (link to committees)</p>
+            <p>Re-branded ourselves Equibit Group to better reflect our long-term vision for the company</p>
+          </div>
+          <div class="{{#eq question 2}}active{{/eq}}">
+            <h2 class="bold">Cras justo odio another?</h2>
+            <h3 class="text-primary margin-bottom bold">Wait Another line?</h3>
+            <p>Re-branded ourselves Equibit Group to better reflect our long-term vision for the company</p>
+            <p>Have finished development and testing of our initial product suite including Equibit Core and Equibit Portfolio. Issuers can issue securities and Investors can invest – both using Equibits and our platform.</p>
+            <p>Signed an agreement with IBM to supply and co-market our Supernodes [link]</p>
+            <p>Grew the team with top tier talent in both development and marketing</p>
+            <p>Put together committees of industry leaders to support our executive in areas of Strategy and Security (link to committees)</p>
+            <p>Re-branded ourselves Equibit Group to better reflect our long-term vision for the company</p>
+            <p>Have finished development and testing of our initial product suite including Equibit Core and Equibit Portfolio. Issuers can issue securities and Investors can invest – both using Equibits and our platform.</p>
+            <p>Signed an agreement with IBM to supply and co-market our Supernodes [link]</p>
+            <p>Grew the team with top tier talent in both development and marketing</p>
+            <p>Put together committees of industry leaders to support our executive in areas of Strategy and Security (link to committees)</p>
+          </div>
+          <div class="{{#eq question 3}}active{{/eq}}">
+
+          </div>
+          <div class="{{#eq question 4}}active{{/eq}}">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

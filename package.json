@@ -1,11 +1,11 @@
 {
-  "name": "tx",
+  "name": "equibit-crowdsale",
   "version": "0.0.0",
   "description": "An awesome DoneJS app",
   "homepage": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TxUniverse/tx-base-website.git"
+    "url": "git+https://github.com/MarcGodard/equibit-crowdsale-website.git"
   },
   "author": {
     "name": "",
@@ -22,7 +22,7 @@
     "test": "npm run lint && npm run testee",
     "testee": "testee test.html --browsers firefox --reporter Spec"
   },
-  "main": "tx/index.stache!done-autorender",
+  "main": "equibit-crowdsale/index.stache!done-autorender",
   "files": [
     "src"
   ],
@@ -31,7 +31,7 @@
     "donejs-app"
   ],
   "steal": {
-    "main": "tx/index.stache!done-autorender/src/no-zone",
+    "main": "equibit-crowdsale/index.stache!done-autorender",
     "directories": {
       "lib": "src"
     },
@@ -87,7 +87,6 @@
     "grid-component": "^0.10.2",
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
-    "quill": "^1.3.2",
     "socket.io-client": "^2.0.3",
     "steal": "^1.5.13",
     "steal-less": "^1.2.0",
