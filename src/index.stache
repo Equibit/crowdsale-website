@@ -109,6 +109,11 @@
             <page-privacy />
           </can-import>
         {{/case}}
+        {{#case 'profile'}}
+          <can-import from="~/pages/page-profile/" can-tag="tag-loading">
+            <page-profile />
+          </can-import>
+        {{/case}}
 
         {{#case 'admin-users'}}
           {{#if session.isAdmin}}

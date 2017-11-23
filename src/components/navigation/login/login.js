@@ -67,7 +67,7 @@ export const ViewModel = DefineMap.extend({
 
         $('#login-modal').modal('hide')
 
-        route.data.set({page: 'dash'}, true)
+        route.data.set({page: 'profile'}, true)
 
         if (tmpPasswordUsed) {
           this.session.loggedIn = true
