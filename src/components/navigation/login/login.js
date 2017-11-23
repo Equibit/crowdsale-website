@@ -59,6 +59,7 @@ export const ViewModel = DefineMap.extend({
     this.disableForm = true
 
     const session = Session.current
+    this.session = session
 
     feathersClient.authenticate({ strategy: 'local', email: email, password: password })
       .then(({user, tmpPasswordUsed}) => {
