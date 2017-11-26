@@ -64,7 +64,7 @@
       {{#if session.loggedIn}}
         {{^if session.kycApproved}}
           <can-import from="~/components/kyc-warnings.component!" />
-          <kyc-warnings {kyc-complete}="appState.kycComplete" />
+          <kyc-warnings {kyc-complete}="session.kycComplete" />
         {{/if}}
       {{/if}}
 

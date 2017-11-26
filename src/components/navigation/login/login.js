@@ -71,12 +71,9 @@ export const ViewModel = DefineMap.extend({
         route.data.set({page: 'profile'}, true)
 
         if (tmpPasswordUsed) {
-          this.session.loggedIn = true
           this.session.tmpPassword = password
-          $('#set-password-modal').modal('show')
-        } else {
-          this.session.loggedIn = true
         }
+        this.session.loggedIn = true
         this.clearForm()
       })
       .catch(() => {

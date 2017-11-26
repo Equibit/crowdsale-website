@@ -19,7 +19,7 @@ const Session = DefineMap.extend('Session', {
 
   // This is for set-password modal
   // todo: consider passing the tmpPassword to set-password component directly.
-  tmpPassword: String,
+  tmpPassword: 'string',
 
   get isAdmin () {
     return (this.user && (this.user.isAdmin === 1 || this.user.isAdmin)) || false
