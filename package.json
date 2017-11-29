@@ -22,7 +22,7 @@
     "test": "npm run lint && npm run testee",
     "testee": "testee test.html --browsers firefox --reporter Spec"
   },
-  "main": "equibit-crowdsale/index.stache!done-autorender",
+  "main": "equibit-crowdsale/index.stache!done-autorender/no-zone",
   "files": [
     "src"
   ],
@@ -31,7 +31,7 @@
     "donejs-app"
   ],
   "steal": {
-    "main": "equibit-crowdsale/index.stache!done-autorender",
+    "main": "equibit-crowdsale/index.stache!done-autorender/no-zone",
     "directories": {
       "lib": "src"
     },
