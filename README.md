@@ -1,8 +1,8 @@
-# easy-app
+# Euquibit Crowdsale Website
 
-[![Build Status](https://travis-ci.org/TxUniverse/tx-base-website.svg?branch=master)](https://travis-ci.org/TxUniverse/tx-base-website)
+[![Build Status](https://travis-ci.com/Equibit/crowdsale-website.svg?branch=master)](https://travis-ci.com/Equibit/crowdsale-website)
 
-Welcome to the easy-app DoneJS application!
+Welcome to the crowdsale-website DoneJS application!
 
 ## Getting started
 
