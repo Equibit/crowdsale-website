@@ -3,6 +3,7 @@ import DefineMap from 'can-define/map/map'
 import './count-down.less'
 import view from './count-down.stache'
 import moment from 'moment'
+import $ from 'jquery'
 
 export const ViewModel = DefineMap.extend({
   countdown: {

@@ -6,6 +6,6 @@ const assert = chai.assert
 describe('app vm', function () {
   it('should set the correct title', function () {
     const appVM = new AppVM()
-    assert.equal(appVM.title, 'Tx Base | Built with Blocks')
+    assert.equal(appVM.title, 'Equibit Group')
   })
 })

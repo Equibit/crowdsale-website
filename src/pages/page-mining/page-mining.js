@@ -2,6 +2,7 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/'
 import './page-mining.less'
 import view from './page-mining.stache'
+import $ from 'jquery'
 
 export const ViewModel = DefineMap.extend({
   message: {
