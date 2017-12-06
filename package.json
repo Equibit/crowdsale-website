@@ -1,5 +1,5 @@
 {
-  "name": "equibit-crowdsale",
+  "name": "ico",
   "version": "0.0.0",
   "description": "An awesome DoneJS app",
   "homepage": "",
@@ -22,7 +22,7 @@
     "test": "npm run lint && npm run testee",
     "testee": "testee test/test.html --browsers firefox --reporter Spec"
   },
-  "main": "equibit-crowdsale/index.stache!done-autorender/no-zone",
+  "main": "ico/index.stache!done-autorender/no-zone",
   "files": [
     "src"
   ],
@@ -31,7 +31,7 @@
     "donejs-app"
   ],
   "steal": {
-    "main": "equibit-crowdsale/index.stache!done-autorender/no-zone",
+    "main": "ico/index.stache!done-autorender/no-zone",
     "directories": {
       "lib": "src"
     },

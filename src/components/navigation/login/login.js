@@ -59,6 +59,7 @@ export const ViewModel = DefineMap.extend({
     this.disableForm = true
 
     const session = Session.current
+    this.session = session
 
     feathersClient.authenticate({ strategy: 'local', email: email, password: password })
       .then(({user, tmpPasswordUsed}) => {
@@ -67,15 +68,12 @@ export const ViewModel = DefineMap.extend({
 
         $('#login-modal').modal('hide')
 
-        route.data.set({page: 'dash'}, true)
+        route.data.set({page: 'profile'}, true)
 
         if (tmpPasswordUsed) {
-          this.session.loggedIn = true
           this.session.tmpPassword = password
-          $('#set-password-modal').modal('show')
-        } else {
-          this.session.loggedIn = true
         }
+        this.session.loggedIn = true
         this.clearForm()
       })
       .catch(() => {
