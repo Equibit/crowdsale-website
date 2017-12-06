@@ -1,10 +1,12 @@
-import QUnit from 'steal-qunit'
+import 'steal-mocha'
+import chai from 'chai/chai'
 import { ViewModel } from './page-profile'
 
-// ViewModel unit tests
-QUnit.module('ico/pages/page-profile')
+const assert = chai.assert
 
-QUnit.test('Has message', function () {
-  var vm = new ViewModel()
-  QUnit.equal(vm.message, 'This is the page-profile component')
+describe('page-profile vm', function () {
+  it('should set the correct message', function () {
+    var vm = new ViewModel()
+    assert.equal(vm.message, 'This is the page-profile component')
+  })
 })
