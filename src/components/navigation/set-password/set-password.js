@@ -9,8 +9,7 @@ export const ViewModel = DefineMap.extend({
   session: {
     type: 'any',
     set (val) {
-      const user = val && val.user
-      if (user.setPassword) {
+      if (val.tmpPassword) {
         setTimeout(() => $('#set-password-modal').modal('show'), 300)
       }
       return val

@@ -64,7 +64,7 @@
       {{#if session.loggedIn}}
         {{^if session.kycApproved}}
           <can-import from="~/components/kyc-warnings.component!" />
-          <kyc-warnings {kyc-complete}="appState.kycComplete" />
+          <kyc-warnings {kyc-complete}="session.kycComplete" />
         {{/if}}
       {{/if}}
 
@@ -107,6 +107,11 @@
         {{#case 'privacy'}}
           <can-import from="~/pages/page-privacy/" can-tag="tag-loading">
             <page-privacy />
+          </can-import>
+        {{/case}}
+        {{#case 'profile'}}
+          <can-import from="~/pages/page-profile/" can-tag="tag-loading">
+            <page-profile />
           </can-import>
         {{/case}}
 
