@@ -14,7 +14,6 @@ import 'bootstrap-select'
 import validate from '~/utils/validators'
 import User from '~/models/user'
 import Kyc from '~/models/kyc'
-import '~/models/fixtures/kyc'
 
 export const ViewModel = DefineMap.extend({
   startYear: {

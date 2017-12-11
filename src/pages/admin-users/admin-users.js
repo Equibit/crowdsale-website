@@ -6,7 +6,6 @@ import view from './admin-users.stache'
 import Pagination from '~/models/pagination'
 import User from '~/models/user'
 import Kyc from '~/models/kyc'
-import '~/models/fixtures/kyc'
 
 export const ViewModel = DefineMap.extend({
   search: 'string',

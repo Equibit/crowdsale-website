@@ -4,7 +4,6 @@ import './page-blog.less'
 import view from './page-blog.stache'
 import Pagination from '~/models/pagination'
 import Blog from '~/models/blog'
-import '~/models/fixtures/blog'
 
 export const ViewModel = DefineMap.extend({
   loadingBlog: {

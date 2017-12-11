@@ -4,7 +4,6 @@ import './kyc-user.less'
 import view from './kyc-user.stache'
 import User from '~/models/user'
 import Kyc from '~/models/kyc'
-import '~/models/fixtures/kyc'
 
 export const ViewModel = DefineMap.extend({
   disableForm: {

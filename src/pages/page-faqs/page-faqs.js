@@ -3,7 +3,6 @@ import DefineMap from 'can-define/map/map'
 import './page-faqs.less'
 import view from './page-faqs.stache'
 import Faq from '~/models/faq'
-import '~/models/fixtures/faq'
 
 export const ViewModel = DefineMap.extend({
   loadingFAQs: {

@@ -4,7 +4,6 @@ import './admin-faqs.less'
 import view from './admin-faqs.stache'
 import Pagination from '~/models/pagination'
 import Faq from '~/models/faq'
-import '~/models/fixtures/faq'
 
 export const ViewModel = DefineMap.extend({
   session: {
