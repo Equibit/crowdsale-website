@@ -1,7 +1,6 @@
 ---
 applications:
 - name: crowdsale-website
-  command: NODE_ENV=production npm start
   path: .
   memory: 1024M
   instances: 1
