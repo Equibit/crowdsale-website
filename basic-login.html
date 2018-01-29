@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>wallet-ui</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      background-color: #1a1b20;
+      position: relative;
+      height: 100%;
+    }
+    form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background-color: #EEE;
+      border-radius: 7px;
+      padding: 14px;
+
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <form action="/basic-login" method="POST">
+    <h4>Login</h4>
+    <div class="form-group">
+      <input type="password" name="password" class="form-control" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</body>
+</html>
