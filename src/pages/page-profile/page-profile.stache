@@ -1,1 +1,56 @@
-<p>{{message}}</p>
+<can-import from="~/components/count-down/" />
+
+<div class="row margin-top">
+  <div class="col-sm-6 col-md-7 col-md-offset-1 col-sm-offset-1"><h1 class="ultra">Your <span class="text-primary">Profile</span></h1></div>
+  <div class="col-sm-4 col-md-3 text-right">
+    <h4 class="text-uppercase bold text-nowrap">Remaining Time</h4>
+    <div class="h2 text-primary bold text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel {{#if isEdit}}inversed{{/if}}">
+      <div class="panel-body">
+        <div class="tab-content text-center">
+          <p class="bold text-primary">user@email.com</p>
+          <p class="small">EMAIL</p>
+          <hr width="70%">
+
+          <p class="bold text-primary">********</p>
+          <p class="small">PASSWORD</p>
+          <hr width="70%">
+
+          <p class="bold text-primary">ICO</p>
+          <p class="bold text-primary">Founders Club</p>
+          <p class="bold text-muted">Private Sale</p>
+          <p class="bold text-primary">Public Sale</p>
+          <p class="small">ELIGIBLE ROUNDS</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="panel panel-warning">
+      <div class="panel-body">
+        <div class="tab-content">
+          <div class="">
+            <h2 class="bold">Summary</h2>
+            <div class="row">
+              <div class="col-md-5 col-md-offset-1">
+                <h2 class="text-primary margin-bottom bold text-center">8,000</h2>
+                <p class="text-center">Total EQB Purchased</p>
+              </div>
+              <div class="col-md-5">
+                <h2 class="text-primary margin-bottom bold text-center">1</h2>
+                <p class="text-center">Number of Transactions</p>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`
