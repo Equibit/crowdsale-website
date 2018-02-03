@@ -7,6 +7,13 @@ import $ from 'jquery'
 export const ViewModel = DefineMap.extend({
   message: {
     value: 'This is the page-home component'
+  },
+  showComingSoon: 'boolean',
+  buy () {
+    $('#coming-soon-modal').modal('show')
+  },
+  close () {
+    $('#coming-soon-modal').modal('hide')
   }
 })
 

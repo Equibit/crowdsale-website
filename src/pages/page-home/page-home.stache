@@ -90,11 +90,30 @@
 
         <div class="row margin-bottom">
           <div class="col-xs-12 text-center">
-            <button type="button" class="btn btn-primary btn-border">BUY</button>
+            <button type="button" class="btn btn-primary btn-border" ($click)="buy()">BUY</button>
           </div>
         </div>
 
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="coming-soon-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="top-right-circle" aria-label="Close" on:click="close()"><i class="fa fa-times fa-2x" aria-hidden="true"></i></button>
+      </div>
+      <div class="modal-body">
+
+        <h2 class="bold text-center">Coming <span class="text-primary">Soon!</span></h2>
+
+        <br />
+        <br />
+
+      </div>
+
     </div>
   </div>
 </div>
