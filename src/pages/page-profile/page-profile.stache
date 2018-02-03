@@ -13,7 +13,7 @@
     <div class="panel {{#if isEdit}}inversed{{/if}}">
       <div class="panel-body">
         <div class="tab-content text-center">
-          <p class="bold text-primary">user@email.com</p>
+          <p class="bold text-primary">{{user.email}}</p>
           <p class="small">EMAIL</p>
           <hr width="70%">
 

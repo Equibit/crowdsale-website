@@ -88,5 +88,7 @@ const Session = DefineMap.extend('Session', {
   }
 })
 
+window.Session = Session
+
 // We need to export Session model to be used in tests
 export default Session

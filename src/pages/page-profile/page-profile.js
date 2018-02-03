@@ -2,10 +2,13 @@ import Component from 'can-component'
 import DefineMap from 'can-define/map/'
 import './page-profile.less'
 import view from './page-profile.stache'
+import Session from '~/models/session'
 
 export const ViewModel = DefineMap.extend({
-  message: {
-    value: 'This is the page-profile component'
+  user: {
+    value () {
+      return Session.current && Session.current.user
+    }
   }
 })
 

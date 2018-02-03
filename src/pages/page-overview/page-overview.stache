@@ -14,19 +14,14 @@
       <div class="panel-body">
 
         <div class="list-group no-margin-bottom">
-          <li class="bold list-group-item {{#eq question 1}}active{{/eq}}" on:click="changeQ(1)">Cras justo odio?</li>
-          <li class="bold list-group-item {{#eq question 2}}active{{/eq}}" on:click="changeQ(2)">Dapibus ac facilisis in?</li>
-          <li class="bold list-group-item {{#eq question 3}}active{{/eq}}" on:click="changeQ(3)">Morbi leo risus?</li>
-          <li class="bold list-group-item {{#eq question 4}}active{{/eq}}" on:click="changeQ(4)">Porta ac consectetur ac?</li>
-          <li class="bold list-group-item">Vestibulum at eros?</li>
-          <li class="bold list-group-item">Dapibus ac facilisis in?</li>
-          <li class="bold list-group-item">Morbi leo risus?</li>
-          <li class="bold list-group-item">Porta ac consectetur ac?</li>
-          <li class="bold list-group-item">Vestibulum at eros?</li>
-          <li class="bold list-group-item">Dapibus ac facilisis in?</li>
-          <li class="bold list-group-item">Morbi leo risus?</li>
-          <li class="bold list-group-item">Porta ac consectetur ac?</li>
-          <li class="bold list-group-item">Vestibulum at eros?</li>
+          <li class="bold list-group-item {{#eq question 1}}active{{/eq}}" on:click="changeQ(1)">What is Equibit?</li>
+          <li class="bold list-group-item {{#eq question 2}}active{{/eq}}" on:click="changeQ(2)">What do Equibits (EQB) do?</li>
+          <li class="bold list-group-item {{#eq question 3}}active{{/eq}}" on:click="changeQ(3)">How valuable would an EQB be?</li>
+          <li class="bold list-group-item {{#eq question 4}}active{{/eq}}" on:click="changeQ(4)">When will I be able to trade EQBs?</li>
+          <li class="bold list-group-item {{#eq question 5}}active{{/eq}}" on:click="changeQ(5)">What if you don’t hit your fundraising targets?</li>
+          <li class="bold list-group-item {{#eq question 6}}active{{/eq}}" on:click="changeQ(6)">Is an EQB a Security?</li>
+          <li class="bold list-group-item {{#eq question 7}}active{{/eq}}" on:click="changeQ(7)">Will I be able to purchase EQB after this sale ends?</li>
+          <li class="bold list-group-item {{#eq question 8}}active{{/eq}}" on:click="changeQ(8)">Why are you capping the sale at 2,000 BTC?</li>
         </div>
 
       </div>
@@ -37,32 +32,43 @@
       <div class="panel-body">
         <div class="tab-content">
           <div class="{{#eq question 1}}active{{/eq}}">
-            <h2 class="bold">Cras justo odio?</h2>
-            <h3 class="text-primary margin-bottom bold">Another line?</h3>
-            <p>Have finished development and testing of our initial product suite including Equibit Core and Equibit Portfolio. Issuers can issue securities and Investors can invest – both using Equibits and our platform.</p>
-            <p>Signed an agreement with IBM to supply and co-market our Supernodes [link]</p>
-            <p>Grew the team with top tier talent in both development and marketing</p>
-            <p>Put together committees of industry leaders to support our executive in areas of Strategy and Security (link to committees)</p>
-            <p>Re-branded ourselves Equibit Group to better reflect our long-term vision for the company</p>
+            <h2 class="bold">What is Equibit?</h2>
+            <!--<h3 class="text-primary margin-bottom bold">Another line?</h3>-->
+            <p>Equibit is a revolutionary, peer-to- peer securities registration, market-making, and compliance platform. It allows investors to hold directly-registered securities and communicate privately with one another. </p><p>The system includes a public order book, direct and group communications, polls, proxies and a compliance system that has been vetted by a major securities regulator. </p><p>Now it’s possible to issue and trade bearer, public, and private securities in a completely decentralized manner and knowing that all regulatory matters have been dealt with!</p>
           </div>
           <div class="{{#eq question 2}}active{{/eq}}">
-            <h2 class="bold">Cras justo odio another?</h2>
-            <h3 class="text-primary margin-bottom bold">Wait Another line?</h3>
-            <p>Re-branded ourselves Equibit Group to better reflect our long-term vision for the company</p>
-            <p>Have finished development and testing of our initial product suite including Equibit Core and Equibit Portfolio. Issuers can issue securities and Investors can invest – both using Equibits and our platform.</p>
-            <p>Signed an agreement with IBM to supply and co-market our Supernodes [link]</p>
-            <p>Grew the team with top tier talent in both development and marketing</p>
-            <p>Put together committees of industry leaders to support our executive in areas of Strategy and Security (link to committees)</p>
-            <p>Re-branded ourselves Equibit Group to better reflect our long-term vision for the company</p>
-            <p>Have finished development and testing of our initial product suite including Equibit Core and Equibit Portfolio. Issuers can issue securities and Investors can invest – both using Equibits and our platform.</p>
-            <p>Signed an agreement with IBM to supply and co-market our Supernodes [link]</p>
-            <p>Grew the team with top tier talent in both development and marketing</p>
-            <p>Put together committees of industry leaders to support our executive in areas of Strategy and Security (link to committees)</p>
+            <h2 class="bold">What do Equibits (EQB) do?</h2>
+            <p>EQBs are the network’s native token and are needed for all transaction fees, as well as to create new securities on the platform. Each EQB is divisible to 8 decimal places and there will only ever be a total of 22 million of them on the system. </p><p>By making them scarce, this incentivizes people to keep the register clean by recycling the securities of dead or declining companies. It also provides a built-in stop-loss to all investors, a world’s first.</p>
           </div>
           <div class="{{#eq question 3}}active{{/eq}}">
-
+            <h2 class="bold">How valuable would an EQB be?</h2>
+            <p>The value of an EQB depends on its state. If an issuer is using it as a security, then the value is determined by the underlying company. If the EQB is blank then there are a number of demand factors that come in to play. </p><p>There are currently hundreds of thousands, possibly millions of companies worldwide in the bearer, public and private markets that will all benefit from the use of EQB versus traditional registration systems like DTCC and Computershare.</p><p>The more liquidity a company wants, the more EQBs they will use in their offerings. For example, a large company like Apple that has 5.25 billion shares issued and outstanding would likely use hundreds, maybe thousands, of EQBs to migrate onto the Equibit registration system. In doing so they would save millions of dollars each year in investor relations overhead.</p>
           </div>
           <div class="{{#eq question 4}}active{{/eq}}">
+            <h2 class="bold">When will I be able to trade EQBs?</h2>
+            <p>You will be able to trade EQB’s just after the sale closes. Once this EQB sale is finished (March X) the EQB sold in the pre-sale (and ICO) will be delivered to an Equibit Portfolio account under the username and email you registered with on this site.</p>
+            <p class="text-primary">Equibit Group is currently in talks with a number of digital asset exchanges that will list EQBs (see list)</p>
+          </div>
+          <div class="{{#eq question 5}}active{{/eq}}">
+            <h2 class="bold">What if you don’t hit your fundraising targets?</h2>
+            <p>We don’t have a specific funding target. The Equibit platform is built and ready for launch as this sale closes and the EQB are in circulation - we don’t need the money to build the platform. </p><p>Money raised from the sale will be used to promote the platform and build a community of developers, issuers (companies) and investors. The more money we raise the quicker we can do this.</p>
+          </div>
+          <div class="{{#eq question 6}}active{{/eq}}">
+            <h2 class="bold">Is an EQB a Security?</h2>
+            <p>Our position, and that of our lawyers, is that an Equibit is an exclusive, limited, transferable software license and not a security. </p><p>However some regulators including the Ontario Securities Commission (OSC), under whose auspices we operate hold that, in terms of this sale, an Equibit is a security and that is why Canadians are not able to participate in this sale.</p>
+          </div>
+          <div class="{{#eq question 7}}active{{/eq}}">
+            <h2 class="bold">Will I be able to purchase EQB after this sale ends?</h2>
+            <p>After our product is launched (March XX) , and EQB are available on exchanges you will be able to purchase EQB as you would other crypto-currencies.</p>
+          </div>
+          <div class="{{#eq question 8}}active{{/eq}}">
+            <h2 class="bold">Why are you capping the sale at 2,000 BTC?</h2>
+            <p>The 2,000 BTC cap will have three positive effects:</p>
+            <ul>
+              <li>It will incent participants to get involved early – rather than risk being shut out.</li>
+              <li>If prevents a huge speculative price increase too early in our life cycle – EQB is designed to be a long-term play.</li>
+              <li>It is a tangible demonstration that Equibit Group has put the long-term health of this project ahead of the personal interest of its shareholders.</li>
+            </ul>
 
           </div>
         </div>
