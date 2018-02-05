@@ -38,7 +38,7 @@
             <h2 class="bold">Summary</h2>
             <div class="row">
               <div class="col-md-5 col-md-offset-1">
-                <h2 class="text-primary margin-bottom bold text-center">8,000</h2>
+                <h2 class="text-primary margin-bottom bold text-center">{{user.ico}}</h2>
                 <p class="text-center">Total EQB Purchased</p>
               </div>
               <div class="col-md-5">
