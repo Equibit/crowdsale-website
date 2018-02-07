@@ -57,7 +57,7 @@ const AppViewModel = DefineMap.extend({
   }
 })
 
-route('{page}', { page: 'home' })
+route('{page}', { page: 'landing' })
 route('{page}/{slug}', { slug: null })
 window.route = route
 

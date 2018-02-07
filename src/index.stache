@@ -48,6 +48,12 @@
 <can-import from="~/components/session-error.component!" />
 <can-import from="~/components/navigation/" />
 
+{{#is page 'landing'}}
+  <can-import from="~/pages/page-landing.component" can-tag="tag-loading">
+    <page-landing />
+  </can-import>
+{{else}}
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-3 col-md-2">
@@ -137,6 +143,7 @@
     </div>
   </div>
 </div>
+{{/is}}
 
 {{#switch env.NODE_ENV}}
   {{#case "production"}}
