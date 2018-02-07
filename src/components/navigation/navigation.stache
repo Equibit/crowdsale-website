@@ -1,5 +1,10 @@
 <can-import from="can-stache/helpers/route" />
 
+{{#is page 'landing'}}
+  <button type="button" class="btn btn-primary btn-border landing-login-btn"
+          data-toggle="modal" data-target="#login-modal" on:click="closeMenu()">Login</button>
+{{else}}
+
 <nav class="navbar navbar-default navbar-fixed-side">
   <div class="container">
     <div class="navbar-header">
@@ -67,6 +72,7 @@
     </div>
   </div>
 </nav>
+{{/is}}
 
 {{^if session.loggedIn}}
 

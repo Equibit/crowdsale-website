@@ -50,6 +50,7 @@
 
 {{#is page 'landing'}}
   <can-import from="~/pages/page-landing.component" can-tag="tag-loading">
+    <navigation-bar session:from="session" page:from="page" />
     <page-landing />
   </can-import>
 {{else}}

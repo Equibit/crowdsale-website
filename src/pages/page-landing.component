@@ -12,11 +12,6 @@
       font-size: 60px;
       font-weight: bold;
     }
-    button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
     img {
       height: 50px;
       position: relative;
@@ -27,7 +22,6 @@
   <view>
     <img src="/assets/img/logo.png" />
     <h1>EQB <span class="text-primary">Sale</span></h1>
-    <button type="button" class="btn btn-primary btn-border" on:click="login()">Login</button>
   </view>
   <script type="view-model">
     import DefineMap from 'can-define/map/map'
