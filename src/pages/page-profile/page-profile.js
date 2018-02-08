@@ -9,6 +9,11 @@ export const ViewModel = DefineMap.extend({
     value () {
       return Session.current && Session.current.user
     }
+  },
+  sum: {
+    get () {
+      return this.user && (this.user.ico + this.user.saft)
+    }
   }
 })
 

@@ -19,7 +19,8 @@ const User = DefineMap.extend('User', {
   lastLogin: 'number',
   locked: 'boolean',
   isAdmin: 'boolean',
-  ico: 'number',
+  ico: { type: 'number', value: 0 },
+  saft: { type: 'number', value: 0 },
   signUp (email) {
     return feathersClient.service('users').create({email})
   },
