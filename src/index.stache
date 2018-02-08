@@ -47,12 +47,11 @@
 <can-import from="~/components/loading.component!" />
 <can-import from="~/components/session-error.component!" />
 <can-import from="~/components/navigation/" />
+<can-import from="~/pages/page-balance-only.component" />
 
-{{#is page 'landing'}}
-  <can-import from="~/pages/page-landing.component" can-tag="tag-loading">
-    <navigation-bar session:from="session" page:from="page" />
-    <page-landing />
-  </can-import>
+{{#is mode 'balance-only'}}
+  <navigation-bar session:from="session" page:from="page" mode:from="mode"/>
+  <page-balance-only session:from="session" />
 {{else}}
 
 <div class="container-fluid">

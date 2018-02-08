@@ -7,6 +7,7 @@ import route from 'can-route'
 import 'can-route-pushstate'
 
 export const ViewModel = DefineMap.extend({
+  mode: '*',
   listenerAdded: {
     value: false
   },

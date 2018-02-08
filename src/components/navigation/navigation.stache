@@ -1,8 +1,13 @@
 <can-import from="can-stache/helpers/route" />
 
-{{#is page 'landing'}}
-  <button type="button" class="btn btn-primary btn-border landing-login-btn"
-          data-toggle="modal" data-target="#login-modal" on:click="closeMenu()">Login</button>
+{{#is mode 'balance-only'}}
+  {{#if session.loggedIn}}
+    <button type="button" class="btn btn-primary btn-border landing-login-btn"
+            on:click="logout()">Logout</button>
+  {{else}}
+    <button type="button" class="btn btn-primary btn-border landing-login-btn"
+            data-toggle="modal" data-target="#login-modal" on:click="closeMenu()">Login</button>
+  {{/if}}
 {{else}}
 
 <nav class="navbar navbar-default navbar-fixed-side">

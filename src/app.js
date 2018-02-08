@@ -20,6 +20,7 @@ const AppViewModel = DefineMap.extend({
   '*': {
     serialize: false
   },
+  mode: { value: 'balance-only' },
   page: {
     type: 'string',
     serialize: true
@@ -57,7 +58,7 @@ const AppViewModel = DefineMap.extend({
   }
 })
 
-route('{page}', { page: 'landing' })
+route('{page}', { page: 'ico' })
 route('{page}/{slug}', { slug: null })
 window.route = route
 

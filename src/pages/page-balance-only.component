@@ -1,16 +1,21 @@
-<can-component tag="page-landing">
+<can-component tag="page-balance-only">
   <style type="less">
     display: block;
     height: 100vh;
     background: #f5f5f5 url("/assets/img/hexagon-bg.png") left top fixed no-repeat;
-    h1 {
+    h1.site-title {
       position: absolute;
       top: 50%;
-      transform: translateY(-90%);
+      transform: translateY(-100%);
       width: 100%;
       text-align: center;
       font-size: 60px;
       font-weight: bold;
+      font-family: 'gotham_boldregular', sans-serif;
+      span {
+        font-weight: normal;
+        font-family: gotham_bookregular;
+      }
     }
     img {
       height: 50px;
@@ -20,13 +25,25 @@
     }
   </style>
   <view>
+    <can-import from="~/pages/page-profile/" />
+
     <img src="/assets/img/logo.png" />
-    <h1>EQB <span class="text-primary">Sale</span></h1>
+
+    {{#if session.loggedIn}}
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <page-profile session:from="session"/>
+        </div>
+      </div>
+    {{else}}
+      <h1 class="site-title">EQB <span class="text-primary">Sale</span></h1>
+    {{/if}}
   </view>
   <script type="view-model">
     import DefineMap from 'can-define/map/map'
 
     const PageLanding = DefineMap.extend('PageLanding', {
+      session: '*'
     })
 
     export default function (opt) {

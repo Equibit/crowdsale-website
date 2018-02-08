@@ -1,10 +1,12 @@
 <can-import from="~/components/count-down/" />
 
 <div class="row margin-top">
-  <div class="col-sm-6 col-md-7 col-md-offset-1 col-sm-offset-1"><h1 class="ultra">Your <span class="text-primary">Profile</span></h1></div>
+  <!--<div class="col-sm-6 col-md-7 col-md-offset-1 col-sm-offset-1"><h1 class="ultra1">Your <span class="text-primary">Profile</span></h1></div>-->
+  <div class="col-md-4"><h2 class="regular">Your <span class="text-primary">Profile</span></h2></div>
+  <div class="col-md-4"><h2 class="regular">History</h2></div>
   <div class="col-sm-4 col-md-3 text-right">
     <h4 class="text-uppercase bold text-nowrap">Remaining Time</h4>
-    <div class="h2 text-primary bold text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>
+    <div class="h4 text-primary text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>
   </div>
 </div>
 
@@ -19,13 +21,6 @@
 
           <p class="bold text-primary">********</p>
           <p class="small">PASSWORD</p>
-          <hr width="70%">
-
-          <p class="bold text-primary">ICO</p>
-          <p class="bold text-primary">Founders Club</p>
-          <p class="bold text-muted">Private Sale</p>
-          <p class="bold text-primary">Public Sale</p>
-          <p class="small">ELIGIBLE ROUNDS</p>
         </div>
       </div>
     </div>
@@ -35,7 +30,6 @@
       <div class="panel-body">
         <div class="tab-content">
           <div class="">
-            <h2 class="bold">Summary</h2>
             <div class="row">
               <div class="col-md-5 col-md-offset-1">
                 <h2 class="text-primary margin-bottom bold text-center">{{user.ico}}</h2>
