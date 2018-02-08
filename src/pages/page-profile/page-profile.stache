@@ -21,7 +21,14 @@
 
           <p class="bold text-primary">********</p>
           <p class="small">PASSWORD</p>
+
         </div>
+      </div>
+
+      <div class="edit-btn-container">
+        <button type="button" class="btn btn-primary"
+                data-toggle="modal" data-target="#change-password-modal"
+                on:click="">Edit</button>
       </div>
     </div>
   </div>
