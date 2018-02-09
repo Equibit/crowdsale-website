@@ -4,10 +4,10 @@
   <!--<div class="col-sm-6 col-md-7 col-md-offset-1 col-sm-offset-1"><h1 class="ultra1">Your <span class="text-primary">Profile</span></h1></div>-->
   <div class="col-md-4"><h2 class="bold">Your <span class="text-primary">Profile</span></h2></div>
   <div class="col-md-4"><h2 class="bold">History</h2></div>
-  <div class="col-md-4 text-right">
-    <h4 class="text-uppercase text-nowrap">Remaining Time</h4>
-    <div class="h4 text-primary text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>
-  </div>
+  <!--<div class="col-md-4 text-right">-->
+    <!--<h4 class="text-uppercase text-nowrap">Remaining Time</h4>-->
+    <!--<div class="h4 text-primary text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>-->
+  <!--</div>-->
 </div>
 
 <div class="row">
@@ -41,8 +41,8 @@
               <thead>
                 <tr>
                   <th>Date</th>
-                  <th>ICO</th>
-                  <th>SAFT</th>
+                  <th>Round</th>
+                  <th>Amount</th>
                   <th>Balance</th>
                 </tr>
               </thead>
@@ -50,15 +50,15 @@
                 {{#if user.ico}}
                   <tr>
                     <td>2017-03-31</td>
+                    <td>ICO</td>
                     <td>{{user.ico}}</td>
-                    <td></td>
                     <td>{{user.ico}}</td>
                   </tr>
                 {{/if}}
                 {{#if user.saft}}
                   <tr>
                     <td>2017-11-30</td>
-                    <td></td>
+                    <td>SAFT</td>
                     <td>{{user.saft}}</td>
                     <td>{{sum}}</td>
                   </tr>
