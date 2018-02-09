@@ -9,6 +9,21 @@ const handler = require('feathers-errors/handler')
 const notFound = require('feathers-errors/not-found')
 
 const app = feathers()
+
+// Forward http requests on heroku to https
+app.use(function (req, res, next) {
+  var herokuProtocol = req.headers['x-forwarded-proto']
+  var host = req.headers['host']
+  var isDevelopment = process.env.NODE_ENV === 'development'
+  var isLocalhost = host.indexOf('localhost') !== -1
+
+  if (!isDevelopment && !isLocalhost && herokuProtocol !== 'https') {
+    res.redirect('https://' + host + req.url)
+  } else {
+    next()
+  }
+})
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
