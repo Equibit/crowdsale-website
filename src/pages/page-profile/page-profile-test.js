@@ -5,8 +5,10 @@ import { ViewModel } from './page-profile'
 const assert = chai.assert
 
 describe('page-profile vm', function () {
-  it('should set the correct message', function () {
-    var vm = new ViewModel()
-    assert.equal(vm.message, 'This is the page-profile component')
+  it('should calc sum as ico plus saft', function () {
+    var vm = new ViewModel({
+      user: {ico: 10, saft: 5}
+    })
+    assert.equal(vm.sum, 15)
   })
 })
