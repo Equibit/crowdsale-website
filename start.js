@@ -34,22 +34,22 @@ app.use(expressSession({
   cookie: { secure: false }
 }))
 
-app.post('/basic-login', function (req, res) {
-  const passwd = req.body.password
-  if (passwd && (process.env.HTTP_PASSWORD ? passwd === process.env.HTTP_PASSWORD : passwd === 'bullish')) {
-    req.session.authorized = true
-    res.redirect('/')
-  } else {
-    res.send('login failed')
-  }
-})
-
-app.use(function (req, res, next) {
-  if (!req.session.authorized) {
-    return res.sendFile(path.join(__dirname, './basic-login.html'))
-  }
-  return next()
-})
+// app.post('/basic-login', function (req, res) {
+//   const passwd = req.body.password
+//   if (passwd && (process.env.HTTP_PASSWORD ? passwd === process.env.HTTP_PASSWORD : passwd === 'bullish')) {
+//     req.session.authorized = true
+//     res.redirect('/')
+//   } else {
+//     res.send('login failed')
+//   }
+// })
+//
+// app.use(function (req, res, next) {
+//   if (!req.session.authorized) {
+//     return res.sendFile(path.join(__dirname, './basic-login.html'))
+//   }
+//   return next()
+// })
 
 // Host the public folder
 app.use('/', feathers.static('./'))
