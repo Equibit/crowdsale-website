@@ -52,6 +52,9 @@ export const ViewModel = DefineMap.extend({
     this.passwordVisible = !this.passwordVisible
   },
   handleLogin (ev, email, password) {
+    if (email && email.toLowerCase) {
+      email = email.toLowerCase()
+    }
     ev.preventDefault()
     if (this.hasErrors) return false
     this.loginError = false
