@@ -38,9 +38,6 @@ export const ViewModel = DefineMap.extend({
     }
   },
   handleSignUp (ev, email) {
-    if (email && email.toLowerCase) {
-      email = email.toLowerCase()
-    }
     ev.preventDefault()
     if (!this.validSignUp) return false
     this.signUpError = false

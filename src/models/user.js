@@ -22,15 +22,24 @@ const User = DefineMap.extend('User', {
   ico: { type: 'number', value: 0 },
   saft: { type: 'number', value: 0 },
   signUp (email) {
+    if (email && email.toLowerCase) {
+      email = email.toLowerCase()
+    }
     return feathersClient.service('users').create({email})
   },
   forgotPassword (email) {
+    if (email && email.toLowerCase) {
+      email = email.toLowerCase()
+    }
     return feathersClient.service('forgot-password').create({email})
   },
   changePassword (newPassword, oldPassword) {
     return feathersClient.service('users').patch(this._id, {password: newPassword, oldPassword})
   },
   changeEmail (password, newEmail, emailCode) {
+    if (newEmail && newEmail.toLowerCase) {
+      newEmail = newEmail.toLowerCase()
+    }
     return feathersClient.service('users').patch(this._id, {password, newEmail, emailCode})
   }
 })
