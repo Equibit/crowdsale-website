@@ -18,8 +18,7 @@
     "develop": "done-serve --static --develop --port 8080",
     "lint": "standard",
     "lint:fix": "standard --fix",
-    "start": "npm run develop",
-    "start1": "done-serve --port 8080",
+    "start": "node start.js",
     "test": "npm run lint && npm run testee",
     "testee": "testee test/test.html --browsers firefox --reporter Spec"
   },
@@ -78,6 +77,7 @@
     "done-serve": "^1.4.0",
     "donejs-feathers": "^2.1.5",
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
+    "express-session": "^1.15.6",
     "feathers": "^2.2.0",
     "feathers-authentication-client": "^0.3.3",
     "feathers-hooks": "^2.0.2",
