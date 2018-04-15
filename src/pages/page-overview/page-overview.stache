@@ -1,9 +1,9 @@
 <can-import from="~/components/count-down/" />
 
 <div class="row margin-top">
-  <div class="col-sm-6 col-md-7 col-md-offset-1 col-sm-offset-1"><h1 class="bold">Frequently Asked <span class="text-primary">Questions</span></h1></div>
+  <div class="col-sm-7 col-md-8 col-md-offset-1 col-sm-offset-1"><h1 class="bold">Frequently Asked <span class="text-primary">Questions</span></h1></div>
   <div class="col-sm-4 col-md-3 text-right">
-    <div class="h2 text-primary bold text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>
+    <div class="h4 bold text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>
   </div>
 </div>
 

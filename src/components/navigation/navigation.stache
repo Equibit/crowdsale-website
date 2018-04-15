@@ -50,13 +50,13 @@
             </a>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="" data-toggle="modal" data-target="#login-modal" on:click="closeMenu()">Login</a></li>
-          <li><a href="" data-toggle="modal" data-target="#sign-up-modal" on:click="closeMenu()">SignUp</a></li>
-        </ul>
       {{else}}
         <ul class="nav navbar-nav">
-          <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}} nav-item"><a href="{{routeUrl page='home'}}" on:click="closeMenu()"><img src="/assets/img/nav-icons/Dashboard{{#routeCurrent page='home'}}-Active{{/routeCurrent}}.svg">Dashboard{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+          <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}} nav-item">
+            <a href="{{routeUrl page='home'}}" on:click="closeMenu()">
+              Dashboard{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
+            </a>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">

@@ -5,7 +5,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="top-right-circle" aria-label="Close" on:click="clearForm()"><i class="fa fa-times fa-2x" aria-hidden="true"></i></button>
-        <h4 class="modal-title bold text-center text-info" id="myModalLabel">Login</h4>
+        <h4 class="modal-title bold text-center text-info" id="myModalLabel">Sign In</h4>
       </div>
       <form novalidate>
         <div class="modal-body">
