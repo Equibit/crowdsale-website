@@ -1,41 +1,113 @@
+<can-import from="~/components/donut-chart.component!" />
 <can-import from="~/components/count-down/" />
 
 <div class="row margin-top">
-  <div class="col-sm-6 col-md-7 col-md-offset-1 col-sm-offset-1"><h1 class="ultra">The <span class="text-primary">Mining</span></h1></div>
-  <div class="col-sm-4 col-md-3 text-right">
-    <h4 class="text-uppercase bold text-nowrap">Remaining Time</h4>
-    <div class="h2 text-primary bold text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>
+  <div class="col-sm-12 text-right">
+    <div class="h4 text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>
+  </div>
+  <div class="col-sm-12">
+    <div class="text-center h1">
+      <span class="bold text-primary">eqb</span> sale
+    </div>
+  </div>
+</div>
+<div class="hidden-xs row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="text-center text-primary text-uppercase bold margin-bottom-extra">
+      722 available
+    </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-12 col-lg-4">
-    <div class="panel">
-      <div class="panel-body">
-        <div class="margin-bottom">
-          <h2 class="text-center text-info ultra">Founders<span>Club</span></h2>
-        </div>
-        <p>The Founders Club is comprised of the 330 [validate] individuals or groups who pre-purchased Equibits during the original crowd sale in [Month] – referred to then as our ICO. As valued ongoing supporters of Equibit Group you will be given the opportunity, from noon, EST, October [XX] to noon, EST, October [seven days later] to purchase additional Equibits at a discounted (20% o ) price of $4.00 each. There is no individual limit but this round with will be capped at an incremental 270,000 Equibits.</p>
-      </div>
+  <div class="col-sm-4">
+    <donut-chart brand="primary" text="173:02" percentage="30" />
+  </div>
+  <div class="col-sm-4">
+    <donut-chart brand="primary" text="1238" percentage="70" large="true" />
+  </div>
+  <div class="col-sm-4">
+    <donut-chart brand="primary" text="0.027" percentage="50" />
+  </div>
+</div>
+
+<div class="hidden-xs row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="text-center text-uppercase margin-bottom margin-top-extra">
+      2000 BTC CAP
     </div>
   </div>
-  <div class="col-md-12 col-lg-4">
-    <div class="panel">
-      <div class="panel-body">
-        <div class="margin-bottom">
-          <h2 class="text-center text-info ultra">Private<span>Sale</span></h2>
-        </div>
-        <p>After “Founders Club” sale closes individual invited by Equibit Group will, from noon, EST, October [XX] to noon, EST, October [seven days later] to purchase Equibits for $5.00 each. Individuals must purchase a minimum of 10,000 Equibits and to a maximum of 100,000 Equibits. The Private Sale is caped at 800,000 (in total) leaving at least 200,000 for the Public sale or Dutch Auction.</p>
-      </div>
+</div>
+
+<div class="hidden-xs row">
+  <div class="col-sm-4">
+    <div class="text-center text-uppercase margin-bottom-extra margin-top bold">
+      Hours remaining
     </div>
   </div>
-  <div class="col-md-12 col-lg-4">
+  <div class="col-sm-4">
+    <div class="text-center text-uppercase margin-bottom-extra margin-top bold">
+      BTC bid
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="text-center text-uppercase margin-bottom-extra margin-top bold">
+      btc / eqb
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4 text-center">
+    {{#if session.loggedIn}}
+      <button type="button" class="btn btn-primary btn-border"
+              on:click="logout()">Sign Out</button>
+    {{else}}
+      <button type="button" class="btn btn-primary"
+              data-toggle="modal" data-target="#sign-up-modal" on:click="closeMenu()">Register</button>
+    <br><br>
+      <button type="button" class="btn btn-grey"
+              data-toggle="modal" data-target="#login-modal" on:click="closeMenu()">Sign In</button>
+    {{/if}}
+  </div>
+</div>
+
+<hr class="margin-top-extra margin-bottom-extra">
+
+<div class="row margin-top">
+  <div class="col-sm-10 col-sm-offset-1">
+    <h1 class="bold">About <span class="text-primary">The Auction</span></h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <div class="margin-top-extra">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut eros et nulla cursus aliquam non sit amet quam. Donec aliquam ante eget mi placerat porta. Integer feugiat nisl felis, vitae tincidunt nunc congue non. Aliquam nec diam pellentesque, consequat lacus et, bibendum quam. Quisque mollis at magna vel faucibus. Maecenas lacinia lacus sit amet tellus ornare, non accumsan lectus eleifend. Nunc id mollis nisi. Suspendisse euismod augue ut massa venenatis, vel iaculis diam iaculis.</p>
+      <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sem tortor, rhoncus in nibh quis, euismod interdum ex. Curabitur sagittis velit id libero fringilla facilisis. Vivamus ut lacus vel urna tincidunt pretium. Integer malesuada sapien nulla, vulputate faucibus velit ultricies nec. Donec at lacus dolor. Integer sagittis ipsum ultrices, laoreet mi vitae, hendrerit odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam auctor mollis gravida. Donec in nulla in augue ultricies pretium. In hac habitasse platea dictumst. Quisque eget dolor magna. Integer et leo pharetra libero ultricies malesuada.</p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
     <div class="panel">
       <div class="panel-body">
-        <div class="margin-bottom">
-          <h2 class="text-center text-info ultra">Dutch<span>Auction</span></h2>
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="margin-bottom">
+              <h2 class="text-info bold">Current<span> Price</span></h2>
+            </div>
+            <p>Starting noon on October xx and running for two weeks we will hold a Dutch auction for any remaining Equibits. Anyone interested in purchasing Equities will indicate how much they want to spend - then the remaining Equities (a minimum of200,000) are divided proportionally to the amount each person wants to spend.</p>
+          </div>
+          <div class="col-sm-4">
+            <div class="text-primary h3">XXX</div>
+            <p>BTC</p>
+            <br>
+            <div class="text-primary h3">250,000</div>
+            <p>EQB</p>
+          </div>
         </div>
-        <p>Starting noon on October xx and running for two weeks we will hold a Dutch auction for any remaining Equibits. Anyone interested in purchasing Equities will indicate how much they want to spend - then the remaining Equities (a minimum of200,000) are divided proportionally to the amount each person wants to spend.</p>
       </div>
     </div>
   </div>

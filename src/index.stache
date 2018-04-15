@@ -56,23 +56,23 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-3 col-md-2">
+    <div class="col-sm-3 col-md-2 col-lg-1">
       <navigation-bar session:from="session" />
     </div>
-    <div class="col-sm-9 col-lg-10">
+    <div class="col-sm-9 col-md-10 col-lg-11">
 
-      {{#if session.sessionError}}
-        <can-import from="~/components/session-error.component!" can-tag="tag-loading">
-          <session-error />
-        </can-import>
-      {{/if}}
+      <!--{{#if session.sessionError}}-->
+        <!--<can-import from="~/components/session-error.component!" can-tag="tag-loading">-->
+          <!--<session-error />-->
+        <!--</can-import>-->
+      <!--{{/if}}-->
 
-      {{#if session.loggedIn}}
-        {{^if session.kycApproved}}
-          <can-import from="~/components/kyc-warnings.component!" />
-          <kyc-warnings {kyc-complete}="session.kycComplete" />
-        {{/if}}
-      {{/if}}
+      <!--{{#if session.loggedIn}}-->
+        <!--{{^if session.kycApproved}}-->
+          <!--<can-import from="~/components/kyc-warnings.component!" />-->
+          <!--<kyc-warnings {kyc-complete}="session.kycComplete" />-->
+        <!--{{/if}}-->
+      <!--{{/if}}-->
 
       {{#switch page}}
         {{#case 'home'}}
@@ -83,11 +83,6 @@
         {{#case 'about'}}
           <can-import from="~/pages/page-about/" can-tag="tag-loading">
             <page-about />
-          </can-import>
-        {{/case}}
-        {{#case 'mining'}}
-          <can-import from="~/pages/page-mining/" can-tag="tag-loading">
-            <page-mining />
           </can-import>
         {{/case}}
         {{#case 'video'}}

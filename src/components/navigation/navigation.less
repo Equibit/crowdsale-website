@@ -12,43 +12,12 @@ navigation-bar {
 			background-color: white;
 		}
 	}
-	.navbar-brand {
-		width: inherit;
-		padding: 0 0 0 10px;
-		img {
-			position: relative;
-			top: -2px;
-			height: 50px;
-			display: inline-block;
-			margin-right: 20px;
-		}
-		span {
-			line-height: 50px;
-		}
+	.large {
+		font-size: 20px;
 	}
 	@media (min-width: @screen-sm-min) {
-		.navbar-brand {
-			width: inherit;
-			padding: 0;
-			img {
-				width: inherit;
-				height: auto;
-				margin: 0;
-				padding: 15px;
-			}
-			span {
-				display: block;
-				text-align: center;
-				width: inherit;
-				padding-bottom: 15px;
-				font-size: 22px;
-			}
-			.box-shadow(0px 0px 10px 0px rgba(0, 0, 0, 0.2))
-		}
-
 		.navbar-fixed-side .navbar-nav > li > a, .collapse.navbar-collapse.margin-top {
 			border: none;
-			text-align: center;
 		}
 
 		.nav.navbar-nav.navbar-right {
@@ -69,7 +38,6 @@ navigation-bar {
 				> a {
 					border: none;
 					color: white;
-					text-align: center;
 					padding: 5px 15px 5px 15px;
 					font-family: 'gotham_boldregular', sans-serif;
 				}
@@ -109,9 +77,8 @@ navigation-bar {
 
 	.nav-item {
 		font-family: 'gotham_boldregular', sans-serif;
-		margin: 10px 0;
+		margin: 30px 0;
 		text-transform: uppercase;
-		text-align: center;
 		img {
 			display: block;
 			width: 15%;
