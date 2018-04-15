@@ -1,12 +1,14 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <div class="h1 no-margin-top">Terms of Service (ToS)</div>
-    </div>
+<div class="row margin-top">
+  <div class="col-sm-7 col-md-8 col-md-offset-1 col-sm-offset-1"><h1 class="bold">Terms of <span class="text-primary">Service</span></h1></div>
+  <div class="col-sm-4 col-md-3 text-right">
+    <div class="h4 bold text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>
   </div>
-  <div class="row">
-    <div class="col-md-12 col-lg-10 col-lg-offset-1">
-      <div class="well">
+</div>
+
+<div class="row">
+  <div class="col-md-12 col-lg-10 col-lg-offset-1">
+    <div class="panel">
+      <div class="panel-body">
         <h3 class="no-margin-top">1. INDEMNIFICATION</h3>
         <p>CUSTOMER AGREES TO PROTECT, DEFEND, HOLD HARMLESS, AND INDEMNIFY EASY APP FRAMEWORK, ANY THIRD PARTY ENTITY RELATED TO EASY APP FRAMEWORK. (INCLUDING THIRD PARTY VENDORS), AND EASY APP FRAMEWORK’S EXECUTIVES, DIRECTORS, OFFICERS, ATTORNEYS, MANAGERS, EMPLOYEES, CONSULTANTS, CONTRACTORS, AGENTS, PARENT COMPANIES, SUBSIDIARIES, AND CO-SUBSIDIARIES FROM AND AGAINST ANY AND ALL LIABILITIES, LOSSES, COSTS, JUDGMENTS, DAMAGES, CLAIMS, OR CAUSES OF ACTIONS, INCLUDING ANY AND ALL LEGAL FEES AND EXPENSES, ARISING OUT OF OR RESULTING IN ANY WAY FROM CUSTOMER’S USE OF EASY APP FRAMEWORK SERVICES.</p>
         <h3>2. LIMITATION OF LIABILITY</h3>

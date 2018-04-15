@@ -21,7 +21,7 @@
       </button>
       <a class="navbar-brand" href="{{routeUrl page='home'}}" on:click="closeMenu()">
         <div class="text-center">
-          <div class="large"><span class="bold text-primary">eqb</span> sale</div>
+          <div class="large"><span class="bold">EQB</span> <span class="text-primary">sale</span></div>
         </div>
       </a>
     </div>
@@ -44,17 +44,12 @@
               Main Site
             </a>
           </li>
-          <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}} nav-item">
-            <a href="{{routeUrl page='home'}}" on:click="closeMenu()">
-              Account{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
-            </a>
-          </li>
         </ul>
       {{else}}
         <ul class="nav navbar-nav">
           <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}} nav-item">
             <a href="{{routeUrl page='home'}}" on:click="closeMenu()">
-              Dashboard{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
+              Account{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
             </a>
           </li>
         </ul>
@@ -76,7 +71,11 @@
           <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li class="{{#routeCurrent page='admin-users'}}active{{/routeCurrent}}"><a href="{{routeUrl page='admin-users'}}" on:click="closeMenu()">Users{{#routeCurrent page='admin-users'}} <span class="sr-only">(current)</span>{{/routeCurrent}}</a></li>
+              <li class="{{#routeCurrent page='admin-users'}}active{{/routeCurrent}}">
+                <a href="{{routeUrl page='admin-users'}}" on:click="closeMenu()">
+                  Users{{#routeCurrent page='admin-users'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
+                </a>
+              </li>
             </ul>
           </li>
           {{/if}}
