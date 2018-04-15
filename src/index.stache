@@ -75,11 +75,6 @@
       <!--{{/if}}-->
 
       {{#switch page}}
-        {{#case 'home'}}
-          <can-import from="~/pages/page-home/" can-tag="tag-loading">
-            <page-home />
-          </can-import>
-        {{/case}}
         {{#case 'about'}}
           <can-import from="~/pages/page-about/" can-tag="tag-loading">
             <page-about />
