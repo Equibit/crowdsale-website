@@ -20,7 +20,7 @@ const AppViewModel = DefineMap.extend({
   '*': {
     serialize: false
   },
-  mode: { value: 'balance-only' },
+  mode: { value: 'test' },
   page: {
     type: 'string',
     serialize: true

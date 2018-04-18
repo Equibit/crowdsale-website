@@ -19,7 +19,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{routeUrl page='home'}}" on:click="closeMenu()">
+      <a class="navbar-brand" href="{{routeUrl page='about'}}" on:click="closeMenu()">
         <div class="text-center">
           <div class="large"><span class="bold">EQB</span> <span class="text-primary">sale</span></div>
         </div>
@@ -47,9 +47,9 @@
         </ul>
       {{else}}
         <ul class="nav navbar-nav">
-          <li class="{{#routeCurrent page='home'}}active{{/routeCurrent}} nav-item">
-            <a href="{{routeUrl page='home'}}" on:click="closeMenu()">
-              Account{{#routeCurrent page='home'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
+          <li class="{{#routeCurrent page='profile'}}active{{/routeCurrent}} nav-item">
+            <a href="{{routeUrl page='profile'}}" on:click="closeMenu()">
+              Account{{#routeCurrent page='profile'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
             </a>
           </li>
         </ul>
