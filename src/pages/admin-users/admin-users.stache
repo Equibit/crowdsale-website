@@ -2,6 +2,7 @@
 <can-import from="~/pages/admin-users/edit-user/" />
 <can-import from="~/pages/admin-users/kyc-user/" />
 <can-import from="~/pages/admin-users/create-user.component" />
+<can-import from="~/pages/admin-users/delete-user.component" />
 
 <div class="container">
   <div class="row">
@@ -55,8 +56,10 @@
                       <td class="text-nowrap text-center">
                         <button class="btn btn-primary btn-sm" type="button" on:click="openUser(.)">Edit</button>
                         <!--{{#if kycComplete}}<button class="btn btn-info btn-sm" type="button" on:click="openUserKYC(.)">{{#if kycUserLoading}}<i class="fa fa-spin fa-spinner"></i>{{else}}KYC{{/if}}</button>{{/if}}-->
-                        {{#if locked}}<button class="btn btn-danger btn-sm" type="button" on:click="deleteUser(.)">Delete</button>{{/if}}
-                        {{^if lastLogin}}{{^if locked}}<button class="btn btn-danger btn-sm" type="button" on:click="deleteUser(.)">Delete</button>{{/if}}{{/if}}
+                        {{^if isAdmin}}
+                          {{#if locked}}<button class="btn btn-danger btn-sm" type="button" on:click="openDeleteUser(.)">Delete</button>{{/if}}
+                          {{^if lastLogin}}{{^if locked}}<button class="btn btn-danger btn-sm" type="button" on:click="openDeleteUser(.)">Delete</button>{{/if}}{{/if}}
+                        {{/if}}
                       </td>
                     </tr>
                   {{/each}}
@@ -96,4 +99,5 @@
 
 <edit-user editUser:bind="editUser" session:from="session"/>
 <kyc-user editUser:bind="editUser" kyc:bind="kycUser"/>
-<create-user createUser:from="@createUser"/>
+<create-user createUser:from="@createUser" />
+<delete-user userDeleted:from="@userDeleted" user:from="delUser" />

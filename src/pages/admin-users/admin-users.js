@@ -71,8 +71,15 @@ export const ViewModel = DefineMap.extend({
         else console.log(err)
       })
   },
-  deleteUser (delUser) {
-    delUser.destroy()
+  delUser: '*',
+  openDeleteUser(delUser) {
+    this.delUser = delUser
+    $('#DeleteUser').modal('show')
+  },
+  userDeleted () {
+    // Reload users and cleanup `delUser`.
+    this.loadPage()
+    this.delUser = null
   },
   doSearch () {
     if (!this.loadingUsers) {
