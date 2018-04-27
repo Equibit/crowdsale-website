@@ -32,7 +32,13 @@
     import User from '~/models/user'
 
     export default DefineMap.extend({
-      email: 'string',
+      email: {
+        set (val) {
+          this.errorMessage = ''
+          this.processing = false
+          return val
+        }
+      },
       processing: 'boolean',
       errorMessage: 'string',
       save () {
