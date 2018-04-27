@@ -78,6 +78,19 @@ export const ViewModel = DefineMap.extend({
     if (!this.loadingUsers) {
       this.loadPage({search: this.search})
     }
+  },
+  openCreateNewUser () {
+    $('#NewUser').modal('show')
+  },
+  createUser (user) {
+    // this.loadPage()
+    if (this.rows.indexOf(user) === -1) {
+      this.rows.push(user)
+    }
+    $('#NewUser').modal('hide')
+  },
+  refresh () {
+    this.loadPage()
   }
 })
 
