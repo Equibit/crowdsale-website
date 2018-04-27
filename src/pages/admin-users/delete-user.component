@@ -18,7 +18,7 @@
             {{#if errorMessage}}
               <div class="alert alert-danger" role="alert">Error: {{errorMessage}}</div>
             {{/if}}
-            <button type="button" class="btn btn-primary" on:click="delete()">{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Delete !{{/if}}</button>
+            <button type="button" class="btn btn-danger" on:click="delete()">{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Delete !{{/if}}</button>
           </div>
         </div>
       </div>
