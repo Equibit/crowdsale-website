@@ -29,7 +29,14 @@
     import User from '~/models/user'
 
     export default DefineMap.extend({
-      user: '*',
+      user: {
+        set (val) {
+          // cleanup:
+          this.errorMessage = ''
+          this.processing = false
+          return val
+        }
+      },
       processing: 'boolean',
       errorMessage: 'string',
       delete () {
