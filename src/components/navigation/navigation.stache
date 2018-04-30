@@ -75,9 +75,9 @@
 
 {{^if session.loggedIn}}
 
-  <can-import from="~/components/navigation/signup/" />
+  <!--<can-import from="~/components/navigation/signup/" />-->
   <can-import from="~/components/navigation/forgot-password/" />
-  <signup-modal />
+  <!--<signup-modal />-->
   <forgot-password-modal />
 
 {{else}}

@@ -3,7 +3,7 @@
 
 <div class="row margin-top">
   <div class="col-sm-12 text-right">
-    <div class="h4 text-nowrap"><count-down timestamp="1639811584" current="1504811708" /></div>
+    <div class="h4 text-nowrap"><count-down timestamp:from="'1639811584'" current:from="'1504811708'" /></div>
   </div>
   <div class="col-sm-12">
     <div class="text-center h1">
@@ -21,13 +21,13 @@
 
 <div class="row">
   <div class="col-sm-4">
-    <donut-chart brand="primary" text="173:02" percentage="30" />
+    <donut-chart brand:from="'primary'" text:from="'173:02'" percentage:from="'30'" />
   </div>
   <div class="col-sm-4">
-    <donut-chart brand="primary" text="1238" percentage="70" large="true" />
+    <donut-chart brand:from="'primary'" text:from="'1238'" percentage:from="70" large="true" />
   </div>
   <div class="col-sm-4">
-    <donut-chart brand="primary" text="0.027" percentage="50" />
+    <donut-chart brand:from="'primary'" text:from="'0.027'" percentage:from="'50'" />
   </div>
 </div>
 
@@ -63,7 +63,7 @@
       <button type="button" class="btn btn-primary btn-border"
               on:click="logout()">Sign Out</button>
     {{else}}
-      <button type="button" class="btn btn-grey"
+      <button type="button" class="btn btn-primary"
               data-toggle="modal" data-target="#login-modal" on:click="closeMenu()">Sign In</button>
     {{/if}}
   </div>
