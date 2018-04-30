@@ -72,7 +72,7 @@ export const ViewModel = DefineMap.extend({
       })
   },
   delUser: '*',
-  openDeleteUser(delUser) {
+  openDeleteUser (delUser) {
     this.delUser = delUser
     $('#DeleteUser').modal('show')
   },
