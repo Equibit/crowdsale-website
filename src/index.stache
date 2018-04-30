@@ -96,15 +96,21 @@
           </can-import>
         {{/case}}
         {{#case 'profile'}}
-          <can-import from="~/pages/page-profile/" can-tag="tag-loading">
-            <page-profile />
-          </can-import>
+          {{#if session.loggedIn}}
+            <can-import from="~/pages/page-profile/" can-tag="tag-loading">
+              <page-profile session:from="../session" />
+            </can-import>
+          {{else}}
+            <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">
+              <page-unauthorized />
+            </can-import>
+          {{/if}}
         {{/case}}
 
         {{#case 'admin-users'}}
           {{#if session.isAdmin}}
             <can-import from="~/pages/admin-users/" can-tag="tag-loading">
-              <admin-users session:from="session" />
+              <admin-users session:from="../session" />
             </can-import>
           {{else}}
             <can-import from="~/pages/page-unauthorized.component" can-tag="tag-loading">

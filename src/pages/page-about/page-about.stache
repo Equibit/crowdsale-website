@@ -63,9 +63,6 @@
       <button type="button" class="btn btn-primary btn-border"
               on:click="logout()">Sign Out</button>
     {{else}}
-      <button type="button" class="btn btn-primary"
-              data-toggle="modal" data-target="#sign-up-modal" on:click="closeMenu()">Register</button>
-    <br><br>
       <button type="button" class="btn btn-grey"
               data-toggle="modal" data-target="#login-modal" on:click="closeMenu()">Sign In</button>
     {{/if}}

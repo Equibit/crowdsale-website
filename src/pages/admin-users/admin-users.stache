@@ -1,6 +1,5 @@
 <can-import from="grid-component" />
 <can-import from="~/pages/admin-users/edit-user/" />
-<can-import from="~/pages/admin-users/kyc-user/" />
 <can-import from="~/pages/admin-users/create-user.component" />
 <can-import from="~/pages/admin-users/delete-user.component" />
 
@@ -37,7 +36,6 @@
               <tr>
                 <th class="text-nowrap text-center">Email</th>
                 <th class="text-nowrap text-center">Unlocked</th>
-                <th class="text-nowrap text-center">KYC</th>
                 <th class="text-nowrap text-center">Last Login</th>
                 <th class="text-nowrap text-center">Account Created</th>
                 <th class="text-nowrap text-center">Actions</th>
@@ -50,7 +48,6 @@
                     <tr>
                       <td class="text-nowrap text-center"><a href="mailto:{{email}}">{{email}}</a></td>
                       <td class="text-nowrap text-center">{{^if locked}}<i class="fa fa-check text-success"></i>{{else}}<i class="fa fa-close text-danger"></i>{{/if}}</td>
-                      <td class="text-nowrap text-center">{{#if kycApproved}}<i class="fa fa-check text-success"></i>{{else}}<i class="fa fa-close text-danger"></i>{{/if}}</td>
                       <td class="text-nowrap text-center">{{timestampDetailed lastLogin}}</td>
                       <td class="text-nowrap text-center">{{timestampDetailed createdAt}}</td>
                       <td class="text-nowrap text-center">
@@ -98,6 +95,5 @@
 </div>
 
 <edit-user editUser:bind="editUser" session:from="session"/>
-<kyc-user editUser:bind="editUser" kyc:bind="kycUser"/>
 <create-user createUser:from="@createUser" />
 <delete-user userDeleted:from="@userDeleted" user:from="delUser" />
