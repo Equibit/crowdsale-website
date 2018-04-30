@@ -1,0 +1,58 @@
+<can-component tag="delete-user">
+  <view>
+    <div class="modal fade" id="DeleteUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Delete User</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-12">
+                Are you sure you want to delete user {{user.email}}?
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            {{#if errorMessage}}
+              <div class="alert alert-danger" role="alert">Error: {{errorMessage}}</div>
+            {{/if}}
+            <button type="button" class="btn btn-danger" on:click="delete()">{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Delete !{{/if}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </view>
+  <view-model>
+    import DefineMap from 'can-define/map/map';
+    import User from '~/models/user'
+
+    export default DefineMap.extend({
+      user: {
+        set (val) {
+          // cleanup:
+          this.errorMessage = ''
+          this.processing = false
+          return val
+        }
+      },
+      processing: 'boolean',
+      errorMessage: 'string',
+      delete () {
+        this.errorMessage = ''
+        this.processing = true
+
+        return this.user.destroy()
+          .then(() => {
+            this.processing = false
+            this.userDeleted()
+          }).catch(err => {
+            console.error(err)
+            this.processing = false
+            this.errorMessage = err.message || 'Sorry, an error occured.'
+          })
+      }
+    });
+  </view-model>
+</can-component>

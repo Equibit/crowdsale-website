@@ -1,6 +1,8 @@
 <can-import from="grid-component" />
 <can-import from="~/pages/admin-users/edit-user/" />
 <can-import from="~/pages/admin-users/kyc-user/" />
+<can-import from="~/pages/admin-users/create-user.component" />
+<can-import from="~/pages/admin-users/delete-user.component" />
 
 <div class="container">
   <div class="row">
@@ -14,7 +16,11 @@
       <div class="well">
 
         <div class="row margin-bottom">
-          <div class="col-sm-4 col-sm-offset-8">
+          <div class="col-sm-4">
+            <button class="btn btn-default btn-primary" type="button" on:click="openCreateNewUser()">Create New</button>
+            <button class="btn btn-default" type="button" on:click="refresh()">Refresh</button>
+          </div>
+          <div class="col-sm-4 col-sm-offset-7">
             <div class="input-group">
               <input type="text" class="form-control" value:bind="search" placeholder="Search Email" on:enter="doSearch()">
               <span class="input-group-btn">
@@ -46,12 +52,14 @@
                       <td class="text-nowrap text-center">{{^if locked}}<i class="fa fa-check text-success"></i>{{else}}<i class="fa fa-close text-danger"></i>{{/if}}</td>
                       <td class="text-nowrap text-center">{{#if kycApproved}}<i class="fa fa-check text-success"></i>{{else}}<i class="fa fa-close text-danger"></i>{{/if}}</td>
                       <td class="text-nowrap text-center">{{timestampDetailed lastLogin}}</td>
-                      <td class="text-nowrap text-center">{{timestampDetailed accountCreated}}</td>
+                      <td class="text-nowrap text-center">{{timestampDetailed createdAt}}</td>
                       <td class="text-nowrap text-center">
                         <button class="btn btn-primary btn-sm" type="button" on:click="openUser(.)">Edit</button>
                         <!--{{#if kycComplete}}<button class="btn btn-info btn-sm" type="button" on:click="openUserKYC(.)">{{#if kycUserLoading}}<i class="fa fa-spin fa-spinner"></i>{{else}}KYC{{/if}}</button>{{/if}}-->
-                        {{#if locked}}<button class="btn btn-danger btn-sm" type="button" on:click="deleteUser(.)">Delete</button>{{/if}}
-                        {{^if lastLogin}}{{^if locked}}<button class="btn btn-danger btn-sm" type="button" on:click="deleteUser(.)">Delete</button>{{/if}}{{/if}}
+                        {{^if isAdmin}}
+                          {{#if locked}}<button class="btn btn-danger btn-sm" type="button" on:click="openDeleteUser(.)">Delete</button>{{/if}}
+                          {{^if lastLogin}}{{^if locked}}<button class="btn btn-danger btn-sm" type="button" on:click="openDeleteUser(.)">Delete</button>{{/if}}{{/if}}
+                        {{/if}}
                       </td>
                     </tr>
                   {{/each}}
@@ -71,11 +79,11 @@
             {{#if hasPages}}
               <nav aria-label="Page navigation" class="pull-right">
                 <ul class="pagination">
-                  <li class="{{^if isPrevActive}}disabled{{/if}}"><a href="" on:click="prev()" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                  <li class="{{^if isPrevActive}}disabled{{/if}}"><a href="javascript:void(0)" on:click="prev()" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
                   {{#each pages}}
-                    <li class="{{#if isActive}}active{{/if}}"><a href="" on:click="changePage(pageNumber)">{{pageTitle}}</a></li>
+                    <li class="{{#if isActive}}active{{/if}}"><a href="javascript:void(0)" on:click="changePage(pageNumber)">{{pageTitle}}</a></li>
                   {{/each}}
-                  <li class="{{^if isNextActive}}disabled{{/if}}"><a href="" on:click="next()" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                  <li class="{{^if isNextActive}}disabled{{/if}}"><a href="javascript:void(0)" on:click="next()" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
                 </ul>
               </nav>
             {{/if}}
@@ -91,3 +99,5 @@
 
 <edit-user editUser:bind="editUser" session:from="session"/>
 <kyc-user editUser:bind="editUser" kyc:bind="kycUser"/>
+<create-user createUser:from="@createUser" />
+<delete-user userDeleted:from="@userDeleted" user:from="delUser" />

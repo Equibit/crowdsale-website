@@ -19,8 +19,13 @@ const User = DefineMap.extend('User', {
   lastLogin: 'number',
   locked: 'boolean',
   isAdmin: 'boolean',
+  isNewUser: 'boolean',
   ico: { type: 'number', value: 0 },
   saft: { type: 'number', value: 0 },
+
+  createdAt: 'date',
+  updatedAt: 'date',
+
   signUp (email) {
     if (email && email.toLowerCase) {
       email = email.toLowerCase()
