@@ -1,7 +1,7 @@
 import stache from 'can-stache/helpers/core'
 import moment from 'moment'
 
-stache.addHelper('timestamp', ts => {
+stache.registerSimpleHelper('timestamp', ts => {
   if (ts) {
     if (!ts.toString().endsWith('000')) ts *= 1000
     let format = 'MMM D, YYYY'
@@ -9,13 +9,13 @@ stache.addHelper('timestamp', ts => {
   } else return 'TBD'
 })
 
-stache.addHelper('timestampFromNow', ts => {
+stache.registerSimpleHelper('timestampFromNow', ts => {
   if (!ts.toString().endsWith('000')) ts *= 1000
   if (ts) return moment(parseInt(ts)).fromNow()
   else return ''
 })
 
-stache.addHelper('timestampDetailed', ts => {
+stache.registerSimpleHelper('timestampDetailed', ts => {
   if (ts) {
     if (!ts.toString().endsWith('000')) ts *= 1000
     let format = 'MMM Do YYYY, h:mm:ss a'
@@ -23,12 +23,12 @@ stache.addHelper('timestampDetailed', ts => {
   } else return 'TBD'
 })
 
-stache.addHelper('shorten', (s, l) => {
+stache.registerSimpleHelper('shorten', (s, l) => {
   if (s !== 'undefined' && s && s.length > l) return s.substr(0, l) + '...'
   else return s
 })
 
-stache.addHelper('numberFormat', num => {
+stache.registerSimpleHelper('numberFormat', num => {
   let formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
