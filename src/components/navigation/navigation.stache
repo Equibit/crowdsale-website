@@ -53,33 +53,20 @@
             </a>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="" class="dropdown-toggle no-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="title">User Menu </span><span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              {{^if session.kycCompleted}}
-                <li><a href="" data-toggle="modal" data-target="#kyc-modal" on:click="closeMenu()">Identity Verification</a></li>
-                <li class="divider"></li>
-              {{/if}}
-              <li><a href="" data-toggle="modal" data-target="#change-password-modal" on:click="closeMenu()">Change Password</a></li>
-              <li><a href="" data-toggle="modal" data-target="#change-email-modal" on:click="closeMenu()">Change Email Address</a></li>
-              <li class="divider"></li>
-              <li><a href="" on:click="logout()">Logout</a></li>
-            </ul>
-          </li>
-          {{#if session.isAdmin}}
-          <li class="dropdown">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li class="{{#routeCurrent page='admin-users'}}active{{/routeCurrent}}">
-                <a href="{{routeUrl page='admin-users'}}" on:click="closeMenu()">
-                  Users{{#routeCurrent page='admin-users'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
-                </a>
-              </li>
-            </ul>
-          </li>
-          {{/if}}
-        </ul>
+        {{#if session.isAdmin}}
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="{{#routeCurrent page='admin-users'}}active{{/routeCurrent}}">
+                  <a href="{{routeUrl page='admin-users'}}" on:click="closeMenu()">
+                    Users{{#routeCurrent page='admin-users'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        {{/if}}
       {{/if}}
     </div>
   </div>
@@ -88,18 +75,18 @@
 
 {{^if session.loggedIn}}
 
-  <can-import from="~/components/navigation/signup/" />
+  <!--<can-import from="~/components/navigation/signup/" />-->
   <can-import from="~/components/navigation/forgot-password/" />
-  <signup-modal />
+  <!--<signup-modal />-->
   <forgot-password-modal />
 
 {{else}}
 
-  <can-import from="~/components/navigation/kyc/" />
+  <!--<can-import from="~/components/navigation/kyc/" />-->
   <can-import from="~/components/navigation/set-password/" />
   <can-import from="~/components/navigation/change-password/" />
   <can-import from="~/components/navigation/change-email/" />
-  <kyc-modal session:from="session" />
+  <!--<kyc-modal session:from="session" />-->
   <set-password-modal session:from="session" />
   <change-password-modal session:from="session" />
   <change-email-modal session:from="session" />

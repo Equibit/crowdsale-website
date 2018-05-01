@@ -3,6 +3,7 @@ import DefineMap from 'can-define/map/'
 import './page-profile.less'
 import view from './page-profile.stache'
 import Session from '~/models/session'
+import route from 'can-route'
 
 export const ViewModel = DefineMap.extend({
   user: {
@@ -14,6 +15,13 @@ export const ViewModel = DefineMap.extend({
     get () {
       return this.user && (this.user.ico + this.user.saft)
     }
+  },
+  session: {
+    type: 'any'
+  },
+  logout () {
+    this.session.logout()
+    route.data.set({page: 'home'}, true)
   }
 })
 
