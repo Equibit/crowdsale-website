@@ -17,7 +17,7 @@
           <tbody>
             {{#each rows}}
               <tr>
-                <td class="text-nowrap text-center">{{timestamp(createdAt)}}</td>
+                <td class="text-nowrap text-center">{{timeshort(createdAt)}}</td>
                 <td class="text-nowrap text-center">{{type}}</td>
                 <td class="text-nowrap text-center">{{amountEqb}}</td>
                 <td class="text-nowrap text-center">
@@ -46,7 +46,13 @@
     import IcoBalance from '~/models/ico-balance'
 
     export default DefineMap.extend({
-      user: '*',
+      user: {
+        set (val) {
+          this.newRound = ''
+          this.newAmount = 0
+          return val
+        }
+      },
       rows: '*',
 
       newRound: 'string',
@@ -60,7 +66,10 @@
           amountEqb: this.newAmount,
           type: this.newRound
         })
-        newItem.save()
+        newItem.save().then(() => {
+          this.newRound = ''
+          this.newAmount = 0
+        })
       },
       remove (item) {
         this.errorMessage = ''

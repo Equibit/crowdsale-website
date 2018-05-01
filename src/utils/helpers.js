@@ -9,6 +9,13 @@ stache.addHelper('timestamp', ts => {
   } else return 'TBD'
 })
 
+stache.addHelper('timeshort', date => {
+  if (date) {
+    let format = 'MMM D, YYYY'
+    return moment(date).format(format)
+  } else return 'TBD'
+})
+
 stache.addHelper('timestampFromNow', ts => {
   if (!ts.toString().endsWith('000')) ts *= 1000
   if (ts) return moment(parseInt(ts)).fromNow()
