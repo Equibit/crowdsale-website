@@ -1,0 +1,80 @@
+<can-component tag="ico-grid">
+  <view>
+    <can-import from="~/utils/helpers" />
+    <can-import from="grid-component" />
+
+    <grid-component rows:from="rows">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th class="text-nowrap text-center">Date</th>
+            <th class="text-nowrap text-center">Round</th>
+            <th class="text-nowrap text-center">Amount</th>
+            <th class="text-nowrap text-center">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+            {{#each rows}}
+              <tr>
+                <td class="text-nowrap text-center">{{timestamp(createdAt)}}</td>
+                <td class="text-nowrap text-center">{{type}}</td>
+                <td class="text-nowrap text-center">{{amountEqb}}</td>
+                <td class="text-nowrap text-center">
+                  <button class="btn btn-danger btn-sm" type="button" on:click="remove(.)">Remove</button>
+                </td>
+              </tr>
+            {{/each}}
+
+              <tr>
+                <td class="text-nowrap text-center"></td>
+                <td class="text-nowrap text-center"><input type="text" value:bind="../newRound" /></td>
+                <td class="text-nowrap text-center"><input type="number" value:bind="../newAmount" /></td>
+                <td class="text-nowrap text-center">
+                  <button class="btn btn-primary btn-sm" type="button" on:click="addNew()">Add</button>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </grid-component>
+  </view>
+  <view-model>
+    import DefineMap from 'can-define/map/map';
+    import User from '~/models/user'
+    import IcoBalance from '~/models/ico-balance'
+
+    export default DefineMap.extend({
+      user: '*',
+      rows: '*',
+
+      newRound: 'string',
+      newAmount: 'number',
+
+      processing: 'boolean',
+      errorMessage: 'string',
+      addNew () {
+        const newItem = new IcoBalance({
+          userId: this.user._id,
+          amountEqb: this.newAmount,
+          type: this.newRound
+        })
+        newItem.save()
+      },
+      remove (item) {
+        this.errorMessage = ''
+        this.processing = true
+
+        return item.destroy()
+          .then(() => {
+            this.processing = false
+          }).catch(err => {
+            console.error(err)
+            this.processing = false
+            this.errorMessage = err.message || 'Sorry, an error occured.'
+          })
+      }
+    });
+  </view-model>
+</can-component>

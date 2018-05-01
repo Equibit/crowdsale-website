@@ -1,3 +1,5 @@
+<can-import from="~/pages/admin-users/ico-grid.component" />
+
 <div class="modal fade" id="EditUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -29,6 +31,9 @@
               </div>
             </div>
           </div>
+
+          <ico-grid rows:from="icoBalance" user:from="editUser" />
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" on:click="saveUser()" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Save{{/if}}</button>

@@ -2,7 +2,7 @@ import fixture from 'can-fixture'
 import User from '../user'
 
 const store = fixture.store([{
-  id: 1,
+  id: '5a5d6333874a44e39b3625cb',
   email: 'godardm@gmail.com',
   password: '1234',
   setPassword: false,
