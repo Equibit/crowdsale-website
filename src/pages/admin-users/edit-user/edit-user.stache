@@ -1,5 +1,7 @@
+<can-import from="~/pages/admin-users/ico-grid.component" />
+
 <div class="modal fade" id="EditUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -29,9 +31,21 @@
               </div>
             </div>
           </div>
+
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <button type="button" class="btn btn-primary" on:click="saveUser()" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Save{{/if}}</button>
+            </div>
+          </div>
+
+          <br>
+          <hr>
+
+          <h4>ICO Items:</h4>
+          <ico-grid rows:from="icoBalance" user:from="editUser" />
+
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" on:click="saveUser()" {{#if disableForm}}disabled{{/if}}>{{#if processing}}<i class="fa fa-spin fa-spinner"></i>{{else}}Save{{/if}}</button>
         </div>
       {{/if}}
     </div>
