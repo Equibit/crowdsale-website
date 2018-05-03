@@ -12,7 +12,7 @@ const Answer = DefineMap.extend({
   '_id': 'any',
   userId: 'string',
   questionId: 'string',
-  userAnswer: 'string'
+  answer: 'string'
 })
 
 Answer.List = DefineList.extend({

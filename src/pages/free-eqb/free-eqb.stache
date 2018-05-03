@@ -2,14 +2,6 @@
 
 {{#switch(user.questionnaire)}}
 
-  {{#default()}}
-    <p>You can get some free EQB if you fill in the questionnaire</p>
-    <p>Please, enter your phone number here. You will receive a confirmation code.</p>
-    <p>After you enter the code and answer all the questions we will reserve some EQB for your account.</p>
-    <input type="tel" value:bind="phone" />
-    <button type="button btn-sm btn-primary" on:click="sendPhone()">Submit Phone</button>
-  {{/default}}
-
   {{#case("WAITING-CODE")}}
     <p>You can get some free EQB if you fill in the questionnaire</p>
     <p>Please, enter your phone number here. You will receive a confirmation code.</p>
@@ -30,5 +22,13 @@
   {{#case("COMPLETED")}}
     <p>Thank you for completing the questionnaire. We reserved some EQB for you.</p>
   {{/case}}
+
+  {{#default()}}
+    <p>You can get some free EQB if you fill in the questionnaire</p>
+    <p>Please, enter your phone number here. You will receive a confirmation code.</p>
+    <p>After you enter the code and answer all the questions we will reserve some EQB for your account.</p>
+    <input type="tel" value:bind="phone" />
+    <button type="button btn-sm btn-primary" on:click="sendPhone()">Submit Phone</button>
+  {{/default}}
 
 {{/switch}}
