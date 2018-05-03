@@ -12,11 +12,12 @@
   {{/case}}
 
   {{#case("QUESTIONS")}}
+    <h2>Questions:</h2>
     {{#each(questions, item=value num=index)}}
       <dd>item.question</dd>
-      <dt><input type="text" value:bind="answers[num]" /></dt>
+      <dt><input type="text" value:to="answers[num]" /></dt>
     {{/each}}
-    <button type="button btn-sm btn-primary" on:click="submitAnswers()">Send Code</button>
+    <button type="button btn-sm btn-primary" on:click="submitAnswers()">Submit Your Answers</button>
   {{/case}}
 
   {{#case("COMPLETED")}}
