@@ -25,7 +25,7 @@ export const ViewModel = DefineMap.extend({
       if (val) {
         return val
       }
-      //this.questionsPromise.then(resolve)
+      // this.questionsPromise.then(resolve)
       return questionStore.getList({}).data
     }
   },
@@ -46,11 +46,13 @@ export const ViewModel = DefineMap.extend({
   },
   sendCode () {
     this.user.assign({
-      code: this.code,
+      code: this.code
     })
     this.user.save()
       // todo: remove this after integrating with serivices.
-      .then(() => this.user.questionnaire = 'QUESTIONS')
+      .then(() => {
+        this.user.questionnaire = 'QUESTIONS'
+      })
   },
   submitAnswers () {
     const answers = new Answer.List([])
