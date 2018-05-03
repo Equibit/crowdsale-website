@@ -3,6 +3,8 @@ import AppVM from './app'
 import chai from 'chai/chai'
 import 'ico/pages/page-profile/page-profile-test'
 
+// import 'ico/pages/free-eqb/free-eqb-test'
+
 const assert = chai.assert
 
 describe('app vm', function () {
