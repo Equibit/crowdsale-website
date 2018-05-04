@@ -53,6 +53,13 @@
             </a>
           </li>
         </ul>
+        <ul class="nav navbar-nav">
+          <li class="{{#routeCurrent page='questionnaire'}}active{{/routeCurrent}} nav-item">
+            <a href="{{routeUrl page='questionnaire'}}" on:click="closeMenu()">
+              Free EQB{{#routeCurrent page='questionnaire'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
+            </a>
+          </li>
+        </ul>
         {{#if session.isAdmin}}
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">

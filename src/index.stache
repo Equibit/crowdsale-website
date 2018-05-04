@@ -107,6 +107,12 @@
           {{/if}}
         {{/case}}
 
+        {{#case 'questionnaire'}}
+          <can-import from="~/pages/free-eqb/" can-tag="tag-loading">
+            <free-eqb />
+          </can-import>
+        {{/case}}
+
         {{#case 'admin-users'}}
           {{#if session.isAdmin}}
             <can-import from="~/pages/admin-users/" can-tag="tag-loading">

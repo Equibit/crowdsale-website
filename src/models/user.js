@@ -20,8 +20,16 @@ const User = DefineMap.extend('User', {
   locked: 'boolean',
   isAdmin: 'boolean',
   isNewUser: 'boolean',
+
+  // Initial ICO:
   ico: { type: 'number', value: 0 },
   saft: { type: 'number', value: 0 },
+
+  // Questionnaire for free EQB:
+  phone: 'string',
+  code: 'string',
+  // enum('WAITING-CODE', 'QUESTIONS', 'COMPLETED')
+  questionnaire: 'string',
 
   createdAt: 'date',
   updatedAt: 'date',
