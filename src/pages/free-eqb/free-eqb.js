@@ -25,7 +25,7 @@ export const ViewModel = DefineMap.extend({
       if (val) {
         return val
       }
-      //this.questionsPromise.then(resolve)
+      // this.questionsPromise.then(resolve)
       return questionStore.getList({}).data
     }
   },
