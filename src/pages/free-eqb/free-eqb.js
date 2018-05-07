@@ -5,7 +5,7 @@ import view from './free-eqb.stache'
 import Session from '../../models/session'
 import Answer from '../../models/answer'
 import Question from '../../models/question'
-import questionStore from '../../models/fixtures/questions'
+// import questionStore from '../../models/fixtures/questions'
 
 export const ViewModel = DefineMap.extend({
   user: {
@@ -74,9 +74,10 @@ export const ViewModel = DefineMap.extend({
     })
     console.log(this.userAnswers)
 
-    //this.answers.forEach(a => a.save())
-    // todo: remove this after integrating with serivices.
-    //this.user.questionnaire = 'COMPLETED'
+    // todo: update user after answers are saved.
+    this.user.questionnaire = 'COMPLETED'
+
+    // this.answers.forEach(a => a.save())
   },
 
   selectCustom (answer, num) {
