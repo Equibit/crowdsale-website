@@ -29,10 +29,21 @@ export const ViewModel = DefineMap.extend({
       return questionStore.getList({}).data
     }
   },
-  textAnswers: {
+  userAnswers: {
     value () {
       if (this.questions) {
-        return new Array(this.questions.length)
+        const questions = this.questions.get ? this.questions.get() : this.questions
+        return new Answer.List(
+          questions.map(q => {
+            return {
+              userId: this.user._id,
+              questionId: q._id,
+              questionSortIndex: q.sortIndex,
+              answer: '',
+              answerChoiceNum: Math.random()
+            }
+          })
+        )
       }
     }
   },
@@ -55,18 +66,23 @@ export const ViewModel = DefineMap.extend({
       })
   },
   submitAnswers () {
-    const answers = new Answer.List([])
-    this.textAnswers.forEach((text, i) => {
-      answers.push({
-        userId: this.user._id,
-        questionId: this.questions[i]._id,
-        answer: text
-      })
+    const questions = this.questions
+    // Update non-CUSTOM answer text value:
+    this.userAnswers.forEach((answer, i) => {
+      if (questions[i].answerOptions[answer.answerChoiceNum] !== 'CUSTOM') {
+        answer.answer = questions[i].answerOptions[answer.answerChoiceNum]
+      }
     })
-    answers.forEach(a => a.save())
+    console.log(this.userAnswers)
 
-    // todo: remove this after integrating with serivices.
+    // todo: update user after answers are saved.
     this.user.questionnaire = 'COMPLETED'
+
+    // this.answers.forEach(a => a.save())
+  },
+
+  selectCustom (answer, num) {
+    answer.answerChoiceNum = num
   }
 })
 

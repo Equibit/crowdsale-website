@@ -46,3 +46,7 @@ stache.addHelper('numberFormat', num => {
     return '<span class="text-danger">' + formatter.format(num) + '</span>'
   } else return formatter.format(num)
 })
+
+stache.addHelper('indexLetter', (index) => {
+  return ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'][index]
+})
