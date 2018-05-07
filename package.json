@@ -14,13 +14,18 @@
   },
   "private": true,
   "scripts": {
-    "build": "node build",
+    "build2": "npm run remove-build && node build",
     "develop": "done-serve --static --develop --port 8080",
+    "remove-build": "make remove-build",
     "lint": "standard",
     "lint:fix": "standard --fix",
     "start": "node start.js",
     "test": "npm run lint && npm run testee",
-    "testee": "testee test/test.html --browsers firefox --reporter Spec"
+    "testee": "testee test/test.html --browsers firefox --reporter Spec",
+    "qa": "npm run release:qa:patch",
+    "release:qa:patch": "npm test && npm run build2 && npm version patch && make release-qa",
+    "release:qa:minor": "npm test && npm run build2 && npm version minor && make release-qa",
+    "release:qa:major": "npm test && npm run build2 && npm version major && make release-qa"
   },
   "main": "ico/index.stache!done-autorender/no-zone",
   "files": [
