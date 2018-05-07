@@ -34,45 +34,88 @@
   {{/case}}
 
   {{#case ("QUESTIONS")}}
-    <h2>Questions:</h2>
+    {{#each (questions, question=value qnum=index)}}
+      <div class="row margin-top">
+        <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+          <div class="panel no-margin">
+            <div class="panel-body">
+              <h4><strong class="text-primary">Q{{qnum}}</strong>:  {{question.question}}</h4>
 
-    <dl>
-      {{#each (questions, question=value qnum=index)}}
-        <dt>
-          <strong>Q{{qnum}}</strong>:  {{question.question}}
-        </dt>
-        <dd>
-          <ul>
-            {{#each (question.answerOptions, answerOption=value anum=index)}}
-              <li>
-                {{#is ../question.questionType 'SINGLE'}}
-                  <input type="radio" checked:bind="equal(~../../userAnswers[../qnum].answerChoiceNum, anum)">
-                {{else}}
-                  <input type="checkbox">
-                {{/is}}
-                <strong>{{indexLetter (anum)}}.</strong>
-                <span>
-                  {{#is answerOption 'CUSTOM'}}
-                    Other - Specify
-                    <input type="text"
-                           value:bind="../../userAnswers[../qnum].answer"
-                           on:focus="selectCustom(../../userAnswers[../qnum], anum)" />
-                  {{else}}
-                    {{{answerOption}}}
-                  {{/is}}
-                </span>
-              </li>
-            {{/each}}
-          </ul>
-          Your choice: {{../userAnswers[qnum].answerChoice}}
-        </dd>
-      {{/each}}
-    </dl>
-    <button type="button btn-sm btn-primary" on:click="submitAnswers()">Submit Your Answers</button>
+              <ul>
+                {{#each (question.answerOptions, answerOption=value anum=index)}}
+                  <li>
+                    {{#is ../question.questionType 'SINGLE'}}
+                      <div class="form-group">
+                        <div class="radio radio-primary">
+                          <input type="radio" id="radio-{{qnum}}-{{indexLetter (anum)}}" name="radio-{{qnum}}" checked:bind="equal(~../../userAnswers[../qnum].answerChoiceNum, anum)" {{#if disableForm}}disabled{{/if}}>
+                          <label for="radio-{{qnum}}-{{indexLetter (anum)}}">
+                            <strong>{{indexLetter (anum)}})</strong>
+                            <span>
+                              {{#is answerOption 'CUSTOM'}}
+                                Other - Specify
+                                <br><br>
+                                <input type="text" class="form-control"
+                                       value:bind="../../userAnswers[../qnum].answer"
+                                       on:focus="selectCustom(../../userAnswers[../qnum], anum)" />
+                              {{else}}
+                                {{{answerOption}}}
+                              {{/is}}
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    {{else}}
+                      <div class="form-group">
+                        <div class="checkbox checkbox-primary">
+                          <input type="checkbox" id="checkbox-{{qnum}}-{{indexLetter (anum)}}">
+                          <label for="checkbox-{{qnum}}-{{indexLetter (anum)}}">
+                            <strong>{{indexLetter (anum)}})</strong>
+                            <span>
+                              {{#is answerOption 'CUSTOM'}}
+                                Other - Specify
+                                <br><br>
+                                <input type="text" class="form-control"
+                                       value:bind="../../userAnswers[../qnum].answer"
+                                       on:focus="selectCustom(../../userAnswers[../qnum], anum)" />
+                              {{else}}
+                                {{{answerOption}}}
+                              {{/is}}
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    {{/is}}
+
+                  </li>
+                {{/each}}
+              </ul>
+              Your choice: <strong class="text-primary">{{../userAnswers[qnum].answerChoice}}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+
+    <div class="row margin-top">
+      <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+        <button type="button" class="btn btn-primary btn-block" on:click="submitAnswers()">Submit Your Answers</button>
+        <br><br>
+      </div>
+    </div>
   {{/case}}
 
   {{#case ("COMPLETED")}}
-    <p>Thank You for completing the questionnaire – now it’s time to set up your account</p>
+    <div class="row margin-top">
+      <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+        <div class="panel no-margin">
+          <div class="panel-body text-center">
+            <h4>Thank you!</h4>
+            <p>Thank You for completing the questionnaire – now it’s time to set up your account</p>
+          </div>
+        </div>
+        <br><br>
+      </div>
+    </div>
   {{/case}}
 
   {{#default ()}}
