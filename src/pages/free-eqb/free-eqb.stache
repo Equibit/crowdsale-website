@@ -58,7 +58,7 @@
   {{/case}}
 
   {{#case("COMPLETED")}}
-    <p>Thank you for completing the questionnaire. We reserved some EQB for you.</p>
+    <p>Thank You for completing the questionnaire – now it’s time to set up your account</p>
   {{/case}}
 
   {{#default()}}
