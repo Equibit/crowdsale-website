@@ -13,6 +13,7 @@ const Question = DefineMap.extend({
   question: 'string',
   // enum: ['MULTI', 'SINGLE']
   questionType: 'string',
+  answerOptions: 'array',
   sortIndex: 'number',
   createdAt: 'date'
 })
