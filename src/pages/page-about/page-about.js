@@ -3,7 +3,6 @@ import DefineMap from 'can-define/map/map'
 import './page-about.less'
 import view from './page-about.stache'
 import $ from 'jquery'
-import route from 'can-route'
 
 export const ViewModel = DefineMap.extend({
   message: {

@@ -5,7 +5,6 @@ import './login.less'
 import view from './login.stache'
 import feathersClient from '~/models/feathers-client'
 import validate from '~/utils/validators'
-import route from 'can-route'
 import 'can-route-pushstate'
 import Session from '~/models/session'
 
