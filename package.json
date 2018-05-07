@@ -90,7 +90,7 @@
     "grid-component": "^0.10.2",
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
-    "socket.io-client": "^2.0.3",
+    "socket.io-client": "2.0.4",
     "steal": "^1.5.13",
     "steal-less": "^1.2.0",
     "steal-socket.io": "^4.0.9",

@@ -2,60 +2,27 @@
 <can-import from="~/components/count-down/" />
 
 <div class="row margin-top">
-  <div class="col-sm-12 text-right">
-    <div class="h4 text-nowrap"><count-down timestamp:from="'1639811584'" current:from="'1504811708'" /></div>
-  </div>
   <div class="col-sm-12">
     <div class="text-center h1">
-      <h1><span class="bold">EQB</span> <span class="text-primary">sale</span></h1>
-    </div>
-  </div>
-</div>
-<div class="hidden-xs row">
-  <div class="col-sm-4 col-sm-offset-4">
-    <div class="text-center text-primary text-uppercase bold margin-bottom-extra">
-      722 available
+      <h1><span class="bold">EQB</span> <span class="text-primary">give away</span></h1>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-sm-4">
-    <donut-chart brand:from="'primary'" text:from="'173:02'" percentage:from="'30'" />
-  </div>
-  <div class="col-sm-4">
+  <div class="col-sm-4 col-sm-offset-4">
     <donut-chart brand:from="'primary'" text:from="'1238'" percentage:from="70" large="true" />
-  </div>
-  <div class="col-sm-4">
-    <donut-chart brand:from="'primary'" text:from="'0.027'" percentage:from="'50'" />
   </div>
 </div>
 
 <div class="hidden-xs row">
   <div class="col-sm-4 col-sm-offset-4">
     <div class="text-center text-uppercase margin-bottom margin-top-extra">
-      2000 BTC CAP
+      EQB given
     </div>
   </div>
 </div>
 
-<div class="hidden-xs row">
-  <div class="col-sm-4">
-    <div class="text-center text-uppercase margin-bottom-extra margin-top bold">
-      Hours remaining
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="text-center text-uppercase margin-bottom-extra margin-top bold">
-      BTC bid
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="text-center text-uppercase margin-bottom-extra margin-top bold">
-      btc / eqb
-    </div>
-  </div>
-</div>
 
 <div class="row">
   <div class="col-sm-4 col-sm-offset-4 text-center">
@@ -64,7 +31,9 @@
               on:click="logout()">Sign Out</button>
     {{else}}
       <button type="button" class="btn btn-primary"
-              data-toggle="modal" data-target="#login-modal" on:click="closeMenu()">Sign In</button>
+              data-toggle="modal" data-target="#login-modal">Sign In</button>
+      <button type="button" class="btn btn-grey"
+              data-toggle="modal" data-target="#sign-up-modal">Sign up</button>
     {{/if}}
   </div>
 </div>
@@ -73,7 +42,7 @@
 
 <div class="row margin-top">
   <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-    <h1 class="bold">About <span class="text-primary">The Auction</span></h1>
+    <h1 class="bold">About <span class="text-primary">The Give Away</span></h1>
   </div>
 </div>
 
@@ -82,30 +51,6 @@
     <div class="margin-top-extra">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut eros et nulla cursus aliquam non sit amet quam. Donec aliquam ante eget mi placerat porta. Integer feugiat nisl felis, vitae tincidunt nunc congue non. Aliquam nec diam pellentesque, consequat lacus et, bibendum quam. Quisque mollis at magna vel faucibus. Maecenas lacinia lacus sit amet tellus ornare, non accumsan lectus eleifend. Nunc id mollis nisi. Suspendisse euismod augue ut massa venenatis, vel iaculis diam iaculis.</p>
       <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sem tortor, rhoncus in nibh quis, euismod interdum ex. Curabitur sagittis velit id libero fringilla facilisis. Vivamus ut lacus vel urna tincidunt pretium. Integer malesuada sapien nulla, vulputate faucibus velit ultricies nec. Donec at lacus dolor. Integer sagittis ipsum ultrices, laoreet mi vitae, hendrerit odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam auctor mollis gravida. Donec in nulla in augue ultricies pretium. In hac habitasse platea dictumst. Quisque eget dolor magna. Integer et leo pharetra libero ultricies malesuada.</p>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-    <div class="panel">
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-sm-8">
-            <div class="margin-bottom">
-              <h2 class="text-info bold">Current<span> Price</span></h2>
-            </div>
-            <p>Starting noon on October xx and running for two weeks we will hold a Dutch auction for any remaining Equibits. Anyone interested in purchasing Equities will indicate how much they want to spend - then the remaining Equities (a minimum of200,000) are divided proportionally to the amount each person wants to spend.</p>
-          </div>
-          <div class="col-sm-4">
-            <div class="text-primary h3">XXX</div>
-            <p>BTC</p>
-            <br>
-            <div class="text-primary h3">250,000</div>
-            <p>EQB</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>

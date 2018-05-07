@@ -7,6 +7,12 @@ import $ from 'jquery'
 export const ViewModel = DefineMap.extend({
   message: {
     value: 'This is the page-about component'
+  },
+  session: {
+    type: 'any'
+  },
+  logout () {
+    this.session.logout()
   }
 })
 

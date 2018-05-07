@@ -1,4 +1,10 @@
 <can-component tag="ico-grid">
+  <style>
+    input.margin.form-control {
+      height: 32px;
+      margin: 4px;
+    }
+  </style>
   <view>
     <can-import from="~/utils/helpers" />
     <can-import from="grid-component" />
@@ -28,8 +34,8 @@
 
               <tr>
                 <td class="text-nowrap text-center"></td>
-                <td class="text-nowrap text-center"><input type="text" value:bind="../newRound" /></td>
-                <td class="text-nowrap text-center"><input type="number" value:bind="../newAmount" /></td>
+                <td class="text-nowrap text-center"><input type="text" class="margin form-control" value:bind="../newRound" /></td>
+                <td class="text-nowrap text-center"><input type="number" class="margin form-control" value:bind="../newAmount" /></td>
                 <td class="text-nowrap text-center">
                   <button class="btn btn-primary btn-sm" type="button" on:click="addNew()">Add</button>
                 </td>

@@ -3,7 +3,6 @@
 <can-import from="~/pages/admin-users/create-user.component" />
 <can-import from="~/pages/admin-users/delete-user.component" />
 
-<div class="container">
   <div class="row">
     <div class="col-sm-12 text-center">
       <h1>Admin Users</h1>
@@ -92,7 +91,6 @@
       </div>
     </div>
   </div>
-</div>
 
 <edit-user editUser:bind="editUser" session:from="session"/>
 <create-user createUser:from="@createUser" />
