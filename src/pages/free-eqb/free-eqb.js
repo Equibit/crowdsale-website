@@ -32,8 +32,9 @@ export const ViewModel = DefineMap.extend({
   userAnswers: {
     value () {
       if (this.questions) {
+        const questions = this.questions.get ? this.questions.get() : this.questions
         return new Answer.List(
-          this.questions.get().map(q => {
+          questions.map(q => {
             return {
               userId: this.user._id,
               questionId: q._id,
