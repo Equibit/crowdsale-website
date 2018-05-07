@@ -1,42 +1,56 @@
 <can-import from="can-stache-converters" />
 
-<h1>Free EQB</h1>
+<div class="row margin-top">
+  <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2"><h2 class="bold">Free <span class="text-primary">EQB</span></h2></div>
+</div>
 
-{{#switch(user.questionnaire)}}
+{{#switch (user.questionnaire)}}
+  {{#case ("WAITING-CODE")}}
+    <div class="row margin-top">
+      <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+        <div class="panel no-margin">
+          <div class="panel-body">
+            <p>To help seed the network and distribute EQB to a community beyond our ICO and SAFT
+              investors we are conducting a 50,000 EQB Airdrop!</p>
 
-  {{#case("WAITING-CODE")}}
-    <p>To help seed the network and distribute EQB to a community beyond our ICO and SAFT
-      investors we are conducting a 50,000 EQB Airdrop!</p>
+            <p>In order to receive your EQB you will first need to set up an account and verify your email
+              address. You will then need to complete a (or the following) simple and short
+              questionnaire. Your answers will not be associated with your name or account but be used
+              in marketing the Equibit Portfolio to issuing companies – and further drive the value of EQB.
+              It’s a win/win!</p>
 
-    <p>In order to receive your EQB you will first need to set up an account and verify your email
-      address. You will then need to complete a (or the following) simple and short
-      questionnaire. Your answers will not be associated with your name or account but be used
-      in marketing the Equibit Portfolio to issuing companies – and further drive the value of EQB.
-      It’s a win/win!</p>
-
-    <p>Please, enter the confirmation code that we sent to your phone here: </p>
-    <input type="text" value:bind="code" />
-    <button type="button btn-sm btn-primary" on:click="sendCode()">Send Code</button>
+            <p>Please, enter the confirmation code that we sent to your phone here: </p>
+            <div class="input-group">
+              <input type="text" class="form-control" value:bind="code" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-primary" on:click="sendCode()">Send Code</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <br><br>
+      </div>
+    </div>
   {{/case}}
 
-  {{#case("QUESTIONS")}}
+  {{#case ("QUESTIONS")}}
     <h2>Questions:</h2>
 
     <dl>
-      {{#each(questions, question=value qnum=index)}}
+      {{#each (questions, question=value qnum=index)}}
         <dt>
           <strong>Q{{qnum}}</strong>:  {{question.question}}
         </dt>
         <dd>
           <ul>
-            {{#each(question.answerOptions, answerOption=value anum=index)}}
+            {{#each (question.answerOptions, answerOption=value anum=index)}}
               <li>
                 {{#is ../question.questionType 'SINGLE'}}
                   <input type="radio" checked:bind="equal(~../../userAnswers[../qnum].answerChoiceNum, anum)">
                 {{else}}
                   <input type="checkbox">
                 {{/is}}
-                <strong>{{indexLetter(anum)}}.</strong>
+                <strong>{{indexLetter (anum)}}.</strong>
                 <span>
                   {{#is answerOption 'CUSTOM'}}
                     Other - Specify
@@ -57,23 +71,37 @@
     <button type="button btn-sm btn-primary" on:click="submitAnswers()">Submit Your Answers</button>
   {{/case}}
 
-  {{#case("COMPLETED")}}
+  {{#case ("COMPLETED")}}
     <p>Thank You for completing the questionnaire – now it’s time to set up your account</p>
   {{/case}}
 
-  {{#default()}}
-    <p>To help seed the network and distribute EQB to a community beyond our ICO and SAFT
-      investors we are conducting a 50,000 EQB Airdrop!</p>
+  {{#default ()}}
+    <div class="row margin-top">
+      <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+        <div class="panel no-margin">
+          <div class="panel-body">
+            <p>To help seed the network and distribute EQB to a community beyond our ICO and SAFT
+              investors we are conducting a 50,000 EQB Airdrop!</p>
 
-    <p>In order to receive your EQB you will first need to set up an account and verify your email
-      address. You will then need to complete a (or the following) simple and short
-      questionnaire. Your answers will not be associated with your name or account but be used
-      in marketing the Equibit Portfolio to issuing companies – and further drive the value of EQB.
-      It’s a win/win!</p>
+            <p>In order to receive your EQB you will first need to set up an account and verify your email
+              address. You will then need to complete a (or the following) simple and short
+              questionnaire. Your answers will not be associated with your name or account but be used
+              in marketing the Equibit Portfolio to issuing companies – and further drive the value of EQB.
+              It’s a win/win!</p>
 
-    <p>Please, enter your phone number here. You will receive a confirmation code.</p>
-    <input type="tel" value:bind="phone" />
-    <button type="button btn-sm btn-primary" on:click="sendPhone()">Submit Phone</button>
+            <p>Please, enter your phone number here. You will receive a confirmation code.</p>
+
+            <div class="input-group">
+              <input type="tel" class="form-control" value:bind="phone">
+              <span class="input-group-btn">
+                <button type="text" class="btn btn-primary" on:click="sendPhone()">Submit Phone</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <br><br>
+      </div>
+    </div>
   {{/default}}
 
 {{/switch}}

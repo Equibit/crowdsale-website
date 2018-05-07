@@ -1,15 +1,12 @@
 <can-import from="~/components/count-down/" />
 
 <div class="row margin-top">
-  <div class="col-sm-7 col-md-8 col-md-offset-1 col-sm-offset-1"><h1 class="bold">Frequently Asked <span class="text-primary">Questions</span></h1></div>
-  <div class="col-sm-4 col-md-3 text-right">
-    <div class="h4 bold text-nowrap"><count-down timestamp:from="'1639811584'" current:from="'1504811708'" /></div>
-  </div>
+  <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2"><h2 class="bold">Frequently Asked <span class="text-primary">Questions</span></h2></div>
 </div>
 
-<div class="row">
+<div class="row margin-top">
   <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-    <div class="panel">
+    <div class="panel no-margin">
       <div class="panel-body">
 
         <div class="list-group no-margin-bottom">
@@ -25,7 +22,8 @@
 
       </div>
     </div>
-    <div class="panel panel-warning">
+    <br><br>
+    <div class="panel panel-warning no-margin">
       <div class="panel-body">
         <div class="tab-content">
           <div class="{{#eq question 1}}active{{/eq}}">

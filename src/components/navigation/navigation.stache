@@ -47,16 +47,29 @@
         </ul>
       {{else}}
         <ul class="nav navbar-nav">
-          <li class="{{#routeCurrent page='profile'}}active{{/routeCurrent}} nav-item">
-            <a href="{{routeUrl page='profile'}}" on:click="closeMenu()">
-              Account{{#routeCurrent page='profile'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
+          <li class="{{#routeCurrent page='about'}}active{{/routeCurrent}} nav-item">
+            <a href="{{routeUrl page='about'}}" on:click="closeMenu()">
+              About{{#routeCurrent page='about'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
             </a>
           </li>
-        </ul>
-        <ul class="nav navbar-nav">
+          <li class="{{#routeCurrent page='overview'}}active{{/routeCurrent}} nav-item">
+            <a href="{{routeUrl page='overview'}}" on:click="closeMenu()">
+              FAQ{{#routeCurrent page='overview'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
+            </a>
+          </li>
+          <li class="{{#routeCurrent page='profile'}}active{{/routeCurrent}} nav-item">
+            <a href="{{routeUrl page='profile'}}" on:click="closeMenu()">
+              Your Account{{#routeCurrent page='profile'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
+            </a>
+          </li>
           <li class="{{#routeCurrent page='questionnaire'}}active{{/routeCurrent}} nav-item">
             <a href="{{routeUrl page='questionnaire'}}" on:click="closeMenu()">
               Free EQB{{#routeCurrent page='questionnaire'}} <span class="sr-only">(current)</span>{{/routeCurrent}}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://equibitgroup.com/" target="_blank" on:click="closeMenu()">
+              Main Site
             </a>
           </li>
         </ul>
@@ -82,9 +95,9 @@
 
 {{^if session.loggedIn}}
 
-  <!--<can-import from="~/components/navigation/signup/" />-->
+  <can-import from="~/components/navigation/signup/" />
   <can-import from="~/components/navigation/forgot-password/" />
-  <!--<signup-modal />-->
+  <signup-modal />
   <forgot-password-modal />
 
 {{else}}
