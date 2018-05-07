@@ -50,5 +50,3 @@ stache.addHelper('numberFormat', num => {
 stache.addHelper('indexLetter', (index) => {
   return ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'][index]
 })
-
-
