@@ -11,7 +11,10 @@ const Question = DefineMap.extend({
 }, {
   '_id': 'any',
   question: 'string',
-  sortIndex: 'number'
+  // enum: ['MULTI', 'SINGLE']
+  questionType: 'string',
+  sortIndex: 'number',
+  createdAt: 'date'
 })
 
 Question.List = DefineList.extend({
@@ -28,8 +31,8 @@ Question.connection = connect([
 ], {
   Map: Question,
   List: Question.List,
-  feathersService: feathersClient.service('question'),
-  name: 'question',
+  feathersService: feathersClient.service('questions'),
+  name: 'questions',
   algebra
 })
 
