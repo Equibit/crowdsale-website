@@ -16,6 +16,13 @@ import 'jquery'
 import 'bootstrap'
 import Session from './models/session'
 
+//! steal-remove-start
+import canViewModel from 'can-view-model'
+window.route = route
+window.Session = Session
+window.canViewModel = canViewModel
+//! steal-remove-end
+
 const AppViewModel = DefineMap.extend({
   '*': {
     serialize: false

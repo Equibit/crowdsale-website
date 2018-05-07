@@ -6,7 +6,7 @@ import feathersClient from './feathers-client'
 import feathersServiceBehavior from 'can-connect-feathers/service/service'
 import behaviors from './behaviors'
 
-const Answer = DefineMap.extend({
+const Answer = DefineMap.extend('Answer', {
   seal: false
 }, {
   '_id': 'any',
@@ -16,11 +16,21 @@ const Answer = DefineMap.extend({
   questionSortIndex: 'number',
   answer: 'string',
   // Enum: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']:
-  answerChoice: 'string',
+  answerChoiceNum: {
+    serialize: false,
+    type: 'any'
+  },
+  answerChoice: {
+    serialize: true,
+    type: 'string',
+    get () {
+      return ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'][this.answerChoiceNum]
+    }
+  },
   createdAt: 'date'
 })
 
-Answer.List = DefineList.extend({
+Answer.List = DefineList.extend('AnswerList', {
   '#': Answer
 })
 

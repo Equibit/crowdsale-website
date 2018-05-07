@@ -1,3 +1,5 @@
+<can-import from="can-stache-converters" />
+
 <h1>Free EQB</h1>
 
 {{#switch(user.questionnaire)}}
@@ -19,6 +21,7 @@
 
   {{#case("QUESTIONS")}}
     <h2>Questions:</h2>
+
     <dl>
       {{#each(questions, question=value qnum=index)}}
         <dt>
@@ -29,14 +32,17 @@
             {{#each(question.answerOptions, answerOption=value anum=index)}}
               <li>
                 {{#is ../question.questionType 'SINGLE'}}
-                  <input type="radio" checked:bind="equal(~textAnswers[qnum], anum)">
+                  <input type="radio" checked:bind="equal(~../../userAnswers[../qnum].answerChoiceNum, anum)">
                 {{else}}
                   <input type="checkbox">
                 {{/is}}
                 <strong>{{indexLetter(anum)}}.</strong>
                 <span>
                   {{#is answerOption 'CUSTOM'}}
-                    Other - Specify <input type="text"  />
+                    Other - Specify
+                    <input type="text"
+                           value:bind="../../userAnswers[../qnum].answer"
+                           on:focus="selectCustom(../../userAnswers[../qnum], anum)" />
                   {{else}}
                     {{{answerOption}}}
                   {{/is}}
@@ -44,6 +50,7 @@
               </li>
             {{/each}}
           </ul>
+          Your choice: {{../userAnswers[qnum].answerChoice}}
         </dd>
       {{/each}}
     </dl>

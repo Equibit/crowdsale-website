@@ -1213,6 +1213,14 @@ can-stache-bindings@^3.11.7, can-stache-bindings@^3.2.0, can-stache-bindings@^3.
     can-view-model "^3.4.0"
     can-view-scope "^3.5.4"
 
+can-stache-converters@3.x:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/can-stache-converters/-/can-stache-converters-3.3.1.tgz#1c4969960e0bf3908365962fdaf7fbee808b8d7d"
+  dependencies:
+    can-stache "^3.1.0"
+    can-stache-bindings "^3.2.0"
+    can-util "^3.9.0"
+
 can-stache-key@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/can-stache-key/-/can-stache-key-0.1.0.tgz#0a8b0047ad227f4c808a202cfa68a77220edfa72"
@@ -1281,6 +1289,28 @@ can-stache@^3.0.22:
     can-view-live "^3.2.0"
     can-view-nodelist "^3.1.0"
     can-view-parser "^3.6.0"
+    can-view-scope "^3.5.4"
+    can-view-target "^3.1.0"
+
+can-stache@^3.1.0:
+  version "3.14.20"
+  resolved "https://registry.yarnpkg.com/can-stache/-/can-stache-3.14.20.tgz#b40e9b57f68ce1420612207bc70d700c616edd86"
+  dependencies:
+    can-attribute-encoder "^0.3.4"
+    can-compute "^3.3.1"
+    can-globals "<2.0.0"
+    can-log "^1.0.0"
+    can-namespace "1.0.0"
+    can-observation "^3.3.1"
+    can-reflect "^1.13.3"
+    can-route "^3.3.3"
+    can-stache-key "^0.1.2"
+    can-symbol "^1.0.0"
+    can-util "^3.10.12"
+    can-view-callbacks "^3.2.0"
+    can-view-live "^3.2.0"
+    can-view-nodelist "^3.1.0"
+    can-view-parser "^3.8.1"
     can-view-scope "^3.5.4"
     can-view-target "^3.1.0"
 

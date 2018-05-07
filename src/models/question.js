@@ -6,19 +6,20 @@ import feathersClient from './feathers-client'
 import feathersServiceBehavior from 'can-connect-feathers/service/service'
 import behaviors from './behaviors'
 
-const Question = DefineMap.extend({
+const Question = DefineMap.extend('Question', {
   seal: false
 }, {
   '_id': 'any',
   question: 'string',
   // enum: ['MULTI', 'SINGLE']
   questionType: 'string',
-  answerOptions: 'array',
+  // Array of strings. Value 'CUSTOM' is for user custom answer.
+  answerOptions: 'any',
   sortIndex: 'number',
   createdAt: 'date'
 })
 
-Question.List = DefineList.extend({
+Question.List = DefineList.extend('QuestionList', {
   '#': Question
 })
 

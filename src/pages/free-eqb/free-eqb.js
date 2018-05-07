@@ -25,14 +25,24 @@ export const ViewModel = DefineMap.extend({
       if (val) {
         return val
       }
-      // this.questionsPromise.then(resolve)
-      return questionStore.getList({}).data
+      this.questionsPromise.then(resolve)
+      // return questionStore.getList({}).data
     }
   },
-  textAnswers: {
+  userAnswers: {
     value () {
       if (this.questions) {
-        return new Array(this.questions.length)
+        return new Answer.List(
+          this.questions.get().map(q => {
+            return {
+              userId: this.user._id,
+              questionId: q._id,
+              questionSortIndex: q.sortIndex,
+              answer: '',
+              answerChoiceNum: Math.random()
+            }
+          })
+        )
       }
     }
   },
@@ -55,18 +65,22 @@ export const ViewModel = DefineMap.extend({
       })
   },
   submitAnswers () {
-    const answers = new Answer.List([])
-    this.textAnswers.forEach((text, i) => {
-      answers.push({
-        userId: this.user._id,
-        questionId: this.questions[i]._id,
-        answer: text
-      })
+    const questions = this.questions
+    // Update non-CUSTOM answer text value:
+    this.userAnswers.forEach((answer, i) => {
+      if (questions[i].answerOptions[answer.answerChoiceNum] !== 'CUSTOM') {
+        answer.answer = questions[i].answerOptions[answer.answerChoiceNum]
+      }
     })
-    answers.forEach(a => a.save())
+    console.log(this.userAnswers)
 
+    //this.answers.forEach(a => a.save())
     // todo: remove this after integrating with serivices.
-    this.user.questionnaire = 'COMPLETED'
+    //this.user.questionnaire = 'COMPLETED'
+  },
+
+  selectCustom (answer, num) {
+    answer.answerChoiceNum = num
   }
 })
 
