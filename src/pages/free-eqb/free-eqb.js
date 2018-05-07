@@ -5,7 +5,7 @@ import view from './free-eqb.stache'
 import Session from '../../models/session'
 import Answer from '../../models/answer'
 import Question from '../../models/question'
-// import questionStore from '../../models/fixtures/questions'
+import questionStore from '../../models/fixtures/questions'
 
 export const ViewModel = DefineMap.extend({
   user: {
@@ -25,8 +25,8 @@ export const ViewModel = DefineMap.extend({
       if (val) {
         return val
       }
-      this.questionsPromise.then(resolve)
-      // return questionStore.getList({}).data
+      //this.questionsPromise.then(resolve)
+      return questionStore.getList({}).data
     }
   },
   userAnswers: {
