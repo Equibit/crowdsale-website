@@ -58,9 +58,15 @@
 
       {{#switch page}}
         {{#case 'about'}}
-          <can-import from="~/pages/page-about/" can-tag="tag-loading">
-            <page-about />
-          </can-import>
+          {{#if session.loggedIn}}
+            <can-import from="~/pages/page-about/" can-tag="tag-loading">
+              <page-about session:from="../session" />
+            </can-import>
+          {{else}}
+            <can-import from="~/pages/page-about/" can-tag="tag-loading">
+              <page-about />
+            </can-import>
+          {{/if}}
         {{/case}}
         {{#case 'overview'}}
           <can-import from="~/pages/page-overview/" can-tag="tag-loading">

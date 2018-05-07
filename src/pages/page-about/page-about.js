@@ -3,10 +3,17 @@ import DefineMap from 'can-define/map/map'
 import './page-about.less'
 import view from './page-about.stache'
 import $ from 'jquery'
+import route from 'can-route'
 
 export const ViewModel = DefineMap.extend({
   message: {
     value: 'This is the page-about component'
+  },
+  session: {
+    type: 'any'
+  },
+  logout () {
+    this.session.logout()
   }
 })
 
