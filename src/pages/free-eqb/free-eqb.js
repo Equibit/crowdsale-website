@@ -77,7 +77,6 @@ export const ViewModel = DefineMap.extend({
       })
   },
   submitAnswers () {
-    debugger
     const questions = this.questions
     // Update non-CUSTOM answer text value:
     this.userAnswers.forEach((answer, i) => {

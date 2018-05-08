@@ -55,6 +55,6 @@ stache.addHelper('plusOne', (num) => {
   return num + 1
 })
 
-  stache.addHelper('numString', (num) => {
+stache.addHelper('numString', (num) => {
   return (num).toString()
 })
