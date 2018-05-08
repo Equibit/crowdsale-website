@@ -9,8 +9,8 @@ import questionStore from '../../models/fixtures/questions'
 
 export const ViewModel = DefineMap.extend({
   user: {
-    get () {
-      return Session.current && Session.current.user
+    get (val) {
+      return (Session.current && Session.current.user) || val
     }
   },
   phone: 'string',
@@ -49,6 +49,9 @@ export const ViewModel = DefineMap.extend({
   },
 
   sendPhone () {
+    if (!this.user) {
+      throw new Error('User is not defined')
+    }
     this.user.assign({
       phone: this.phone,
       questionnaire: 'WAITING-CODE'
@@ -56,6 +59,9 @@ export const ViewModel = DefineMap.extend({
     this.user.save()
   },
   sendCode () {
+    if (!this.user) {
+      throw new Error('User is not defined')
+    }
     this.user.assign({
       code: this.code
     })
