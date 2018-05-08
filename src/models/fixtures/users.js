@@ -2,7 +2,7 @@ import fixture from 'can-fixture'
 import User from '../user'
 
 const store = fixture.store([{
-  id: '5a5d6333874a44e39b3625cb',
+  _id: '5a5d6333874a44e39b3625cb',
   email: 'godardm@gmail.com',
   password: '1234',
   setPassword: false,
@@ -14,7 +14,7 @@ const store = fixture.store([{
   kycId: 1,
   isAdmin: false
 }, {
-  id: 2,
+  _id: 2,
   email: 'admin@admin.com',
   password: '1234',
   setPassword: false,
@@ -26,7 +26,7 @@ const store = fixture.store([{
   kycId: 2,
   isAdmin: true
 }, {
-  id: 3,
+  _id: 3,
   email: 'locked@locked.com',
   password: '1234',
   setPassword: false,
@@ -38,7 +38,7 @@ const store = fixture.store([{
   kycId: 3,
   isAdmin: false
 }, {
-  id: 4,
+  _id: 4,
   email: 'set@password.com',
   password: '1234',
   setPassword: true,
@@ -50,7 +50,7 @@ const store = fixture.store([{
   kycId: 4,
   isAdmin: false
 }, {
-  id: 5,
+  _id: 5,
   email: 'kyc@notcomplete.com',
   password: '1234',
   setPassword: false,
@@ -62,7 +62,7 @@ const store = fixture.store([{
   kycId: null,
   isAdmin: false
 }, {
-  id: 6,
+  _id: 6,
   email: 'kyc@notapproved.com',
   password: '1234',
   setPassword: true,
@@ -75,6 +75,6 @@ const store = fixture.store([{
   isAdmin: false
 }], User.connection.algebra)
 
-fixture('/users/{id}', store)
+fixture('/users/{_id}', store)
 
 export default store

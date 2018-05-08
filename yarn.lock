@@ -1303,7 +1303,7 @@ can-stache-key@^0.1.0, can-stache-key@^0.1.2:
     can-symbol "^1.0.0"
     can-util "^3.9.0"
 
-can-stache@^3.0.15, can-stache@^3.10.0, can-stache@^3.13.5, can-stache@^3.3.0, can-stache@^3.3.3, can-stache@^3.7.1, can-stache@^3.7.2, can-stache@^3.7.3:
+can-stache@^3.0.15, can-stache@^3.10.0, can-stache@^3.13.5, can-stache@^3.3.0, can-stache@^3.3.3, can-stache@^3.7.1, can-stache@^3.7.3:
   version "3.14.16"
   resolved "https://registry.yarnpkg.com/can-stache/-/can-stache-3.14.16.tgz#7e0ed5e38d1da3a9cea38c25a5bb442263a9bce3"
   dependencies:
@@ -1347,7 +1347,7 @@ can-stache@^3.0.22:
     can-view-scope "^3.5.4"
     can-view-target "^3.1.0"
 
-can-stache@^3.1.0:
+can-stache@^3.1.0, can-stache@^3.14.20:
   version "3.14.20"
   resolved "https://registry.yarnpkg.com/can-stache/-/can-stache-3.14.20.tgz#b40e9b57f68ce1420612207bc70d700c616edd86"
   dependencies:

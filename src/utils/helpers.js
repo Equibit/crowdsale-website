@@ -50,3 +50,11 @@ stache.addHelper('numberFormat', num => {
 stache.addHelper('indexLetter', (index) => {
   return ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'][index]
 })
+
+stache.addHelper('plusOne', (num) => {
+  return num + 1
+})
+
+stache.addHelper('numString', (num) => {
+  return (num).toString()
+})
