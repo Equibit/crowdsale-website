@@ -1,5 +1,6 @@
 import Component from 'can-component'
 import DefineMap from 'can-define/map/'
+import DefineList from 'can-define/list/'
 import './free-eqb.less'
 import view from './free-eqb.stache'
 import Session from '../../models/session'
@@ -36,16 +37,20 @@ export const ViewModel = DefineMap.extend({
         return new Answer.List(
           questions.map(q => {
             return {
-              userId: this.user._id,
+              userId: this.user && this.user._id,
               questionId: q._id,
               questionSortIndex: q.sortIndex,
               answer: '',
-              answerChoiceNum: Math.random()
+              answerChoiceNum: q.questionType === 'MULTI' ? new DefineList([2]) : null
             }
           })
         )
       }
     }
+  },
+
+  choices (list) {
+    return list ? list.join(', ') : ''
   },
 
   sendPhone () {
@@ -72,11 +77,18 @@ export const ViewModel = DefineMap.extend({
       })
   },
   submitAnswers () {
+    debugger
     const questions = this.questions
     // Update non-CUSTOM answer text value:
     this.userAnswers.forEach((answer, i) => {
       if (questions[i].answerOptions[answer.answerChoiceNum] !== 'CUSTOM') {
-        answer.answer = questions[i].answerOptions[answer.answerChoiceNum]
+        if (answer.answerChoiceNum && answer.answerChoiceNum.length) {
+          answer.answer = answer.answerChoiceNum.map((answerChoiceNum, i) => {
+            return answerChoiceNum ? questions[i].answerOptions[answer.answerChoiceNum] : null
+          }).filter(a => a !== null)
+        } else {
+          answer.answer = questions[i].answerOptions[answer.answerChoiceNum]
+        }
       }
     })
     console.log(this.userAnswers)

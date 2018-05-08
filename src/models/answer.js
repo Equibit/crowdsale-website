@@ -14,7 +14,7 @@ const Answer = DefineMap.extend('Answer', {
   questionId: 'string',
   // Starts with 1:
   questionSortIndex: 'number',
-  answer: 'string',
+  answer: 'any',
   // Enum: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']:
   answerChoiceNum: {
     serialize: false,
@@ -24,7 +24,12 @@ const Answer = DefineMap.extend('Answer', {
     serialize: true,
     type: 'string',
     get () {
-      return ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'][this.answerChoiceNum]
+      const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+      if (this.answerChoiceNum && this.answerChoiceNum.length) {
+        return this.answerChoiceNum.map(num => letters[num])
+      } else {
+        return letters[this.answerChoiceNum]
+      }
     }
   },
   createdAt: 'date'
