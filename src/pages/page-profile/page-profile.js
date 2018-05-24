@@ -4,6 +4,7 @@ import './page-profile.less'
 import view from './page-profile.stache'
 import Session from '~/models/session'
 import route from 'can-route'
+import IcoBalance from '../../models/ico-balance'
 
 export const ViewModel = DefineMap.extend({
   user: {
@@ -11,10 +12,22 @@ export const ViewModel = DefineMap.extend({
       return Session.current && Session.current.user
     }
   },
+  icoItems: {
+    get (val, resolve) {
+      if (this.user && this.user._id) {
+        IcoBalance.getList({userId: this.user._id}).then(resolve)
+      }
+    }
+  },
   sum: {
     get () {
-      return this.user && (this.user.ico + this.user.saft)
+      return (this.user && ((this.user.ico || 0) + (this.user.saft || 0))) || 0
     }
+  },
+  summ (index) {
+    return this.sum + ((this.icoItems && this.icoItems.reduce((acc, item, i) => {
+      return acc + (i <= index ? item.amountEqb : 0)
+    }, 0)) || 0)
   },
   session: {
     type: 'any'
