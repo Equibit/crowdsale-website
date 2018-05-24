@@ -21,13 +21,13 @@ export const ViewModel = DefineMap.extend({
   },
   sum: {
     get () {
-      return this.user && ((this.user.ico || 0) + (this.user.saft || 0)) || 0
+      return (this.user && ((this.user.ico || 0) + (this.user.saft || 0))) || 0
     }
   },
   summ (index) {
-    return this.sum + (this.icoItems && this.icoItems.reduce((acc, item, i) => {
+    return this.sum + ((this.icoItems && this.icoItems.reduce((acc, item, i) => {
       return acc + (i <= index ? item.amountEqb : 0)
-    }, 0) || 0)
+    }, 0)) || 0)
   },
   session: {
     type: 'any'
