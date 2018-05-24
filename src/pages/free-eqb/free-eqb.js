@@ -74,7 +74,9 @@ export const ViewModel = DefineMap.extend({
     this.user.assign({
       smsCode: this.code
     })
-    this.user.save().catch(err => this.error = err.message)
+    this.user.save().catch(err => {
+      this.error = err.message
+    })
   },
   submitAnswers () {
     const questions = this.questions
