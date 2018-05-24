@@ -11,6 +11,10 @@
       <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
         <div class="panel no-margin">
           <div class="panel-body">
+            {{#if (error)}}
+              <p class="alert alert-danger" role="alert">{{error}}</p>
+            {{/if}}
+
             <p>To help seed the network and distribute EQB to a community beyond our ICO and SAFT
               investors we are conducting a 50,000 EQB Airdrop!</p>
 
