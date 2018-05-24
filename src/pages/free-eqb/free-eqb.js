@@ -14,6 +14,7 @@ export const ViewModel = DefineMap.extend({
       return (Session.current && Session.current.user) || val
     }
   },
+  error: 'string',
   phone: 'string',
   code: 'string',
   questionsPromise: {
@@ -54,27 +55,26 @@ export const ViewModel = DefineMap.extend({
   },
 
   sendPhone () {
+    this.error = ''
     if (!this.user) {
       throw new Error('User is not defined')
     }
     this.user.assign({
-      phone: this.phone,
-      questionnaire: 'WAITING-CODE'
+      phoneNumber: this.phone
     })
-    this.user.save()
+    this.user.save().then(user => {
+      console.log(`Sent phone: questionnaire=${user.questionnaire}`, user)
+    })
   },
   sendCode () {
+    this.error = ''
     if (!this.user) {
       throw new Error('User is not defined')
     }
     this.user.assign({
-      code: this.code
+      smsCode: this.code
     })
-    this.user.save()
-      // todo: remove this after integrating with serivices.
-      .then(() => {
-        this.user.questionnaire = 'QUESTIONS'
-      })
+    this.user.save().catch(err => this.error = err.message)
   },
   submitAnswers () {
     const questions = this.questions

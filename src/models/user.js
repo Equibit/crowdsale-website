@@ -26,8 +26,8 @@ const User = DefineMap.extend('User', {
   saft: { type: 'number', value: 0 },
 
   // Questionnaire for free EQB:
-  phone: 'string',
-  code: 'string',
+  phoneNumber: 'string',
+  smsCode: 'string',
   // enum('WAITING-CODE', 'QUESTIONS', 'COMPLETED')
   questionnaire: 'string',
 
