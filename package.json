@@ -1,6 +1,6 @@
 {
   "name": "ico",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Equibit ICO website",
   "homepage": "",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "private": true,
   "scripts": {
-    "build": "node build",
+    "build2": "node build",
     "develop": "done-serve --static --develop --port 8080",
     "lint": "standard",
     "lint:fix": "standard --fix",
