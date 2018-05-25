@@ -25,7 +25,7 @@ export const ViewModel = DefineMap.extend({
       const extras = [
         {prop: 'ico', code: 'ICO', date: new Date('March 1, 2017')},
         {prop: 'saft', code: 'SAFT 1', date: new Date('March 30, 2017')},
-        {prop: 'icoBonus', code: 'ICO Bonus', date: new Date('May 25, 2018')},
+        {prop: 'icoBonus', code: 'ICO Bonus', date: new Date('May 25, 2018')}
       ]
       extras.forEach(item => {
         const amountEqb = this.user[item.prop]
