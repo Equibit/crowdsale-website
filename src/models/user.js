@@ -5,6 +5,7 @@ import feathersClient from './feathers-client'
 import feathersServiceBehavior from 'can-connect-feathers/service/service'
 import behaviors from './behaviors'
 import algebra from './algebra'
+import { toMaxPrecision } from '../utils/formatter'
 
 const User = DefineMap.extend('User', {
   _id: 'any',
@@ -33,6 +34,12 @@ const User = DefineMap.extend('User', {
 
   createdAt: 'date',
   updatedAt: 'date',
+
+  // Note: both ICO and SAFT values are in EQB (not Satoshi).
+  get icoBonus () {
+    const amount = (this.ico && this.ico > 0 && this.ico * 0.090268872354) || 0
+    return toMaxPrecision(amount, 8)
+  },
 
   signUp (email) {
     if (email && email.toLowerCase) {

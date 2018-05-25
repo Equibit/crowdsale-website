@@ -41,23 +41,7 @@
             </tr>
             </thead>
             <tbody>
-            {{#if user.ico}}
-              <tr>
-                <td>March 1, 2017</td>
-                <td>ICO</td>
-                <td>{{user.ico}}</td>
-                <td>{{user.ico}}</td>
-              </tr>
-            {{/if}}
-            {{#if user.saft}}
-              <tr>
-                <td>March 30, 2017</td>
-                <td>SAFT</td>
-                <td>{{user.saft}}</td>
-                <td>{{sum}}</td>
-              </tr>
-            {{/if}}
-            {{#each (icoItems, item=value key=index)}}
+            {{#each (allItems, item=value key=index)}}
               <tr>
                 <td>{{timeshort (item.createdAt)}}</td>
                 <td>{{item.type}}</td>

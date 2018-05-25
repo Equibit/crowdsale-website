@@ -19,15 +19,35 @@ export const ViewModel = DefineMap.extend({
       }
     }
   },
-  sum: {
+  allItems: {
     get () {
-      return (this.user && ((this.user.ico || 0) + (this.user.saft || 0))) || 0
+      const items = new IcoBalance.List([])
+      const extras = [
+        {prop: 'ico', code: 'ICO', date: new Date('March 1, 2017')},
+        {prop: 'saft', code: 'SAFT 1', date: new Date('March 30, 2017')},
+        {prop: 'icoBonus', code: 'ICO Bonus', date: new Date('May 25, 2018')},
+      ]
+      extras.forEach(item => {
+        const amountEqb = this.user[item.prop]
+        if (amountEqb && amountEqb > 0) {
+          items.push(new IcoBalance({
+            type: item.code,
+            amountEqb,
+            createdAt: item.date
+          }))
+        }
+      })
+      if (this.icoItems) {
+        items.push.apply(items, this.icoItems)
+      }
+
+      return items
     }
   },
   summ (index) {
-    return this.sum + ((this.icoItems && this.icoItems.reduce((acc, item, i) => {
+    return (this.allItems && this.allItems.reduce((acc, item, i) => {
       return acc + (i <= index ? item.amountEqb : 0)
-    }, 0)) || 0)
+    }, 0)) || 0
   },
   session: {
     type: 'any'
