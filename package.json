@@ -19,7 +19,7 @@
     "lint": "standard",
     "lint:fix": "standard --fix",
     "start": "node start.js",
-    "test": "npm run lint && npm run testee",
+    "test": "npm run testee",
     "testee": "testee test/test.html --browsers firefox --reporter Spec"
   },
   "main": "ico/index.stache!done-autorender/no-zone",
