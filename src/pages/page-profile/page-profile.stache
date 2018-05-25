@@ -47,22 +47,14 @@
                 </tr>
               </thead>
               <tbody>
-                {{#if user.ico}}
+                {{#each (allItems, item=value key=index)}}
                   <tr>
-                    <td>2017-03-31</td>
-                    <td>ICO</td>
-                    <td>{{user.ico}}</td>
-                    <td>{{user.ico}}</td>
+                    <td>{{timeshort (item.createdAt)}}</td>
+                    <td>{{item.type}}</td>
+                    <td>{{item.amountEqb}}</td>
+                    <td>{{summ(key)}}</td>
                   </tr>
-                {{/if}}
-                {{#if user.saft}}
-                  <tr>
-                    <td>2017-11-30</td>
-                    <td>SAFT</td>
-                    <td>{{user.saft}}</td>
-                    <td>{{sum}}</td>
-                  </tr>
-                {{/if}}
+                {{/each}}
               </tbody>
             </table>
             <!--<div class="row">-->
