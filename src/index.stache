@@ -49,12 +49,17 @@
 <can-import from="~/components/navigation/" />
 <can-import from="~/pages/page-balance-only.component" />
 
+{{#is mode 'balance-only'}}
+  <navigation-bar session:from="session" page:from="page" mode:from="mode"/>
+  <page-balance-only session:from="session" />
+{{else}}
+
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-3 col-md-2">
+    <div class="col-sm-3 col-md-2 col-lg-1">
       <navigation-bar session:from="session" />
     </div>
-    <div class="col-sm-9 col-md-10">
+    <div class="col-sm-9 col-md-10 col-lg-11">
 
       {{#switch page}}
         {{#case 'about'}}
@@ -123,6 +128,7 @@
     </div>
   </div>
 </div>
+{{/is}}
 
 {{#switch env.NODE_ENV}}
   {{#case "production"}}

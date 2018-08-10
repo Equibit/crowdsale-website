@@ -1,11 +1,14 @@
-<can-import from="~/components/count-down/" />
+<!--<can-import from="~/components/count-down/" />-->
 
 <div class="row margin-top">
-  <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2"><h2 class="bold">Your <span class="text-primary">Account</span></h2></div>
+  <!--<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2"><h2 class="bold">Your <span class="text-primary">Account</span></h2></div>-->
+  <div class="col-md-4"><h2 class="bold">Your <span class="text-primary">Profile</span></h2></div>
+  <div class="col-md-4"><h2 class="bold">History</h2></div>
 </div>
 
-<div class="row margin-top">
-  <div class="col-md-3 col-md-offset-1 col-lg-2 col-lg-offset-2">
+<div class="row">
+  <!--<div class="col-md-3 col-md-offset-1 col-lg-2 col-lg-offset-2">-->
+  <div class="col-md-4">
     <div class="panel {{#if isEdit}}inversed{{/if}}">
       <div class="panel-body text-center">
         <p class="bold text-primary overflow-ellipsis">{{user.email}}</p>
@@ -15,20 +18,22 @@
         <p class="bold text-primary">********</p>
         <p class="small">PASSWORD</p>
 
-        <hr width="70%">
+        <!--<hr width="70%">-->
 
-        <p><a href="" data-toggle="modal" data-target="#change-password-modal" on:click="closeMenu()">Change Password</a></p>
-        <p><a href="" data-toggle="modal" data-target="#change-email-modal" on:click="closeMenu()">Change Email Address</a></p>
+        <!--<p><a href="" data-toggle="modal" data-target="#change-password-modal" on:click="closeMenu()">Change Password</a></p>-->
+        <!--<p><a href="" data-toggle="modal" data-target="#change-email-modal" on:click="closeMenu()">Change Email Address</a></p>-->
       </div>
 
       <div class="edit-btn-container">
         <button type="button" class="btn btn-primary"
-                on:click="logout()">Logout</button>
+                data-toggle="modal" data-target="#change-password-modal"
+                on:click="">Edit</button>
       </div>
     </div>
     <br><br>
   </div>
-  <div class="col-md-7 col-lg-6">
+  <!--<div class="col-md-7 col-lg-6">-->
+  <div class="col-md-8">
     <div class="panel">
       <div class="panel-body">
         <div class="tab-content">
