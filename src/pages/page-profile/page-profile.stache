@@ -31,36 +31,39 @@
   <div class="col-md-7 col-lg-6">
     <div class="panel">
       <div class="panel-body">
-          <table class="table">
-            <thead>
-            <tr>
-              <th>Date</th>
-              <th>Round</th>
-              <th>Amount</th>
-              <th>Balance</th>
-            </tr>
-            </thead>
-            <tbody>
-            {{#each (allItems, item=value key=index)}}
-              <tr>
-                <td>{{timeshort (item.createdAt)}}</td>
-                <td>{{item.type}}</td>
-                <td>{{item.amountEqb}}</td>
-                <td>{{summ(key)}}</td>
-              </tr>
-            {{/each}}
-            </tbody>
-          </table>
-          <!--<div class="row">-->
-          <!--<div class="col-md-5 col-md-offset-1">-->
-          <!--<h2 class="text-primary margin-bottom bold text-center">{{user.ico}}</h2>-->
-          <!--<p class="text-center">Total EQB Purchased</p>-->
-          <!--</div>-->
-          <!--<div class="col-md-5">-->
-          <!--<h2 class="text-primary margin-bottom bold text-center">1</h2>-->
-          <!--<p class="text-center">Number of Transactions</p>-->
-          <!--</div>-->
-          <!--</div>-->
+        <div class="tab-content">
+          <div class="">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Round</th>
+                  <th>Amount</th>
+                  <th>Balance</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each (allItems, item=value key=index)}}
+                  <tr>
+                    <td>{{timeshort (item.createdAt)}}</td>
+                    <td>{{item.type}}</td>
+                    <td>{{item.amountEqb}}</td>
+                    <td>{{summ(key)}}</td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+            <!--<div class="row">-->
+              <!--<div class="col-md-5 col-md-offset-1">-->
+                <!--<h2 class="text-primary margin-bottom bold text-center">{{user.ico}}</h2>-->
+                <!--<p class="text-center">Total EQB Purchased</p>-->
+              <!--</div>-->
+              <!--<div class="col-md-5">-->
+                <!--<h2 class="text-primary margin-bottom bold text-center">1</h2>-->
+                <!--<p class="text-center">Number of Transactions</p>-->
+              <!--</div>-->
+            <!--</div>-->
+          </div>
 
       </div>
     </div>

@@ -1,5 +1,6 @@
 import Component from 'can-component'
 import DefineMap from 'can-define/map/'
+import DefineList from 'can-define/list/'
 import './page-profile.less'
 import view from './page-profile.stache'
 import Session from '~/models/session'
