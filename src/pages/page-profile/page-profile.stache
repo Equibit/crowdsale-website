@@ -42,7 +42,7 @@
               <thead>
                 <tr>
                   <th>Date</th>
-                  <th>Round</th>
+                  <th>Details</th>
                   <th>Amount</th>
                   <th>Balance</th>
                 </tr>
